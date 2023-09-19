@@ -32,8 +32,8 @@ const requester = async (method, url, data) => {
 
     // console.log(11111111111, options.body)
     // console.log(11111111111, data.password)
-    console.log(111111, url, options)
-    console.log(11111111, url, options.headers)
+    // console.log(111111, url, options)
+    // console.log(11111111, url, options.headers)
     
     const response = await fetch(url, options);
 

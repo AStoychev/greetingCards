@@ -84,6 +84,8 @@ export const AuthProvider = ({
         // Try logout
     };
 
+    // console.log(1111111111111, auth)
+
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,

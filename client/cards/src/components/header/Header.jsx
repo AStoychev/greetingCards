@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../../contexts/AuthContext';
 
 // import { OnLoad } from '../../utils/onLoad/onLoad';
 // import { MyFavorite } from '../../utils/MyFavorites/MyFavorites';
@@ -10,7 +12,10 @@ import { Link } from 'react-router-dom';
 import styles from "./Header.module.css"
 
 export const Header = () => {
-
+    const { isAuthenticated, userId, userEmail, userName } = useContext(AuthContext);
+    // if (isAuthenticated) {
+    //     console.log(userEmail, userId, userName)
+    // }
     // Show first modal
     // Safe cookies for ten minutes
     // const cookies = new Cookies(null, { path: '/', expires: new Date(Date.now()+600000)});
@@ -37,9 +42,20 @@ export const Header = () => {
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
-                        <Link className={styles.navigationLink} to="/login">Login</Link>
-                        <Link className={styles.navigationLink} to="/register">Register</Link>
-                        <Link className={styles.navigationLink} to="/logout">Logout</Link>
+                        {!isAuthenticated &&
+                            <>
+                                <Link className={styles.navigationLink} to="/login">Login</Link>
+                                <Link className={styles.navigationLink} to="/register">Register</Link>
+                            </>
+                        }
+
+                        {isAuthenticated &&
+                            <>
+                                <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
+                                <Link className={styles.navigationLink} to="/logout">Logout</Link>
+                                <div className={styles.userName}>{userEmail}</div>
+                            </>
+                        }
                     </div>
                 </div>
                 <div className={styles.navigation}>
@@ -54,7 +70,7 @@ export const Header = () => {
                     </Link>
                 </div>
                 <div className={styles.navigation}></div>
-            </div>
+            </div >
         </>
     );
 }
