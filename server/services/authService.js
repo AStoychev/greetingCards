@@ -7,7 +7,6 @@ const SECRET = 'secretisnotverysecretbutissomesecretwemusthave';
 
 exports.login = async (email, password) => {
     const user = await User.findOne({ email });
-    // const user = await this.findByEmail(email);
 
     if (!user) {
         throw new Error('Invalid email or password!');
