@@ -42,6 +42,7 @@ export const Header = () => {
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
+                        <Link className={styles.navigationLink} to="/Catalog">Catalog</Link>
                         {!isAuthenticated &&
                             <>
                                 <Link className={styles.navigationLink} to="/login">Login</Link>
@@ -53,7 +54,7 @@ export const Header = () => {
                             <>
                                 <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
                                 <Link className={styles.navigationLink} to="/logout">Logout</Link>
-                                <div className={styles.userName}>{userEmail}</div>
+                                <div className={styles.userName}>{userName}</div>
                             </>
                         }
                     </div>

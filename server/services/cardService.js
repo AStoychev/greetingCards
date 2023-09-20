@@ -1,19 +1,37 @@
 const Card = require('../models/Card');
 
-exports.addCard = async (title, description, price, discount, imageUrl) => {
-    const existingCard = await Card.findOne({ title });
+exports.addCard = async (cardData) => {
+    const existingCard = await Card.findOne({title:cardData.title});
 
     if (existingCard) {
         throw new Error('Card exists!');
     };
 
-    if (title.length < 2) {
+    if (cardData.title.length < 2) {
         throw new Error('Title too short!');
     };
 
-    if (description.length < 10) {
+    if (cardData.description.length < 10) {
         throw new Error('Description too short!');
     };
 
-    await Card.create({ title, description, price, discount, imageUrl });
+    await Card.create(cardData);
 };
+
+exports.getAll = async () => {
+    const existingCard = await Card.find({});
+    return existingCard
+    // await Card.find({})
+}
+
+exports.getOne = async (cardId) => {
+    const existingCard = await Card.findById(cardId);
+    return existingCard
+    // await Card.find({})
+}
+
+exports.delete = async (cardId) => {
+    const existingCard = await Card.findByIdAndDelete(cardId);
+    return existingCard
+    // await Card.find({})
+}

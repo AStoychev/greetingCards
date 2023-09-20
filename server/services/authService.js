@@ -28,6 +28,7 @@ exports.login = async (email, password) => {
 
     return {
         _id: user._id,
+        username: user.username,
         email: user.email,
         accessToken: token,
     };

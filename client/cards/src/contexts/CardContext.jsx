@@ -21,10 +21,9 @@ export const CardProvider = ({
     }, []);
 
     const onCreateCardSubmit = async (data) => {
-        console.log(data)
         const newCard = await cardService.create(data);
         setCards(state => [...state, newCard]);
-        navigate('/');
+        navigate('/catalog');
     };
 
     const onCardEditSubmit = async (values) => {

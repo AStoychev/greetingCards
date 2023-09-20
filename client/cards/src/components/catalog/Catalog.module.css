@@ -1,0 +1,139 @@
+.productContainer {
+    overflow: auto;
+    z-index: 1;
+
+    margin-top: calc(16px + 1em);
+    margin-bottom: calc(16px + 3em);
+    width: 100%;
+    padding: 1%;
+    padding-top: 50px;
+    background-color: rgb(234, 234, 234);
+}
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+
+    /* This CSS don't change rows */
+    /* display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch; */
+}
+
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.grid>article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid>article img {
+    max-width: 80%;
+}
+
+.grid .text {
+    padding: 20px;
+}
+
+.article>div {
+    text-align: center;
+}
+
+.image>img {
+    border: solid;
+    width: 400px;
+    height: 410px;
+}
+
+.title>button {
+    width: 120px;
+    background-color: rgb(33, 105, 134);
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 12px;
+}
+
+.title>button:hover {
+    background-color: rgb(136, 196, 27);
+}
+
+.price {
+    padding-top: 10px;
+}
+
+.star {
+    margin-bottom: 10px;
+}
+
+.productAndSortItem {
+    display: flex;
+    padding-top: 10px;
+}
+
+.columnOne {
+    flex: 90%;
+    padding: 10px;
+    height: 50px;
+}
+
+.modalContainer {
+    padding-top: 50px;
+}
+
+.columnTwo {
+    flex: 10%;
+    padding: 10px;
+    height: 50px;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.loadMoreButton {
+    color: white;
+    background-color: rgb(70, 70, 128);
+    border: none;
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.loadMoreButton:hover {
+    background-color: rgb(66, 143, 99);
+}
+
+.noMoreProduct {
+    color: #212429;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    width: 300px;
+    height: 30px;
+}
+
+.message {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

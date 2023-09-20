@@ -1,4 +1,24 @@
+import { useState, useEffect, useContext } from "react";
+import { CardContext } from "../../contexts/CardContext";
+
+import { useCardContext } from "../../contexts/CardContext";
+import { cardServiceFactory } from "../../services/cardService";
+
+import { Cards } from "../../utils/Cards/Cards";
+
+import styles from './Catalog.module.css'
+
 export const Catalog = () => {
+    const [allCards, setAllCards] = useState([]);
+    const allCardsService = cardServiceFactory();
+    
+    useEffect(() => {
+        allCardsService.getAll()
+            .then(result => {
+                setAllCards(result)
+            })
+    }, [])
+    
     return (
         <div className={styles.productContainer}>
             <div id="app" className="container">
@@ -7,7 +27,7 @@ export const Catalog = () => {
                     <Search getDataFromSearch={getDataFromSearch} />
                 </div> */}
 
-                <CategoryNameDescription props={"All product"} />
+                {/* <CategoryNameDescription props={"All product"} /> */}
 
                 <div className={styles.productAndSortItem}>
                     <div className={styles.columnOne}>
@@ -32,12 +52,12 @@ export const Catalog = () => {
                 {/* <ProductsCounter items={items} /> */}
 
                 <div className={styles.grid}>
-                    {/* {items && items.map(item => (
-                        < Card item={item} key={item.id} />
-                    ))} */}
+                    {allCards && allCards.map(card => (
+                        < Cards card={card} key={card._id} />
+                    ))}
                 </div>
 
-                {!filtred &&
+                {/* {!filtred &&
                     <div className={styles.buttonDiv}>
                         {page < totalPage
                             ? (
@@ -51,7 +71,7 @@ export const Catalog = () => {
                             </div>
                         }
                     </div>
-                }
+                } */}
             </div>
         </div>
     );

@@ -1,0 +1,47 @@
+.container {
+    width: 1000px;
+    margin: 0 auto
+}
+
+.columns3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    max-width: 1200px;
+
+    /* width: 100%;
+    display: flex; */
+}
+
+/* .columns3>* {
+    width: calc(100% / 1);
+} */
+
+.columnsLeft {
+    width: 230px;
+    flex: 0 0 130px;
+    border: solid;
+}
+
+.columnsCenter {
+    border-left: 1px solid #eee;
+    border: solid;
+}
+
+.columnsRight {
+    width: 330px;
+    flex: 0 0 430px;
+    border: solid;
+}
+
+.bgRed {
+    background-color: rgb(159, 85, 85);
+}
+
+.bgPink {
+    background-color: pink;
+}
+
+.bgOrange {
+    background-color: orange;
+}
