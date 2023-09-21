@@ -1,0 +1,69 @@
+.popup {
+    background-color: #cca3a3;
+    width: 450px;
+    padding: 10px 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    z-index: 1000;
+    font-family: "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 100%;
+    }
+}
+
+/* @media(min-width:768px) {
+    .popup {
+        float: left;
+        width: 30%;
+        margin-right: 5px;
+    }
+} */
+
+.container {
+    padding-bottom: 5px;
+}
+
+.closeButton {
+    display: block;
+    margin: 0 0 1px auto;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.paragraphCookie {
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.letsGoButton {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #0f72e5;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+    border: none;
+}
+
+.letsGoButton:hover {
+    background-color: #18579f;
+}

@@ -1,6 +1,6 @@
 .flexContainer {
     display: flex;
-    width: 100%;
+    width: 99.9%;
     height: 72px;
     background-color: rgb(11, 1, 38);
 }

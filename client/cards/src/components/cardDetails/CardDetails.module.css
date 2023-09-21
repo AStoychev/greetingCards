@@ -17,11 +17,44 @@
     width: calc(100% / 1);
 } */
 
+/* Left Column */
 .columnsLeft {
     width: 230px;
+    height: 720px;
     flex: 0 0 130px;
     border: solid;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    /* flex-direction: column;
+    flex-wrap: wrap; */
 }
+
+.leftImages{
+    margin-top: 70px;
+}
+
+.bgPink {
+    margin-top: 15px;
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+}
+
+.otherPictures {
+    border: solid;
+    border-width: thin;
+    width: 100px;
+    height: 100px;
+}
+
+.otherPictures:hover {
+    border: solid;
+    cursor: pointer;
+}
+/* Left Column */
 
 .columnsCenter {
     border-left: 1px solid #eee;
@@ -38,8 +71,9 @@
     background-color: rgb(159, 85, 85);
 }
 
-.bgPink {
-    background-color: pink;
+.mainImage {
+    width: 400px;
+    height: 600px;
 }
 
 .bgOrange {

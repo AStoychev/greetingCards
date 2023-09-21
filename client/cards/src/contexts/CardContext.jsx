@@ -29,7 +29,7 @@ export const CardProvider = ({
     const onCardEditSubmit = async (values) => {
         const result = await cardService.edit(values._id, values);
         setCards(state => state.map(x => x._id === values._id ? result : x));
-        navigate('/');
+        navigate(`/catalog/${values._id}`);
     };
 
     const deleteCard = (cardId) => {

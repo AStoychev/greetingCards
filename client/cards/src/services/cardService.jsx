@@ -28,15 +28,15 @@ export const cardServiceFactory = (token) => {
         return result;
     };
 
-    const edit = (cardId, data) => request.put(`${baseUrl}/${cardId}`, data);
+    const edit = (cardId, data) => request.put(`${baseUrl}/${cardId}/edit`, data);
 
-    const deleteCard = (cardId) => request.delete(`${baseUrl}/${cardId}`);
+    const deleteCard = (cardId) => request.delete(`${baseUrl}/${cardId}/delete`);
 
     return {
         getAll,
         getOne,
         create,
         edit,
-        delete: deleteCard,
+        deleteCard,
     };
 }

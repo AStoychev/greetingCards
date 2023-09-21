@@ -17,18 +17,13 @@ router.get('/all-cards', async (req, res) => {
 
 });
 
-// Get one card for details
-router.get('/:cardId', async (req, res) => {
-    const card = req.params.cardId
-    const result = await cardService.getOne(card);
-    res.json(result);
-});
-
 // Create card
 router.post('/add-card', async (req, res) => {
     const card = req.body;
     try {
-        const result = await cardService.addCard(card);
+        // req.user._id is information from authMiddlewares and it's give our's information about user id
+        const result = await cardService.addCard(req.user._id, card);
+
         // It is a good practice to return some metadata( this is data which is created from DB)
         res.json({ ok: 'true' });
         // res.json({ _id: result._id });
@@ -37,15 +32,44 @@ router.post('/add-card', async (req, res) => {
     }
 });
 
-// Delete one card
-router.get('/:cardId/delete', async (req, res) => {
-    const card = req.params.cardId;
+// Get one card for details
+router.get('/:cardId', async (req, res) => {
+    const card = req.params.cardId
+    const result = await cardService.getOne(card);
+    res.json(result);
+});
+
+// Get for edit page
+router.get('/:cardId/edit', async (req, res) => {
+    const card = req.params.cardId
+    const result = await cardService.getOne(card);
+    res.json(result);
+});
+
+router.put('/:cardId/edit', async (req, res) => {
+    const card = req.body;
     try {
-        await cardService.delete(card)
-        res.json({ok: 'true'});
+        // req.user._id is information from authMiddlewares and it's give our's information about user id
+        const result = await cardService.update(req.params.cardId, req.user._id, card);
+
+        // It is a good practice to return some metadata( this is data which is created from DB)
+        res.json({ ok: 'true' });
+        // res.json({ _id: result._id });
     } catch (error) {
         console.log(error);
     }
 })
+
+// Delete one card
+router.delete('/:cardId/delete', async (req, res) => {
+    const card = req.params.cardId;
+    try {
+        const result = await cardService.delete(card);
+        res.json({ok: 'true'});
+        // res.json(result);
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 module.exports = router;

@@ -14,8 +14,9 @@ import { HomePage } from './components/homePage/HomePage';
 import { Catalog } from './components/catalog/Catalog';
 import { AddCard } from './components/addCard/addCard';
 import { CardDetails } from './components/cardDetails/CardDetails';
+import { EditCard } from './components/editCard/editCard';
 
-import './App.css';
+// import './App.css';
 
 function App() {
     return (
@@ -30,7 +31,8 @@ function App() {
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/catalog' element={<Catalog />} />
                         <Route path='/add-card' element={<AddCard />} />
-                        <Route path='/catalog/:cardId' element={<CardDetails />}/>
+                        <Route path='/catalog/:cardId' element={<CardDetails />} />
+                        <Route path='/catalog/:cardId/edit' element={<EditCard />} />
                     </Routes>
                     <Footer />
                 </CardProvider>

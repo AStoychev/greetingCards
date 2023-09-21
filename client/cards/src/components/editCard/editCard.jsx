@@ -1,27 +1,49 @@
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
-import { CardContext } from "../../contexts/CardContext";
+import { useCardContext } from "../../contexts/CardContext";
 
-export const AddCard = () => {
+import { useService } from "../../hooks/useService";
+import { cardServiceFactory } from "../../services/cardService";
 
-    const { onCreateCardSubmit } = useContext(CardContext);
-    const { values, changeHandler, onSubmit } = useForm({
+export const EditCard = () => {
+
+    const { onCardEditSubmit } = useCardContext();
+    const cardIdObj = useParams();
+    const cardId = cardIdObj.cardId;
+    const cardService = useService(cardServiceFactory);
+
+    const { values, changeHandler, onSubmit, changeValues } = useForm({
         title: '',
         description: '',
         price: '',
         discount: '',
         imageUrl: '',
 
-    }, onCreateCardSubmit);
+    }, onCardEditSubmit);
+
+    useEffect(() => {
+        cardService.getOne(cardId)
+            .then(result => {
+                changeValues(result);
+            });
+    }, [cardId]);
+
+    // I don't know is good pratcice
+    const setDiscount = () => {
+        if(values.discount === "") {
+            values.discount = 0;
+        }
+    }
 
     return (
         <div className="container">
             <div>
-                <h1>Add Card</h1>
+                <h1>Edit Card</h1>
                 <div>
                     <section id="card-page" className="content auth">
-                            <form id="card" method='POST' onSubmit={onSubmit}>
+                        <form id="card" method='POST' onSubmit={onSubmit}>
                             <div className='field-card'>
 
                                 <label className='htmlContent' htmlFor="title">Title:</label>
@@ -72,7 +94,7 @@ export const AddCard = () => {
                                 />
                             </div>
                             <div className="submit">
-                                <input className="submit" type="submit" value="Create" style={{ marginTop: "21px" }} />
+                                <input className="submit" type="submit" value="Create" onClick={setDiscount} style={{ marginTop: "21px" }} />
                             </div>
                         </form>
                     </section>

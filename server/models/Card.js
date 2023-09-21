@@ -31,6 +31,15 @@ const cardSchema = new mongoose.Schema({
     inStock: {
         type: Boolean,
         default: true,
+    },
+    owner: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+    },
+    updateFrom: {
+        type: String,
+        default: '',
+        require: false,
     }
 });
 

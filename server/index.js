@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 
 const routes = require('./routes');
 
+// This is middleware for owner user id
+const { authentication} = require('./middlewares/authMiddlewares')
+
 const app = express();
 
 app.use(cors());
@@ -11,6 +14,7 @@ app.use(cors());
 // Middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(authentication());
 
 app.get('/', (req, res) => {
     res.send('Hello REST API');
