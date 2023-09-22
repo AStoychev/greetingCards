@@ -28,6 +28,12 @@ const cardSchema = new mongoose.Schema({
             message: 'URL is invalid!'
         }
     },
+    // Try save more image
+    additionalImage:[{
+        type: String,
+        required: false,
+    }],
+    // Try save more image
     inStock: {
         type: Boolean,
         default: true,

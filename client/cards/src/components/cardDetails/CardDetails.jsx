@@ -10,10 +10,14 @@ import { DeleteCardModal } from "../../utils/Modals/deleteModal/deleteCardModal"
 
 import { checkForDiscount } from "../../functions/checkForDiscount";
 
+import Magnifier from "react-magnifier";
+
 import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
     const [card, setCard] = useState([]);
+    const [mainImage, setMainImage] = useState('');
+    const [imageIndex, setImageIndex] = useState(0);
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId
     const allCardsService = cardServiceFactory();
@@ -48,6 +52,38 @@ export const CardDetails = () => {
         navigate('/catalog')
     }
 
+    const showClickedImege = (clickedImage, index) => {
+        setImageIndex(Number(index))
+        setMainImage(clickedImage)
+    }
+
+    const CheckForUdenfified = () => {
+        let allImage = []
+        for (let i in card.additionalImage) {
+            if (card.additionalImage[i] != undefined) {
+                allImage.push(
+                    <div className={styles.bgPink} key={i}>
+                        <img className={styles.otherPictures} onClick={() => showClickedImege(card.additionalImage[i], i)} src={card.additionalImage[i]} />
+                    </div>
+                )
+            }
+        }
+        return allImage
+    }
+
+    const moveImage = (direction) => {
+        if (card.additionalImage != undefined) {
+            // console.log(card.additionalImage.length)
+            if (direction === 'back') {
+                if(imageIndex < 0) {
+                    setImageIndex(card.additionalImage.length - 1)
+                }
+                setImageIndex(imageIndex - 1)
+                setMainImage(card.additionalImage[imageIndex])
+            }
+        }
+    }
+
     return (
         <div>
             <div className={styles.container}>
@@ -57,27 +93,34 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsLeft}>
                         <div className={styles.leftImages}>
-                            <div className={styles.bgPink}>
-                                <img className={styles.otherPictures} src={card.imageUrl} />
-                            </div>
-                            <div className={styles.bgPink}>
-                                <img className={styles.otherPictures} src={card.imageUrl} />
-                            </div>
-                            <div className={styles.bgPink}>
-                                <img className={styles.otherPictures} src={card.imageUrl} />
-                            </div>
-                            <div className={styles.bgPink}>
-                                <img className={styles.otherPictures} src={card.imageUrl} />
-                            </div>
-                            <div className={styles.bgPink}>
-                                <img className={styles.otherPictures} src={card.imageUrl} />
-                            </div>
+                            <CheckForUdenfified />
                         </div>
                     </div>
 
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
-                            <img className={styles.mainImage} src={card.imageUrl} />
+
+                            <div className={styles.leftBox}>
+                                <button onClick={() => moveImage('back')}>{'<'}</button>
+                            </div>
+
+                            <div className={styles.middleBox}>
+                                <Magnifier
+                                    className={styles.mainImage}
+                                    src={mainImage ? mainImage : card.imageUrl}
+                                    width={422}
+                                    height={610}
+                                    zoomFactor={0.5}
+                                    mgWidth={300}
+                                    mgHeight={300}
+                                    mgShape='circle'
+                                />
+                            </div>
+
+                            <div className={styles.rigthBox}>
+                                <button onClick={() => moveImage('prev')}>{'>'}</button>
+                            </div>
+
                         </div>
                     </div>
 
@@ -95,6 +138,6 @@ export const CardDetails = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

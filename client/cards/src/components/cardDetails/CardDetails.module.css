@@ -1,5 +1,5 @@
 .container {
-    width: 1000px;
+    width: 1100px;
     margin: 0 auto
 }
 
@@ -32,7 +32,7 @@
     flex-wrap: wrap; */
 }
 
-.leftImages{
+.leftImages {
     margin-top: 70px;
 }
 
@@ -54,21 +54,15 @@
     border: solid;
     cursor: pointer;
 }
+
 /* Left Column */
 
+/* Middle Column */
 .columnsCenter {
+    width: 530px;
+    height: 720px;
     border-left: 1px solid #eee;
     border: solid;
-}
-
-.columnsRight {
-    width: 330px;
-    flex: 0 0 430px;
-    border: solid;
-}
-
-.bgRed {
-    background-color: rgb(159, 85, 85);
 }
 
 .mainImage {
@@ -78,4 +72,42 @@
 
 .bgOrange {
     background-color: orange;
+}
+
+.leftBox {
+    float: left;
+    /* background: Red; */
+    margin-top: 50%;
+    width: 10%;
+    height: 100px;
+}
+
+.middleBox {
+    float: left;
+    background: Green;
+    margin-top: 10%;
+    /* width: 80%;
+    height: 280px; */
+}
+
+.rigthBox {
+    float: right;
+    /* background: blue; */
+    margin-top: 50%;
+    width: 10%;
+    height: 100px;
+    text-align: right;
+}
+
+/* Middle Column */
+
+
+.columnsRight {
+    width: 330px;
+    flex: 0 0 430px;
+    border: solid;
+}
+
+.bgRed {
+    background-color: rgb(159, 85, 85);
 }

@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 import { useForm } from "../../hooks/useForm";
 import { CardContext } from "../../contexts/CardContext";
 
 export const AddCard = () => {
-
+    const [count, setCounter] = useState(0)
     const { onCreateCardSubmit } = useContext(CardContext);
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
@@ -12,6 +12,10 @@ export const AddCard = () => {
         price: '',
         discount: '',
         imageUrl: '',
+        additionalImageOne: '',
+        additionalImageTwo: '',
+        additionalImageThree: '',
+        additionalImageFour: '',
 
     }, onCreateCardSubmit);
 
@@ -21,7 +25,7 @@ export const AddCard = () => {
                 <h1>Add Card</h1>
                 <div>
                     <section id="card-page" className="content auth">
-                            <form id="card" method='POST' onSubmit={onSubmit}>
+                        <form id="card" method='POST' onSubmit={onSubmit}>
                             <div className='field-card'>
 
                                 <label className='htmlContent' htmlFor="title">Title:</label>
@@ -70,6 +74,44 @@ export const AddCard = () => {
                                     value={values.imageUrl}
                                     onChange={changeHandler}
                                 />
+                                {/* Additional Image */}
+                                <label className='htmlContent' htmlFor="additionalImageOne">Aditional Image One:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageOne"
+                                    id="additionalImageOne"
+                                    placeholder="https//"
+                                    value={values.additionalImageOne}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageTwo">Aditional Image Two:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageTwo"
+                                    id="additionalImageTwo"
+                                    placeholder="https//"
+                                    value={values.additionalImageTwo}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageThree">Aditional Image Three:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageThree"
+                                    id="additionalImageThree"
+                                    placeholder="https//"
+                                    value={values.additionalImageThree}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageFour">Aditional Image Four:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageFour"
+                                    id="additionalImageFour"
+                                    placeholder="https//"
+                                    value={values.additionalImageFour}
+                                    onChange={changeHandler}
+                                />
+                                {/* Additional Image */}
                             </div>
                             <div className="submit">
                                 <input className="submit" type="submit" value="Create" style={{ marginTop: "21px" }} />

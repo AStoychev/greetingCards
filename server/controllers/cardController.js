@@ -20,6 +20,15 @@ router.get('/all-cards', async (req, res) => {
 // Create card
 router.post('/add-card', async (req, res) => {
     const card = req.body;
+
+    // Server filtred empty additional image
+    const additionalImage = [req.body.imageUrl, req.body.additionalImageOne, req.body.additionalImageTwo, req.body.additionalImageThree, req.body.additionalImageFour]
+    const filtredAdditionalImage = additionalImage.filter(function(image){
+        return image != ""
+    })
+    card['additionalImage'] = filtredAdditionalImage
+    // Server filtred empty additional image
+
     try {
         // req.user._id is information from authMiddlewares and it's give our's information about user id
         const result = await cardService.addCard(req.user._id, card);
