@@ -16,7 +16,7 @@ import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
     const [card, setCard] = useState([]);
-    const [mainImage, setMainImage] = useState('');
+
     const [imageIndex, setImageIndex] = useState(0);
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId
@@ -52,35 +52,53 @@ export const CardDetails = () => {
         navigate('/catalog')
     }
 
-    const showClickedImege = (clickedImage, index) => {
-        setImageIndex(Number(index))
-        setMainImage(clickedImage)
+    const showClickedImage = (clickedImage, slow) => {
+        if (slow) {
+            setTimeout(() => setImageIndex(card.additionalImage.indexOf(clickedImage) + 1), 300)
+        } else {
+            setImageIndex(card.additionalImage.indexOf(clickedImage) + 1)
+        }
     }
 
-    const CheckForUdenfified = () => {
-        let allImage = []
+    const checkForIndetifiedImage = () => {
+        let images = []
+        images.push(card.imageUrl)
         for (let i in card.additionalImage) {
-            if (card.additionalImage[i] != undefined) {
-                allImage.push(
-                    <div className={styles.bgPink} key={i}>
-                        <img className={styles.otherPictures} onClick={() => showClickedImege(card.additionalImage[i], i)} src={card.additionalImage[i]} />
-                    </div>
-                )
+            if (card.additionalImage[i] !== null) {
+                images.push(card.additionalImage[i])
             }
         }
-        return allImage
+        return images
     }
 
-    const moveImage = (direction) => {
-        if (card.additionalImage != undefined) {
-            // console.log(card.additionalImage.length)
-            if (direction === 'back') {
-                if(imageIndex < 0) {
-                    setImageIndex(card.additionalImage.length - 1)
-                }
-                setImageIndex(imageIndex - 1)
-                setMainImage(card.additionalImage[imageIndex])
-            }
+    const AdditionalImages = () => {
+        let additionalImages = []
+
+        checkForIndetifiedImage().map(image => {
+            additionalImages.push(
+                <div className={styles.bgPink} key={additionalImages.length}>
+                    <img className={styles.otherPictures} onClick={() => showClickedImage(image)} onMouseEnter={() => showClickedImage(image, 'slow')} src={image} />
+                </div>
+            )
+        })
+        return additionalImages
+    }
+
+    const moveImageBack = () => {
+        // Remove index -1 after length because add +1 in showClickedImage
+        if (imageIndex <= 0) {
+            setImageIndex(card.additionalImage.length);
+        } else {
+            setImageIndex(imageIndex - 1);
+        }
+    }
+
+    const moveImagePrev = () => {
+        // Remove index -1 after length because add +1 in showClickedImage
+        if (imageIndex >= card.additionalImage.length) {
+            setImageIndex(0);
+        } else {
+            setImageIndex(imageIndex + 1);
         }
     }
 
@@ -93,7 +111,7 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsLeft}>
                         <div className={styles.leftImages}>
-                            <CheckForUdenfified />
+                            <AdditionalImages />
                         </div>
                     </div>
 
@@ -101,13 +119,17 @@ export const CardDetails = () => {
                         <div className={styles.bgOrange}>
 
                             <div className={styles.leftBox}>
-                                <button onClick={() => moveImage('back')}>{'<'}</button>
+                                {checkForIndetifiedImage().length > 1 &&
+                                    <button onClick={moveImageBack}>{'<'}</button>
+                                }
                             </div>
 
                             <div className={styles.middleBox}>
                                 <Magnifier
                                     className={styles.mainImage}
-                                    src={mainImage ? mainImage : card.imageUrl}
+                                    src={checkForIndetifiedImage() ? checkForIndetifiedImage()[imageIndex] : card.imageUrl}
+                                    // src={card.additionalImage ? card.additionalImage[imageIndex] : card.imageUrl}
+                                    // src={mainImage ? mainImage : card.imageUrl}
                                     width={422}
                                     height={610}
                                     zoomFactor={0.5}
@@ -118,7 +140,9 @@ export const CardDetails = () => {
                             </div>
 
                             <div className={styles.rigthBox}>
-                                <button onClick={() => moveImage('prev')}>{'>'}</button>
+                                {checkForIndetifiedImage().length > 1 &&
+                                    < button onClick={moveImagePrev}>{'>'}</button>
+                                }
                             </div>
 
                         </div>
@@ -126,7 +150,7 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsRight}>
                         <div className={styles.bgRed}>
-                            <article>
+                            <article className={styles.rightColumnArticle}>
                                 <h3>{card.title}</h3>
                                 <h3>{card.description}</h3>
                                 <h3>Price: {card.discount !== 0 ? checkForDiscount(card.price, card.discount) : card.price} BGN</h3>

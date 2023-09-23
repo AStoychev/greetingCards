@@ -20,6 +20,10 @@ export const EditCard = () => {
         price: '',
         discount: '',
         imageUrl: '',
+        additionalImageOne: '',
+        additionalImageTwo: '',
+        additionalImageThree: '',
+        additionalImageFour: '',
 
     }, onCardEditSubmit);
 
@@ -32,8 +36,17 @@ export const EditCard = () => {
 
     // I don't know is good pratcice
     const setDiscount = () => {
-        if(values.discount === "") {
+        if (values.discount === "") {
             values.discount = 0;
+        }
+    }
+
+    // Empty input string solve idea
+    const checkForEmptyInput = (data) => {
+        if(!data) {
+            return data = '';
+        } else {
+            return data;
         }
     }
 
@@ -69,7 +82,7 @@ export const EditCard = () => {
                                 <input
                                     type="number"
                                     name="price"
-                                    id="card-price"
+                                    id="price"
                                     placeholder="0.00"
                                     value={values.price}
                                     onChange={changeHandler}
@@ -92,6 +105,44 @@ export const EditCard = () => {
                                     value={values.imageUrl}
                                     onChange={changeHandler}
                                 />
+                                {/* Additional Image */}
+                                <label className='htmlContent' htmlFor="additionalImageOne">Aditional Image One:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageOne"
+                                    id="additionalImageOne"
+                                    placeholder="https//"
+                                    value={checkForEmptyInput(values.additionalImageOne)}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageTwo">Aditional Image Two:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageTwo"
+                                    id="additionalImageTwo"
+                                    placeholder="https//"
+                                    value={checkForEmptyInput(values.additionalImageTwo)}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageThree">Aditional Image Three:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageThree"
+                                    id="additionalImageThree"
+                                    placeholder="https//"
+                                    value={checkForEmptyInput(values.additionalImageThree)}
+                                    onChange={changeHandler}
+                                />
+                                <label className='htmlContent' htmlFor="additionalImageFour">Aditional Image Four:</label>
+                                <input
+                                    type="url"
+                                    name="additionalImageFour"
+                                    id="additionalImageFour"
+                                    placeholder="https//"
+                                    value={checkForEmptyInput(values.additionalImageFour)}
+                                    onChange={changeHandler}
+                                />
+                                {/* Additional Image */}
                             </div>
                             <div className="submit">
                                 <input className="submit" type="submit" value="Create" onClick={setDiscount} style={{ marginTop: "21px" }} />

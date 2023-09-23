@@ -51,7 +51,7 @@ export const AddCard = () => {
                                 <input
                                     type="number"
                                     name="price"
-                                    id="card-price"
+                                    id="price"
                                     placeholder="0.00"
                                     value={values.price}
                                     onChange={changeHandler}

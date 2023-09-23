@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const cardService = require('../services/cardService');
 
+// Server filtred empty additional image
+const destructureArrayAdditionalImage = (body) => {
+    const additionalImage = [body.additionalImageOne, body.additionalImageTwo, body.additionalImageThree, body.additionalImageFour]
+    let filtredAdditionalImage = additionalImage.filter(function (image) {
+        return image != ""
+    })
+    filtredAdditionalImage = filtredAdditionalImage.filter(function (image) {
+        return image != null
+    })
+    return filtredAdditionalImage
+}
+
 router.get('/', async (req, res) => {
     const result = await cardService.getAll();
     res.json({ ok: result });
@@ -20,14 +32,7 @@ router.get('/all-cards', async (req, res) => {
 // Create card
 router.post('/add-card', async (req, res) => {
     const card = req.body;
-
-    // Server filtred empty additional image
-    const additionalImage = [req.body.imageUrl, req.body.additionalImageOne, req.body.additionalImageTwo, req.body.additionalImageThree, req.body.additionalImageFour]
-    const filtredAdditionalImage = additionalImage.filter(function(image){
-        return image != ""
-    })
-    card['additionalImage'] = filtredAdditionalImage
-    // Server filtred empty additional image
+    card['additionalImage'] = destructureArrayAdditionalImage(card)
 
     try {
         // req.user._id is information from authMiddlewares and it's give our's information about user id
@@ -52,11 +57,14 @@ router.get('/:cardId', async (req, res) => {
 router.get('/:cardId/edit', async (req, res) => {
     const card = req.params.cardId
     const result = await cardService.getOne(card);
+
     res.json(result);
 });
 
 router.put('/:cardId/edit', async (req, res) => {
     const card = req.body;
+    card['additionalImage'] = destructureArrayAdditionalImage(card)
+
     try {
         // req.user._id is information from authMiddlewares and it's give our's information about user id
         const result = await cardService.update(req.params.cardId, req.user._id, card);
@@ -74,7 +82,7 @@ router.delete('/:cardId/delete', async (req, res) => {
     const card = req.params.cardId;
     try {
         const result = await cardService.delete(card);
-        res.json({ok: 'true'});
+        res.json({ ok: 'true' });
         // res.json(result);
     } catch (error) {
         console.log(error);

@@ -11,14 +11,14 @@ import styles from './Catalog.module.css'
 export const Catalog = () => {
     const [allCards, setAllCards] = useState([]);
     const allCardsService = cardServiceFactory();
-    
+
     useEffect(() => {
         allCardsService.getAll()
             .then(result => {
                 setAllCards(result)
             })
     }, [])
-    
+
     return (
         <div className={styles.productContainer}>
             <div id="app" className="container">
@@ -53,7 +53,7 @@ export const Catalog = () => {
 
                 <div className={styles.grid}>
                     {allCards && allCards.map(card => (
-                        < Cards card={card} key={card._id} />
+                        < Cards card={card} key={card._id}/>
                     ))}
                 </div>
 

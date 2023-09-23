@@ -10,13 +10,20 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        
+
         onSubmitHandler(values);
-        
+
         setValues(initialValues);
     };
 
     const changeValues = (newValues) => {
+        // This is for destructuring array with additionalValue and send to editCard page for update information
+        const [additionalImageOne, additionalImageTwo, additionalImageThree, additionalImageFour] = newValues.additionalImage
+        newValues['additionalImageOne'] = additionalImageOne
+        newValues['additionalImageTwo'] = additionalImageTwo
+        newValues['additionalImageThree'] = additionalImageThree
+        newValues['additionalImageFour'] = additionalImageFour
+
         setValues(newValues);
     }
 

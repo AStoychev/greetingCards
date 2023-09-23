@@ -22,7 +22,7 @@
     width: 230px;
     height: 720px;
     flex: 0 0 130px;
-    border: solid;
+    /* border: solid; */
 
     display: flex;
     text-align: center;
@@ -33,11 +33,12 @@
 }
 
 .leftImages {
-    margin-top: 70px;
+    margin-top: 10px;
 }
 
 .bgPink {
-    margin-top: 15px;
+    margin-top: 30px;
+    /* padding-top: 10px; */
     background-color: pink;
     width: 100px;
     height: 100px;
@@ -47,7 +48,7 @@
     border: solid;
     border-width: thin;
     width: 100px;
-    height: 100px;
+    height: 120px;
 }
 
 .otherPictures:hover {
@@ -61,8 +62,10 @@
 .columnsCenter {
     width: 530px;
     height: 720px;
-    border-left: 1px solid #eee;
-    border: solid;
+    border: 3px solid #eee;
+
+    /* border-left: 1px solid #eee;
+    border-width: thin; */
 }
 
 .mainImage {
@@ -84,7 +87,7 @@
 
 .middleBox {
     float: left;
-    background: Green;
+    /* background: Green; */
     margin-top: 10%;
     /* width: 80%;
     height: 280px; */
@@ -101,13 +104,19 @@
 
 /* Middle Column */
 
-
+/* Right Column */
 .columnsRight {
-    width: 330px;
-    flex: 0 0 430px;
-    border: solid;
+    /* width: 330px; */
+    /* height: 720px; */
+    flex: 0 0 330px;
+    /* border: solid; */
 }
 
 .bgRed {
-    background-color: rgb(159, 85, 85);
+    background-color: rgb(243, 238, 238);
 }
+
+.rightColumnArticle {
+    font-size: 13px;
+}
+/* Right Column */
