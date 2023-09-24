@@ -116,12 +116,6 @@ export const CardDetails = () => {
         }
     }
 
-    // const saveFiveItemInLocalStorage = () => {
-    //     if (card.title) {
-    //         localStorage.setItem(card.title, JSON.stringify(card));
-    //     }
-    // };
-
     // This function save in local storage visited item and data use for last visited items below of page
     const saveFiveItemInLocalStorage = () => {
         const items = [];
@@ -139,22 +133,46 @@ export const CardDetails = () => {
         return items
     }
 
-    // saveFiveItemInLocalStorage()
+    // const saveFiveItemInLocalStorage = () => {
+    //     const items = [];
 
-    const saveInLocalStorage = () => {
-        localStorage.setItem('visited', JSON.stringify([card]))
-        let getString = localStorage.getItem('visited')
-        let itemObject = JSON.parse(getString)
-        console.log(111111111 , itemObject)
+    //     for (let i in { ...localStorage }) {
+    //         items.push(JSON.parse(localStorage.getItem(i)));
+    //         // for (let j in items) {
+    //         //     fiveItemsId.push(items[j].id)
+    //         // }
+    //         if (items.length >= 6) {
+    //             localStorage.removeItem(items[0].title);
+    //             items.shift()
+    //         }
+    //     }
+    //     if (card.title) {
+    //         // card['id'] = Number(fiveItemsId.slice(-1)) + 1
+    //         localStorage.setItem(card.title, JSON.stringify(card));
+    //     }
+    //     const fiveItemsId = [Number(items.length)]
+    //     console.log(items.length)
+    //     console.log(fiveItemsId)
+    //     return items
+    // }
 
-        for (let i in itemObject) {
-            if (!Array.isArray(itemObject[i])) {
-                console.log(itemObject[i])
-            }
-        }
-    }
+    saveFiveItemInLocalStorage()
 
-    saveInLocalStorage()
+
+    // const saveInLocalStorage = () => {
+    //     localStorage.setItem('visited', JSON.stringify([card]))
+    //     let getString = localStorage.getItem('visited')
+    //     let itemObject = JSON.parse(getString)
+    //     console.log(111111111 , itemObject)
+
+    //     for (let i in itemObject) {
+    //         if (!Array.isArray(itemObject[i])) {
+    //             console.log(itemObject[i])
+    //         }
+    //     }
+    // }
+
+    // saveInLocalStorage()
 
     return (
         <div>
