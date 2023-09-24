@@ -1,0 +1,58 @@
+.lastFiveCart {
+    text-align: center;
+    border: solid;
+}
+
+.flexRow {
+    height: 430px;
+
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+    border-color: greenyellow;
+    /* remove if you want to force all flex items on same row */
+}
+
+.column1 {
+    width: 15%;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    border: solid;
+    /* width: 150px; remove; use flex property instead
+    flex: 1 1 150px; don't grow, don't shrink, stay at 150px
+    border: solid; */
+}
+
+.column2 {
+    width: 15%;
+    /* use flex-basis instead */
+    flex-grow: 1;
+    /* use flex property instead */
+    flex: 1 1 auto;
+    /* grow evenly, shrink evenly, start at natural width; see NOTES below */
+    border: solid;
+}
+
+.column3 {
+    width: 15%;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    border: solid;
+}
+
+.column4 {
+    width: 15%;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    border: solid;
+}
+
+.column5 {
+    width: 15%;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    border: solid;
+}

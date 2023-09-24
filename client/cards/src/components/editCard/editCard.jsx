@@ -93,7 +93,7 @@ export const EditCard = () => {
                                     name="discount"
                                     id="discount"
                                     placeholder="0%"
-                                    value={values.discount}
+                                    value={checkForEmptyInput(values.discount)}
                                     onChange={changeHandler}
                                 />
                                 <label className='htmlContent' htmlFor="imageUrl">ImageURL:</label>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { checkForDiscount } from '../../functions/checkForDiscount';
+import { checkForDiscount } from '../../../functions/checkForDiscount';
 
 import styles from './Cards.module.css'
 // import styles from '../../components/catalog/Catalog.module.css'
@@ -28,24 +28,21 @@ export const Cards = ({
 
     return (
         <div>
-            <article className={styles.article} onClick={onArticleClick} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
+            <article className={styles.article} onClick={onArticleClick}>
                 {/* {message} */}
-                <div className={styles.image}>
-                    <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
+                <div onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
+                    <div className={styles.image}>
+                        <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
+                    </div>
+
+                    <div className={styles.title}>
+                        <h3>{card.title}</h3>
+                    </div>
                 </div>
 
-                <div className={styles.title}>
-                    <h3>{card.title}</h3>
-                </div>
-
-                <div className={styles.description}>
-                    This is {card.description}
-                </div>
 
                 <div className={styles.price}>
-                    Price: {card.discount !== 0 ? checkForDiscount(card.price, card.discount) : card.price}
-                    {/* Price: {card.price} */}
-                    {/* <TryDiscount card={card} /> */}
+                    Price: {checkForDiscount(card.price, card.discount)}
                 </div>
 
                 <div className={styles.star}>
@@ -54,9 +51,9 @@ export const Cards = ({
 
 
                 <div className={styles.title}>
-                    {/* <button onClick={onAdd}>Add to cart</button> */}
+                    <button>Add to Cart</button>
                 </div>
-                <Link className={styles.navigationLink} to={`/catalog/${card._id}`}>Details</Link>
+                {/* <Link className={styles.navigationLink} to={`/catalog/${card._id}`}>Details</Link> */}
 
             </article>
         </div>

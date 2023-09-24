@@ -39,20 +39,23 @@
 .bgPink {
     margin-top: 30px;
     /* padding-top: 10px; */
-    background-color: pink;
+    background-color: rgb(216, 216, 216);
+    /* background-color: pink; */
     width: 100px;
-    height: 100px;
+    height: 120px;
 }
 
 .otherPictures {
     border: solid;
     border-width: thin;
+    border-color: rgb(216, 216, 216);
     width: 100px;
     height: 120px;
 }
 
 .otherPictures:hover {
-    border: solid;
+    opacity: 0.5;
+    /* border: solid; */
     cursor: pointer;
 }
 
@@ -101,6 +104,43 @@
     height: 100px;
     text-align: right;
 }
+
+.changeImageButtonBack {
+    width: 44px;
+    height: 44px;
+    margin-left: 5px;
+    border: 1.5px solid;
+    border-color: rgb(236, 97, 97);
+    background-color: transparent;
+    color: rgb(236, 97, 97);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.changeImageButtonBack:hover {
+    background-color: rgb(236, 97, 97);
+    color: white;
+}
+
+.changeImageButtonPrev {
+    width: 44px;
+    height: 44px;
+    margin-right: 5px;
+    border: 1.5px solid;
+    border-color: rgb(236, 97, 97);
+    background-color: transparent;
+    color: rgb(236, 97, 97);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.changeImageButtonPrev:hover {
+    background-color: rgb(236, 97, 97);
+    color: white;
+}
+
 
 /* Middle Column */
 

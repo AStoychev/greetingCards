@@ -17,6 +17,8 @@ import styles from './CardDetails.module.css'
 export const CardDetails = () => {
     const [card, setCard] = useState([]);
 
+    const [fiveArray, setFiveArray] = useState([])
+
     const [imageIndex, setImageIndex] = useState(0);
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId
@@ -54,11 +56,23 @@ export const CardDetails = () => {
 
     const showClickedImage = (clickedImage, slow) => {
         if (slow) {
-            setTimeout(() => setImageIndex(card.additionalImage.indexOf(clickedImage) + 1), 300)
+            // Make ? to stop make indefOf error undefined
+            setTimeout(() => setImageIndex(card.additionalImage?.indexOf(clickedImage) + 1), 300)
+            // setTimeout(() => setImageIndex(card.additionalImage.indexOf(clickedImage) + 1), 300)
         } else {
             setImageIndex(card.additionalImage.indexOf(clickedImage) + 1)
         }
     }
+
+    // Put border on mainImage in additional image field
+    const aroundWithBorder = (image) => {
+        if (image === checkForIndetifiedImage()[imageIndex]) {
+            return 'solid'
+        } else {
+            return ""
+        }
+    }
+    // Put border on mainImage in additional image field
 
     const checkForIndetifiedImage = () => {
         let images = []
@@ -77,7 +91,7 @@ export const CardDetails = () => {
         checkForIndetifiedImage().map(image => {
             additionalImages.push(
                 <div className={styles.bgPink} key={additionalImages.length}>
-                    <img className={styles.otherPictures} onClick={() => showClickedImage(image)} onMouseEnter={() => showClickedImage(image, 'slow')} src={image} />
+                    <img className={styles.otherPictures} style={{ border: aroundWithBorder(image) }} onClick={() => showClickedImage(image)} onMouseEnter={() => showClickedImage(image, 'slow')} src={image} />
                 </div>
             )
         })
@@ -102,6 +116,46 @@ export const CardDetails = () => {
         }
     }
 
+    // const saveFiveItemInLocalStorage = () => {
+    //     if (card.title) {
+    //         localStorage.setItem(card.title, JSON.stringify(card));
+    //     }
+    // };
+
+    // This function save in local storage visited item and data use for last visited items below of page
+    const saveFiveItemInLocalStorage = () => {
+        const items = [];
+
+        for (let i in { ...localStorage }) {
+            items.push(JSON.parse(localStorage.getItem(i)));
+            if (items.length >= 6) {
+                localStorage.removeItem(items[0].title);
+                items.shift()
+            }
+        }
+        if (card.title) {
+            localStorage.setItem(card.title, JSON.stringify(card));
+        }
+        return items
+    }
+
+    // saveFiveItemInLocalStorage()
+
+    const saveInLocalStorage = () => {
+        localStorage.setItem('visited', JSON.stringify([card]))
+        let getString = localStorage.getItem('visited')
+        let itemObject = JSON.parse(getString)
+        console.log(111111111 , itemObject)
+
+        for (let i in itemObject) {
+            if (!Array.isArray(itemObject[i])) {
+                console.log(itemObject[i])
+            }
+        }
+    }
+
+    saveInLocalStorage()
+
     return (
         <div>
             <div className={styles.container}>
@@ -120,7 +174,9 @@ export const CardDetails = () => {
 
                             <div className={styles.leftBox}>
                                 {checkForIndetifiedImage().length > 1 &&
-                                    <button onClick={moveImageBack}>{'<'}</button>
+                                    <div>
+                                        <button className={styles.changeImageButtonBack} onClick={moveImageBack}>{'<'}</button>
+                                    </div>
                                 }
                             </div>
 
@@ -135,13 +191,14 @@ export const CardDetails = () => {
                                     zoomFactor={0.5}
                                     mgWidth={300}
                                     mgHeight={300}
-                                    mgShape='circle'
+                                    mgShape='square'
+                                // mgShape='circle'
                                 />
                             </div>
 
                             <div className={styles.rigthBox}>
                                 {checkForIndetifiedImage().length > 1 &&
-                                    < button onClick={moveImagePrev}>{'>'}</button>
+                                    < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
 
@@ -153,7 +210,8 @@ export const CardDetails = () => {
                             <article className={styles.rightColumnArticle}>
                                 <h3>{card.title}</h3>
                                 <h3>{card.description}</h3>
-                                <h3>Price: {card.discount !== 0 ? checkForDiscount(card.price, card.discount) : card.price} BGN</h3>
+                                <h3>Price: {checkForDiscount(card.price, card.discount)} BGN</h3>
+                                {/* <h3>Price: {card.discount !== 0 ? checkForDiscount(card.price, card.discount) : card.price} BGN</h3> */}
                             </article>
                         </div>
                         <button onClick={onDeleteClick}>Delete</button>

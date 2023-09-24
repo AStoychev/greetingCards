@@ -1,13 +1,15 @@
 .productContainer {
     overflow: auto;
     z-index: 1;
+    border: solid;
 
     margin-top: calc(16px + 1em);
     margin-bottom: calc(16px + 3em);
-    width: 100%;
+    width: 99.6%;
     /* padding: 1%; */
-    padding-top: 50px;
-    background-color: rgb(234, 234, 234);
+    /* padding-top: 50px; */
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(234, 234, 234); */
 }
 
 .grid {
@@ -21,6 +23,8 @@
     grid-template-columns: repeat(3, minmax(280px, 1fr));
     grid-gap: 20px;
     align-items: stretch; */
+    grid-row: 4;
+    grid-gap: 30px;
 }
 
 @media (min-width: 600px) {

@@ -4,8 +4,9 @@ import { CardContext } from "../../contexts/CardContext";
 import { useCardContext } from "../../contexts/CardContext";
 import { cardServiceFactory } from "../../services/cardService";
 
-import { Cards } from "../../utils/Cards/Cards";
+import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
+import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
 import styles from './Catalog.module.css'
 
 export const Catalog = () => {
@@ -53,7 +54,7 @@ export const Catalog = () => {
 
                 <div className={styles.grid}>
                     {allCards && allCards.map(card => (
-                        < Cards card={card} key={card._id}/>
+                        < Cards card={card} key={card._id} />
                     ))}
                 </div>
 
@@ -72,6 +73,7 @@ export const Catalog = () => {
                         }
                     </div>
                 } */}
+                < SaveLastFiveVisitedCards />
             </div>
         </div>
     );
