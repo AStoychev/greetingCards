@@ -8,6 +8,7 @@ import { useCardContext } from "../../contexts/CardContext";
 
 import { DeleteCardModal } from "../../utils/Modals/deleteModal/deleteCardModal";
 
+import { saveFiveItemsInLocalStorage } from "../../functions/saveFiveItemsInLocalStorage";
 import { checkForDiscount } from "../../functions/checkForDiscount";
 
 import Magnifier from "react-magnifier";
@@ -16,8 +17,6 @@ import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
     const [card, setCard] = useState([]);
-
-    const [fiveArray, setFiveArray] = useState([])
 
     const [imageIndex, setImageIndex] = useState(0);
     const cardIdObj = useParams();
@@ -51,6 +50,8 @@ export const CardDetails = () => {
     const deleteGreetinCard = async () => {
         await cardService.deleteCard(cardId)
         deleteCard(cardId)
+        // Have to delete also card from localStorage
+        localStorage.removeItem(card.title)
         navigate('/catalog')
     }
 
@@ -116,63 +117,7 @@ export const CardDetails = () => {
         }
     }
 
-    // This function save in local storage visited item and data use for last visited items below of page
-    const saveFiveItemInLocalStorage = () => {
-        const items = [];
-
-        for (let i in { ...localStorage }) {
-            items.push(JSON.parse(localStorage.getItem(i)));
-            if (items.length >= 6) {
-                localStorage.removeItem(items[0].title);
-                items.shift()
-            }
-        }
-        if (card.title) {
-            localStorage.setItem(card.title, JSON.stringify(card));
-        }
-        return items
-    }
-
-    // const saveFiveItemInLocalStorage = () => {
-    //     const items = [];
-
-    //     for (let i in { ...localStorage }) {
-    //         items.push(JSON.parse(localStorage.getItem(i)));
-    //         // for (let j in items) {
-    //         //     fiveItemsId.push(items[j].id)
-    //         // }
-    //         if (items.length >= 6) {
-    //             localStorage.removeItem(items[0].title);
-    //             items.shift()
-    //         }
-    //     }
-    //     if (card.title) {
-    //         // card['id'] = Number(fiveItemsId.slice(-1)) + 1
-    //         localStorage.setItem(card.title, JSON.stringify(card));
-    //     }
-    //     const fiveItemsId = [Number(items.length)]
-    //     console.log(items.length)
-    //     console.log(fiveItemsId)
-    //     return items
-    // }
-
-    saveFiveItemInLocalStorage()
-
-
-    // const saveInLocalStorage = () => {
-    //     localStorage.setItem('visited', JSON.stringify([card]))
-    //     let getString = localStorage.getItem('visited')
-    //     let itemObject = JSON.parse(getString)
-    //     console.log(111111111 , itemObject)
-
-    //     for (let i in itemObject) {
-    //         if (!Array.isArray(itemObject[i])) {
-    //             console.log(itemObject[i])
-    //         }
-    //     }
-    // }
-
-    // saveInLocalStorage()
+    saveFiveItemsInLocalStorage(card)
 
     return (
         <div>
