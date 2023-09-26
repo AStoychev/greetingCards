@@ -59,7 +59,6 @@ export const CardDetails = () => {
         if (slow) {
             // Make ? to stop make indefOf error undefined
             setTimeout(() => setImageIndex(card.additionalImage?.indexOf(clickedImage) + 1), 300)
-            // setTimeout(() => setImageIndex(card.additionalImage.indexOf(clickedImage) + 1), 300)
         } else {
             setImageIndex(card.additionalImage.indexOf(clickedImage) + 1)
         }
@@ -147,8 +146,6 @@ export const CardDetails = () => {
                                 <Magnifier
                                     className={styles.mainImage}
                                     src={checkForIndetifiedImage() ? checkForIndetifiedImage()[imageIndex] : card.imageUrl}
-                                    // src={card.additionalImage ? card.additionalImage[imageIndex] : card.imageUrl}
-                                    // src={mainImage ? mainImage : card.imageUrl}
                                     width={422}
                                     height={610}
                                     zoomFactor={0.5}
@@ -174,7 +171,6 @@ export const CardDetails = () => {
                                 <h3>{card.title}</h3>
                                 <h3>{card.description}</h3>
                                 <h3>Price: {checkForDiscount(card.price, card.discount)} BGN</h3>
-                                {/* <h3>Price: {card.discount !== 0 ? checkForDiscount(card.price, card.discount) : card.price} BGN</h3> */}
                             </article>
                         </div>
                         <button onClick={onDeleteClick}>Delete</button>
