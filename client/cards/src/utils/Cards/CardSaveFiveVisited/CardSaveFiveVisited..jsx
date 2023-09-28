@@ -44,7 +44,6 @@ export const CardSaveFiveVisited = ({
                 </div>
 
                 <div className={styles.star}>
-                    {/* <StarRating /> */}
                 </div>
 
 
