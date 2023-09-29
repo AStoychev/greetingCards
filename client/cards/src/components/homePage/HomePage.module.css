@@ -1,0 +1,59 @@
+.firstAddBanner {
+    display: flex;
+    width: 99.7%;
+    height: 600px;
+    /* border: solid; */
+}
+
+.firstAddBannerImageDiv {
+    position: relative;
+    text-align: center;
+
+    display: flex;
+    width: 90%;
+    height: 550px;
+    margin: auto;
+    /* border: solid; */
+}
+
+.firstAddBannerImage {
+    width: 100%;
+}
+
+.imageInnerDiv {
+    position: absolute;
+    top: -44px;
+    left: 16px;
+
+    color: #c1caeb;
+    font-size: 30px;
+}
+
+.buttonInnerDiv {
+    position: absolute;
+    bottom: 21px;
+    left: 16px;
+}
+
+.buttonInnerDiv>button {
+    width: 220px;
+    height: 60px;
+    background-color: #b42926;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    font-size: 31px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttonInnerDiv>button:hover {
+    background-color: rgb(236, 97, 97);
+    color: white;
+    cursor: pointer;
+}
+
+.imageInnerDiv>p {
+    font-style: oblique;
+    font-size: 40px;
+    font-weight: bold;
+}

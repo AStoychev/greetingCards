@@ -1,0 +1,38 @@
+.flexRow {
+    height: 160px;
+
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* border: solid; */
+
+    /* remove if you want to force all flex items on same row */
+}
+
+.column1,
+.column2,
+.column3,
+.column4,
+.column5,
+.column6,
+.column7 {
+    width: 10%;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    margin-right: 3cqmax;
+    /* border: solid; */
+    /* width: 150px; remove; use flex property instead
+    flex: 1 1 150px; don't grow, don't shrink, stay at 150px
+    border: solid; */
+}
+
+.column1{
+    margin-left: 30px;
+}
+
+.imagPartners {
+    width: 100%;
+    height: 160px;
+}
