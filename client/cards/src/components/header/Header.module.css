@@ -7,6 +7,9 @@
 
 .navigation {
     flex: 1;
+
+    /* border: solid;
+    border-color: red; */
 }
 
 .navigation:first-child {
@@ -105,4 +108,45 @@
 
 .userName {
     color: white;
+}
+
+.mainRight {
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    margin-top: 12px;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.basketMain {
+    display: flex;
+    text-align: center;
+    width: 100px;
+    padding-right: 10px;
+    color: white;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.innerBascketOne {
+    flex: 50%;
+
+    /* border: solid;
+    border-color: white; */
+}
+
+.bascketLogo {
+    width: 37px;
+    height: 37px;
+}
+
+.innerBascketTwo {
+    flex: 50%;
+    padding-top: 6px;
+
+    /* border: solid;
+    border-color: white; */
 }

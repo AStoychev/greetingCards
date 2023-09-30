@@ -70,7 +70,18 @@ export const Header = () => {
                         </div>
                     </Link>
                 </div>
-                <div className={styles.navigation}></div>
+                <div className={styles.navigation}>
+                    <div className={styles.mainRight}>
+                        <div className={styles.basketMain}>
+                            <div className={styles.innerBascketOne}>
+                                <img className={styles.bascketLogo} src="images/purchase.png" alt="purchase" />
+                            </div>
+                            <div className={styles.innerBascketTwo}>
+                                0.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div >
         </>
     );
