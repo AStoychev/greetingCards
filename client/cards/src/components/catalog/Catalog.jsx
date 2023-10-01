@@ -4,6 +4,7 @@ import { CardContext } from "../../contexts/CardContext";
 import { useCardContext } from "../../contexts/CardContext";
 import { cardServiceFactory } from "../../services/cardService";
 
+import { Basket } from "../header/basket/Basket";
 import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
 import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
@@ -22,6 +23,7 @@ export const Catalog = () => {
 
     return (
         <div className={styles.productContainer}>
+            {/* <Basket /> */}
             <div id="app" className="container">
 
                 {/* <div>

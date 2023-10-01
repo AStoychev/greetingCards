@@ -110,14 +110,12 @@
     color: white;
 }
 
-.mainRight {
+/* .mainRight {
     display: flex;
     text-align: right;
     justify-content: right;
     margin-top: 12px;
 
-    /* border: solid;
-    border-color: red; */
 }
 
 .basketMain {
@@ -127,26 +125,19 @@
     padding-right: 10px;
     color: white;
 
-    /* border: solid;
-    border-color: red; */
 }
 
 .innerBascketOne {
     flex: 50%;
 
-    /* border: solid;
-    border-color: white; */
 }
 
 .bascketLogo {
-    width: 37px;
-    height: 37px;
+    width: 33px;
+    height: 33px;
 }
 
 .innerBascketTwo {
     flex: 50%;
     padding-top: 6px;
-
-    /* border: solid;
-    border-color: white; */
-}
+} */

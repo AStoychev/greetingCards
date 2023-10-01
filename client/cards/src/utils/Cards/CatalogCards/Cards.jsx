@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
 import { addToOrder } from '../../../functions/addToOrder';
 
 import styles from './Cards.module.css'
-// import styles from '../../components/catalog/Catalog.module.css'
 
 export const Cards = ({
     card,
@@ -15,7 +14,8 @@ export const Cards = ({
 
     const addToCart = () => {
         localStorage.setItem(`orders ${card._id}`, JSON.stringify(card));
-        addToOrder();
+        // localStorage.setItem(`price ${card._id}`, JSON.stringify(card.price));
+        // addToOrder();
     }
 
     const onArticleClick = () => {
@@ -37,7 +37,7 @@ export const Cards = ({
             <article className={styles.article}>
                 {/* {message} */}
                 <div className={styles.mainCardDiv} onClick={onArticleClick}>
-                <div onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
+                    <div onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
                         <div className={styles.image}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
                         </div>

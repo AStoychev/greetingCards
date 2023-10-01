@@ -1,7 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
+
+import { Basket } from './basket/Basket';
+
+import { addToOrder } from '../../functions/addToOrder';
 
 // import { OnLoad } from '../../utils/onLoad/onLoad';
 // import { MyFavorite } from '../../utils/MyFavorites/MyFavorites';
@@ -13,6 +17,7 @@ import styles from "./Header.module.css"
 
 export const Header = () => {
     const { isAuthenticated, userId, userEmail, userName } = useContext(AuthContext);
+
     // if (isAuthenticated) {
     //     console.log(userEmail, userId, userName)
     // }
@@ -71,16 +76,17 @@ export const Header = () => {
                     </Link>
                 </div>
                 <div className={styles.navigation}>
-                    <div className={styles.mainRight}>
+                    <Basket />
+                    {/* <div className={styles.mainRight}>
                         <div className={styles.basketMain}>
                             <div className={styles.innerBascketOne}>
                                 <img className={styles.bascketLogo} src="images/purchase.png" alt="purchase" />
                             </div>
                             <div className={styles.innerBascketTwo}>
-                                0.00
+                                {price}
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div >
         </>
