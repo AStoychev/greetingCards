@@ -1,0 +1,47 @@
+.graphicInnerContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.lineOrderGraphic {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    width: 90%;
+    /* border: solid; */
+}
+
+.cubeOne {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    width: 39px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    /* background-color: #1b9e22; */
+
+    /* border: solid; */
+}
+
+.innerCubeText {
+    font-size: 18px;
+    font-weight:600;
+    color: rgb(0, 0, 0);
+}
+
+.innerLineOne {
+    text-align: center;
+    width: 15%;
+    /* border: solid; */
+}
+
+.lineOne {
+    display: inline-block;
+    padding-bottom: 20px;
+    width: 100%;
+    border-bottom: 3px solid rgb(255, 255, 255);
+}

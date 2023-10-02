@@ -1,0 +1,78 @@
+.purchaseRow {
+    height: 100px;
+    display: flex;
+    background-color: rgb(179, 175, 184);
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+
+    /* border: solid; */
+}
+
+.purchaseImage {
+    width: 20%;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.purchaseTitle {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.purchaseQuantity {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.multiplySign {
+    display: flex;
+    width: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchasePrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.deletePurchase {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.finalPrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.deletePurchase>button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}

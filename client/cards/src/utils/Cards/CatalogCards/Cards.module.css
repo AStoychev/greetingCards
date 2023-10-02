@@ -48,6 +48,7 @@
 .title>button:hover {
     background-color: rgb(236, 97, 97);
     color: white;
+    cursor: pointer;
     /* background-color: rgb(136, 196, 27); */
 }
 

@@ -39,6 +39,7 @@ export const Header = () => {
     //         setPopup(<OnLoad onLoadModal={onLoadModal} />)
     //     }
     // }
+
     return (
         <>
             <div className={styles.flexContainer}>
@@ -67,8 +68,8 @@ export const Header = () => {
                 <div className={styles.navigation}>
                     <Link className={styles.navigationLinkLogo} to="/">
                         <div className={styles.container}>
-                            <h1>Greeting</h1>
-                            <h2>Cards</h2>
+                            {/* <h1>Greeting</h1>
+                            <h2>Cards</h2> */}
                             <div>
                                 <img className={styles.logo} src="images/logo.png" alt="logo" />
                             </div>

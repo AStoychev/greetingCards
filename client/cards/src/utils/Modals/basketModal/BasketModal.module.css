@@ -1,15 +1,17 @@
 .popup {
-    background-color: rgb(56, 29, 29);
-    ;
+    background-color: rgba(4, 0, 11, 0.557);
+    /* background-color: rgb(56, 29, 29); */
     width: 450px;
     padding: 10px 20px;
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    left: 85%;
+    top: 20%;
     border-radius: 8px;
     z-index: 1000;
     font-family: "Poppins", sans-serif;
+
+    box-shadow: 21px 15px 121px 1020px rgba(11, 23, 80, 0.2);
 }
 
 @media only screen and (max-width: 400px) {
@@ -50,9 +52,61 @@
     font-size: 15px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-.letsGoButton {
+.emptyList {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.mainFinalOrder {
+    height: 50px;
+    display: flex;
+    background-color: rgb(150, 87, 87);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.finalOrder {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonsOrder {
+    display: flex;
+}
+
+.buttonClose {
+    width: 50%;
+
+    /* border: solid; */
+}
+
+.buttonOrder {
+    width: 50%;
+    /* border: solid; */
+}
+
+.bottomButton {
+    width: 150px;
+    background-color: #7896b8;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 5px 0;
+    border: none;
+}
+
+.bottomButton:hover {
+    background-color: #18579f;
+    cursor: pointer;
+}
+
+
+/* .closeBottomButton {
     display: block;
     width: 150px;
     position: relative;
@@ -60,75 +114,12 @@
     text-align: center;
     background-color: #0f72e5;
     color: #ffffff;
+    border-radius: 25px;
     text-decoration: none;
     padding: 5px 0;
     border: none;
 }
 
-.letsGoButton:hover {
+.closeBottomButton:hover {
     background-color: #18579f;
-}
-
-.purchaseRow {
-    height: 100px;
-    display: flex;
-    background-color: rgb(179, 175, 184);
-    border-radius: 10px;
-    margin-top: 5px;
-    color: white;
-
-    /* border: solid; */
-}
-
-.purchaseImage {
-    width: 20%;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-}
-
-.purchaseTitle {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-
-    /* border: solid;
-    border-color: red; */
-}
-
-.purchaseQuantity {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-
-    /* border: solid;
-    border-color: red; */
-}
-
-.purchasePrice {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-
-    /* border: solid;
-    border-color: red; */
-}
-
-.deletePurchase {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-
-    /* border: solid;
-    border-color: red; */
-}
-
-.deletePurchase>button {
-    border: none;
-    background: none;
-    cursor: pointer;
-}
+} */

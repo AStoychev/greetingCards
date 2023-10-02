@@ -1,0 +1,94 @@
+.container {
+    width: 100%;
+    background-color: rgba(107, 208, 231, 0.313);
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.innerContainer {
+    width: 70%;
+    margin: auto;
+
+    /* border: solid; */
+}
+
+.headerOrder {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.651);
+
+    /* border: solid; */
+}
+
+.orderContainer {
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+
+.purchaseRow {
+    height: 150px;
+    display: flex;
+    background-color: rgba(38, 165, 87, 0.263);
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+.purchaseImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.purchaseTitle {
+    display: flex;
+    color: black;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyList {
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+
+.bottomButtons {
+    display: flex;
+    margin-bottom: 10px;
+    /* border: solid; */
+}
+
+.nextStep {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+
+    /* border: solid; */
+}
+
+.nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(51, 153, 112);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}

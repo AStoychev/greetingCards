@@ -12,8 +12,21 @@ export const Cards = ({
     const [coverImage, setCoverImage] = useState('');
     const navigate = useNavigate();
 
-    const addToCart = () => {
-        localStorage.setItem(`orders ${card._id}`, JSON.stringify(card));
+    const addToCart = (id) => {
+        if (localStorage.getItem(`orders ${id}`) === null) {
+            card['quantity'] = 1;
+            localStorage.setItem(`orders ${id}`, JSON.stringify(card));
+        }
+        else {
+            let localStorageItems = JSON.parse(localStorage.getItem(`orders ${id}`));
+
+            let lastQuantity = localStorageItems['quantity']
+            card['quantity'] = lastQuantity + 1;
+            localStorage.removeItem(`orders ${id}`);
+            localStorage.setItem(`orders ${id}`, JSON.stringify(card));
+        }
+
+        // localStorage.setItem(`orders ${card._id}`, JSON.stringify(card));
         // localStorage.setItem(`price ${card._id}`, JSON.stringify(card.price));
         // addToOrder();
     }
@@ -60,7 +73,7 @@ export const Cards = ({
 
 
                 <div className={styles.title}>
-                    <button onClick={addToCart}>Add to Cart</button>
+                    <button onClick={() => addToCart(card._id)}>Add to Cart</button>
                 </div>
                 {/* <Link className={styles.navigationLink} to={`/catalog/${card._id}`}>Details</Link> */}
 

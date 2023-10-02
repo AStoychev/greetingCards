@@ -1,0 +1,15 @@
+.mainFinalOrder {
+    height: 50px;
+    display: flex;
+    background-color: rgb(150, 87, 87);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.finalOrder {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
