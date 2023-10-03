@@ -3,7 +3,7 @@ import styles from './GraphicksOrder.module.css'
 export const GraphicksOrder = () => {
 
     const changeCubeAntTextColor = (step) => {
-        const data = { '/make-first-step-order':1 , '/make-second-step-order':2 };
+        const data = { '/make-first-step-order': 1, '/make-second-step-order': 2, '/make-thirth-step-order': 3 };
         const urlStep = window.location.pathname;
 
         let key = (data[`${urlStep}`]);
@@ -15,7 +15,7 @@ export const GraphicksOrder = () => {
             return ['rgb(255, 255, 255)', 'rgb(0, 0, 0)']
         }
     }
-    
+
     return (
         <div className={styles.graphicInnerContainer}>
             <div className={styles.lineOrderGraphic}>
@@ -36,8 +36,8 @@ export const GraphicksOrder = () => {
                     <div className={styles.lineOne}></div>
                 </div>
 
-                <div className={styles.cubeOne}>
-                    <div className={styles.innerCubeText}>3</div>
+                <div className={styles.cubeOne} style={{ backgroundColor: `${changeCubeAntTextColor(3)[0]}` }}>
+                    <div className={styles.innerCubeText} style={{ color: `${changeCubeAntTextColor(3)[1]}` }}>3</div>
                 </div>
             </div>
         </div>

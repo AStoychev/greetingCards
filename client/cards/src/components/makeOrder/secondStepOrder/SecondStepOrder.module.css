@@ -22,9 +22,13 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 320px;
     width: 516px;
+    height: 1120px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
+    background-color: white;
     color: rgb(2, 2, 2);
     font-size: 15px;
     font-weight: bold;
@@ -32,13 +36,219 @@
     /* margin-bottom: 10px; */
 
     border: solid;
+    border-color: #9fb3b4;
+}
+
+.formTopField {
+    width: 100%;
+    height: 50px;
+    background-color: #51b9bc;
+
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+.topFieldTitle {
+    display: flex;
+    margin: auto;
+    width: 76%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+
+    /* border: solid; */
+}
+
+.firstAndLastName {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    margin: auto;
+    width: 400px;
+    color: #51b9bc;
+
+    /* border: solid; */
+}
+
+.innerDivDataOrderName {
+    text-align: left;
+
+    /* border: solid; */
 }
 
 .innerDivDataOrder {
     margin: auto;
-
-    width: 170px;
+    width: 400px;
     flex: 0 0 50px;
+    color: #51b9bc;
+    font-size: 16px;
+    text-align: left;
+
     /* margin: 5px; */
     /* background-color: green; */
+
+    /* border: solid; */
+}
+
+input[type='first'],
+[type='last'] {
+    width: 180px;
+    height: 29px;
+    margin-bottom: 10px;
+    background-color: #d9dcdf;
+    border: none;
+    caret-color: rgb(6, 188, 248);
+}
+
+input[type='email'],
+[type='phone'],
+[type='city'],
+[type='post-code'],
+[type='address'] {
+    width: 382px;
+    height: 29px;
+    margin-bottom: 10px;
+    background-color: #d9dcdf;
+    border: none;
+    caret-color: rgb(6, 188, 248);
+}
+
+input[type='radio']::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    /* background-color: #9eeb9c;
+    content:''; */
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+input[type='radio']:checked:after {
+    width: 12px;
+    height: 12px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #6b4b4b;
+    /* background-color: #51b9bc; */
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgba(2, 2, 2, 0.769);
+}
+
+.innerLineOne {
+    width: 100%;
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+.lineOne {
+    display: inline-block;
+    width: 90%;
+    border-bottom: 1.5px solid #b5c1c1
+        /* border-bottom-style: dotted; */
+}
+
+.choosePaymentMehod {
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(12, 11, 12);
+}
+
+.innerDivPayment {
+    display: flex;
+    margin: auto;
+    background-color: rgba(65, 194, 164, 0.509);
+    width: 282px;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+
+    border: 1px solid rgb(199, 191, 191);
+}
+
+.innerDivPayment>label {
+    width: 10%;
+    margin: auto;
+    font-size: 15px;
+
+    /* border: solid; */
+}
+
+.innerPaymentType {
+    width: 30%;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    margin: auto;
+
+    /* border: solid;
+    border-radius: 10px; */
+}
+
+.logoPayment {
+    width: 60%;
+    /* margin: auto; */
+
+    /* border: solid;
+    border-radius: 10px; */
+}
+
+.tick {
+    opacity: 0.8;
+    width: 23px;
+    height: 23px;
+    /* border: solid; */
+}
+
+/* .emptyCircleButton {
+    width: 25px;
+    height: 25px;
+    border: solid;
+    border-radius: 55px;
+    background-color: rgb(249, 248, 151);
+} */
+
+.logoPayment>img {
+    /* margin: auto; */
+    height: 80px;
+}
+
+.privaciPolicy {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 282px;
+    height: 60px;
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+.checkbox {
+    width: 8.3%;
+    height: 23px;
+    margin: auto;
+    background-color: rgba(174, 188, 185, 0.655);
+    /* background-color: rgba(65, 194, 164, 0.509); */
+    cursor: pointer;
+}
+
+.textPolicy {
+    width: 90%;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 600;
+
+    /* border: solid; */
 }

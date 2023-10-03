@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MapOrder } from "../../../utils/Modals/basketModal/MapOrder/MapOrder";
 import { FinalPrice } from "../../../utils/Modals/basketModal/FinalPrice/FinalPrice";
 import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
+import { ButtonNext } from "../buttonNext/ButtonNext";
 
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 import { deletePurchase } from "../../../functions/localStorageFunction/deletePurchase";
@@ -37,11 +38,13 @@ export const FirstStepOrder = () => {
                 <FinalPrice />
             </div>
 
-            <div className={styles.bottomButtons}>
+            <ButtonNext nextStep={nextStep}/>
+
+            {/* <div className={styles.bottomButtons}>
                 <div className={styles.nextStep}>
                     <button onClick={nextStep} className={styles.nextButton}>Next</button>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     );

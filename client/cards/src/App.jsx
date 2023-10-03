@@ -18,6 +18,7 @@ import { EditCard } from './components/editCard/editCard';
 
 import { FirstStepOrder } from './components/makeOrder/firstStepOrder/FirstStepOrder';
 import { SecondStepOrder } from './components/makeOrder/secondStepOrder/SecondStepOrder';
+import { ThirtStepOrder } from './components/makeOrder/thirtStepOrder/ThirtStepOrder';
 
 // import './App.css';
 
@@ -38,6 +39,7 @@ function App() {
                         <Route path='/catalog/:cardId/edit' element={<EditCard />} />
                         <Route path='/make-first-step-order' element={<FirstStepOrder />} />
                         <Route path='/make-second-step-order' element={<SecondStepOrder />} />
+                        <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
                     </Routes>
                     <Footer />
                 </CardProvider>
