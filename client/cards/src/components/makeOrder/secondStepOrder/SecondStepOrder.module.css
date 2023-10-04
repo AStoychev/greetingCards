@@ -23,7 +23,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 516px;
-    height: 1120px;
+    height: 100%;
+    /* height: 1311px; */
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -77,6 +78,57 @@
 
     /* border: solid; */
 }
+
+.mainShipping {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    margin: auto;
+    width: 300px;
+    color: #1b1d1e;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.innerDivShippingOne, .innerDivOffice {
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    margin: auto;
+
+    /* border: solid; */
+}
+
+.innerDivShippingTwo {
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    margin: auto;
+
+    /* border: solid; */
+}
+
+.innerShippingType {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    margin: auto;
+}
+
+.logoShipping {
+    width: 50%;
+    margin: auto;
+
+    /* border: solid; */
+}
+
+.logoShipping>img {
+    width: 50px;
+}
+
 
 .innerDivDataOrder {
     margin: auto;
@@ -139,20 +191,6 @@ input[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 2px solid rgba(2, 2, 2, 0.769);
-}
-
-.innerLineOne {
-    width: 100%;
-    margin-bottom: 10px;
-
-    /* border: solid; */
-}
-
-.lineOne {
-    display: inline-block;
-    width: 90%;
-    border-bottom: 1.5px solid #b5c1c1
-        /* border-bottom-style: dotted; */
 }
 
 .choosePaymentMehod {
@@ -246,6 +284,67 @@ input[type='radio']:checked:after {
     margin: auto;
     font-size: 11px;
     font-weight: 600;
+
+    /* border: solid; */
+}
+
+.buttonsNextBack {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    /* border: solid; */
+}
+
+.next {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    margin-left: 10px;
+    /* align-items: center; */
+    justify-content: space-between;
+
+    /* border: solid; */
+}
+
+/* Next Button */
+.bottomButtons {
+    display: flex;
+    margin-bottom: 10px;
+    /* border: solid; */
+}
+
+.nextStep {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+
+    /* border: solid; */
+}
+
+.nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(17, 162, 104, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}
+
+/* Next Button */
+
+.back {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    margin-right: 10px;
+    /* align-items: center; */
+    justify-content: end;
 
     /* border: solid; */
 }

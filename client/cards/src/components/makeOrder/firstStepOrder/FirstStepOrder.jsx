@@ -38,7 +38,7 @@ export const FirstStepOrder = () => {
                 <FinalPrice />
             </div>
 
-            <ButtonNext nextStep={nextStep}/>
+            <ButtonNext nextStep={nextStep} page={'NEXT'}/>
 
             {/* <div className={styles.bottomButtons}>
                 <div className={styles.nextStep}>

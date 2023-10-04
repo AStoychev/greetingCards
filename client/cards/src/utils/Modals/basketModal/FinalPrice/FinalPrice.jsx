@@ -1,17 +1,8 @@
-import { showAllPurchase } from "../../../../functions/localStorageFunction/showAllPurchase";
+import { totalPrice } from "../../../../functions/totalPrice";
 
 import styles from './FinalPrice.module.css'
 
 export const FinalPrice = () => {
-
-    const totalPrice = () => {
-        let price = 0;
-        showAllPurchase().map((x) => {
-            price += (x.price * x.quantity);
-        });
-        return price.toFixed(2)
-    };
-
     return (
         <div>
             <div className={styles.mainFinalOrder}>

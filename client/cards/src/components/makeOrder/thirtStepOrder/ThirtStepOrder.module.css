@@ -1,0 +1,257 @@
+.container {
+    width: 100%;
+    background-color: rgba(107, 208, 231, 0.313);
+    ;
+}
+
+.innerContainer {
+    width: 70%;
+    margin: auto;
+}
+
+.headerOrder {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.651);
+}
+
+.dataContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 516px;
+    height: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    /* margin-bottom: 10px; */
+
+    border: solid;
+    border-color: #9fb3b4;
+}
+
+
+.formTopField {
+    width: 100%;
+    height: 50px;
+    background-color: #51b9bc;
+
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+.topFieldTitle {
+    display: flex;
+    margin: auto;
+    width: 76%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+
+    /* border: solid; */
+}
+
+.mainPersonalData {
+    width: 98%;
+    height: 100%;
+    /* display: flex; */
+    justify-content: left;
+    text-align: left;
+    padding-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: rgb(216, 215, 218);
+
+    /* border: solid; */
+}
+
+.innerPersonalData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    /* border: solid; */
+
+}
+
+.typePersonalData {
+    width: 50%;
+    text-align: right;
+    margin-right: 10px;
+
+    /* border: solid; */
+}
+
+.detailedData {
+    width: 50%;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 600;
+    /* border: solid; */
+}
+
+.innerPrivacyPolicy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-weight: 00;
+}
+
+.typeSeparator {
+    margin-bottom: 30px;
+
+    /* border: solid; */
+}
+
+.mainAllPurchase {
+    width: 98%;
+    height: 30px;
+    display: flex;
+    background-color: rgb(216, 215, 218);
+    /* border: solid;
+    border-color: rgb(136, 136, 136); */
+    /* border-radius: 10px; */
+    margin: auto;
+    margin-top: 5px;
+    color: white;
+}
+
+.mainAllPurchase>div {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.purchaseTitle {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.purchaseQuantity {
+    display: flex;
+    width: 8%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.multiplySign {
+    display: flex;
+    width: 6%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid; */
+}
+
+.purchasePrice {
+    display: flex;
+    width: 16%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.purchaseFinalPrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.purchaseTotalPrice {
+    display: flex;
+    justify-content: right;
+    background-color: rgba(255, 141, 141, 0.559);
+    width: 96%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* text-align: right; */
+    padding-right: 10px;
+
+    /* border: solid; */
+}
+
+.purchaseTotalPrice>div {
+    margin-left: 10px;
+}
+
+.bottomButtons {
+    display: flex;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+
+    /* border: solid; */
+}
+
+.back {
+    display: flex;
+    width: 50%;
+    justify-content: right;
+    margin-right: 10px;
+
+    /* border: solid; */
+}
+
+.next {
+    display: flex;
+    width: 50%;
+    justify-content: left;
+    margin-left: 10px;
+
+    /* border: solid; */
+}
+
+/* Next Button */
+.nextStep {
+    text-align: left;
+    justify-content: left;
+    width: 100%;
+
+    /* border: solid; */
+}
+
+.nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(17, 162, 104, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}
+
+/* Next Button */
