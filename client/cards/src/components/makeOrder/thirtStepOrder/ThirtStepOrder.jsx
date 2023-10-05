@@ -1,42 +1,44 @@
+import { useContext } from "react";
+
 import { useNavigate } from "react-router-dom";
 
+import { useForm } from "../../../hooks/useForm";
+import { OrderContext } from "../../../contexts/OrderContext";
+
 import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
-import { ButtonNext } from "../buttonNext/ButtonNext";
 import { ButtonBack } from "../buttonBack/ButtonBack";
-import { Line } from "../line/Line";
 
 import { totalPrice } from "../../../functions/totalPrice";
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 import { showMakeOrderData } from "../../../functions/localStorageFunction/showMakeOrderData";
 import { checkForDiscount } from "../../../functions/checkForDiscount";
+import { unPackingOrder } from "../../../functions/localStorageFunction/unPackingOrder";
 
 import styles from './ThirtStepOrder.module.css'
 
 export const ThirtStepOrder = () => {
 
-    const navigate = useNavigate();
+    const { onCreateOrderSubmit } = useContext(OrderContext);
+    const { onSubmit } = useForm({
+        firstName: unPackingOrder()[0],
+        lastName: unPackingOrder()[1],
+        email: unPackingOrder()[2],
+        phoneNumber: unPackingOrder()[3],
+        shippingCompany: unPackingOrder()[4],
+        shippingPlace: unPackingOrder()[5],
+        city: unPackingOrder()[6],
+        postCode: unPackingOrder()[7],
+        address: unPackingOrder()[8],
+        orders: unPackingOrder()[9],
+        takeMessage: unPackingOrder()[10],
+        payment: unPackingOrder()[11],
+        privacyPolicy: unPackingOrder()[12],
+    }, onCreateOrderSubmit)
 
-    const nextStep = () => {
-        navigate('/make-thirth-step-order')
-    }
+    const navigate = useNavigate();
 
     const backStep = () => {
         navigate('/make-second-step-order')
-    }
-
-    const sendOrder = () => {
-        localStorage.removeItem('makeOrder');
-        const items = []
-        for (let i = 0; i < localStorage.length; i++) {
-            if (localStorage.key(i).startsWith('orders')) {
-                let name = localStorage.key(i);
-                items.push(localStorage.getItem(name))
-                localStorage.removeItem(name);
-            }
-        }
-
-        navigate('/complete-order')
-        console.log(items)
     }
 
     return (
@@ -97,6 +99,11 @@ export const ThirtStepOrder = () => {
                                 <div className={styles.innerPersonalData}>
                                     <div className={styles.typePersonalData}>ADDRESS:</div>
                                     <div className={styles.detailedData}>{x.address}</div>
+                                </div>
+
+                                <div className={styles.innerPersonalData}>
+                                    <div className={styles.typePersonalData}>MESSAGE</div>
+                                    <div className={styles.detailedData}>{x.takeMessage}</div>
                                 </div>
 
                                 <div className={styles.typeSeparator}></div>
@@ -163,7 +170,7 @@ export const ThirtStepOrder = () => {
                             </div>
                             <div className={styles.next}>
                                 <div className={styles.nextStep}>
-                                    <button onClick={sendOrder} className={styles.nextButton}>FINISH</button>
+                                    <button onClick={onSubmit} className={styles.nextButton}>FINISH</button>
                                 </div>
                             </div>
                         </div>

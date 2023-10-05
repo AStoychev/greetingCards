@@ -164,6 +164,18 @@ input[type='email'],
     caret-color: rgb(6, 188, 248);
 }
 
+textarea {
+    width: 382px;
+    height: 80px;
+    max-width: 382px;
+    min-width: 382px;
+    max-height: 180px;
+    margin-bottom: 10px;
+    background-color: #d9dcdf;
+    border: none;
+    caret-color: rgb(6, 188, 248);
+}
+
 input[type='radio']::after {
     width: 15px;
     height: 15px;

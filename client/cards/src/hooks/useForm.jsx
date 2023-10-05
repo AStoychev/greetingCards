@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { deleteAllDataPurchaseAfterSendOrder } from '../functions/localStorageFunction/deleteAllDataPurchaseAfterSendOrder';
+
 export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState(initialValues);
 
@@ -14,6 +16,8 @@ export const useForm = (initialValues, onSubmitHandler) => {
         onSubmitHandler(values);
 
         setValues(initialValues);
+        
+        deleteAllDataPurchaseAfterSendOrder();
     };
 
     const changeValues = (newValues) => {
