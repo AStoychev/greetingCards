@@ -8,6 +8,7 @@ import { ButtonBack } from "../buttonBack/ButtonBack";
 import { Line } from "../line/Line";
 
 import { showMakeOrderData } from "../../../functions/localStorageFunction/showMakeOrderData";
+import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 
 import styles from './SecondStepOrder.module.css'
 
@@ -22,7 +23,9 @@ export const SecondStepOrder = () => {
                     x.firstName, x.lastName, x.email,
                     x.phoneNumber, x.shippingCompany,
                     x.shippingPlace, x.city, x.postCode,
-                    x.address, x.payment, x.privacyPolicy)
+                    x.address, x.takeMessage,
+                    x.payment, x.privacyPolicy
+                )
             })
         }
         return peronalData
@@ -38,8 +41,9 @@ export const SecondStepOrder = () => {
         city: checkForOrder()[6] ? checkForOrder()[6] : '',
         postCode: checkForOrder()[7] ? checkForOrder()[7] : '',
         address: checkForOrder()[8] ? checkForOrder()[8] : '',
-        payment: checkForOrder()[9] ? checkForOrder()[9] : '',
-        privacyPolicy: checkForOrder()[10] ? checkForOrder()[10] : ''
+        takeMessage: checkForOrder()[9] ? checkForOrder()[9] : '',
+        payment: checkForOrder()[10] ? checkForOrder()[10] : '',
+        privacyPolicy: checkForOrder()[11] ? checkForOrder()[11] : ''
 
     });
 
@@ -63,6 +67,7 @@ export const SecondStepOrder = () => {
     }
 
     const savePersonalInformation = () => {
+        values['orders'] = showAllPurchase();
         localStorage.setItem('makeOrder', JSON.stringify(values))
         nextStep();
     }
@@ -72,10 +77,10 @@ export const SecondStepOrder = () => {
     }
 
     const changeAddresTitle = () => {
-        if (values.shippingPlace === 'ToOffice') {
+        if (values.shippingPlace === 'To A Courier Office') {
             return ('OFFICE')
         }
-        else if (values.shippingPlace === 'ToYourAddress') {
+        else if (values.shippingPlace === 'To Your Address') {
             return ('YOUR')
         }
     }
@@ -247,6 +252,17 @@ export const SecondStepOrder = () => {
                                 id="address"
                                 name="address"
                                 value={values.address}
+                                onChange={changeHandler}
+                            />
+                        </div>
+
+                        <div className={styles.innerDivDataOrder}>
+                            <label htmlFor="takeMessage">TAKE MESSAGE</label>
+                            <textarea
+                                type="text"
+                                id="takeMessage"
+                                name="takeMessage"
+                                value={values.takeMessage}
                                 onChange={changeHandler}
                             />
                         </div>

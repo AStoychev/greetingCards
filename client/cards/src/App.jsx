@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
 import { CardProvider } from './contexts/CardContext';
+import { OrderProvider } from './contexts/OrderContext';
 
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
@@ -12,7 +13,7 @@ import { Logout } from './components/logout/Logout';
 
 import { HomePage } from './components/homePage/HomePage';
 import { Catalog } from './components/catalog/Catalog';
-import { AddCard } from './components/addCard/addCard';
+import { AddCard } from './components/addCard/AddCard';
 import { CardDetails } from './components/cardDetails/CardDetails';
 import { EditCard } from './components/editCard/editCard';
 
@@ -28,22 +29,24 @@ function App() {
         <>
             <AuthProvider>
                 <CardProvider>
-                    <Header />
-                    <Routes>
-                        <Route path='/' element={<HomePage />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Register />} />
-                        <Route path='/logout' element={<Logout />} />
-                        <Route path='/catalog' element={<Catalog />} />
-                        <Route path='/add-card' element={<AddCard />} />
-                        <Route path='/catalog/:cardId' element={<CardDetails />} />
-                        <Route path='/catalog/:cardId/edit' element={<EditCard />} />
-                        <Route path='/make-first-step-order' element={<FirstStepOrder />} />
-                        <Route path='/make-second-step-order' element={<SecondStepOrder />} />
-                        <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
-                        <Route path='/complete-order' element={<CompleteOrderMenu />} />
-                    </Routes>
-                    <Footer />
+                    <OrderProvider>
+                        <Header />
+                        <Routes>
+                            <Route path='/' element={<HomePage />} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/register' element={<Register />} />
+                            <Route path='/logout' element={<Logout />} />
+                            <Route path='/catalog' element={<Catalog />} />
+                            <Route path='/add-card' element={<AddCard />} />
+                            <Route path='/catalog/:cardId' element={<CardDetails />} />
+                            <Route path='/catalog/:cardId/edit' element={<EditCard />} />
+                            <Route path='/make-first-step-order' element={<FirstStepOrder />} />
+                            <Route path='/make-second-step-order' element={<SecondStepOrder />} />
+                            <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
+                            <Route path='/complete-order' element={<CompleteOrderMenu />} />
+                        </Routes>
+                        <Footer />
+                    </OrderProvider>
                 </CardProvider>
             </AuthProvider>
         </>
