@@ -3,10 +3,6 @@ const orderService = require('../services/orderService');
 
 const sendMail = require('../sendMail/sendMailAfterMakeOrder');
 
-const nodemailer = require('nodemailer');
-
-
-
 router.get('/get-all-order', async (req, res) => {
     const result = await orderService.getAll();
     res.json({ ok: result });
@@ -14,10 +10,13 @@ router.get('/get-all-order', async (req, res) => {
 
 router.post('/make-order', async (req, res) => {
     const order = req.body;
+
     try {
         const result = await orderService.makeOrder(order);
 
-        await sendMail.sendMailAfterMakeOrder()
+        if (res.statusCode === 200) {
+            await sendMail.sendMailAfterMakeOrder(order)
+        }
 
         res.json({ ok: 'true' });
 

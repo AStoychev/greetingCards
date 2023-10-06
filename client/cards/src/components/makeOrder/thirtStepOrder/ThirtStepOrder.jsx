@@ -33,6 +33,7 @@ export const ThirtStepOrder = () => {
         takeMessage: unPackingOrder()[10],
         payment: unPackingOrder()[11],
         privacyPolicy: unPackingOrder()[12],
+        price: totalPrice(),
     }, onCreateOrderSubmit)
 
     const navigate = useNavigate();

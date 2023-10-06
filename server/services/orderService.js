@@ -2,7 +2,13 @@ const Order = require('../models/Order');
 
 exports.makeOrder = async (orderData) => {
     await Order.create({ ...orderData })
-}
+};
+
+exports.getOne = async (orderId) => {
+    const existingOrder = await Order.findById(orderId);
+    return existingOrder
+    // await Card.find({})
+};
 
 exports.getAll = async () => {
     const existingOrder = await Order.find({});
