@@ -59,6 +59,7 @@ export const Header = () => {
                         {isAuthenticated &&
                             <>
                                 <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
+                                <Link className={styles.navigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
                                 <Link className={styles.navigationLink} to="/logout">Logout</Link>
                                 <div className={styles.userName}>{userName}</div>
                             </>

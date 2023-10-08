@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 
-import { SaveLastFiveVisitedCards } from '../SaveInLocalStorage/SaveLastFiveVisitedCards';
+import { SaveLastFiveVisitedCards } from '../saveInLocalStorage/SaveLastFiveVisitedCards';
 import { Partners } from '../../utils/Partners/Partners';
 
 import styles from './HomePage.module.css';
@@ -30,11 +30,11 @@ export const HomePage = () => {
                     <img className={styles.firstAddBannerImage} src='../images/halloween1.jpg' alt='fisrtAddBaner' />
                     <div className={styles.imageInnerDiv}>
                         <p>Scary & Funny</p>
-                        <span>
+                        <div className={styles.textImageBackGround}>
                             Darkness falls across the land.
-                        </span>
+                        </div>
                         <br></br>
-                        <span>The midnight hour is close at hand.</span>
+                        <div className={styles.textImageBackGround}>The midnight hour is close at hand.</div>
                     </div>
                     <div className={styles.buttonInnerDiv}>
                         <button onClick={goToShop}>SHOP NOW</button>

@@ -40,6 +40,10 @@
     border-color: #9fb3b4;
 }
 
+span {
+    color: rgb(223, 60, 60);
+}
+
 .formTopField {
     width: 100%;
     height: 50px;
@@ -346,6 +350,17 @@ input[type='radio']:checked:after {
 .nextButton:hover {
     background-color: rgb(13, 135, 86);
     cursor: pointer;
+}
+
+.nextButtonDisabled {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(58, 66, 63, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: no-drop;
 }
 
 /* Next Button */

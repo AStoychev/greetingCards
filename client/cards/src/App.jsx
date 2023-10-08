@@ -17,6 +17,9 @@ import { AddCard } from './components/addCard/AddCard';
 import { CardDetails } from './components/cardDetails/CardDetails';
 import { EditCard } from './components/editCard/editCard';
 
+import { AdminMainPage } from './components/admin/adminMainPage/AdminMainPage';
+import { AdminAllOrders } from './components/admin/allOrders/AllOrders';
+
 import { FirstStepOrder } from './components/makeOrder/firstStepOrder/FirstStepOrder';
 import { SecondStepOrder } from './components/makeOrder/secondStepOrder/SecondStepOrder';
 import { ThirtStepOrder } from './components/makeOrder/thirtStepOrder/ThirtStepOrder';
@@ -40,10 +43,14 @@ function App() {
                             <Route path='/add-card' element={<AddCard />} />
                             <Route path='/catalog/:cardId' element={<CardDetails />} />
                             <Route path='/catalog/:cardId/edit' element={<EditCard />} />
+
                             <Route path='/make-first-step-order' element={<FirstStepOrder />} />
                             <Route path='/make-second-step-order' element={<SecondStepOrder />} />
                             <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
                             <Route path='/complete-order' element={<CompleteOrderMenu />} />
+
+                            <Route path='/admin-main-page/:userId' element={<AdminMainPage />} />
+                            <Route path='/admin-main-page/all-order/:userId' element={<AdminAllOrders />} />
                         </Routes>
                         <Footer />
                     </OrderProvider>

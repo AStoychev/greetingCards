@@ -7,6 +7,12 @@ import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
 import { ButtonBack } from "../buttonBack/ButtonBack";
 import { Line } from "../line/Line";
 
+import {
+    validateFirstName, validateLastName, validateEmail,
+    validatePhone, validateShippingCompany, validateShippingPlace,
+    validateCity, validatePostCode, validateAddress,
+    validatePayment, validatePrivacyPolicy, validateAllOrder
+} from "./validateOrderClientDataForm";
 import { showMakeOrderData } from "../../../functions/localStorageFunction/showMakeOrderData";
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 
@@ -85,6 +91,21 @@ export const SecondStepOrder = () => {
         }
     }
 
+    //Validations
+
+    // validateFirstName(values)
+    // validateLastName(values)
+    // validateEmail(values)
+    // validatePhone(values)
+    // validateShippingCompany(values)
+    // validateShippingPlace(values)
+    // validateCity(values)
+    // validatePostCode(values)
+    // validateAddress(values)
+    // validatePayment(values)
+    // validatePrivacyPolicy(checkbox)
+    // console.log(validateAllOrder(values, checkbox))
+
     return (
         <div className={styles.container}>
             <div className={styles.innerContainer}>
@@ -100,7 +121,9 @@ export const SecondStepOrder = () => {
 
                         <div className={styles.firstAndLastName}>
                             <div className={styles.innerDivDataOrderName}>
-                                <label htmlFor="first">FIRST*</label>
+                                <label htmlFor="first">FIRST
+                                    <span>*</span>
+                                </label>
                                 <input
                                     type="first"
                                     id="first"
@@ -111,7 +134,9 @@ export const SecondStepOrder = () => {
                             </div>
 
                             <div className={styles.innerDivDataOrderName}>
-                                <label htmlFor="last">LAST*</label>
+                                <label htmlFor="last">LAST
+                                    <span>*</span>
+                                </label>
                                 <input
                                     type="last"
                                     id="last"
@@ -123,7 +148,9 @@ export const SecondStepOrder = () => {
                         </div>
 
                         <div className={styles.innerDivDataOrder}>
-                            <label htmlFor="email">EMAIL*</label>
+                            <label htmlFor="email">EMAIL
+                                <span>*</span>
+                            </label>
                             <input
                                 type="email"
                                 id="email"
@@ -134,7 +161,9 @@ export const SecondStepOrder = () => {
                         </div>
 
                         <div className={styles.innerDivDataOrder}>
-                            <label htmlFor="phone">PHONE NUMBER*</label>
+                            <label htmlFor="phone">PHONE NUMBER
+                                <span>*</span>
+                            </label>
                             <input
                                 type="phone"
                                 id="phone"
@@ -224,7 +253,9 @@ export const SecondStepOrder = () => {
                         }
 
                         <div className={styles.innerDivDataOrder}>
-                            <label htmlFor="city">CITY*</label>
+                            <label htmlFor="city">CITY
+                                <span>*</span>
+                            </label>
                             <input
                                 type="city"
                                 id="city"
@@ -235,7 +266,9 @@ export const SecondStepOrder = () => {
                         </div>
 
                         <div className={styles.innerDivDataOrder}>
-                            <label htmlFor="postCode">POST CODE*</label>
+                            <label htmlFor="postCode">POST CODE
+                                <span>*</span>
+                            </label>
                             <input
                                 type="post-code"
                                 id="postCode"
@@ -246,7 +279,9 @@ export const SecondStepOrder = () => {
                         </div>
 
                         <div className={styles.innerDivDataOrder}>
-                            <label htmlFor="address">{changeAddresTitle()} ADDRESS*</label>
+                            <label htmlFor="address">{changeAddresTitle()} ADDRESS
+                                <span>*</span>
+                            </label>
                             <input
                                 type="address"
                                 id="address"
@@ -385,7 +420,9 @@ export const SecondStepOrder = () => {
                                 }
                             </div>
 
-                            <div className={styles.textPolicy}>*By ticking this box I agree that I have read the privacy policy</div>
+                            <div className={styles.textPolicy}>
+                                <span>*</span>
+                                By ticking this box I agree that I have read the privacy policy</div>
                         </div>
                     </form>
 
@@ -397,7 +434,11 @@ export const SecondStepOrder = () => {
                         <div className={styles.next}>
                             <div className={styles.bottomButtons}>
                                 <div className={styles.nextStep}>
-                                    <button onClick={savePersonalInformation} className={styles.nextButton} >NEXT</button>
+                                    {validateAllOrder(values, checkbox) ?
+                                        <button onClick={savePersonalInformation} className={styles.nextButton}>NEXT</button>
+                                        :
+                                        <button className={styles.nextButtonDisabled} title="Please fill in the required fields!">NEXT</button>
+                                    }
                                 </div>
                             </div>
                         </div>

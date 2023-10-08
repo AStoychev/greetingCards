@@ -7,7 +7,7 @@ import { cardServiceFactory } from "../../services/cardService";
 import { Basket } from "../header/basket/Basket";
 import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
-import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
+import { SaveLastFiveVisitedCards } from "../saveInLocalStorage/SaveLastFiveVisitedCards";
 import styles from './Catalog.module.css'
 
 export const Catalog = () => {

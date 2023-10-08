@@ -4,9 +4,24 @@ const orderService = require('../services/orderService');
 const sendMail = require('../sendMail/sendMailAfterMakeOrder');
 
 router.get('/get-all-order', async (req, res) => {
-    const result = await orderService.getAll();
-    res.json({ ok: result });
+    try {
+        const result = await orderService.getAll();
+        res.json(result);
+    } catch (error) {
+        console.log(error)
+    }
+
 });
+
+// router.get('/all-orders', async (req, res) => {
+//     try {
+//         const result = await orderService.getAll();
+//         res.json(result);
+//     } catch (error) {
+//         console.log(error)
+//     }
+
+// });
 
 router.post('/make-order', async (req, res) => {
     const order = req.body;

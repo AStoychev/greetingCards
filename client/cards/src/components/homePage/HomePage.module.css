@@ -29,6 +29,13 @@
     font-size: 30px;
 }
 
+.textImageBackGround {
+    color: #c1caeb;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+}
+
 .buttonInnerDiv {
     position: absolute;
     bottom: 21px;

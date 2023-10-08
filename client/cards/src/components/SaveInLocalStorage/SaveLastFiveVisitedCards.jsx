@@ -5,17 +5,20 @@ import { CardSaveFiveVisited } from "../../utils/Cards/CardSaveFiveVisited/CardS
 import styles from './SaveLastFiveVisitedCards.module.css'
 
 export const SaveLastFiveVisitedCards = () => {
-    const saveFiveItems = { ...localStorage }
-    const saveItems = []
-    for (let i in saveFiveItems) {
-        if (JSON.parse(saveFiveItems[i]).title) {
-            saveItems.push(JSON.parse(saveFiveItems[i]))
+    let saveFiveItems = '';
+    // let saveFiveItems = { ...localStorage };
+    const saveItems = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = (localStorage.key(i));
+        if (!key.startsWith('orders')) {
+            saveFiveItems = localStorage.getItem(localStorage.key(i));
+            saveItems.push(JSON.parse(saveFiveItems));
         }
     }
 
-
     let lastFiveVisitedCarts = saveItems.slice(-5)
-    
+
     // This code sorted last visited five items from local storage
     let sortedCarts = lastFiveVisitedCarts.sort((p1, p2) => ((p1.time < p2.time) ? -1 : 0))
     // let sortedCarts = lastFiveVisitedCarts.sort((p1, p2) => (p1.time < p2.time) ? 1 : (p1.time > p2.time) ? -1 : 0)

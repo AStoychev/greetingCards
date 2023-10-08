@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+let validateEmail = function(email) {
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return regex.test(email)
+};
+
 const orderSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -14,7 +19,10 @@ const orderSchema = new mongoose.Schema({
     email: {
         type: String,
         minLength: 2,
-        require: [true, 'Email is required!']
+        trim: true,
+        require: [true, 'Email is required!'],
+        validate: [validateEmail, 'Please fill a valid email address'],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     phoneNumber: {
         type: Number,
@@ -53,6 +61,13 @@ const orderSchema = new mongoose.Schema({
         type: String,
         minLength: 2,
         require: [true, 'Payment is required!']
+    },
+    orderStatus: {
+        type:String,
+        default: 'Unprocessed',
+    },
+    price: {
+        type:Number,
     },
     privacyPolicy: {
         type: String,
