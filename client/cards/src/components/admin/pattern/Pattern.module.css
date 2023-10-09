@@ -8,9 +8,9 @@
 .middleColumnTopBaR {
     display: flex;
     margin: auto;
-    width: 90%;
+    width: 99%;
     height: 50px;
-    background-color: rgb(215, 145, 145);
+    background-color: #ffffff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -20,10 +20,10 @@
 .mainField {
     display: flex;
     justify-content: left;
-    width: 90%;
+    width: 99%;
     height: 90%;
     margin: auto;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 
     /* border: solid; */
     border-radius: 10px;
@@ -32,7 +32,7 @@
 .leftColumn {
     flex: 0 0 10%;
     border-bottom-left-radius: 10px;
-    background-color: rgb(215, 145, 145);;
+    background-color: #ffffff;
 
     /* border: solid;
     border-color: #0000ff; */
@@ -40,32 +40,33 @@
 
 .lineUpOrder {
     text-align: left;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 5px;
 }
 
 .lineUpOrder>div {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.lineUpOrder>div>* {
+.linkTo {
     color: rgb(9, 9, 9);
-    background-color: aquamarine;
+    /* background-color: #9ba2a8; */
+    font-size: 20px;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
-    border: none;
+    /* border: solid; */
 }
 
-.lineUpOrder>div>*:hover {
+.linkTo:hover {
     background-color: rgb(94, 139, 124);
 }
 
 .middleColumn {
     float: right;
     flex: 0 0 90%;
-    background-color: #41dd8c;
+    background-color: #fafafa;
     border-bottom-right-radius: 10px;
 
     /* You can remove margin for delete space between columns */

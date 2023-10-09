@@ -19,6 +19,8 @@ import { EditCard } from './components/editCard/editCard';
 
 import { AdminMainPage } from './components/admin/adminMainPage/AdminMainPage';
 import { AdminAllOrders } from './components/admin/allOrders/AllOrders';
+import { UnprocessedOrders } from './components/admin/unprocessedOrders/UnprocessedOrders';
+import { SendOrders } from './components/admin/sendOrders/SendOrders';
 
 import { FirstStepOrder } from './components/makeOrder/firstStepOrder/FirstStepOrder';
 import { SecondStepOrder } from './components/makeOrder/secondStepOrder/SecondStepOrder';
@@ -51,6 +53,8 @@ function App() {
 
                             <Route path='/admin-main-page/:userId' element={<AdminMainPage />} />
                             <Route path='/admin-main-page/all-order/:userId' element={<AdminAllOrders />} />
+                            <Route path='/admin-main-page/unprocessed-order/:userId' element={<UnprocessedOrders />} />
+                            <Route path='/admin-main-page/send-order/:userId' element={<SendOrders />} />
                         </Routes>
                         <Footer />
                     </OrderProvider>

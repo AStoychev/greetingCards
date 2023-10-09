@@ -1,0 +1,216 @@
+.titleTypeOrder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  
+    /* border: solid;
+    border-color: red; */
+  }
+  
+  .divTable {
+    display: table;
+    width: 100%;
+    background-color: #eee;
+    /* border: 1px solid #666666;          */
+    /* border-spacing: 5px; */
+  }
+  
+  .headRow>div {
+    margin-bottom: 5px;
+    border-top: 1px solid rgb(191, 186, 197);
+    border-bottom: 1px solid rgb(191, 186, 197);
+  }
+  
+  .divRow {
+    display: table-row;
+    width: 100%;
+    height: 10px;
+    border: solid;
+    clear: both;
+  }
+  
+  /* .divCell {
+    float: left;
+    display: table-column;
+    width: 200px;
+    background-color: #ccc;
+    border: solid;
+  } */
+  
+  .divRow>div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 1px solid rgb(191, 186, 197);
+    border-bottom: 1px solid rgb(191, 186, 197);
+  }
+  
+  .divCellNumber {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 1%;
+    padding: 10px;
+    background-color: #fafafa;
+    border-left: 1px solid rgb(191, 186, 197);
+  
+    /* border: solid; */
+  
+  }
+  
+  .divCellId {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 11%;
+    padding: 10px;
+    background-color: #fafafa;
+  
+    /* border: solid */
+  }
+  
+  .divCellDate {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 4%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+    /* border: solid; */
+  }
+  
+  .divCellAddress {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 10%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+    /* border: solid; */
+  }
+  
+  .divCellClient {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 10%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+    /* border: solid; */
+  }
+  
+  .divCellShipping {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 16%;
+    background-color: #fafafa;
+    padding: 10px;
+    /* border: solid; */
+  }
+  
+  .divCellPayment {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 4%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+    /* border: solid; */
+  }
+  
+  .divCellPrice {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 4%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+    /* border: solid; */
+  }
+  
+  .divCellStatus {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 5%;
+    background-color: #fafafa;
+    padding: 10px;
+  
+  }
+  
+  .divCellOrder {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 5%;
+    background-color: #fafafa;
+    padding: 10px;
+    border-right: 1px solid rgb(191, 186, 197);
+  
+    /* border: solid */
+  }
+  
+  .divCellOrderButton {
+    text-align: center;
+    float: left;
+    display: table-column;
+    width: 5%;
+    background-color: #fafafa;
+    padding: 10px;
+    cursor: pointer;
+    border-right: 1px solid rgb(191, 186, 197);
+  
+    /* border: solid */
+  }
+  
+  .divCellOrderButton>button {
+    all: unset;
+    border-radius: 10px;
+    width: 80%;
+    font-weight: 600;
+    background-color: #b0dcf4;
+  
+    /* border: solid; */
+  }
+  
+  .divCellOrderButton>button:hover {
+    background-color: rgb(137, 106, 168);
+    ;
+  }
+  
+  
+  .accordion {
+    /* display: flex; */
+    text-align: center;
+    width: 77%;
+    /* border: solid; */
+    
+  }
+  
+  
+  .innerOrders{
+    display: flex;
+    border: 1px solid;
+    margin-bottom: 3px;
+  }
+  
+  .itemInfo {
+    display: flex;
+  }
+  .itemInfo>div {
+    font-size: 16px;
+    margin: auto;
+    padding-left: 10px;
+  }
+  
+  .imageOrders{
+    width: 100px;
+  }

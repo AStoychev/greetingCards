@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let validateEmail = function(email) {
+let validateEmail = function (email) {
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return regex.test(email)
 };
@@ -63,11 +63,11 @@ const orderSchema = new mongoose.Schema({
         require: [true, 'Payment is required!']
     },
     orderStatus: {
-        type:String,
+        type: String,
         default: 'Unprocessed',
     },
     price: {
-        type:Number,
+        type: Number,
     },
     privacyPolicy: {
         type: String,
@@ -76,6 +76,10 @@ const orderSchema = new mongoose.Schema({
     },
     orders: {
         type: Array,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     }
 });
 
