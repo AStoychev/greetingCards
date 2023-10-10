@@ -28,6 +28,8 @@ export const orderServiceFactory = (token) => {
         return result;
     };
 
+    const changeStatusOrder = (orderId, data) => (request.put(`${baseUrl}/${orderId}/change-status`, data));
+
     // const edit = (orderId, data) => request.put(`${baseUrl}/${orderId}/edit`, data);
 
     // const deleteCard = (orderId) => request.delete(`${baseUrl}/${orderId}/delete`);
@@ -36,6 +38,7 @@ export const orderServiceFactory = (token) => {
         getAll,
         getOne,
         create,
+        changeStatusOrder,
         // edit,
         // deleteCard,
     };

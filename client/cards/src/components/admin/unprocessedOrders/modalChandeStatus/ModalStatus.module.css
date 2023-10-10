@@ -1,0 +1,71 @@
+.containerModal {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    background-color: rgb(138, 211, 164);
+}
+
+.closeModalTopButton {
+    position: absolute;
+    display: inline-block;
+    top: 1%;
+    left: 94%;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.closeModalTopButton:hover {
+    color: rgb(248, 53, 53);
+}
+
+.mainFieldModal {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.mainFieldModal>span {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modalButtons {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.buttonNo {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(0, 157, 255);
+    color: white;
+    margin-right: 5px;
+    cursor: pointer;
+
+    border: none;
+}
+
+.buttonNo:hover {
+    background-color: rgb(0, 111, 180);
+}
+
+.buttonYes {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(255, 55, 0);
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+
+    border: none;
+}
+
+.buttonYes:hover {
+    background-color: rgb(178, 23, 23);
+}

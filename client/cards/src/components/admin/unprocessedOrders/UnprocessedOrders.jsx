@@ -3,6 +3,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Pattern } from '../pattern/Pattern';
+import { ModalStatus } from './modalChandeStatus/ModalStatus';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { checkForDiscount } from '../../../functions/checkForDiscount';
@@ -13,6 +14,7 @@ export const UnprocessedOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [orders, setOrders] = useState('off');
     const [idOrder, setIdOrder] = useState();
+    const [showModal, setShowModal] = useState('');
     const allOrdersService = orderServiceFactory();
 
     const unprocessedOrders = [];
@@ -22,7 +24,12 @@ export const UnprocessedOrders = () => {
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                setAllOrders(result)
+                for (let i in result) {
+                    if (result[i].orderStatus === 'Unprocessed') {
+                        setAllOrders([...allOrders, result[i]])
+                    }
+                };
+                // setAllOrders(result)
             })
     }, [])
 
@@ -39,23 +46,34 @@ export const UnprocessedOrders = () => {
         }
     };
 
-    const changeStatusToSend = (order) => {
-        order.orderStatus = 'Send'
-    };
-
     const changeStatusToRefuse = () => {
 
     };
 
-    for (let i in allOrders) {
-        if (allOrders[i].orderStatus === 'Unprocessed') {
-            unprocessedOrders.push(allOrders[i])
-        }
+    // for (let i in allOrders) {
+    //     if (allOrders[i].orderStatus === 'Unprocessed') {
+    //         unprocessedOrders.push(allOrders[i])
+    //     }
+    // };
+
+    const modalController = () => {
+        setShowModal('')
+    }
+
+    const modalPressYes = () => {
+        
+    }
+
+    const changeStatusToSend = (e) => {
+        setShowModal(<ModalStatus modalController={modalController} modalPressYes={modalPressYes} id={e.target.value}/>)
     };
+
+    console.log(1111111, allOrders)
 
     return (
         <Pattern pageWithOrder={
             <div>
+                {showModal}
                 <div className={styles.titleTypeOrder}>
                     <div className={styles.divTable}>
                         <div className={styles.headRow}>
@@ -72,7 +90,7 @@ export const UnprocessedOrders = () => {
                             <div className={styles.divCellAction}>Action</div>
                         </div>
 
-                        {unprocessedOrders.map((x, index) => (
+                        {allOrders.map((x, index) => (
                             <Fragment key={x._id}>
                                 <div className={styles.divRow}>
                                     <div className={styles.divCellNumber}>{index + 1}</div>
@@ -87,7 +105,7 @@ export const UnprocessedOrders = () => {
                                     <div className={styles.divCellOrderButton}><button onClick={showOrder} value={x._id}>ORDER</button></div>
                                     <div className={styles.divCellActionButton}>
                                         <div className={styles.buttonsAction}>
-                                            <button className={styles.buttonProces} value={x._id} onClick={() => changeStatusToSend(x)}>PROCESS</button>
+                                            <button className={styles.buttonProces} value={x._id} onClick={changeStatusToSend}>PROCESS</button>
                                             <button className={styles.buttonRefuse} value={x._id} onClick={changeStatusToRefuse}>REFUSE</button>
                                         </div>
                                     </div>

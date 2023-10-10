@@ -26,11 +26,11 @@ export const OrderProvider = ({
         navigate('/catalog');
     };
 
-    // const onOrderEditSubmit = async (values) => {
-    //     const result = await orderService.edit(values._id, values);
-    //     setOrders(state => state.map(x => x._id === values._id ? result : x));
-    //     navigate(`/catalog/${values._id}`);
-    // };
+    const onOrderEditSubmit = async (values) => {
+        const result = await orderService.changeStatusOrder(values._id, values);
+        setOrders(state => state.map(x => x._id === values._id ? result : x));
+        // navigate(`/catalog/${values._id}`);
+    };
 
     // const deleteOrder = (orderId) => {
     //     setOrders(state => state.filter(order => order._id !== orderId));
@@ -43,7 +43,7 @@ export const OrderProvider = ({
     const contextValues = {
         orders,
         onCreateOrderSubmit,
-        // onOrderEditSubmit,
+        onOrderEditSubmit,
         // deleteOrder,
         // getOrder,
     };

@@ -8,12 +8,12 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const changeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }));
-
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
 
+        console.log(1111111, values)
         onSubmitHandler(values);
 
         setValues(initialValues);
@@ -35,10 +35,15 @@ export const useForm = (initialValues, onSubmitHandler) => {
         setValues(newValues);
     }
 
+    const changeStatus = (newValues) => {
+        setValues(newValues);
+    }
+
     return {
         values,
         changeHandler,
         onSubmit,
         changeValues,
+        changeStatus,
     };
 };

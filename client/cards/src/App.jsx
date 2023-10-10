@@ -15,7 +15,7 @@ import { HomePage } from './components/homePage/HomePage';
 import { Catalog } from './components/catalog/Catalog';
 import { AddCard } from './components/addCard/AddCard';
 import { CardDetails } from './components/cardDetails/CardDetails';
-import { EditCard } from './components/editCard/editCard';
+import { EditCard } from './components/editCard/EditCard';
 
 import { AdminMainPage } from './components/admin/adminMainPage/AdminMainPage';
 import { AdminAllOrders } from './components/admin/allOrders/AllOrders';
