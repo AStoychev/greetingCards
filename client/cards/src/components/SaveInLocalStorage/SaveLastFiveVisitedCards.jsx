@@ -11,7 +11,7 @@ export const SaveLastFiveVisitedCards = () => {
 
     for (let i = 0; i < localStorage.length; i++) {
         let key = (localStorage.key(i));
-        if (!key.startsWith('orders')) {
+        if (!key.startsWith('orders') && !key.startsWith('auth')) {
             saveFiveItems = localStorage.getItem(localStorage.key(i));
             saveItems.push(JSON.parse(saveFiveItems));
         }

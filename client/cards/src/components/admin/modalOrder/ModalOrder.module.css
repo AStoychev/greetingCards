@@ -1,0 +1,200 @@
+.containerModal {
+    position: absolute;
+    width: 720px;
+    height: auto;
+    border-radius: 10px;
+    left: 33%;
+    top: 20%;
+    margin-left: -100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    /* box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.25); */
+
+    /* border: solid; */
+}
+
+.topField {
+    top: 11%;
+    transform: translate(0, 11%);
+    background-color: rgba(255, 255, 255, 0);
+
+    /* border: solid; */
+
+}
+
+.orderImage {
+    display: flex;
+
+    margin-bottom: -156px;
+    /* 156px is half of #userAvatar's height */
+    margin-left: calc(380px - 116px);
+    /* half of .accountStats's width - half of #userAvatar's height */
+    /* border-radius: 50%; */
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blueField {
+    text-align: center;
+    /* additional */
+    padding-top: 156px;
+    /* half of #userAvatar's height */
+    width: 100%;
+    height: 10px;
+    /* box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.25); */
+    border-top: 1px solid rgb(63, 40, 86);
+    border-left: 1px solid rgb(63, 40, 86);
+    border-right: 1px solid rgb(63, 40, 86);
+
+    background-color: #31B9F3;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.secondField {
+    width: 100%;
+    background-color: rgb(236, 238, 239);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid rgb(63, 40, 86);
+    padding-bottom: 10px;
+
+}
+
+/* .closeModalTopButton {
+    position: absolute;
+    display: inline-block;
+    top: 1%;
+    left: 94%;
+    cursor: pointer;
+    font-weight: 400;
+} */
+
+.closeModalTopButton:hover {
+    color: rgb(248, 53, 53);
+}
+
+.mainFieldModal {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.mainFieldModal>span {
+    color: rgb(79, 72, 72);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.finalPrice {
+    text-align: right;
+    padding-right: 30px;
+    font-weight: 600;
+
+    /* border: solid; */
+}
+
+.modalButtons {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.buttonOk {
+    display: inline;
+    color: #31B9F3;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:sans-serif;
+    cursor: pointer;
+}
+
+.buttonOk:hover {
+    color: rgb(35, 82, 177);
+}
+
+/* .buttonNo {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(0, 157, 255);
+    color: white;
+    margin-right: 5px;
+    cursor: pointer;
+
+    border: none;
+}
+
+.buttonNo:hover {
+    background-color: rgb(0, 111, 180);
+}
+
+.buttonYes {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(255, 55, 0);
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+
+    border: none;
+}
+
+.buttonYes:hover {
+    background-color: rgb(178, 23, 23);
+} */
+
+
+
+/* Flex container */
+
+.tableRow {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    border-bottom: 1px solid #dadada;
+}
+
+.rowItem {
+    display: flex;
+    flex: 1;
+    font-size: 12px;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+
+    /* border: solid; */
+
+}
+
+.rowItemId {
+    display: flex;
+    flex: 1;
+    font-size: 12px;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.rowItemId:hover {
+    font-weight: bold;
+    color: rgb(7, 113, 121);
+}
+
+.imageUrl {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    border: 1px solid rgba(102, 51, 153, 0);
+}
+
+.imageUrl:hover {
+    border: 1px solid;
+}

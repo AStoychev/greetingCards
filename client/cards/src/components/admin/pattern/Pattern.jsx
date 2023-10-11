@@ -19,26 +19,25 @@ export const Pattern = ({
                 <div className={styles.leftColumn}>
                     <div className={styles.lineUpOrder}>
                         <div>
-                            {/* <button onClick={() => showAllOrders(<AdminAllOrders/>)}>All Orders</button> */}
-                            <Link  className={styles.linkTo}to={`/admin-main-page/all-order/${userId}`}>All Orders</Link>
+                            <Link className={styles.linkTo} to={`/admin-main-page/${userId}`}>Main</Link>
                         </div>
                         <div>
-                            <Link  className={styles.linkTo}to={`/admin-main-page/unprocessed-order/${userId}`}>Unprocessed</Link>
+                            <Link className={styles.linkTo} to={`/admin-main-page/all-order/${userId}`}>All Orders</Link>
                         </div>
-                        {/* <div>
-                            <Link  className={styles.linkTo}to={`/admin-main-page/processed-order/${userId}`}>Processed</Link>
-                        </div> */}
                         <div>
-                            <Link  className={styles.linkTo}to={`/admin-main-page/send-order/${userId}`}>Sent</Link>
+                            <Link className={styles.linkTo} to={`/admin-main-page/unprocessed-order/${userId}`}>Unprocessed</Link>
+                        </div>
+                        <div>
+                            <Link className={styles.linkTo} to={`/admin-main-page/send-order/${userId}`}>Sent</Link>
                         </div>
                         <div>
                             <Link className={styles.linkTo} to={`/admin-main-page/received-order/${userId}`}>Received</Link>
                         </div>
                         <div>
-                            <Link  className={styles.linkTo}to={`/admin-main-page/returned-order/${userId}`}>Returned</Link>
+                            <Link className={styles.linkTo} to={`/admin-main-page/returned-order/${userId}`}>Returned</Link>
                         </div>
                         <div>
-                            <Link  className={styles.linkTo}to={`/admin-main-page/refuse-order/${userId}`}>Refused</Link>
+                            <Link className={styles.linkTo} to={`/admin-main-page/refused-order/${userId}`}>Refused</Link>
                         </div>
 
                     </div>

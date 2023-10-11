@@ -1,110 +1,87 @@
-import { useState, useEffect, Fragment } from 'react';
-
-import { useNavigate } from 'react-router-dom';
-
-import { Pattern } from '../pattern/Pattern';
+import { useState, useEffect } from 'react';
 
 import { orderServiceFactory } from '../../../services/orderService';
-import { checkForDiscount } from '../../../functions/checkForDiscount';
+import { showDateTime } from '../functions/showDateTime';
+
+import { Pattern } from '../pattern/Pattern';
+import { ModalOrder } from '../modalOrder/ModalOrder';
 
 import styles from './SendOrders.module.css'
 
 export const SendOrders = () => {
-    const [allOrders, setAllOrders] = useState([]);
+
+    const [sendOrders, setSendOrders] = useState([]);
     const [orders, setOrders] = useState('off');
     const [idOrder, setIdOrder] = useState();
+    const [showModal, setShowModal] = useState();
     const allOrdersService = orderServiceFactory();
-
-    const sendOrders = [];
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                setAllOrders(result)
+                for (let i in result) {
+                    if (result[i].orderStatus === 'Send') {
+                        setSendOrders([...sendOrders, result[i]])
+
+                    }
+                };
             })
     }, [])
 
-    const goToCard = (cardId) => {
-        navigate(`/catalog/${cardId}`)
+    const showOrder = (id, firstName, lastName, order) => {
+        setIdOrder(id);
+        let fullName = `${firstName} ${lastName}`
+        setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
+    };
+
+    const modalController = () => {
+        setShowModal('');
     }
 
-    const showOrder = (e) => {
-        setIdOrder(e.target.value);
-        if (orders === 'on') {
-            setOrders('off');
-        } else {
-            setOrders('on');
-        }
-    }
-
-    for (let i in allOrders) {
-        if (allOrders[i].orderStatus === 'Send') {
-            sendOrders.push(allOrders[i])
-        }
-    }
     return (
         <Pattern pageWithOrder={
-            <div>
-                <div className={styles.titleTypeOrder}>
-                    <div className={styles.divTable}>
-                        <div className={styles.headRow}>
-                            <div className={styles.divCellNumber}>#</div>
-                            <div className={styles.divCellId}>ID</div>
-                            <div className={styles.divCellDate}>Date</div>
-                            <div className={styles.divCellAddress}>Address</div>
-                            <div className={styles.divCellClient}>Client</div>
-                            <div className={styles.divCellShipping}>Shipping</div>
-                            <div className={styles.divCellPayment}>Payment</div>
-                            <div className={styles.divCellPrice}>Price</div>
-                            <div className={styles.divCellStatus}>Status</div>
-                            <div className={styles.divCellOrder}>Order</div>
-                        </div>
-
-                        {sendOrders.map((x, index) => (
-                            <Fragment key={x._id}>
-                                <div className={styles.divRow}>
-                                    <div className={styles.divCellNumber}>{index + 1}</div>
-                                    <div className={styles.divCellId}>{x._id}</div>
-                                    <div className={styles.divCellDate}>9.10.2023</div>
-                                    <div className={styles.divCellAddress}>{x.city} - {x.address}</div>
-                                    <div className={styles.divCellClient}>{x.firstName} {x.lastName}</div>
-                                    <div className={styles.divCellShipping}>{x.shippingPlace} with {x.shippingCompany}</div>
-                                    <div className={styles.divCellPayment}>{x.payment}</div>
-                                    <div className={styles.divCellPrice}>{x.price}</div>
-                                    <div className={styles.divCellStatus} >{x.orderStatus}</div>
-                                    <div className={styles.divCellOrderButton}><button onClick={showOrder} value={x._id}>ORDER</button></div>
-                                </div>
-
-                                <div>
-                                    {orders === 'on' && idOrder === x._id
-                                        ?
-
-                                        <div className={styles.accordion}>
-                                            {x.orders.map((order) => (
-                                                <div className={styles.orders} key={order._id}>
-                                                    <div className={styles.innerOrders}>
-                                                        <div><img className={styles.imageOrders} src={`${order.imageUrl}`} onClick={() => goToCard(order._id)} /></div>
-                                                        <div className={styles.itemInfo}>
-                                                            <div><b>{order.title}</b></div>
-                                                            <div>Quantity:<b>{order.quantity}</b></div>
-                                                            <div>First Price:<b>{order.price}</b></div>
-                                                            <div>Discount:<b>{order.discount ? order.discount : 'no discount'}</b></div>
-                                                            <div>Price with Discount:<b>{checkForDiscount(order.price, order.discount)}</b></div>
-                                                            <div>Final Price for this product:<b>{checkForDiscount(order.price, order.discount) * order.quantity}</b></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        :
-                                        ''
-                                    }
-                                </div>
-                            </Fragment>
-                        ))}
+            <div className={styles.mainContainer}>
+                {showModal}
+                <div className={styles.tableContainer}>
+                    <div className={styles.tableRowHeading}>
+                        <div className={styles.rowItem}>#</div>
+                        <div className={styles.rowItem}>ID</div>
+                        <div className={styles.rowItem}>Date</div>
+                        <div className={styles.rowItem}>Address</div>
+                        <div className={styles.rowItem}>Client</div>
+                        <div className={styles.rowItem}>Shipping</div>
+                        <div className={styles.rowItem}>Payment</div>
+                        <div className={styles.rowItem}>Price</div>
+                        <div className={styles.rowItem}>Status</div>
+                        <div className={styles.rowItem}>Order</div>
+                        <div className={styles.rowItem}>Action</div>
                     </div>
+
+                    {
+                        sendOrders.length
+                            ?
+                            sendOrders.map((x, index) => (
+                                <div className={styles.tableRow} key={x._id}>
+                                    <div className={styles.rowItem}>{index + 1}</div>
+                                    <div className={styles.rowItem}>{x._id}</div>
+                                    <div className={styles.rowItem}>{showDateTime(x.createdAt)[0]}</div>
+                                    <div className={styles.rowItem}>{x.city} {x.address}</div>
+                                    <div className={styles.rowItem}>{x.firstName} {x.lastName}</div>
+                                    <div className={styles.rowItem}>{x.shippingPlace} with {x.shippingCompany}</div>
+                                    <div className={styles.rowItem}>{x.payment}</div>
+                                    <div className={styles.rowItem}>{x.price}</div>
+                                    <div className={styles.rowItem}>{x.orderStatus}</div>
+                                    <div className={styles.rowItemOrder}><button className={styles.buttonSeeItemOrder} onClick={() => showOrder(x._id, x.firstName, x.lastName, x.orders)} value={x._id}>SEE ITEMS</button></div>
+                                    <div className={styles.rowSubContainer}>
+                                        <div className={styles.rowItem}>Sub item 1</div>
+                                        <div className={styles.rowItem}>Sub item 2</div>
+                                    </div>
+                                </div>
+                            ))
+                            :
+                            <div>Not send orders</div>
+                    }
+
                 </div>
             </div>
         } />

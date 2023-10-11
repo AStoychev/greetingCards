@@ -49,9 +49,9 @@ export const Basket = () => {
                     {
                         purchase === 0
                             ?
-                            <img className={styles.bascketLogo} src="images/purchase.png" alt="purchase" />
+                            <img className={styles.bascketLogo} src="../../../images/purchase.png" alt="purchase" />
                             :
-                            <img className={styles.bascketLogo} src="images/purchaseHover.png" alt="purchase" />
+                            <img className={styles.bascketLogo} src="../../../images/purchaseHover.png" alt="purchase" />
                     }
                     {/* <img className={styles.bascketLogo} src="images/purchase.png" alt="purchase" /> */}
                 </div>

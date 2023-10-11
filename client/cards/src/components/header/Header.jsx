@@ -72,7 +72,7 @@ export const Header = () => {
                             {/* <h1>Greeting</h1>
                             <h2>Cards</h2> */}
                             <div>
-                                <img className={styles.logo} src="images/logo.png" alt="logo" />
+                                <img className={styles.logo} src="../../../images/logo.png" alt="logo" />
                             </div>
                         </div>
                     </Link>

@@ -32,11 +32,13 @@ export const ModalStatus = ({
     }, [id]);
 
     const closeModal = () => {
-        modalController()
+        modalController();
     };
 
-    const pressYes = () => {
-        modalPressYes()
+    const pressYes = (e) => {
+        onSubmit(e);
+        modalController();
+        window.location.reload();
     }
 
     return (
@@ -59,7 +61,7 @@ export const ModalStatus = ({
                             onChange={changeHandler}
                         />
                         <div>
-                            <input className="submit" type="submit" value="Yes" />
+                            <input className="submit" type="submit" value="Yes" onClick={pressYes}/>
                         </div>
                     </div>
                 </form>

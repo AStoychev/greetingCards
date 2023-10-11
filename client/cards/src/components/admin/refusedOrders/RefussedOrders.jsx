@@ -6,11 +6,11 @@ import { showDateTime } from '../functions/showDateTime';
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
 
-import styles from './AllOrders.module.css'
+import styles from './RefussedOrders.module.css'
 
-export const AdminAllOrders = () => {
+export const RefussedOrders = () => {
 
-    const [allOrders, setAllOrders] = useState([]);
+    const [refuseOrders, setRefisedOrders] = useState([]);
     const [orders, setOrders] = useState('off');
     const [idOrder, setIdOrder] = useState();
     const [showModal, setShowModal] = useState();
@@ -19,7 +19,13 @@ export const AdminAllOrders = () => {
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                setAllOrders(result)
+                for (let i in result) {
+                    if (result[i].orderStatus === 'Refused') {
+                        setRefisedOrders([...refuseOrders, result[i]])
+
+                    }
+                };
+                // setRefisedOrders(result)
             })
     }, [])
 
@@ -48,14 +54,14 @@ export const AdminAllOrders = () => {
                         <div className={styles.rowItem}>Payment</div>
                         <div className={styles.rowItem}>Price</div>
                         <div className={styles.rowItem}>Status</div>
-                        <div className={styles.rowItem}>Message</div>
                         <div className={styles.rowItem}>Order</div>
                         <div className={styles.rowItem}>Action</div>
                     </div>
 
                     {
-                        allOrders.length ?
-                            allOrders.map((x, index) => (
+                        refuseOrders.length
+                            ?
+                            refuseOrders.map((x, index) => (
                                 <div className={styles.tableRow} key={x._id}>
                                     <div className={styles.rowItem}>{index + 1}</div>
                                     <div className={styles.rowItem}>{x._id}</div>
@@ -66,15 +72,6 @@ export const AdminAllOrders = () => {
                                     <div className={styles.rowItem}>{x.payment}</div>
                                     <div className={styles.rowItem}>{x.price}</div>
                                     <div className={styles.rowItem}>{x.orderStatus}</div>
-                                    <div className={styles.rowItem} title={`${x.takeMessage ? x.takeMessage : ''}`}>
-                                        {
-                                            x.takeMessage
-                                                ?
-                                                <img className={styles.messageIcon} src='../../../images/message.png' alt='haveMessage' />
-                                                :
-                                                <img className={styles.messageIcon} src='../../../images/none.png' alt='noneMessage' />
-                                        }
-                                    </div>
                                     <div className={styles.rowItemOrder}><button className={styles.buttonSeeItemOrder} onClick={() => showOrder(x._id, x.firstName, x.lastName, x.orders)} value={x._id}>SEE ITEMS</button></div>
                                     <div className={styles.rowSubContainer}>
                                         <div className={styles.rowItem}>Sub item 1</div>
@@ -83,7 +80,7 @@ export const AdminAllOrders = () => {
                                 </div>
                             ))
                             :
-                            <div>Not orders</div>
+                            <div>Not refussed orders</div>
                     }
 
                 </div>

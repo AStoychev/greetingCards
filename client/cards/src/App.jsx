@@ -21,6 +21,9 @@ import { AdminMainPage } from './components/admin/adminMainPage/AdminMainPage';
 import { AdminAllOrders } from './components/admin/allOrders/AllOrders';
 import { UnprocessedOrders } from './components/admin/unprocessedOrders/UnprocessedOrders';
 import { SendOrders } from './components/admin/sendOrders/SendOrders';
+import { ReceivedOrders } from './components/admin/receivedOrders/ReceivedOrders';
+import { ReturnedOrders } from './components/admin/returnedOrders/ReturnedOrders';
+import { RefussedOrders } from './components/admin/refusedOrders/RefussedOrders';
 
 import { FirstStepOrder } from './components/makeOrder/firstStepOrder/FirstStepOrder';
 import { SecondStepOrder } from './components/makeOrder/secondStepOrder/SecondStepOrder';
@@ -55,6 +58,9 @@ function App() {
                             <Route path='/admin-main-page/all-order/:userId' element={<AdminAllOrders />} />
                             <Route path='/admin-main-page/unprocessed-order/:userId' element={<UnprocessedOrders />} />
                             <Route path='/admin-main-page/send-order/:userId' element={<SendOrders />} />
+                            <Route path='/admin-main-page/received-order/:userId' element={<ReceivedOrders />} />
+                            <Route path='/admin-main-page/returned-order/:userId' element={<ReturnedOrders />}/>
+                            <Route path='/admin-main-page/refused-order/:userId' element={<RefussedOrders />} />
                         </Routes>
                         <Footer />
                     </OrderProvider>
