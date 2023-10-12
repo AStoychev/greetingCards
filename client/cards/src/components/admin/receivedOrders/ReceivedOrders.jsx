@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
+import { takeTypeOrder } from '../functions/takeTypeOrder';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
@@ -19,12 +20,8 @@ export const ReceivedOrders = () => {
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                for (let i in result) {
-                    if (result[i].orderStatus === 'Received') {
-                        setReceivedOrders([...receivedOrders, result[i]])
-
-                    }
-                };
+                let type = takeTypeOrder(result, 'Received')
+                setReceivedOrders(type);
             })
     }, [])
 

@@ -1,0 +1,96 @@
+.loginContainer {
+    width: 99.6%;
+    height: 760px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid;
+    border-color: rgb(255, 0, 0);
+}
+
+.innerContiner {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #313338;
+
+    /* border: solid; */
+}
+
+.mainLoginField {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #F2F3F5;
+
+    border: solid;
+}
+
+.columOne {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border: solid;
+    border-color: rgb(255, 0, 4);
+}
+
+.columOne h1 {
+    text-align: center;
+}
+
+.innerColumOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    /* border: solid;
+    border-color: rgb(255, 0, 4); */
+}
+
+.fieldLogin {
+    /* border: solid;
+    border-color: rebeccapurple; */
+}
+
+.loginInformation {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input[type='email'],
+[type='password'] {
+    all: unset;
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #1E1F22;
+}
+
+.submitBtn {
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border: none;
+    transform: translate();
+}
+
+.submitBtn:hover {
+    background-color: #3d46ae;
+}
+
+.columTwo {
+    border: solid;
+    width: 30%;
+    border-color: rgb(29, 213, 16);
+}

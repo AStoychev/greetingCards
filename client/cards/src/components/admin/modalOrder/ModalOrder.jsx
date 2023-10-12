@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
+import { copyOnClickId } from '../functions/copyOnClickId';
 
 import styles from './ModalOrder.module.css'
 
@@ -32,15 +33,9 @@ export const ModalOrder = ({
     }
 
     const onClickId = (id) => {
-        setCopyId(id);
-        setCopyMessage(
-            <div style={{ color: 'green', fontSize: '13px', fontWeight: 'bold' }}>
-                <img style={{ width: "25px" }} src='../../../images/checkmark.png' alt='checkmark' />
-            </div>);
-        // setTimeout(() => {
-        //     setCopyMessage('Copy ID')
-        // }, 3000);
-        navigator.clipboard.writeText(id);
+        setCopyId(copyOnClickId(id)[0]);
+        setCopyMessage(copyOnClickId(id)[1])
+        // navigator.clipboard.writeText(id);
     }
 
     return (

@@ -4,12 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
+import { takeTypeOrder } from '../functions/takeTypeOrder';
+import { changeColorOfStatus } from '../functions/changeColorOfStatus';
+import { copyOnClickId } from '../functions/copyOnClickId';
 
 import { useForm } from '../../../hooks/useForm';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
 import { ModalStatus } from './modalChangeStatus/ModalStatus';
+import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
 
@@ -17,30 +21,18 @@ import styles from './UnprocessedOrders.module.css'
 
 export const UnprocessedOrders = () => {
     const [unprocesedOrders, setUnprocessedOrders] = useState([]);
-    const [orders, setOrders] = useState('off');
-    const [idOrder, setIdOrder] = useState();
+    const [copyId, setCopyId] = useState();
+    const [copyMessage, setCopyMessage] = useState();
     const [showModal, setShowModal] = useState('');
     const allOrdersService = orderServiceFactory();
-
-    const { values } = useForm();
-
-    const orderItems = [];
-    // const unprocessedOrders = [];
 
     const navigate = useNavigate();
 
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                for (let i in result) {
-                    if (result[i].orderStatus === 'Unprocessed') {
-                        orderItems.push(result[i]);
-                        setUnprocessedOrders(orderItems)
-                        // setUnprocessedOrders([...unprocesedOrders, result[i]])
-
-                    }
-                };
-                // setUnprocessedOrders(result)
+                let type = takeTypeOrder(result, 'Unprocessed')
+                setUnprocessedOrders(type);
             })
     }, [])
 
@@ -49,7 +41,6 @@ export const UnprocessedOrders = () => {
     };
 
     const showOrder = (id, firstName, lastName, order) => {
-        setIdOrder(id);
         let fullName = `${firstName} ${lastName}`
         setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
     };
@@ -57,12 +48,6 @@ export const UnprocessedOrders = () => {
     const changeStatusToRefuse = () => {
 
     };
-
-    // for (let i in unprocesedOrders) {
-    //     if (unprocesedOrders[i].orderStatus === 'Unprocessed') {
-    //         unprocessedOrders.push(unprocesedOrders[i])
-    //     }
-    // };
 
     const modalController = () => {
         setShowModal('');
@@ -75,6 +60,11 @@ export const UnprocessedOrders = () => {
     const changeStatusToSend = (e) => {
         setShowModal(<ModalStatus modalController={modalController} modalPressYes={modalPressYes} id={e.target.value} />)
     };
+
+    const onClickId = (id) => {
+        setCopyId(copyOnClickId(id)[0]);
+        setCopyMessage(copyOnClickId(id)[1])
+    }
 
     return (
         <Pattern pageWithOrder={
@@ -91,6 +81,7 @@ export const UnprocessedOrders = () => {
                         <div className={styles.rowItem}>Payment</div>
                         <div className={styles.rowItem}>Price</div>
                         <div className={styles.rowItem}>Status</div>
+                        <div className={styles.rowItem}>Message</div>
                         <div className={styles.rowItem}>Order</div>
                         <div className={styles.rowItem}>Action</div>
                     </div>
@@ -101,7 +92,7 @@ export const UnprocessedOrders = () => {
                             unprocesedOrders.map((x, index) => (
                                 <div className={styles.tableRow} key={x._id}>
                                     <div className={styles.rowItem}>{index + 1}</div>
-                                    <div className={styles.rowItem}>{x._id}</div>
+                                    <div className={styles.rowItem} onClick={() => onClickId(x._id)} title={`Click to copy ID ${x._id}`}>{copyId === x._id ? copyMessage : 'Copy Order ID'}</div>
                                     <div className={styles.rowItem}>{showDateTime(x.createdAt)[0]}</div>
                                     <div className={styles.rowItem}>{x.city} {x.address}</div>
                                     <div className={styles.rowItem}>{x.firstName} {x.lastName}</div>
@@ -109,6 +100,19 @@ export const UnprocessedOrders = () => {
                                     <div className={styles.rowItem}>{x.payment}</div>
                                     <div className={styles.rowItem}>{x.price}</div>
                                     <div className={styles.rowItem}>{x.orderStatus}</div>
+                                    <div className={styles.rowItem}>
+                                        {
+                                            x.takeMessage
+                                                ?
+                                                <div className={styles.tooltipMessage}>
+                                                    <TooltipMessageOrder text={x.takeMessage}>
+                                                        <img className={styles.messageIcon} src='../../../images/message.png' alt='haveMessage' />
+                                                    </TooltipMessageOrder>
+                                                </div>
+                                                :
+                                                <img className={styles.messageIcon} src='../../../images/none.png' alt='noneMessage' />
+                                        }
+                                    </div>
                                     <div className={styles.rowItemOrder}><button className={styles.buttonSeeItemOrder} onClick={() => showOrder(x._id, x.firstName, x.lastName, x.orders)} value={x._id}>SEE ITEMS</button></div>
                                     <div className={styles.rowSubContainer}>
                                         <div className={styles.rowItemButtons}><button className={styles.buttonProces} value={x._id} onClick={changeStatusToSend}>PROCESS</button></div>
@@ -119,85 +123,8 @@ export const UnprocessedOrders = () => {
                             :
                             <div>Not unprocessed orders</div>
                     }
-
                 </div>
             </div>
         } />
-
-
-
-        // <Pattern pageWithOrder={
-        //     <div>
-        //         {showModal}
-        //         <div className={styles.titleTypeOrder}>
-        //             <div className={styles.divTable}>
-        //                 <div className={styles.headRow}>
-        //                     <div className={styles.divCellNumber}>#</div>
-        //                     <div className={styles.divCellId}>ID</div>
-        //                     <div className={styles.divCellDate}>Date</div>
-        //                     <div className={styles.divCellAddress}>Address</div>
-        //                     <div className={styles.divCellClient}>Client</div>
-        //                     <div className={styles.divCellShipping}>Shipping</div>
-        //                     <div className={styles.divCellPayment}>Payment</div>
-        //                     <div className={styles.divCellPrice}>Price</div>
-        //                     <div className={styles.divCellStatus}>Status</div>
-        //                     <div className={styles.divCellOrder}>Order</div>
-        //                     <div className={styles.divCellAction}>Action</div>
-        //                 </div>
-
-        //                 {allOrders.map((x, index) => (
-        //                     <Fragment key={x._id}>
-        //                         <div className={styles.divRow}>
-        //                             <div className={styles.divCellNumber}>{index + 1}</div>
-        //                             <div className={styles.divCellId}>{x._id}</div>
-        //                             <div className={styles.divCellDate}>9.10.2023</div>
-        //                             <div className={styles.divCellAddress}>{x.city} - {x.address}</div>
-        //                             <div className={styles.divCellClient}>{x.firstName} {x.lastName}</div>
-        //                             <div className={styles.divCellShipping}>{x.shippingPlace} with {x.shippingCompany}</div>
-        //                             <div className={styles.divCellPayment}>{x.payment}</div>
-        //                             <div className={styles.divCellPrice}>{x.price}</div>
-        //                             <div className={styles.divCellStatus} >{x.orderStatus}</div>
-        //                             <div className={styles.divCellOrderButton}><button onClick={showOrder} value={x._id}>ORDER</button></div>
-        //                             <div className={styles.divCellActionButton}>
-        //                                 <div className={styles.buttonsAction}>
-        //                                     <button className={styles.buttonProces} value={x._id} onClick={changeStatusToSend}>PROCESS</button>
-        //                                     <button className={styles.buttonRefuse} value={x._id} onClick={changeStatusToRefuse}>REFUSE</button>
-        //                                 </div>
-        //                             </div>
-
-
-        //                         </div>
-
-        //                         <div>
-        //                             {orders === 'on' && idOrder === x._id
-        //                                 ?
-
-        //                                 <div className={styles.accordion}>
-        //                                     {x.orders.map((order) => (
-        //                                         <div className={styles.orders} key={order._id}>
-        //                                             <div className={styles.innerOrders}>
-        //                                                 <div><img className={styles.imageOrders} src={`${order.imageUrl}`} onClick={() => goToCard(order._id)} /></div>
-        //                                                 <div className={styles.itemInfo}>
-        //                                                     <div><b>{order.title}</b></div>
-        //                                                     <div>Quantity:<b>{order.quantity}</b></div>
-        //                                                     <div>First Price:<b>{order.price}</b></div>
-        //                                                     <div>Discount:<b>{order.discount ? order.discount : 'no discount'}</b></div>
-        //                                                     <div>Price with Discount:<b>{checkForDiscount(order.price, order.discount)}</b></div>
-        //                                                     <div>Final Price for this product:<b>{checkForDiscount(order.price, order.discount) * order.quantity}</b></div>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>
-        //                                     ))}
-        //                                 </div>
-        //                                 :
-        //                                 ''
-        //                             }
-        //                         </div>
-        //                     </Fragment>
-        //                 ))}
-        //             </div>
-        //         </div>
-        //     </div>
-        // } />
     );
 }

@@ -2,17 +2,20 @@ import { useState, useEffect } from 'react';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
+import { changeColorOfStatus } from '../functions/changeColorOfStatus';
+import { copyOnClickId } from '../functions/copyOnClickId';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
+import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
 
 import styles from './AllOrders.module.css'
 
 export const AdminAllOrders = () => {
 
     const [allOrders, setAllOrders] = useState([]);
-    const [orders, setOrders] = useState('off');
-    const [idOrder, setIdOrder] = useState();
+    const [copyId, setCopyId] = useState();
+    const [copyMessage, setCopyMessage] = useState();
     const [showModal, setShowModal] = useState();
     const allOrdersService = orderServiceFactory();
 
@@ -24,13 +27,17 @@ export const AdminAllOrders = () => {
     }, [])
 
     const showOrder = (id, firstName, lastName, order) => {
-        setIdOrder(id);
         let fullName = `${firstName} ${lastName}`
         setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
     };
 
     const modalController = () => {
         setShowModal('');
+    }
+
+    const onClickId = (id) => {
+        setCopyId(copyOnClickId(id)[0]);
+        setCopyMessage(copyOnClickId(id)[1])
     }
 
     return (
@@ -58,19 +65,23 @@ export const AdminAllOrders = () => {
                             allOrders.map((x, index) => (
                                 <div className={styles.tableRow} key={x._id}>
                                     <div className={styles.rowItem}>{index + 1}</div>
-                                    <div className={styles.rowItem}>{x._id}</div>
+                                    <div className={styles.rowItem} onClick={() => onClickId(x._id)} title={`Click to copy ID ${x._id}`}>{copyId === x._id ? copyMessage : 'Copy Order ID'}</div>
                                     <div className={styles.rowItem}>{showDateTime(x.createdAt)[0]}</div>
-                                    <div className={styles.rowItem}>{x.city} {x.address}</div>
-                                    <div className={styles.rowItem}>{x.firstName} {x.lastName}</div>
+                                    <div className={styles.rowItem}>{x.city} {x.postCode} <br></br> {x.address}</div>
+                                    <div className={styles.rowItem}>{x.firstName} {x.lastName} <br></br> +359 {x.phoneNumber}</div>
                                     <div className={styles.rowItem}>{x.shippingPlace} with {x.shippingCompany}</div>
                                     <div className={styles.rowItem}>{x.payment}</div>
                                     <div className={styles.rowItem}>{x.price}</div>
-                                    <div className={styles.rowItem}>{x.orderStatus}</div>
-                                    <div className={styles.rowItem} title={`${x.takeMessage ? x.takeMessage : ''}`}>
+                                    <div className={styles.rowItem} style={{ color: changeColorOfStatus(x.orderStatus), fontWeight: 'bold' }}>{x.orderStatus}</div>
+                                    <div className={styles.rowItem}>
                                         {
                                             x.takeMessage
                                                 ?
-                                                <img className={styles.messageIcon} src='../../../images/message.png' alt='haveMessage' />
+                                                <div className={styles.tooltipMessage}>
+                                                    <TooltipMessageOrder text={x.takeMessage}>
+                                                        <img className={styles.messageIcon} src='../../../images/message.png' alt='haveMessage' />
+                                                    </TooltipMessageOrder>
+                                                </div>
                                                 :
                                                 <img className={styles.messageIcon} src='../../../images/none.png' alt='noneMessage' />
                                         }

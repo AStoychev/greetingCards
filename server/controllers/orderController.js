@@ -2,6 +2,7 @@ const router = require('express').Router();
 const orderService = require('../services/orderService');
 
 const sendMail = require('../sendMail/sendMailAfterMakeOrder');
+const sendMailSendOrder = require('../sendMail/sendMailAfterSendOrder');
 
 router.get('/get-all-order', async (req, res) => {
     try {
@@ -64,6 +65,10 @@ router.put('/:orderId/change-status', async (req, res) => {
     try {
         // req.user._id is information from authMiddlewares and it's give our's information about user id
         const result = await orderService.update(req.params.orderId, req.user._id, order);
+
+        if (order.orderStatus === 'Send') {
+            await sendMailSendOrder.sendMailAfterSendOrder(order)
+        }
 
         // It is a good practice to return some metadata( this is data which is created from DB)
         res.json({ ok: 'true' });

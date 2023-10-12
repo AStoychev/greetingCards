@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
+import { takeTypeOrder } from '../functions/takeTypeOrder';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
@@ -10,7 +11,7 @@ import styles from './RefussedOrders.module.css'
 
 export const RefussedOrders = () => {
 
-    const [refuseOrders, setRefisedOrders] = useState([]);
+    const [refuseOrders, sestRefusedOrders] = useState([]);
     const [orders, setOrders] = useState('off');
     const [idOrder, setIdOrder] = useState();
     const [showModal, setShowModal] = useState();
@@ -19,13 +20,8 @@ export const RefussedOrders = () => {
     useEffect(() => {
         allOrdersService.getAll()
             .then(result => {
-                for (let i in result) {
-                    if (result[i].orderStatus === 'Refused') {
-                        setRefisedOrders([...refuseOrders, result[i]])
-
-                    }
-                };
-                // setRefisedOrders(result)
+                let type = takeTypeOrder(result, 'Refused')
+                sestRefusedOrders(type);
             })
     }, [])
 
