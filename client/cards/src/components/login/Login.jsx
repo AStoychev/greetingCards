@@ -42,8 +42,6 @@ export const Login = () => {
                                                 name={LoginFormKeys.Email}
                                                 value={values[LoginFormKeys.Email]}
                                                 onChange={changeHandler}
-                                            // onClick={onClickEmail}
-                                            // onBlur={onBlurEmail}
                                             />
 
                                             <label className={styles.htmlContent} htmlFor="pass"></label>
