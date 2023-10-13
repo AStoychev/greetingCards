@@ -17,9 +17,9 @@ router.get('/get-all-order', async (req, res) => {
 // Get one order for details
 router.get('/:orderId', async (req, res) => {
     try {
-    const order = req.params.orderId
-    const result = await orderService.getOne(order);
-    res.json(result);
+        const order = req.params.orderId
+        const result = await orderService.getOne(order);
+        res.json(result);
     } catch (error) {
         console.log(error)
     }
@@ -42,7 +42,7 @@ router.post('/make-order', async (req, res) => {
         const result = await orderService.makeOrder(order);
 
         if (res.statusCode === 200) {
-            await sendMail.sendMailAfterMakeOrder(order)
+            await sendMail.sendMailAfterMakeOrder(order);
         }
 
         res.json({ ok: 'true' });

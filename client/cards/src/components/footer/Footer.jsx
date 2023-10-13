@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <div className={styles.footerContainer}>
             <div className={styles.divText}>
-                FlyShop is made by <Link to="https://github.com/AStoychev" target="_blank" rel="noopener noreferrer" className={styles.linkGitHub}>
+                GreetingCards is made by <Link to="https://github.com/AStoychev" target="_blank" rel="noopener noreferrer" className={styles.linkGitHub}>
                     A.Stoychev
                 </Link>
             </div>

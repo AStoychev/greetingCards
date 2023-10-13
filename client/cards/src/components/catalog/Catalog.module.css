@@ -1,11 +1,11 @@
 .productContainer {
     overflow: auto;
     z-index: 1;
-    border: solid;
+    /* border: solid; */
 
     /* margin-top: calc(16px + 1em);
     margin-bottom: calc(16px + 3em); */
-    width: 99.6%;
+    width: 100%;
     background-color: rgb(255, 255, 255);
 }
 

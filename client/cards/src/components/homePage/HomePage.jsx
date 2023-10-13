@@ -17,7 +17,7 @@ export const HomePage = () => {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             {/* <h1>Hello in Greeting Cards</h1> */}
             <div >
                 {/* <Link className='navigationLink' to="/">Home</Link>

@@ -1,4 +1,4 @@
-.loginContainer {
+.container {
     width: 100%;
     height: 760px;
     background-color: #d86f6f;
@@ -6,63 +6,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: solid;
-    border-color: rgb(255, 0, 0); */
 }
 
-.innerContiner {
+.innerContainer {
     display: flex;
-    width: 50%;
-    height: 50%;
+    width: 36%;
+    height: auto;
+    padding-bottom: 30px;
     border-radius: 10px;
     background-color: #313338;
     box-shadow: 1px 1px 10px #313338;
-
-    /* border: solid; */
 }
 
-.mainLoginField {
+.mainField {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     color: #F2F3F5;
 
-    /* border: solid; */
+    /* border: solid rebeccapurple; */
 }
 
-.columnOne {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-
-    /* border: solid;
-    border-color: rgb(255, 0, 4); */
-}
-
-.columnOne h1 {
+.mainField h1 {
     text-align: center;
     font-weight: 400;
     font-family: Tahoma, sans-serif;
 }
 
-.innerColumOne {
+.innerColumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     width: 100%;
-
-    /* border: solid;
-    border-color: rgb(255, 0, 4); */
 }
 
-.fieldLogin {
-    /* border: solid;
-    border-color: rebeccapurple; */
-}
+.fieldRegister {}
 
-.loginInformation {
-    width: 78%;
+.registerInformation {
+    width: 50%;
     text-align: left;
     margin: 0 auto;
     font-size: 12px;
@@ -70,33 +52,26 @@
     color: #d8d9dc;
 }
 
-.fieldLogin input[type='email'],
-[type='password'] {
+.fieldRegister input[type='email'],
+input[type='username'],
+input[id='password'],
+input[id='repeatPassword'] {
     all: unset;
-    width: 80%;
-    height: 30px;
+    width: 50%;
+    height: 36px;
     margin: 10px;
     border-radius: 5px;
     background-color: #1E1F22;
+
+    border: solid rgba(102, 51, 153, 0);
 }
 
-.forgotPasswordFiled {
-    width: 78%;
-    text-align: left;
-    margin: 0 auto;
-    font-size: 13px;
-    font-weight: 600;
-    color: #43baf6;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.forgotPasswordFiled:hover {
-    color: #357493;
+.fieldRegister :focus {
+    border: solid;
 }
 
 .submitBtn {
-    width: 80%;
+    width: 50%;
     height: 30px;
     margin-top: 20px;
     background-color: #5865F2;
@@ -111,44 +86,60 @@
     background-color: #3d46ae;
 }
 
-.goToRegister {
-    width: 78%;
-    text-align: left;
-    margin: 0 auto;
+.disabledSubmitBtn {
+    width: 50%;
+    height: 30px;
     margin-top: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #90969F;
+    background-color: #7b7d91;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor:no-drop;
+    transition: 0.3s;
 }
 
-.navigationLink {
+.navigationLinkLogin {
+    padding-top: 20px;
     margin-left: 5px;
     font-size: 13px;
     font-weight: 600;
     color: #43baf6;
     text-decoration: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.navigationLink:hover {
+.navigationLinkLogin:hover {
     color: #357493;
 }
 
-.columnTwo {
+.privaciPolicy {
     display: flex;
-    flex-direction: columnn;
-    width: 40%;
-    
-    /* border: solid;
-    border-color: rgb(29, 213, 16); */
-}
-
-.innerLogo {
+    align-items: center;
     margin: auto;
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 60px;
 }
 
-.innerLogo img {
-    width: 100%;
+.checkbox {
+    width: 26px;
+    height: 26px;
+    margin: auto;
+    background-color: rgba(174, 188, 185, 0.655);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tick {
+    opacity: 0.8;
+    width: 26px;
+    height: 26px;
+}
+
+.textPolicy {
+    width: 90%;
+    color: #90969F;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 600;
 }

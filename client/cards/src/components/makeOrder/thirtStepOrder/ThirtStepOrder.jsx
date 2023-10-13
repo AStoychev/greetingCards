@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,7 @@ import { OrderContext } from "../../../contexts/OrderContext";
 
 import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
 import { ButtonBack } from "../buttonBack/ButtonBack";
+import { MakeOrderSpinner } from "../../../utils/Spinners/makeOrderSpinner/MakeOrderSpinner";
 
 import { totalPrice } from "../../../functions/totalPrice";
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
@@ -18,7 +19,7 @@ import styles from './ThirtStepOrder.module.css'
 
 export const ThirtStepOrder = () => {
 
-    const { onCreateOrderSubmit } = useContext(OrderContext);
+    const { order, onCreateOrderSubmit } = useContext(OrderContext);
     const { onSubmit } = useForm({
         firstName: unPackingOrder()[0],
         lastName: unPackingOrder()[1],
@@ -34,8 +35,11 @@ export const ThirtStepOrder = () => {
         payment: unPackingOrder()[11],
         privacyPolicy: unPackingOrder()[12],
         price: totalPrice(),
-        createdAt:unPackingOrder()[13],
+        createdAt: unPackingOrder()[13],
     }, onCreateOrderSubmit)
+
+    const [spinner, setSpinner] = useState('');
+
 
     const navigate = useNavigate();
 
@@ -43,8 +47,14 @@ export const ThirtStepOrder = () => {
         navigate('/make-second-step-order')
     }
 
+    const onClickSubmit = (e) => {
+        setSpinner(<MakeOrderSpinner />);
+        onSubmit(e);
+    }
+
     return (
         <div className={styles.container}>
+            {spinner}
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Final Steps</div>
                 <GraphicksOrder />
@@ -172,7 +182,7 @@ export const ThirtStepOrder = () => {
                             </div>
                             <div className={styles.next}>
                                 <div className={styles.nextStep}>
-                                    <button onClick={onSubmit} className={styles.nextButton}>FINISH</button>
+                                    <button onClick={onClickSubmit} className={styles.nextButton}>FINISH</button>
                                 </div>
                             </div>
                         </div>

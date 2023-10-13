@@ -28,7 +28,9 @@ export const orderServiceFactory = (token) => {
         return result;
     };
 
-    const changeStatusOrder = (orderId, data) => (request.put(`${baseUrl}/${orderId}/change-status`, data));
+    const changeStatusOrder = async (orderId, data) => {
+        const result = await request.put(`${baseUrl}/${orderId}/change-status`, data);
+    };
 
     // const edit = (orderId, data) => request.put(`${baseUrl}/${orderId}/edit`, data);
 
