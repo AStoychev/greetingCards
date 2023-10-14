@@ -9,6 +9,7 @@ import { ButtonNext } from "../buttonNext/ButtonNext";
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 import { deletePurchase } from "../../../functions/localStorageFunction/deletePurchase";
 
+import background from '../../img/background.png'
 import styles from './FirstStepOrder.module.css'
 
 export const FirstStepOrder = () => {
@@ -21,7 +22,7 @@ export const FirstStepOrder = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{backgroundImage: `url(${background})`}}>
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Your Order</div>
                 <GraphicksOrder />

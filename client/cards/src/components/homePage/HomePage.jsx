@@ -25,6 +25,25 @@ export const HomePage = () => {
                 <Link className='navigationLink' to="/register">Register</Link>
                 <Link className='navigationLink' to="/logout">Logout</Link> */}
             </div >
+
+            <div className={styles.articleBanner}>
+                <section>
+                    <div className={styles.bannerContainer}>
+                        <div className={styles.bannerContent}>
+                            <h1>Imagine a place...</h1>
+                            <p>...where you can wish a loved one everything you feel for them</p>
+                            <div className={styles}>
+                                <button className={styles.shopNowButton}>SHOP NOW</button>
+                                <button className={styles.aboutButton}>ABOUT</button>
+                            </div>
+                        </div>
+                        <div className={styles.bannerImage}>
+                            <img className={styles.animatedBox} src='../../../images/animatetBox.gif' alt='animatedBox' />
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <div className={styles.firstAddBanner}>
                 <div className={styles.firstAddBannerImageDiv}>
                     <img className={styles.firstAddBannerImage} src='../images/halloween1.jpg' alt='fisrtAddBaner' />

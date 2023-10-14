@@ -8,6 +8,7 @@ import { Basket } from "../header/basket/Basket";
 import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
 import { SaveLastFiveVisitedCards } from "../saveInLocalStorage/SaveLastFiveVisitedCards";
+
 import styles from './Catalog.module.css'
 
 export const Catalog = () => {
@@ -22,7 +23,7 @@ export const Catalog = () => {
     }, [])
 
     return (
-        <div className={styles.productContainer}>
+        <div className={styles.productContainer} >
             {/* <Basket /> */}
             <div id="app" className="container">
 

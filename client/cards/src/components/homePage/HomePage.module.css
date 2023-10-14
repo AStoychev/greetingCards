@@ -2,6 +2,77 @@
     width: 100%;
 }
 
+.articleBanner section {
+    background-color: #071e2c;
+    padding: 100px 0;
+}
+
+.articleBanner section .bannerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.articleBanner section .bannerContainer .bannerContent h1 {
+    font-size: 67px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.articleBanner section .bannerContainer .bannerContent p {
+    font-size: 29px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.articleBanner section .bannerContainer .bannerContent button {
+    font-size: 21px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.articleBanner section .bannerContainer .bannerContent button.shopNowButton {
+    background-color: #00bec9;
+    border: 2px solid #00bec9;
+    margin-right: 20px;
+}  
+
+.articleBanner section .bannerContainer .bannerContent button.shopNowButton:hover {
+    color: #00bec9;
+    /* border: 2px solid #00bec9; */
+    background-color: transparent;
+}
+
+.articleBanner section .bannerContainer .bannerContent button.aboutButton {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    
+}
+
+.articleBanner section .bannerContainer .bannerContent button.aboutButton:hover {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    color: #071e2c;
+}
+
+.articleBanner section .bannerContainer .bannerImage .animatedBox {
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+
 .firstAddBanner {
     display: flex;
     width: 100%;
@@ -55,6 +126,7 @@
     border-radius: 30px;
     font-size: 31px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.3s;
 }
 
 .buttonInnerDiv>button:hover {

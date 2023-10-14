@@ -15,6 +15,7 @@ import { showMakeOrderData } from "../../../functions/localStorageFunction/showM
 import { checkForDiscount } from "../../../functions/checkForDiscount";
 import { unPackingOrder } from "../../../functions/localStorageFunction/unPackingOrder";
 
+import background from '../../img/background.png'
 import styles from './ThirtStepOrder.module.css'
 
 export const ThirtStepOrder = () => {
@@ -53,7 +54,7 @@ export const ThirtStepOrder = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{backgroundImage: `url(${background})`}}>
             {spinner}
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Final Steps</div>

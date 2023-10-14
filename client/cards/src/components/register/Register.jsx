@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
 
+import background from '../img/background.png'
 import styles from './Register.module.css'
 
 export const Register = () => {
@@ -58,7 +59,7 @@ export const Register = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
                 <div className={styles.mainField}>
                     <h1>Create an account</h1>
@@ -116,48 +117,49 @@ export const Register = () => {
                                     // onClick={onClickConfirmPassword}
                                     // onBlur={onBlurRepeatPassword}
                                     />
-                                </div>
 
 
 
 
-                                <div className={styles.privaciPolicy}>
 
-                                    <div className={styles.checkbox} onClick={onCheckPrivacyPolicy}>
-                                        {
-                                            checkbox
-                                                ?
-                                                <img className={styles.tick} src="images/payment-icons/check.png" alt="checkmark" />
-                                                :
-                                                ''
+                                    <div className={styles.privaciPolicy}>
+
+                                        <div className={styles.checkbox} onClick={onCheckPrivacyPolicy}>
+                                            {
+                                                checkbox
+                                                    ?
+                                                    <img className={styles.tick} src="images/payment-icons/check.png" alt="checkmark" />
+                                                    :
+                                                    ''
+                                            }
+                                        </div>
+
+                                        <div className={styles.textPolicy}>
+                                            I have read and agree to Greeting Cards Ters of Service and Privacy Policy.
+                                            <span>*</span>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div className="submit">
+                                        {validateRegisterForm()
+                                            ?
+                                            <input
+                                                type="submit"
+                                                className={styles.submitBtn}
+                                                value="Continue"
+                                            />
+                                            :
+                                            <input
+                                                type="submit"
+                                                className={styles.disabledSubmitBtn}
+                                                title='You must fill all fields and agree to our Terms of Service to continue'
+                                                value="Continue"
+                                            />
                                         }
                                     </div>
-
-                                    <div className={styles.textPolicy}>
-                                        I have read and agree to Greeting Cards Ters of Service and Privacy Policy.
-                                        <span>*</span>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div className="submit">
-                                    {validateRegisterForm()
-                                        ?
-                                        <input
-                                            type="submit"
-                                            className={styles.submitBtn}
-                                            value="Continue"
-                                        />
-                                        :
-                                        <input
-                                            type="submit"
-                                            className={styles.disabledSubmitBtn}
-                                            title='You must fill all fields and agree to our Terms of Service to continue'
-                                            value="Continue"
-                                        />
-                                    }
                                 </div>
 
                             </form>

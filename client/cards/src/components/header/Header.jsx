@@ -45,6 +45,19 @@ export const Header = () => {
             <div className={styles.flexContainer}>
                 {/* <div className={styles.flexContainer} onLoad={lookForCookies}> */}
                 {/* {popup} */}
+
+                <div className={styles.navigation}>
+                    <Link className={styles.navigationLinkLogo} to="/">
+                        <div className={styles.container}>
+                            {/* <h1>Greeting</h1>
+                            <h2>Cards</h2> */}
+                            <div>
+                                <img className={styles.logo} src="../../../images/login-menu/invite.png" alt="logo" />
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
@@ -65,30 +78,10 @@ export const Header = () => {
                             </>
                         }
                     </div>
-                </div>
-                <div className={styles.navigation}>
-                    <Link className={styles.navigationLinkLogo} to="/">
-                        <div className={styles.container}>
-                            {/* <h1>Greeting</h1>
-                            <h2>Cards</h2> */}
-                            <div>
-                                <img className={styles.logo} src="../../../images/logo.png" alt="logo" />
-                            </div>
-                        </div>
-                    </Link>
+
                 </div>
                 <div className={styles.navigation}>
                     <Basket />
-                    {/* <div className={styles.mainRight}>
-                        <div className={styles.basketMain}>
-                            <div className={styles.innerBascketOne}>
-                                <img className={styles.bascketLogo} src="images/purchase.png" alt="purchase" />
-                            </div>
-                            <div className={styles.innerBascketTwo}>
-                                {price}
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div >
         </>
