@@ -6,6 +6,7 @@ import { useForm } from "../../../hooks/useForm";
 import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
 import { ButtonBack } from "../buttonBack/ButtonBack";
 import { Line } from "../line/Line";
+import { TooltipMessageOrder } from "../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder";
 
 import {
     validateFirstName, validateLastName, validateEmail,
@@ -108,7 +109,7 @@ export const SecondStepOrder = () => {
     // console.log(validateAllOrder(values, checkbox))
 
     return (
-        <div className={styles.container} style={{backgroundImage: `url(${background})`}}>
+        <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Order Information</div>
 
@@ -438,7 +439,11 @@ export const SecondStepOrder = () => {
                                     {validateAllOrder(values, checkbox) ?
                                         <button onClick={savePersonalInformation} className={styles.nextButton}>NEXT</button>
                                         :
-                                        <button className={styles.nextButtonDisabled} title="Please fill in the required fields!">NEXT</button>
+                                        <div className={styles.tooltiMessage}>
+                                            <TooltipMessageOrder text={'Please fill all required fields!'}>
+                                                <button className={styles.nextButtonDisabled}>NEXT</button>
+                                            </TooltipMessageOrder>
+                                        </div>
                                     }
                                 </div>
                             </div>

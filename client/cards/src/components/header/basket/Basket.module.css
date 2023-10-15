@@ -21,7 +21,7 @@
 
 .innerBascketOne {
     flex: 50%;
-    /* cursor: pointer; */
+    cursor: pointer;
 
     /* border: solid;
     border-color: white; */

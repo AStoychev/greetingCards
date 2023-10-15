@@ -27,24 +27,42 @@ export const HomePage = () => {
             </div >
 
             <div className={styles.articleBanner}>
-                <section>
-                    <div className={styles.bannerContainer}>
+                <section className={styles.firstSection}>
+                    <div className={styles.bannerContainerOne}>
                         <div className={styles.bannerContent}>
                             <h1>Imagine a place...</h1>
                             <p>...where you can wish a loved one everything you feel for them</p>
                             <div className={styles}>
-                                <button className={styles.shopNowButton}>SHOP NOW</button>
+                                {/* <button className={styles.shopNowButton}>SHOP NOW</button> */}
                                 <button className={styles.aboutButton}>ABOUT</button>
                             </div>
                         </div>
                         <div className={styles.bannerImage}>
-                            <img className={styles.animatedBox} src='../../../images/animatetBox.gif' alt='animatedBox' />
+                            <img className={styles.imageOne} src='../../../images/home-page/image1.png' alt='greetingCartOne' />
                         </div>
                     </div>
                 </section>
             </div>
 
-            <div className={styles.firstAddBanner}>
+            <div className={styles.articleBanner}>
+                <section className={styles.secondSection}>
+                    <div className={styles.bannerContainer}>
+                        <div className={styles.bannerContent}>
+                            <h1>Imagine a box...</h1>
+                            <p>...full of beautiful wishes</p>
+                            <div className={styles}>
+                                <button className={styles.shopNowButton} onClick={goToShop}>SHOP NOW</button>
+                                <button className={styles.aboutButton}>ABOUT</button>
+                            </div>
+                        </div>
+                        <div className={styles.bannerImage}>
+                            <img className={styles.animatedBox} src='../../../images/home-page/animatetBox.gif' alt='animatedBox' />
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            {/* <div className={styles.firstAddBanner}>
                 <div className={styles.firstAddBannerImageDiv}>
                     <img className={styles.firstAddBannerImage} src='../images/halloween1.jpg' alt='fisrtAddBaner' />
                     <div className={styles.imageInnerDiv}>
@@ -59,7 +77,7 @@ export const HomePage = () => {
                         <button onClick={goToShop}>SHOP NOW</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <Partners />
 

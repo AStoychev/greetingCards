@@ -14,21 +14,23 @@ export const Basket = () => {
     const onPurchseModal = (data) => {
         if (data === 'Close') {
             setPurchaseModal([])
+            setPurchase(0)
         }
     };
 
     const showOrder = () => {
-        setPurchaseModal(<BasketModal onPurchseModal={onPurchseModal} />)
+        // setPurchaseModal(<BasketModal onPurchseModal={onPurchseModal} />)
         setPurchase(1)
     };
 
     const closeOrder = () => {
-        setPurchaseModal([]);
+        // setPurchaseModal([]);
         setPurchase(0)
     };
 
     const onBascketClick = () => {
         setPurchaseModal(<BasketModal onPurchseModal={onPurchseModal} />)
+        setPurchase(1)
     };
 
 
@@ -44,6 +46,7 @@ export const Basket = () => {
     return (
         <div className={styles.mainRight} onClick={onClickOutSide}>
             <div className={styles.basketMain} onMouseEnter={showOrder} onMouseLeave={closeOrder} onClick={onBascketClick}>
+            {/* <div className={styles.basketMain} onMouseEnter={showOrder} onMouseLeave={closeOrder} onClick={onBascketClick}> */}
                 {purchaseModal}
                 <div className={styles.innerBascketOne}>
                     {

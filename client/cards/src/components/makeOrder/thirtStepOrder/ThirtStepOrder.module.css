@@ -113,8 +113,6 @@
 
 .typeSeparator {
     margin-bottom: 30px;
-
-    /* border: solid; */
 }
 
 .mainAllPurchase {
@@ -122,9 +120,6 @@
     height: 30px;
     display: flex;
     background-color: rgb(216, 215, 218);
-    /* border: solid;
-    border-color: rgb(136, 136, 136); */
-    /* border-radius: 10px; */
     margin: auto;
     margin-top: 5px;
     color: white;
@@ -247,6 +242,7 @@
     border: none;
     border-radius: 20px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .nextButton:hover {
