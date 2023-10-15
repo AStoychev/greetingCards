@@ -21,13 +21,11 @@ exports.addCard = async (ownerId, cardData) => {
 exports.getAll = async () => {
     const existingCard = await Card.find({});
     return existingCard
-    // await Card.find({})
 };
 
 exports.getOne = async (cardId) => {
     const existingCard = await Card.findById(cardId);
     return existingCard
-    // await Card.find({})
 };
 
 exports.update = async (cardId, updateId, data) => {
@@ -37,5 +35,4 @@ exports.update = async (cardId, updateId, data) => {
 exports.delete = async (cardId) => {
     const existingCard = await Card.findByIdAndDelete(cardId);
     return existingCard
-    // await Card.find({})
 };

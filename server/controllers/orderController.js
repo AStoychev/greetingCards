@@ -56,7 +56,6 @@ router.post('/make-order', async (req, res) => {
 router.get('/:orderId/change-status', async (req, res) => {
     const order = req.params.orderId
     const result = await orderService.getOne(order);
-
     res.json(result);
 });
 
@@ -72,7 +71,6 @@ router.put('/:orderId/change-status', async (req, res) => {
 
         // It is a good practice to return some metadata( this is data which is created from DB)
         res.json({ ok: 'true' });
-        // res.json({ _id: result._id });
     } catch (error) {
         console.log(error);
     }

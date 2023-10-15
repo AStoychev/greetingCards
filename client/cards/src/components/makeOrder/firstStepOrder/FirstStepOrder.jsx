@@ -7,7 +7,6 @@ import { GraphicksOrder } from "../../../utils/GraphicksOrder/GraphicksOrder";
 import { ButtonNext } from "../buttonNext/ButtonNext";
 
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
-import { deletePurchase } from "../../../functions/localStorageFunction/deletePurchase";
 
 import background from '../../img/background.png'
 import styles from './FirstStepOrder.module.css'
@@ -40,12 +39,6 @@ export const FirstStepOrder = () => {
             </div>
 
             <ButtonNext nextStep={nextStep} page={'NEXT'}/>
-
-            {/* <div className={styles.bottomButtons}>
-                <div className={styles.nextStep}>
-                    <button onClick={nextStep} className={styles.nextButton}>Next</button>
-                </div>
-            </div> */}
 
         </div>
     );

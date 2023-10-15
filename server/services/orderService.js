@@ -7,7 +7,6 @@ exports.makeOrder = async (orderData) => {
 exports.getOne = async (orderId) => {
     const existingOrder = await Order.findById(orderId);
     return existingOrder
-    // await Card.find({})
 };
 
 exports.getAll = async () => {
