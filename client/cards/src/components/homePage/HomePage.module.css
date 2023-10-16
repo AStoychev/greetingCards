@@ -43,16 +43,16 @@
     transition: 0.3s;
 }
 
-/* .articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton {
+.articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton {
     background-color: #00bec9;
     border: 2px solid #00bec9;
     margin-right: 20px;
-}  
+}
 
 .articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton:hover {
     color: #00bec9;
     background-color: transparent;
-} */
+}
 
 .articleBanner .firstSection .bannerContainerOne .bannerContent button.aboutButton {
     background-color: #071e2c;
@@ -141,10 +141,36 @@
 
 .articleBanner .secondSection .bannerContainer .bannerImage .animatedBox {
     width: 400px;
-    height: 400px;
+    height: 500px;
     /* width: 500px;
     height: 400px; */
     border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent h1,
+    .articleBanner .secondSection .bannerContainer .bannerContent h1 {
+        font-size: 20px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent p,
+    .articleBanner .secondSection .bannerContainer .bannerContent p {
+        font-size: 12px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent button,
+    .articleBanner .secondSection .bannerContainer .bannerContent button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerImage .imageOne,
+    .articleBanner .secondSection .bannerContainer .bannerImage .animatedBox {
+        width: 200px;
+        height: 300px;
+    }
+
 }
 
 
