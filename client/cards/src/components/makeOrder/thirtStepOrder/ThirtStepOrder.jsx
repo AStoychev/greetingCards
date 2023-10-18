@@ -67,8 +67,6 @@ export const ThirtStepOrder = () => {
                             <div className={styles.topFieldTitle}>COMPLETE YOUR INFORMATION</div>
                         </div>
 
-                        {/* <div className={styles.titlePersonalInformation}>PERSONAL INFORMATION</div> */}
-
                         {showMakeOrderData().map((x) => (
                             <div className={styles.mainPersonalData} key={x.firstName}>
 
