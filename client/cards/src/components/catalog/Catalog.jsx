@@ -1,10 +1,7 @@
 import { useState, useEffect, useContext } from "react";
-import { CardContext } from "../../contexts/CardContext";
 
-import { useCardContext } from "../../contexts/CardContext";
 import { cardServiceFactory } from "../../services/cardService";
 
-import { Basket } from "../header/basket/Basket";
 import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
 import { SaveLastFiveVisitedCards } from "../saveInLocalStorage/SaveLastFiveVisitedCards";
