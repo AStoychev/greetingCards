@@ -1,12 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../../contexts/AuthContext';
-
 import { Pattern } from '../pattern/Pattern';
-import { orderServiceFactory } from "../../../services/orderService";
-
-import { AdminAllOrders } from '../allOrders/AllOrders';
 
 import styles from './AdminMainPage.module.css'
 
