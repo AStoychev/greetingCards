@@ -27,7 +27,6 @@ export const CardSaveFiveVisited = ({
 
     return (
             <article className={styles.article} onClick={onArticleClick}>
-                {/* {message} */}
                 <div onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
                     <div className={styles.image}>
                         <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
