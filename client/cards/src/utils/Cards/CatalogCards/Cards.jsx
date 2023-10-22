@@ -25,10 +25,6 @@ export const Cards = ({
             localStorage.removeItem(`orders ${id}`);
             localStorage.setItem(`orders ${id}`, JSON.stringify(card));
         }
-
-        // localStorage.setItem(`orders ${card._id}`, JSON.stringify(card));
-        // localStorage.setItem(`price ${card._id}`, JSON.stringify(card.price));
-        // addToOrder();
     }
 
     const onArticleClick = () => {
