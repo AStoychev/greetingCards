@@ -74,7 +74,6 @@
 
 /* First */
 
-
 .articleBanner .secondSection {
     background-color: #071e2c;
     padding: 100px 0;
@@ -84,7 +83,7 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
 }
 
 .articleBanner .secondSection .bannerContainer .bannerContent h1 {
@@ -170,8 +169,13 @@
         width: 200px;
         height: 300px;
     }
-
 }
+
+
+
+
+
+
 
 
 /* .firstAddBanner {

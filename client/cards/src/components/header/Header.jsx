@@ -51,8 +51,9 @@ export const Header = () => {
                         <div className={styles.container}>
                             {/* <h1>Greeting</h1>
                             <h2>Cards</h2> */}
-                            <div>
+                            <div className={styles.logoWrapper}>
                                 <img className={styles.logo} src="../../../images/login-menu/invite.png" alt="logo" />
+                                <p className={styles.textLogo}>NikoletaArt</p>
                             </div>
                         </div>
                     </Link>

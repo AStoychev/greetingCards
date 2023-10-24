@@ -43,10 +43,15 @@ export const HomePage = () => {
                     </div>
                 </section>
             </div>
-
+            
             <div className={styles.articleBanner}>
                 <section className={styles.secondSection}>
                     <div className={styles.bannerContainer}>
+
+                        <div className={styles.bannerImage}>
+                            <img className={styles.animatedBox} src='../../../images/home-page/animatetBox.gif' alt='animatedBox' />
+                        </div>
+
                         <div className={styles.bannerContent}>
                             <h1>Imagine a box...</h1>
                             <p>...full of beautiful wishes</p>
@@ -55,9 +60,7 @@ export const HomePage = () => {
                                 <button className={styles.aboutButton}>ABOUT</button>
                             </div>
                         </div>
-                        <div className={styles.bannerImage}>
-                            <img className={styles.animatedBox} src='../../../images/home-page/animatetBox.gif' alt='animatedBox' />
-                        </div>
+
                     </div>
                 </section>
             </div>
