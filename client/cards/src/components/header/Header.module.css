@@ -1,36 +1,33 @@
-.flexContainer {
+.container {
     display: flex;
-    width: 100;
+    width: 100%;
     height: 72px;
     background-color: rgb(11, 1, 38);
 }
 
-.flexContainer .navigation {
+.container .logoContainer {
     flex: 1;
 
     /* border: solid;
     border-color: red; */
 }
 
-.navigation:first-child {
+.container .logoContainer {
     display: flex;
     /* justify-content: center; */
     color: white;
     box-sizing: border-box;
 }
 
-.flexContainer .navigation .navigationLinkLogo .container {
+.container .logoContainer .navigationLinkLogo .logoContainer {
     box-sizing: border-box;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-left: 60px;
+    padding-left: 30px;
     padding-top: 6px;
-}
 
-.navigationChild {
-    padding-top: 20px;
-    font-family: 'Playpen Sans', cursive;
+    /* border: solid white; */
 }
 
 .navigation:nth-last-child(2) {
@@ -41,36 +38,76 @@
 }
 
 
-.container>h1 {
+.logoContainer>h1 {
     font-weight: bold;
 }
 
-.container>h2 {
+.logoContainer>h2 {
     color: rgb(108, 197, 210);
     font-weight: bold;
 }
 
-.flexContainer .navigation .navigationLinkLogo .container .logoWrapper {
+.container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 
+    position: relative;
+    overflow: hidden;
+    
     /* border: solid white; */
 }
 
-.flexContainer .navigation .navigationLinkLogo .container .logoWrapper .logo {
-    width: 50px;
+.container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper::after {
+    content: '';
+    position: absolute;
+    background: #0e1538;
+    inset: 1px;
+    border-radius: 10px;
 }
 
-.flexContainer .navigation .navigationLinkLogo .container .logoWrapper .textLogo {
+.container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper::before {
+    content: '';
+    position: absolute;
+    width: 172px;
+    height: 50px;
+    /* margin-bottom: 6px;
+    margin-right: 20px; */
+    background: linear-gradient(rgb(108, 197, 210), #a25dae);
+    /* background: linear-gradient(#00ccff, #d500f9); */
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .logo {
+    width: 50px;
+    z-index: 2;
+}
+
+.container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .textLogo {
     color: #88BED8;
     margin-left: 10px;
     font-family: 'Playpen Sans', cursive;
+    z-index: 2;
 }
 
-.navigationLink {
+.container .navigation .navigationChild {
+    padding-top: 20px;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.container .navigation .navigationLink {
     padding-top: 20px;
     color: white;
     padding-left: 10px;
@@ -80,19 +117,98 @@
     transition: 0.3s;
 }
 
-.navigationLink:hover {
+.container .navigation .navigationLink:hover {
     color: #88BED8;
     /* color: rgb(184, 205, 115); */
 }
 
-@media screen and (max-width: 900px) {
-    .flexContainer {
-        height: 60px;
+.navigationLinkButton {
+    all: unset;
+    color: white;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigationLinkButton:hover {
+    color: #88BED8;
+}
+
+
+
+.navigationLinkLogo {
+    text-decoration: none;
+}
+
+.userName {
+    color: white;
+}
+
+/* Basket */
+.container .basket {
+    padding-top: 5px;
+}
+
+
+/* Extra small devices /phone, smartwatch and other smart devices */
+@media screen and (max-width: 600px) {
+    .container {
+        height: 50px;
+    }
+
+    .container .logoContainer {
+        margin-top: -1px;
+    }
+
+    .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .logo {
+        width: 30px;
+        /* height: 50px; */
+        /* margin-top: 10px; */
+    }
+
+    .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .textLogo {
+        font-size: 13px;
+    }
+
+    .container .navigation .navigationChild {
+        padding-top: 12px;
+    }
+
+    .container .navigation .navigationChild .navigationLink {
+        font-size: 13px;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .flexContainer {
+/* Small devices / portrait tablet, large phone */
+@media screen and (min-width: 600px) {}
+
+/* Medium devices / horizontal tablet, small laptop */
+@media screen and (min-width: 768px) {}
+
+/* Large devices / desktop laptop */
+@media screen and (min-width: 992px) {
+    .container {
+        height: 70px;
+    }
+}
+
+/* Extra large devices / desctop, large laptop, tv */
+@media screen and (min-width: 1200px) {}
+
+
+
+
+/* @media screen and (max-width: 900px) {
+    .container {
+        height: 60px;
+    }
+} */
+
+/* @media screen and (max-width: 600px) {
+    .container {
         height: 50px;
     }
 
@@ -110,18 +226,6 @@
 
     .logo {
         width: 30px;
-        /* height: 50px; */
         margin-top: 10px;
     }
-}
-
-.navigationLinkLogo {
-    text-decoration: none;
-}
-
-.userName {
-    color: white;
-}
-
-/* Basket */
-.navigation:nth-last-child(1) {}
+} */

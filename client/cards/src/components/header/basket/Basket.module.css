@@ -39,3 +39,10 @@
     /* border: solid;
     border-color: white; */
 }
+
+@media screen and (max-width: 600px) {
+    .mainRight .basketMain .innerBascketOne .bascketLogo {
+        width: 20px;
+        height: 20px;
+    }
+}

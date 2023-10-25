@@ -306,7 +306,9 @@ export const SecondStepOrder = () => {
 
                         <Line />
 
-                        <div className={styles.choosePaymentMehod}>CHOOSE PAYMENT METHOD</div>
+                        <div className={styles.choosePaymentMehod}>CHOOSE PAYMENT METHOD
+                            <span>*</span>
+                        </div>
 
                         <div className={styles.typePayment}>
                             <div className={styles.innerDivPayment}>

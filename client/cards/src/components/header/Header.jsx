@@ -1,9 +1,11 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
+import { Logout } from '../logout/Logout';
 import { Basket } from './basket/Basket';
+import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
 
 import { addToOrder } from '../../functions/addToOrder';
 
@@ -17,6 +19,23 @@ import styles from "./Header.module.css"
 
 export const Header = () => {
     const { isAuthenticated, userId, userEmail, userName } = useContext(AuthContext);
+
+    const [logoutModal, setLogoutModal] = useState();
+
+    const navigate = useNavigate();
+
+    const onLoadLogoutModal = (data) => {
+        if (data === 'Yes') {
+            setLogoutModal('');
+            navigate('/logout');
+        } else {
+            setLogoutModal('')
+        }
+    }
+
+    const showLogoutModal = () => {
+        setLogoutModal(<ShowLogoutModal onLoadLogoutModal={onLoadLogoutModal} />)
+    }
 
     // if (isAuthenticated) {
     //     console.log(userEmail, userId, userName)
@@ -41,16 +60,15 @@ export const Header = () => {
     // }
 
     return (
-        <>
-            <div className={styles.flexContainer}>
+        <header>
+            <div className={styles.container}>
                 {/* <div className={styles.flexContainer} onLoad={lookForCookies}> */}
                 {/* {popup} */}
+                {logoutModal}
 
-                <div className={styles.navigation}>
+                <div className={styles.logoContainer}>
                     <Link className={styles.navigationLinkLogo} to="/">
-                        <div className={styles.container}>
-                            {/* <h1>Greeting</h1>
-                            <h2>Cards</h2> */}
+                        <div className={styles.logoContainer}>
                             <div className={styles.logoWrapper}>
                                 <img className={styles.logo} src="../../../images/login-menu/invite.png" alt="logo" />
                                 <p className={styles.textLogo}>NikoletaArt</p>
@@ -74,17 +92,19 @@ export const Header = () => {
                             <>
                                 <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
                                 <Link className={styles.navigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
-                                <Link className={styles.navigationLink} to="/logout">Logout</Link>
+                                <button className={styles.navigationLinkButton} onClick={showLogoutModal}>Logout</button>
+                                {/* <Link className={styles.navigationLink} onClick={showLogoutModal} to="/logout">Logout</Link> */}
                                 <div className={styles.userName}>{userName}</div>
                             </>
                         }
                     </div>
-
                 </div>
-                <div className={styles.navigation}>
+
+                <div className={styles.basket}>
                     <Basket />
                 </div>
             </div >
-        </>
+
+        </header>
     );
 }

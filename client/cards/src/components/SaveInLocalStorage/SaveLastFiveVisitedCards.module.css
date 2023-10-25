@@ -1,18 +1,19 @@
 .lastFiveCart {
     text-align: center;
-    border: solid;
+    /* border: solid; */
 }
 
 .flexRow {
-    height: 430px;
+    height: auto;
+    /* height: 430px; */
 
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: solid;
-    border-color: greenyellow;
+    /* border: solid; */
+    /* border-color: greenyellow; */
     /* remove if you want to force all flex items on same row */
 }
 

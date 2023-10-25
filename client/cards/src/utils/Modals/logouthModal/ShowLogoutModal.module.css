@@ -1,0 +1,109 @@
+.popup {
+    background-color: #2c2d31;
+    box-shadow: 1px 1px 10px #2c2d31;
+    width: 450px;
+    height: 130px;
+    /* padding: 10px 20px; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    z-index: 1000;
+    font-family: "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 100%;
+    }
+}
+
+/* @media(min-width:768px) {
+    .popup {
+        float: left;
+        width: 30%;
+        margin-right: 5px;
+    }
+} */
+
+.popup .container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* padding-bottom: 5px; */
+}
+
+.popup .container .titleWrapper {
+    width: 100%;
+    background-color: #323338;
+    border-radius: 8px;
+}
+
+.closeButton {
+    display: block;
+    margin: 0 0 1px auto;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup .container h2 {
+    text-align: center;
+    color: white;
+}
+
+.popup .container .buttonWrapper {
+    display: flex;
+    width: 99%;
+    border-radius: 8px;
+    padding-top: 15px;
+    background-color: #2c2d31;
+}
+
+.popup .container .buttonWrapper .noButton {
+    all: unset;
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    /* background-color: #0f72e5; */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+    border-radius: 8px;
+    border: solid white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup .container .buttonWrapper .noButton:hover {
+    border: solid #5393dc;
+    color:#5393dc;
+    /* background-color: #18579f; */
+}
+
+.popup .container .buttonWrapper .yesButton {
+    all: unset;
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #db3738;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+    border-radius: 8px;
+    /* border: solid #2c2d31; */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup .container .buttonWrapper .yesButton:hover {
+    background-color: #ac3030;
+}
