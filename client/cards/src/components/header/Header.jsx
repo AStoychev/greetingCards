@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
-import { Logout } from '../logout/Logout';
 import { Basket } from './basket/Basket';
 import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
 

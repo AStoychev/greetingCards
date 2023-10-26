@@ -64,7 +64,8 @@
 .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper::after {
     content: '';
     position: absolute;
-    background: #0e1538;
+    background-color: rgb(11, 1, 38);
+    /* background: #0e1538; */
     inset: 1px;
     border-radius: 10px;
 }

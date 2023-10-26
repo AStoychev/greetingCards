@@ -1,4 +1,10 @@
 .article {
+    /* display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center; */
+    
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
     /* max-height: 560px; */
@@ -11,7 +17,14 @@
     cursor: pointer;
 }
 
+.article .mainCardDiv {}
+
+.article .mainCardDiv .itemInfoWrapper {
+    
+}
+
 .article img {
+    display: flex;
     max-width: 100%;
 }
 
@@ -58,4 +71,10 @@
 
 .star {
     margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .article img {
+        max-width: 84%;
+    }
 }

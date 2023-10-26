@@ -69,8 +69,8 @@ export const HomePage = () => {
                 <section className={styles.firstSection}>
                     <div className={styles.bannerContainerOne}>
                         <div className={styles.bannerContent}>
-                            <h1>Have you ever wondered...</h1>
-                            <p>... hmm what would be the most appropriate wish?</p>
+                            <h1>Imagine a place...</h1>
+                            <p>...where you can wish a loved one everything you feel for them</p>
                             <div className={styles}>
                                 <button className={styles.shopNowButton} onClick={goToShop}>SHOP NOW</button>
                                 <button className={styles.aboutButton}>ABOUT</button>

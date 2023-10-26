@@ -1,17 +1,23 @@
 .popup {
     background-color: rgba(4, 0, 11, 0.557);
     /* background-color: rgb(56, 29, 29); */
-    width: 450px;
+    width: 530px;
+    max-height: 500px;
+    overflow: auto;
     padding: 10px 20px;
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     transform: translate(-50%, -50%);
-    left: 85%;
-    top: 20%;
+    left: 50%;
+    top: 50%;
+    /* left: 85%;
+    top: 20%; */
     border-radius: 8px;
     z-index: 1000;
     font-family: "Poppins", sans-serif;
 
-    box-shadow: 21px 15px 121px 1020px rgba(11, 23, 80, 0.2);
+    box-shadow: 21px 15px 121px 1020px rgba(45, 45, 46, 0.329);
+    /* box-shadow: 21px 15px 121px 1020px rgba(11, 23, 80, 0.2); */
 }
 
 @media only screen and (max-width: 400px) {

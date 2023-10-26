@@ -36,6 +36,7 @@ export const Basket = () => {
 
     // Try to close order on click outside order field
     const onClickOutSide = (e) => {
+        console.log(e.target)
         if (purchaseModal != false && e.target.closest("#mainPopup") === null) {
             setPurchaseModal(false)
         }
