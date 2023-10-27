@@ -57,7 +57,7 @@
 
     position: relative;
     overflow: hidden;
-    
+
     /* border: solid white; */
 }
 
@@ -86,6 +86,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -148,16 +149,79 @@
     color: white;
 }
 
+
 /* Basket */
 .container .basket {
-    padding-top: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.container .basket .basketWrapper {
+    width: 30px;
+    margin: 0 auto;
+    margin-right: 30px;
+
+    /* border: solid white; */
+}
+
+.container .basket .mobileNavigation {
+    display: none;
+    width: 50%;
+}
+
+.container .basket .mobileNavigation>button {
+    all: unset;
+}
+
+.container .basket .mobileNavigation .mobileIcon {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.container .basket .mobileNavigation .containerMobileNav {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    top: 1;
+    right: 0;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(195, 196, 198);
+}
+
+.container .basket .mobileNavigation .containerMobileNav .mobileNavigationLink {
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: rgb(8, 8, 8);
+}
+
+.container .basket .mobileNavigation .containerMobileNav .mobileNavigationLinkButton {
+    all: unset;
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: rgb(8, 8, 8);
+}
+
+.container .basket .mobileNavigation .containerMobileNav .mobileUserName {
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: #66559e;
+}
+
+.container .basket .mobileNavigation .closeMobileNavBottom {
+    font-size: 20px;
+    /* padding-bottom: 10px; */
+    /* border:  solid white; */
 }
 
 
 /* Extra small devices /phone, smartwatch and other smart devices */
 @media screen and (max-width: 600px) {
     .container {
-        height: 50px;
+        height: 54px;
     }
 
     .container .logoContainer {
@@ -175,11 +239,21 @@
     }
 
     .container .navigation .navigationChild {
+        display: none;
         padding-top: 12px;
     }
 
     .container .navigation .navigationChild .navigationLink {
         font-size: 13px;
+    }
+
+    .container .basket .mobileNavigation {
+        display: inline;
+        padding-top: 10px;
+    }
+
+    .container .basket .basketWrapper {
+        margin-right: 10px;
     }
 }
 
@@ -194,6 +268,7 @@
     .container {
         height: 70px;
     }
+
 }
 
 /* Extra large devices / desctop, large laptop, tv */

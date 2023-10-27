@@ -2,7 +2,7 @@
     display: flex;
     text-align: right;
     justify-content: right;
-    margin-top: 12px;
+    margin-top: 10px;
 
     /* border: solid;
     border-color: red; */
@@ -11,7 +11,7 @@
 .basketMain {
     display: flex;
     text-align: center;
-    width: 100px;
+    width: 15px;
     padding-right: 10px;
     color: white;
 
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 600px) {
     .mainRight .basketMain .innerBascketOne .bascketLogo {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 }
