@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
-import { addToOrder } from '../../../functions/addToOrder';
 
 import styles from './Cards.module.css'
 
