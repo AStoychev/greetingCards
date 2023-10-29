@@ -12,7 +12,6 @@ import styles from './SendOrders.module.css'
 export const SendOrders = () => {
 
     const [sendOrders, setSendOrders] = useState([]);
-    const [orders, setOrders] = useState('off');
     const [idOrder, setIdOrder] = useState();
     const [showModal, setShowModal] = useState();
     const allOrdersService = orderServiceFactory();
