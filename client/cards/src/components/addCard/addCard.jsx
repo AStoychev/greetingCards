@@ -4,7 +4,6 @@ import { useForm } from "../../hooks/useForm";
 import { CardContext } from "../../contexts/CardContext";
 
 export const AddCard = () => {
-    const [count, setCounter] = useState(0)
     const { onCreateCardSubmit } = useContext(CardContext);
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
