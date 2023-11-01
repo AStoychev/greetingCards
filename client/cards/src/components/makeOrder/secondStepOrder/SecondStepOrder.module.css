@@ -289,8 +289,6 @@ input[type='radio']:checked:after {
     width: 282px;
     height: 60px;
     margin-bottom: 10px;
-
-    /* border: solid; */
 }
 
 .checkbox {
@@ -298,7 +296,6 @@ input[type='radio']:checked:after {
     height: 23px;
     margin: auto;
     background-color: rgba(174, 188, 185, 0.655);
-    /* background-color: rgba(65, 194, 164, 0.509); */
     cursor: pointer;
 }
 
@@ -307,15 +304,12 @@ input[type='radio']:checked:after {
     margin: auto;
     font-size: 11px;
     font-weight: 600;
-
-    /* border: solid; */
 }
 
 .buttonsNextBack {
     display: flex;
     width: 100%;
     height: 50px;
-    /* border: solid; */
 }
 
 .next {
@@ -325,23 +319,18 @@ input[type='radio']:checked:after {
     margin-left: 10px;
     /* align-items: center; */
     justify-content: space-between;
-
-    /* border: solid; */
 }
 
 /* Next Button */
 .bottomButtons {
     display: flex;
     margin-bottom: 10px;
-    /* border: solid; */
 }
 
 .nextStep {
     text-align: center;
     justify-content: center;
     width: 100%;
-
-    /* border: solid; */
 }
 
 .nextButton {
@@ -384,8 +373,5 @@ input[type='radio']:checked:after {
     display: flex;
     margin: auto;
     margin-right: 10px;
-    /* align-items: center; */
     justify-content: end;
-
-    /* border: solid; */
 }

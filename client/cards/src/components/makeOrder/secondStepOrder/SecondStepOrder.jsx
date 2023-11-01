@@ -8,12 +8,7 @@ import { ButtonBack } from "../buttonBack/ButtonBack";
 import { Line } from "../line/Line";
 import { TooltipMessageOrder } from "../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder";
 
-import {
-    validateFirstName, validateLastName, validateEmail,
-    validatePhone, validateShippingCompany, validateShippingPlace,
-    validateCity, validatePostCode, validateAddress,
-    validatePayment, validatePrivacyPolicy, validateAllOrder
-} from "./validateOrderClientDataForm";
+import { validateAllOrder } from "./validateOrderClientDataForm";
 import { showMakeOrderData } from "../../../functions/localStorageFunction/showMakeOrderData";
 import { showAllPurchase } from "../../../functions/localStorageFunction/showAllPurchase";
 
@@ -98,7 +93,6 @@ export const SecondStepOrder = () => {
     // validateFirstName(values)
     // validateLastName(values)
     // validateEmail(values)
-    // validatePhone(values)
     // validateShippingCompany(values)
     // validateShippingPlace(values)
     // validateCity(values)
