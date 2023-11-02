@@ -88,20 +88,6 @@ export const SecondStepOrder = () => {
         }
     }
 
-    //Validations
-
-    // validateFirstName(values)
-    // validateLastName(values)
-    // validateEmail(values)
-    // validateShippingCompany(values)
-    // validateShippingPlace(values)
-    // validateCity(values)
-    // validatePostCode(values)
-    // validateAddress(values)
-    // validatePayment(values)
-    // validatePrivacyPolicy(checkbox)
-    // console.log(validateAllOrder(values, checkbox))
-
     return (
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>

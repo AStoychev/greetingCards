@@ -24,7 +24,6 @@
     flex-wrap: wrap;
     width: 516px;
     height: 100%;
-    /* height: 1311px; */
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -34,7 +33,6 @@
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    /* margin-bottom: 10px; */
 
     border: solid;
     border-color: #9fb3b4;
@@ -50,8 +48,6 @@ span {
     background-color: #51b9bc;
 
     margin-bottom: 10px;
-
-    /* border: solid; */
 }
 
 .topFieldTitle {
@@ -62,8 +58,6 @@ span {
     font-size: 18px;
     font-weight: 400;
     color: white;
-
-    /* border: solid; */
 }
 
 .firstAndLastName {
@@ -73,14 +67,10 @@ span {
     margin: auto;
     width: 400px;
     color: #51b9bc;
-
-    /* border: solid; */
 }
 
 .innerDivDataOrderName {
     text-align: left;
-
-    /* border: solid; */
 }
 
 .mainShipping {
@@ -90,9 +80,6 @@ span {
     margin: auto;
     width: 300px;
     color: #1b1d1e;
-
-    /* border: solid;
-    border-color: red; */
 }
 
 .innerDivShippingOne,
@@ -102,8 +89,6 @@ span {
     font-size: 15px;
     font-weight: 400;
     margin: auto;
-
-    /* border: solid; */
 }
 
 .innerDivShippingTwo {
@@ -112,8 +97,6 @@ span {
     font-size: 15px;
     font-weight: 400;
     margin: auto;
-
-    /* border: solid; */
 }
 
 .innerShippingType {
@@ -126,8 +109,6 @@ span {
 .logoShipping {
     width: 50%;
     margin: auto;
-
-    /* border: solid; */
 }
 
 .logoShipping>img {
@@ -142,8 +123,6 @@ span {
     color: #51b9bc;
     font-size: 16px;
     text-align: left;
-
-    /* border: solid; */
 }
 
 input[type='first'],
@@ -188,8 +167,6 @@ input[type='radio']::after {
     top: -2px;
     left: -1px;
     position: relative;
-    /* background-color: #9eeb9c;
-    content:''; */
     display: inline-block;
     visibility: visible;
     border: 2px solid rgb(255, 255, 255);
@@ -203,7 +180,6 @@ input[type='radio']:checked:after {
     left: -1px;
     position: relative;
     background-color: #6b4b4b;
-    /* background-color: #51b9bc; */
     content: '';
     display: inline-block;
     visibility: visible;
@@ -239,8 +215,6 @@ input[type='radio']:checked:after {
     width: 10%;
     margin: auto;
     font-size: 15px;
-
-    /* border: solid; */
 }
 
 .innerPaymentType {
@@ -249,36 +223,19 @@ input[type='radio']:checked:after {
     font-size: 15px;
     font-weight: 400;
     margin: auto;
-
-    /* border: solid;
-    border-radius: 10px; */
 }
 
 .logoPayment {
     width: 60%;
-    /* margin: auto; */
-
-    /* border: solid;
-    border-radius: 10px; */
 }
 
 .tick {
     opacity: 0.8;
     width: 23px;
     height: 23px;
-    /* border: solid; */
 }
 
-/* .emptyCircleButton {
-    width: 25px;
-    height: 25px;
-    border: solid;
-    border-radius: 55px;
-    background-color: rgb(249, 248, 151);
-} */
-
 .logoPayment>img {
-    /* margin: auto; */
     height: 80px;
 }
 
@@ -317,7 +274,6 @@ input[type='radio']:checked:after {
     display: flex;
     margin: auto;
     margin-left: 10px;
-    /* align-items: center; */
     justify-content: space-between;
 }
 
