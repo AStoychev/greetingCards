@@ -83,7 +83,6 @@ router.delete('/:cardId/delete', async (req, res) => {
     try {
         const result = await cardService.delete(card);
         res.json({ ok: 'true' });
-        // res.json(result);
     } catch (error) {
         console.log(error);
     }
