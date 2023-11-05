@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { CardSaveFiveVisited } from "../../utils/Cards/CardSaveFiveVisited/CardSaveFiveVisited.";
+import { CardSaveFiveVisited } from "../../utils/Cards/CardSaveFiveVisited/CardSaveFiveVisited";
 
 import styles from './SaveLastFiveVisitedCards.module.css'
 

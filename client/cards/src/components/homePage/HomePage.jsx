@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 
-import { SaveLastFiveVisitedCards } from '../saveInLocalStorage/SaveLastFiveVisitedCards';
+import { SaveLastFiveVisitedCards } from '../SaveInLocalStorage/SaveLastFiveVisitedCards';
 import { Partners } from '../../utils/Partners/Partners';
 
 import styles from './HomePage.module.css';

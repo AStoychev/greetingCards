@@ -4,7 +4,7 @@ import { cardServiceFactory } from "../../services/cardService";
 
 import { Cards } from "../../utils/Cards/CatalogCards/Cards";
 
-import { SaveLastFiveVisitedCards } from "../saveInLocalStorage/SaveLastFiveVisitedCards";
+import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
 
 import styles from './Catalog.module.css'
 
