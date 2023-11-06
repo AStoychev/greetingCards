@@ -25,9 +25,7 @@ export const AddCard = () => {
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
                 <div className={styles.mainField}>
-
                     <h1>Add Card</h1>
-                    
                     <div className={styles.innerColumn}>
                         <section id="card-page" className="content auth">
                             <form id="card" method='POST' onSubmit={onSubmit}>
