@@ -21,7 +21,6 @@ export const AddCard = () => {
         additionalImageFour: '',
 
     }, onCreateCardSubmit);
-
     return (
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>

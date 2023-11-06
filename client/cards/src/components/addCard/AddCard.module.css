@@ -63,8 +63,6 @@ input[type='url'] {
     margin-top: 5px;
     border-radius: 5px;
     background-color: #1E1F22;
-
-    /* border: solid rgba(199, 106, 106, 0); */
 }
 
 .container .innerContainer .mainField .innerColumn .submitBtn {
