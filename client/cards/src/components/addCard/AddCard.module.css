@@ -47,7 +47,38 @@
 .container .innerContainer .mainField .innerColumn .fieldCard label {
     width: 50%;
     margin: 0 auto;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     color: #d8d9dc;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='url'] {
+    all: unset;
+    width: 70%;
+    height: 36px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #1E1F22;
+
+    /* border: solid rgba(199, 106, 106, 0); */
+}
+
+.container .innerContainer .mainField .innerColumn .submitBtn {
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .innerContainer .mainField .innerColumn .submitBtn:hover {
+    background-color: #3d46ae;
 }

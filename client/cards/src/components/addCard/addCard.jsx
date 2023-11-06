@@ -32,7 +32,7 @@ export const AddCard = () => {
                             <form id="card" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldCard}>
 
-                                    <label className='htmlContent' htmlFor="title">Title:</label>
+                                    <label className={styles.labelContent} htmlFor="title">Title:</label>
                                     <input
                                         type="text"
                                         id="title"
@@ -42,7 +42,7 @@ export const AddCard = () => {
                                         onChange={changeHandler}
                                     />
 
-                                    <label className='htmlContent' htmlFor="description">Description:</label>
+                                    <label className={styles.labelContent} htmlFor="description">Description:</label>
                                     <input
                                         type="text"
                                         id="description"
@@ -51,7 +51,7 @@ export const AddCard = () => {
                                         value={values.description}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="price">Price:</label>
+                                    <label className={styles.labelContent} htmlFor="price">Price:</label>
                                     <input
                                         type="number"
                                         name="price"
@@ -60,7 +60,7 @@ export const AddCard = () => {
                                         value={values.price}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="discount">Discount:</label>
+                                    <label className={styles.labelContent} htmlFor="discount">Discount:</label>
                                     <input
                                         type="number"
                                         name="discount"
@@ -69,7 +69,7 @@ export const AddCard = () => {
                                         value={values.discount}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="imageUrl">ImageURL:</label>
+                                    <label className={styles.labelContent} htmlFor="imageUrl">ImageURL:</label>
                                     <input
                                         type="url"
                                         name="imageUrl"
@@ -79,7 +79,7 @@ export const AddCard = () => {
                                         onChange={changeHandler}
                                     />
                                     {/* Additional Image */}
-                                    <label className='htmlContent' htmlFor="additionalImageOne">Aditional Image One:</label>
+                                    <label className={styles.labelContent} htmlFor="additionalImageOne">Aditional Image One:</label>
                                     <input
                                         type="url"
                                         name="additionalImageOne"
@@ -88,7 +88,7 @@ export const AddCard = () => {
                                         value={values.additionalImageOne}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="additionalImageTwo">Aditional Image Two:</label>
+                                    <label className={styles.labelContent} htmlFor="additionalImageTwo">Aditional Image Two:</label>
                                     <input
                                         type="url"
                                         name="additionalImageTwo"
@@ -97,7 +97,7 @@ export const AddCard = () => {
                                         value={values.additionalImageTwo}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="additionalImageThree">Aditional Image Three:</label>
+                                    <label className={styles.labelContent} htmlFor="additionalImageThree">Aditional Image Three:</label>
                                     <input
                                         type="url"
                                         name="additionalImageThree"
@@ -106,7 +106,7 @@ export const AddCard = () => {
                                         value={values.additionalImageThree}
                                         onChange={changeHandler}
                                     />
-                                    <label className='htmlContent' htmlFor="additionalImageFour">Aditional Image Four:</label>
+                                    <label className={styles.labelContent} htmlFor="additionalImageFour">Aditional Image Four:</label>
                                     <input
                                         type="url"
                                         name="additionalImageFour"
@@ -118,7 +118,7 @@ export const AddCard = () => {
                                     {/* Additional Image */}
                                 </div>
                                 <div className="submit">
-                                    <input className="submit" type="submit" value="Create" style={{ marginTop: "21px" }} />
+                                    <input className={styles.submitBtn} type="submit" value="Create" style={{ marginTop: "21px" }} />
                                 </div>
                             </form>
                         </section>
