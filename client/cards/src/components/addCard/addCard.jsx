@@ -21,6 +21,25 @@ export const AddCard = () => {
         additionalImageFour: '',
     }, onCreateCardSubmit);
 
+    const validateImageUrl = (url) => {
+        let regex = /https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+        return regex.test(url)
+    }
+
+    const validateAddCardFileds = () => {
+        if (values.title.length >= 2
+            &&
+            values.description.length >= 10
+            &&
+            values.price.length > 0
+            &&
+            validateImageUrl(values.imageUrl)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
@@ -31,7 +50,7 @@ export const AddCard = () => {
                             <form id="card" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldCard}>
 
-                                    <label className={styles.labelContent} htmlFor="title">Title:</label>
+                                    <label className={styles.labelContent} htmlFor="title">Title<span>*</span></label>
                                     <input
                                         type="text"
                                         id="title"
@@ -41,7 +60,7 @@ export const AddCard = () => {
                                         onChange={changeHandler}
                                     />
 
-                                    <label className={styles.labelContent} htmlFor="description">Description:</label>
+                                    <label className={styles.labelContent} htmlFor="description">Description<span>*</span></label>
                                     <input
                                         type="text"
                                         id="description"
@@ -50,7 +69,7 @@ export const AddCard = () => {
                                         value={values.description}
                                         onChange={changeHandler}
                                     />
-                                    <label className={styles.labelContent} htmlFor="price">Price:</label>
+                                    <label className={styles.labelContent} htmlFor="price">Price<span>*</span></label>
                                     <input
                                         type="number"
                                         name="price"
@@ -68,7 +87,7 @@ export const AddCard = () => {
                                         value={values.discount}
                                         onChange={changeHandler}
                                     />
-                                    <label className={styles.labelContent} htmlFor="imageUrl">ImageURL:</label>
+                                    <label className={styles.labelContent} htmlFor="imageUrl">ImageURL<span>*</span></label>
                                     <input
                                         type="url"
                                         name="imageUrl"
@@ -117,7 +136,24 @@ export const AddCard = () => {
                                     {/* Additional Image */}
                                 </div>
                                 <div className="submit">
-                                    <input className={styles.submitBtn} type="submit" value="Create" style={{ marginTop: "21px" }} />
+                                    {
+                                        validateAddCardFileds()
+                                            ?
+                                            <input
+                                                className={styles.submitBtn}
+                                                type="submit"
+                                                value="Create"
+                                            />
+                                            :
+
+                                            <input
+                                                className={styles.disabledSubmitBtn}
+                                                type="submit"
+                                                value="Create"
+                                                disabled="true"
+                                                title="You have to fill all required fields"
+                                            />
+                                    }
                                 </div>
                             </form>
                         </section>

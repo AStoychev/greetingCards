@@ -155,6 +155,7 @@ export const Register = () => {
                                             <input
                                                 type="submit"
                                                 className={styles.disabledSubmitBtn}
+                                                disabled="true"
                                                 title='You must fill all fields and agree to our Terms of Service to continue'
                                                 value="Continue"
                                             />
