@@ -1,6 +1,7 @@
 .purchaseRow {
     height: 100px;
     display: flex;
+    align-items: center;
     background-color: rgb(179, 175, 184);
     border-radius: 10px;
     margin-top: 5px;
@@ -10,7 +11,6 @@
 }
 
 .purchaseImage {
-    width: 20%;
     width: 100px;
     height: 100px;
     border-radius: 10px;
@@ -54,6 +54,18 @@
     border-color: red; */
 }
 
+.priceValue {
+    margin-left: 3px;
+    color: black;
+}
+
+.finalPrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
 .deletePurchase {
     display: flex;
     width: 20%;
@@ -64,15 +76,63 @@
     border-color: red; */
 }
 
-.finalPrice {
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-}
-
 .deletePurchase>button {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .purchaseRow {
+        height: 70px;
+        font-size: 15px;
+    }
+    .purchaseImage {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .purchaseTitle {
+        display: flex;
+        width: 15%;
+        margin-right: 3px;
+    }
+
+    .purchaseQuantity {
+        display: flex;
+        width: 10%;
+        margin-right: 3px;
+    }
+
+    .multiplySign {
+        display: flex;
+        width: 5%;
+        margin-right: 3px;
+    }
+    
+    .purchasePrice {
+        display: flex;
+        width: 20%;
+        margin-left: 3px;
+    }
+
+    .priceValue {
+        width: auto;
+        display: flex;
+        color: black;
+    }
+
+    .finalPrice {
+        display: flex;
+        width: 20%;
+        margin-left: 3px;
+    }
+    
+    .deletePurchase {
+        display: flex;
+        width: 10%;
+        margin-right: 3px;
+    }
 }

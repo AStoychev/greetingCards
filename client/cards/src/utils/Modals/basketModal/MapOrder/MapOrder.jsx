@@ -52,13 +52,13 @@ export const MapOrder = () => {
                     </div>
                     <div className={styles.purchasePrice}>
                         <div className={styles.price}>
-                            {checkForDiscount(x.price, x.discount)}
+                            {checkForDiscount(x.price, x.discount)}<span className={styles.priceValue}>BGN</span>
                             {/* {(x.price).toFixed(2)} */}
                         </div>
                     </div>
                     <div className={styles.finalPrice}>
                         <div className={styles.final}>
-                            {(x.quantity * checkForDiscount(x.price, x.discount)).toFixed(2)}
+                            {(x.quantity * checkForDiscount(x.price, x.discount)).toFixed(2)}<span className={styles.priceValue}>BGN</span>
                         </div>
                     </div>
                     <div className={styles.deletePurchase}>
