@@ -1,12 +1,18 @@
+.mainDivPartner {
+    width: 99.9%;
+}
+
 .flexRow {
     height: 160px;
 
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    /* border: solid; */
+
+    /* text-align: center; */
+    /* align-items: center; */
+    justify-content:space-around;
+    border: solid;
 
     /* remove if you want to force all flex items on same row */
 }
@@ -19,9 +25,10 @@
 .column6,
 .column7 {
     width: 10%;
-    flex-grow: 1;
-    flex: 1 1 auto;
+    /* flex-grow: 1; */
+    /* flex: 1 1 auto; */
     margin-right: 3cqmax;
+    /* justify-content:space-evenly; */
     /* border: solid; */
     /* width: 150px; remove; use flex property instead
     flex: 1 1 150px; don't grow, don't shrink, stay at 150px
