@@ -1,10 +1,14 @@
 .container {
     width: 100%;
-    height: 90vh;
+    max-height: 800px;
+    /* height: 90vh; */
     background-color: #d86f6f;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .container .innerContainer {
@@ -91,4 +95,20 @@ input[type='url'] {
     border: none;
     cursor: no-drop;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        height: auto;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    .container .innerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        color: #F2F3F5;
+    }
 }
