@@ -1,12 +1,11 @@
 .container {
     width: 100%;
     background-color: rgba(107, 208, 231, 0.313);
-    ;
 }
 
 .innerContainer {
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .headerOrder {
@@ -52,7 +51,7 @@ span {
 
 .topFieldTitle {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     width: 76%;
     padding: 10px;
     font-size: 18px;
@@ -64,7 +63,7 @@ span {
     display: flex;
     flex-direction: row;
     font-size: 16px;
-    margin: auto;
+    margin: 0 auto;
     width: 400px;
     color: #51b9bc;
 }
@@ -330,4 +329,24 @@ input[type='radio']:checked:after {
     margin: auto;
     margin-right: 10px;
     justify-content: end;
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        max-width: 360px;
+        height: auto;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .container .innerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        color: #F2F3F5;
+        text-align: center;
+        border-radius: 0px;
+    }
+
 }

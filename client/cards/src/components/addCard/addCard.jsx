@@ -136,24 +136,11 @@ export const AddCard = () => {
                                     {/* Additional Image */}
                                 </div>
                                 <div className="submit">
-                                    {
-                                        validateAddCardFileds()
-                                            ?
-                                            <input
-                                                className={styles.submitBtn}
-                                                type="submit"
-                                                value="Create"
-                                            />
-                                            :
-
-                                            <input
-                                                className={styles.disabledSubmitBtn}
-                                                type="submit"
-                                                value="Create"
-                                                disabled="true"
-                                                title="You have to fill all required fields"
-                                            />
-                                    }
+                                    <input
+                                        className={!validateAddCardFileds() ? styles.disabledSubmitBtn : styles.submitBtn}
+                                        type="submit"
+                                        value="Create"
+                                    />
                                 </div>
                             </form>
                         </section>
