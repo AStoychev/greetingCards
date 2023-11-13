@@ -150,6 +150,7 @@
 
     .articleBanner .firstSection,
     .articleBanner .secondSection {
+        max-width: 100%;
         padding: 10px;
     }
 

@@ -334,7 +334,7 @@ input[type='radio']:checked:after {
 @media screen and (max-width: 768px) {
 
     .container {
-        max-width: 360px;
+        max-width: 100%;
         height: auto;
         padding-top: 0px;
         padding-bottom: 0px;
