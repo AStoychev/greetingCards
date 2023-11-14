@@ -189,6 +189,7 @@
     flex-direction: column;
     border-radius: 10px;
     background-color: rgb(195, 196, 198);
+    z-index: 5;
 }
 
 .container .basket .mobileNavigation .containerMobileNav .mobileNavigationLink {

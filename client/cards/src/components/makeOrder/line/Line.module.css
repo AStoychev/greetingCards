@@ -11,3 +11,9 @@
     border-bottom: 1.5px solid #b5c1c1
         /* border-bottom-style: dotted; */
 }
+
+@media screen and (max-width:768px) {
+    .innerLineOne {
+        width: 97%;
+    }
+}

@@ -100,7 +100,7 @@ input[type='url'] {
 @media screen and (max-width: 768px) {
 
     .container {
-        max-width: 360px;
+        max-width: 100%;
         height: auto;
         padding-top: 0px;
         padding-bottom: 0px;
@@ -109,7 +109,7 @@ input[type='url'] {
     .container .innerContainer {
         display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
         color: #F2F3F5;
         text-align: center;
         border-radius: 0px;

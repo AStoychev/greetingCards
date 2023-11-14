@@ -1,13 +1,21 @@
 .container {
-    width: 1100px;
-    margin: 0 auto
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container .header {
+    display: flex;
+    justify-content: center;
 }
 
 .container .columns3 {
     display: flex;
     justify-content: space-around;
     align-items: stretch;
-    max-width: 1200px;
+    width: 100%;
 
     /* width: 100%;
     display: flex; */
@@ -63,8 +71,8 @@
 
 /* Middle Column */
 .container .columns3 .columnsCenter {
-    width: 530px;
-    height: 720px;
+    max-width: 530px;
+    max-height: 720px;
     border: 3px solid #eee;
 
     /* border-left: 1px solid #eee;
@@ -112,14 +120,15 @@
 }
 
 .container .columns3 .columnsCenter .bgOrange .middleBox .mainImage {
-    width: 400px;
-    height: 600px;
+    max-width: 400px;
+    max-height: 600px;
 }
 
 .container .columns3 .columnsCenter .bgOrange .rigthBox {
     float: right;
     /* background: blue; */
-    margin-top: 50%;
+    margin-top: -82%;
+    /* margin-top: 50%; */
     width: 10%;
     height: 100px;
     text-align: right;
@@ -150,7 +159,7 @@
 
 /* Right Column */
 .container .columns3 .columnsRight {
-    width: 330px;
+    min-width: 330px;
     height: auto;
     flex: 0 0 330px;
     background-color: #EDEDED;
@@ -167,3 +176,69 @@
 }
 
 /* Right Column */
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        max-width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .container .columns3 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container .columns3 .columnsLeft {
+        display: none;
+    }
+
+    .container .columns3 .columnsCenter {
+        width: 100%;
+        height: auto;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange {
+        position: relative;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .leftBox {
+        position: absolute;
+        top: 560px;
+        left: 1%;
+        z-index: 3;
+        margin-top: 0px;
+        width: 0px;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .rigthBox {
+        position: absolute;
+        top: 560px;
+        right: 13%;
+        z-index: 3;
+        margin-top: 0px;
+        width: 0px;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .middleBox {
+        display: flex;
+        width: 100%;
+        margin-top: 0px;
+
+        /* border: 1px solid red; */
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .middleBox .mainImage {
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .container .columns3 .columnsRight {
+        width: 100%;
+        margin: 10px auto;
+    }
+}

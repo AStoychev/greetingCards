@@ -1,5 +1,6 @@
 .container {
     width: 100%;
+    min-height: 1510px;
     background-color: rgba(107, 208, 231, 0.313);
 }
 
@@ -151,7 +152,7 @@ textarea {
     width: 382px;
     height: 80px;
     max-width: 382px;
-    min-width: 382px;
+    min-width: 300px;
     max-height: 180px;
     margin-bottom: 10px;
     background-color: #d9dcdf;
@@ -212,7 +213,7 @@ input[type='radio']:checked:after {
 
 .innerDivPayment>label {
     width: 10%;
-    margin: auto;
+    margin: 0 auto;
     font-size: 15px;
 }
 
@@ -343,10 +344,49 @@ input[type='radio']:checked:after {
     .container .innerContainer {
         display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
         color: #F2F3F5;
         text-align: center;
         border-radius: 0px;
+    }
+
+    .container .innerContainer .dataContainer {
+        width: 100%;
+        border: none;
+        margin-bottom: 0px;
+    }
+
+    .container .innerContainer .dataContainer .formTopField {
+        width: 100%;
+    }
+
+    .container .innerContainer .firstAndLastName {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .container .innerContainer .innerDivDataOrder {
+        width: 90%;
+    }
+
+    input[type='first'],
+    [type='last'],
+    input[type='email'],
+    [type='phone'],
+    [type='city'],
+    [type='post-code'],
+    [type='address'] {
+        width: 350px;
+        height: 29px;
+        margin-bottom: 10px;
+        background-color: #d9dcdf;
+        border: none;
+        caret-color: rgb(6, 188, 248);
+    }
+
+    .container .innerContainer textarea {
+        width: 350px;
     }
 
 }
