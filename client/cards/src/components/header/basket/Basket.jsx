@@ -36,13 +36,12 @@ export const Basket = () => {
 
     // Try to close order on click outside order field
     const onClickOutSide = (e) => {
-        console.log(e.target)
         if (purchaseModal != false && e.target.closest("#mainPopup") === null) {
             setPurchaseModal(false)
+            setPurchase(0)
         }
         // console.log(e.target.closest('#mainPopup'));
     }
-
 
     return (
         <div className={styles.mainRight} onClick={onClickOutSide}>

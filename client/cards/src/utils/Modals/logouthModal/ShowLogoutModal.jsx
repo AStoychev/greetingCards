@@ -8,9 +8,9 @@ export const ShowLogoutModal = ({
         onLoadLogoutModal(data)
     }
     return (
-        <div>
+        <div className={styles.container} onClick={() => handleClose('No')}>
             <div className={styles.popup}>
-                <div className={styles.container}>
+                <div className={styles.wrapper}>
                     <div className={styles.titleWrapper}>
                         {/* <button className={styles.closeButton} onClick={handleClose}>&times;</button> */}
                         <h2>Are you sure you want to logout?</h2>

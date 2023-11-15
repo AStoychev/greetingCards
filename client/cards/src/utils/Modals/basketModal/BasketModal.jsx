@@ -24,9 +24,9 @@ export const BasketModal = ({
     };
 
     return (
-        <div>
+        <div className={styles.container} onClick={() => handleClose('Close')}>
             <div className={styles.popup} id="mainPopup" onClick={e => { e.stopPropagation() }}>
-                <div className={styles.container}>
+                <div className={styles.wrapper}>
                     {/* <button className={styles.closeButton} onClick={handleClose}>&times;</button> */}
                     <h2>My Order</h2>
 

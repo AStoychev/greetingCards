@@ -1,3 +1,15 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(44, 45, 48, 58%);
+    /* background-color: #2c2d31; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 1000;
+    box-shadow: 21px 15px 121px 3020px rgba(45, 45, 46, 0.651);
+}
+
 .popup {
     background-color: #2c2d31;
     box-shadow: 1px 1px 10px #2c2d31;
@@ -13,7 +25,7 @@
     z-index: 1000;
     font-family: "Poppins", sans-serif;
 
-    box-shadow: 21px 15px 121px 1020px rgba(45, 45, 46, 0.651);
+    /* box-shadow: 21px 15px 121px 1020px rgba(45, 45, 46, 0.651); */
 }
 
 /* @media(min-width:768px) {
@@ -24,14 +36,14 @@
     }
 } */
 
-.popup .container {
+.popup .wrapper {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     /* padding-bottom: 5px; */
 }
 
-.popup .container .titleWrapper {
+.popup .wrapper .titleWrapper {
     width: 100%;
     background-color: #323338;
     border-radius: 8px;
@@ -48,12 +60,12 @@
     cursor: pointer;
 }
 
-.popup .container h2 {
+.popup .wrapper h2 {
     text-align: center;
     color: white;
 }
 
-.popup .container .buttonWrapper {
+.popup .wrapper .buttonWrapper {
     display: flex;
     width: 99%;
     border-radius: 8px;
@@ -61,7 +73,7 @@
     background-color: #2c2d31;
 }
 
-.popup .container .buttonWrapper .noButton {
+.popup .wrapper .buttonWrapper .noButton {
     all: unset;
     display: block;
     width: 150px;
@@ -78,13 +90,13 @@
     transition: 0.3s;
 }
 
-.popup .container .buttonWrapper .noButton:hover {
+.popup .wrapper .buttonWrapper .noButton:hover {
     border: solid #5393dc;
     color: #5393dc;
     /* background-color: #18579f; */
 }
 
-.popup .container .buttonWrapper .yesButton {
+.popup .wrapper .buttonWrapper .yesButton {
     all: unset;
     display: block;
     width: 150px;
@@ -101,7 +113,7 @@
     transition: 0.3s;
 }
 
-.popup .container .buttonWrapper .yesButton:hover {
+.popup .wrapper .buttonWrapper .yesButton:hover {
     background-color: #ac3030;
 }
 
@@ -113,12 +125,12 @@
         top: 50%;
     }
 
-    .popup .container .titleWrapper h2 {
+    .popup .wrapper .titleWrapper h2 {
         font-size: 15px;
     }
 
-    .popup .container .buttonWrapper .noButton,
-    .popup .container .buttonWrapper .yesButton {
+    .popup .wrapper .buttonWrapper .noButton,
+    .popup .wrapper .buttonWrapper .yesButton {
         font-size: 15px;
         width: 80px;
         padding: 2px 0;
