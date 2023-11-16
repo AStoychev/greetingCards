@@ -94,6 +94,7 @@ export const AuthProvider = ({
         token: auth.accessToken,
         userEmail: auth.email,
         userName: auth.username,
+        isAdmin: auth.admin,
         isAuthenticated: !!auth.accessToken,
 
         thisError: errors,

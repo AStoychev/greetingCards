@@ -29,4 +29,14 @@ router.get('/logout', (req, res) => {
     res.json({ ok: true });
 });
 
+
+// Change Password Functionality not completed
+
+router.get('/change-password', async (req, res) => {
+    console.log('Change Password')
+    res.json({ ok: true });
+});
+
+// Change Password Functionality not completed
+
 module.exports = router

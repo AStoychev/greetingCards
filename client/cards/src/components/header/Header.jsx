@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 import { Basket } from './basket/Basket';
 import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
+import { Profile } from './profile/Profile';
 
 import { addToOrder } from '../../functions/addToOrder';
 
@@ -14,16 +15,18 @@ import { addToOrder } from '../../functions/addToOrder';
 // import Cookies from 'universal-cookie';
 
 // import { AiFillHeart } from 'react-icons/ai'
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaUser } from "react-icons/fa";
+// import { FaUser } from "react-icons/fa";
 import styles from "./Header.module.css"
 
 export const Header = () => {
-    const { isAuthenticated, userId, userEmail, userName } = useContext(AuthContext);
+    const { isAuthenticated, userId, userEmail, userName, isAdmin } = useContext(AuthContext);
 
     const [logoutModal, setLogoutModal] = useState();
     const [mobileNav, setMobileNav] = useState(0);
     const [colorMobileNav, setColorMobileNav] = useState('white')
     const [dropdownMobileNav, setDropdownMobileNav] = useState();
+    const [profileModal, setProfileModal] = useState();
 
     const navigate = useNavigate();
 
@@ -62,8 +65,12 @@ export const Header = () => {
 
                     {isAuthenticated &&
                         <>
-                            <Link className={styles.mobileNavigationLink} to="/add-card">Add Card</Link>
-                            <Link className={styles.mobileNavigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
+                            {isAdmin &&
+                                <>
+                                    <Link className={styles.mobileNavigationLink} to="/add-card">Add Card</Link>
+                                    <Link className={styles.mobileNavigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
+                                </>
+                            }
                             <button className={styles.mobileNavigationLinkButton} onClick={showLogoutModal}>Logout</button>
                             {/* <Link className={styles.navigationLink} onClick={showLogoutModal} to="/logout">Logout</Link> */}
                             <div className={styles.mobileUserName}>{userName}</div>
@@ -101,12 +108,25 @@ export const Header = () => {
     //     }
     // }
 
+    const onLoadProfileModal = (data) => {
+        if (data === 'Yes') {
+            setProfileModal('');
+        } else {
+            setProfileModal('')
+        }
+    }
+
+    const showProfileModal = () => {
+        setProfileModal(<Profile onLoadProfileModal={onLoadProfileModal} data={[userEmail, userName]} />)
+    }
+
     return (
         <header>
             <div className={styles.container}>
                 {/* <div className={styles.flexContainer} onLoad={lookForCookies}> */}
                 {/* {popup} */}
                 {logoutModal}
+                {profileModal}
 
                 <div className={styles.logoContainer}>
                     <Link className={styles.navigationLinkLogo} to="/">
@@ -132,19 +152,29 @@ export const Header = () => {
 
                         {isAuthenticated &&
                             <>
-                                <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
-                                <Link className={styles.navigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
+                                {isAdmin &&
+                                    <>
+                                        <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
+                                        <Link className={styles.navigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
+                                    </>
+                                }
                                 <button className={styles.navigationLinkButton} onClick={showLogoutModal}>Logout</button>
                                 {/* <Link className={styles.navigationLink} onClick={showLogoutModal} to="/logout">Logout</Link> */}
-                                <div className={styles.userName}>{userName}</div>
+                                {/* <div className={styles.userName}>{userName}</div> */}
                             </>
                         }
                     </div>
                 </div>
 
                 <div className={styles.basket}>
+                    {isAuthenticated &&
+                        <div className={styles.profileWrapper} onClick={showProfileModal}>
+                            <FaUser className={styles.profileIcon} />
+                        </div>
+                    }
+
                     <div className={styles.basketWrapper}>
-                        <Basket/>
+                        <Basket />
                     </div>
                     <div className={styles.mobileNavigation}>
                         <button onClick={clickMObileNavButton}>

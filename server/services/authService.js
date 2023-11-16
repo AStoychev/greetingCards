@@ -30,6 +30,7 @@ exports.login = async (email, password) => {
         _id: user._id,
         username: user.username,
         email: user.email,
+        admin: user.isAdmin,
         accessToken: token,
     };
 
@@ -63,3 +64,28 @@ exports.register = async (username, email, password, repeatPassword) => {
 
     return this.login(email, password);
 };
+
+
+// Change Password not completed
+
+exports.changePassword = async (id, password, repeatPassword) => {
+    if (password !== repeatPassword) {
+        throw new Error('Password missmatch!');
+
+        if (existingUser) {
+            throw new Error('User exists!');
+        };
+    
+        if (password.length < 4) {
+            throw new Error('Password too short!');
+        };
+    
+        const hashedPassword = await bcrypt.hash(password, 10);
+    
+        await User.create({ username, email, password: hashedPassword });
+    
+        return this.login(email, password);
+    }
+}
+
+// Change Password not completed

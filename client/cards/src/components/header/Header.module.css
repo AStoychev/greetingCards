@@ -157,6 +157,28 @@
     align-items: center;
 }
 
+.container .basket .profileWrapper {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 47px;
+    padding-right: 10px;
+    padding-top: 5px;
+
+    /* border: 1px solid white; */
+}
+
+.container .basket .profileIcon {
+    font-size: 28px;
+    color: rgb(55, 159, 86);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.container .basket .profileIcon:hover {
+    color: rgb(34, 225, 101);
+}
+
 .container .basket .basketWrapper {
     width: 30px;
     margin: 0 auto;
