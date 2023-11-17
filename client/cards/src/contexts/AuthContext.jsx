@@ -74,6 +74,27 @@ export const AuthProvider = ({
 
     };
 
+    const onChangePasswordSubmit = async (values) => {
+        const { email, password, newPassword, repeatNewPassword } = values;
+        if (repeatNewPassword !== newPassword) {
+            console.log('Password Mismatch')
+            return;
+        }
+
+        try {
+            const result = await authService.changePassword({...values});
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem change password')
+            }
+        }
+
+    };
+
+
+
+
     const onLogout = async () => {
         await authService.logout();
 
@@ -89,6 +110,7 @@ export const AuthProvider = ({
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
+        onChangePasswordSubmit,
         onLogout,
         userId: auth._id,
         token: auth.accessToken,

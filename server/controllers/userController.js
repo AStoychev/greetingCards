@@ -32,9 +32,14 @@ router.get('/logout', (req, res) => {
 
 // Change Password Functionality not completed
 
-router.get('/change-password', async (req, res) => {
-    console.log('Change Password')
-    res.json({ ok: true });
+router.post('/change-password', async (req, res) => {
+    const { email, password, newPassword, repeatNewPassword } = req.body;
+    try {
+        const result = await authService.changePassword(email, password, newPassword, repeatNewPassword);
+        res.json({ ok: true });
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 // Change Password Functionality not completed

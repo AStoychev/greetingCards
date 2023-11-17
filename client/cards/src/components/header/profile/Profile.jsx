@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import { useForm } from '../../../hooks/useForm';
+
+import { AuthContext } from '../../../contexts/AuthContext';
 
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import styles from './Profile.module.css'
@@ -8,17 +12,32 @@ export const Profile = ({
     data,
 }) => {
 
+    let [email, userName] = data;
+
+    const {onChangePasswordSubmit} = useContext(AuthContext);
+    const { values, changeHandler, onSubmit } = useForm({
+        email: email,
+        password: '',
+        newPassword: '',
+        repeatNewPassword: '',
+
+    }, onChangePasswordSubmit);
+
     const [accordion, setAccordion] = useState(false);
     const [arrow, setArrow] = useState(<FaAngleDown />);
 
-    let [email, userName] = data
     const handleClose = (data) => {
         onLoadProfileModal(data)
     }
 
-    const showChangePasswordMenu = (e) => {
-        setAccordion(true)
-        setArrow(<FaAngleUp />)
+    const showChangePasswordMenu = (data) => {
+        if (data === false) {
+            setAccordion(true)
+            setArrow(<FaAngleUp />)
+        } else {
+            setAccordion(false)
+            setArrow(<FaAngleDown />)
+        }
     }
 
     return (
@@ -48,12 +67,17 @@ export const Profile = ({
                     </div>
 
                     <div className={styles.changePasswordWrapper}>
+
+                        <div className={styles.buttonWrapper}>
+                            <button onClick={() => showChangePasswordMenu(accordion)}>Change Password {arrow}</button>
+                        </div>
+
                         <div className={styles.changePassword}>
-                            <button onClick={showChangePasswordMenu} value={accordion}>Change Password {arrow}</button>
+                            {/* <button onClick={() => showChangePasswordMenu(accordion)}>Change Password {arrow}</button> */}
 
                             {accordion &&
                                 <div className={styles.changePasswordMenu}>
-                                    <form>
+                                    <form id="changePasword" method='POST' onSubmit={onSubmit}>
                                         <label className='htmlContent' htmlFor="password"></label>
 
                                         <div className={styles.registerInformation}>PASSWORD<span>*</span></div>
@@ -61,9 +85,9 @@ export const Profile = ({
                                             type="password"
                                             name="password"
                                             id="oldPassword"
+                                            value={values.password}
+                                            onChange={changeHandler}
                                             placeholder="******"
-                                        // value={values.password}
-                                        // onChange={changeHandler}
                                         />
                                         <label className='htmlContent' htmlFor="newPassword"></label>
 
@@ -72,19 +96,19 @@ export const Profile = ({
                                             type="password"
                                             name="newPassword"
                                             id="newPassword"
+                                            value={values.newPassword}
+                                            onChange={changeHandler}
                                             placeholder="******"
-                                        // value={values.repeatPassword}
-                                        // onChange={changeHandler}
                                         />
 
                                         <div className={styles.registerInformation}>CONFIRM NEW PASSWORD<span>*</span></div>
                                         <input
                                             type="password"
-                                            name="repeatPassword"
+                                            name="repeatNewPassword"
                                             id="repeatNewPassword"
+                                            value={values.repeatNewPassword}
+                                            onChange={changeHandler}
                                             placeholder="******"
-                                        // value={values.repeatPassword}
-                                        // onChange={changeHandler}
                                         />
 
                                         <div className={styles.submit}>

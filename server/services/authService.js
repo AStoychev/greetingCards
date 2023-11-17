@@ -65,27 +65,24 @@ exports.register = async (username, email, password, repeatPassword) => {
     return this.login(email, password);
 };
 
-
 // Change Password not completed
 
-exports.changePassword = async (id, password, repeatPassword) => {
-    if (password !== repeatPassword) {
-        throw new Error('Password missmatch!');
+exports.changePassword = async (email, password, newPassword, repeatNewPassword) => {
+    const user = await User.findOne({ email });
+    const isValid = await bcrypt.compare(password, user.password);
 
-        if (existingUser) {
-            throw new Error('User exists!');
-        };
-    
-        if (password.length < 4) {
-            throw new Error('Password too short!');
-        };
-    
-        const hashedPassword = await bcrypt.hash(password, 10);
-    
-        await User.create({ username, email, password: hashedPassword });
-    
-        return this.login(email, password);
+    if (newPassword !== repeatNewPassword) {
+        throw new Error('Password missmatch!');
     }
+
+    if (!isValid) {
+        throw new Error('Wrong password!');
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+
+    await User.findByIdAndUpdate(user._id, { ...user, password: hashedPassword });
 }
 
 // Change Password not completed
