@@ -4,8 +4,6 @@
     height: 100%;
 
     background-color: rgb(44, 45, 48, 58%);
-    /* background-color: #2c2d31; */
-    /* transform: translate(-50%, -50%); */
     z-index: 1000;
     box-shadow: 21px 15px 121px 3020px rgba(45, 45, 46, 0.651);
 }
@@ -55,9 +53,6 @@
 .popup .wrapper .infoWrapper {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
-
-    /* border: 1px solid white; */
 }
 
 .popup .wrapper .infoWrapper .profileImage {
@@ -109,8 +104,6 @@
     cursor: pointer;
     font-size: 15px;
     padding-bottom: 10px;
-
-    /* border: 1px solid white; */
 }
 
 .popup .wrapper .changePasswordWrapper .changePassword button:hover {
@@ -122,14 +115,11 @@
     text-align: center;
     color: white;
     padding-bottom: 8px;
-
-    /* border: 1px solid white; */
 }
 
 .popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu input[type="password"] {
     width: 300px;
 
-    /* all: unset; */
     height: 30px;
     border-radius: 5px;
     background-color: #1E1F22;
@@ -165,7 +155,6 @@
     position: relative;
     margin: auto;
     text-align: center;
-    /* background-color: #0f72e5; */
     color: #ffffff;
     text-decoration: none;
     padding: 5px 0;
@@ -178,7 +167,6 @@
 .popup .wrapper .buttonWrapper .noButton:hover {
     border: solid #5393dc;
     color: #5393dc;
-    /* background-color: #18579f; */
 }
 
 .popup .wrapper .buttonWrapper .yesButton {
@@ -193,7 +181,6 @@
     text-decoration: none;
     padding: 5px 0;
     border-radius: 8px;
-    /* border: solid #2c2d31; */
     cursor: pointer;
     transition: 0.3s;
 }
@@ -207,8 +194,6 @@
         width: 100%;
         height: auto;
         border-radius: 0px;
-        /* left: 40%;
-        top: 50%; */
     }
 
     .popup .wrapper .titleWrapper h2 {
