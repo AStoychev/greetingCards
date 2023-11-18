@@ -86,3 +86,64 @@ exports.changePassword = async (email, password, newPassword, repeatNewPassword)
 }
 
 // Change Password not completed
+
+// Reset Password
+exports.resetPasswordSendEmail = async (email, code) => {
+    const user = await User.findOne({ email });
+    if (user) {
+        user.resetPasswordCode = code
+        await User.findByIdAndUpdate(user._id, { ...user, resetPasswordCode: code });
+    } else {
+        throw new Error("Email doesn't exist!")
+    }
+}
+
+exports.resetPasswordCompareCode = async (code, cryptEmail) => {
+    let splitCryptEmail = cryptEmail.split('!');
+    let encryptEmail = ''
+    for (let i in splitCryptEmail) {
+        if (i) {
+            encryptEmail += String.fromCharCode(splitCryptEmail[i])
+        }
+    }
+
+    email = encryptEmail.replaceAll('\x00', '');
+    const user = await User.findOne({ email });
+
+
+    if (user) {
+        if (code !== user.resetPasswordCode) {
+            throw new Error("Wrong code!")
+        }
+    } else {
+        throw new Error("Email doesn't exist!")
+    }
+}
+
+
+exports.resetPasswordChangePaswword = async (cryptEmail, newPassword, confirmNewPassword) => {
+
+    let splitCryptEmail = cryptEmail.split('!');
+    let encryptEmail = ''
+    for (let i in splitCryptEmail) {
+        if (i) {
+            encryptEmail += String.fromCharCode(splitCryptEmail[i])
+        }
+    }
+
+    if (newPassword !== confirmNewPassword) {
+        throw new Error('Server establish password mismatch!')
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    email = encryptEmail.replaceAll('\x00', '');
+    const user = await User.findOne({ email });
+
+    if (user) {
+        user.password = hashedPassword;
+        await User.findByIdAndUpdate(user._id, { ...user, password: hashedPassword });
+    } else {
+        throw new Error("Email for change password doesn't exist!")
+    }
+}
+// Reset Password

@@ -15,11 +15,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    resetPasswordCode: {
+        type: String,
+        maxLength: 6,
+    },
     isAdmin: {
         type: Boolean,
         default: false,
+    },
+
+},
+    {
+        timestamps: true,
     }
-});
+);
 
 const User = mongoose.model('User', userSchema);
 

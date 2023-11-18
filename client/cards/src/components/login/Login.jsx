@@ -56,7 +56,9 @@ export const Login = () => {
                                             onChange={changeHandler}
                                         />
 
-                                        <div className={styles.forgotPasswordFiled}>Forgot your password?</div>
+                                        <div className={styles.forgotPasswordFiled}>
+                                            <Link className={styles.navigationLink} to="/reset-password-step-one">Forgot your password?</Link>
+                                        </div>
                                         <div className="submit">
                                             <input type="submit" className={styles.submitBtn} value="Log In" />
                                         </div>

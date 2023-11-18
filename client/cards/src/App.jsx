@@ -30,6 +30,10 @@ import { SecondStepOrder } from './components/makeOrder/secondStepOrder/SecondSt
 import { ThirtStepOrder } from './components/makeOrder/thirtStepOrder/ThirtStepOrder';
 import { CompleteOrderMenu } from './components/makeOrder/completeOrderMenu/CompleteOrderMenu';
 
+import { ResetPasswordStepOne } from './components/resetPassword/stepOne/ResetPasswordStepOne';
+import { ResetPasswordStepTwo } from './components/resetPassword/stepTwo/ResetPasswordStepTwo';
+import { ResetPasswordStepThree } from './components/resetPassword/stepThree/ResetPasswordStepThree';
+
 // import './App.css';
 
 function App() {
@@ -59,8 +63,12 @@ function App() {
                             <Route path='/admin-main-page/unprocessed-order/:userId' element={<UnprocessedOrders />} />
                             <Route path='/admin-main-page/send-order/:userId' element={<SendOrders />} />
                             <Route path='/admin-main-page/received-order/:userId' element={<ReceivedOrders />} />
-                            <Route path='/admin-main-page/returned-order/:userId' element={<ReturnedOrders />}/>
+                            <Route path='/admin-main-page/returned-order/:userId' element={<ReturnedOrders />} />
                             <Route path='/admin-main-page/refused-order/:userId' element={<RefussedOrders />} />
+
+                            <Route path='/reset-password-step-one' element={<ResetPasswordStepOne />} />
+                            <Route path='/reset-password-step-two/:cryptEmail' element={<ResetPasswordStepTwo />} />
+                            <Route path='/reset-password-step-three/:cryptEmail' element={<ResetPasswordStepThree />} />
                         </Routes>
                         <Footer />
                     </OrderProvider>

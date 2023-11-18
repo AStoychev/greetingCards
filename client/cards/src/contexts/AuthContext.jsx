@@ -82,18 +82,59 @@ export const AuthProvider = ({
         }
 
         try {
-            const result = await authService.changePassword({...values});
+            const result = await authService.changePassword({ ...values });
 
         } catch (error) {
             if (error) {
-                console.log('There is a problem change password')
+                console.log('There is a problem with change password')
             }
         }
 
     };
 
+    const onResetPasswordSubmitStepOne = async (values) => {
+        try {
+            const result = await authService.resetPasswordStepOne({ ...values });
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with reset password!')
+            }
+        }
 
+    };
 
+    const onResetPasswordSubmitStepTwo = async (values) => {
+        try {
+            const result = await authService.resetPasswordStepTwo({ ...values });
+            if (result.error) {
+                console.log('Error', result.error)
+            } else {
+                navigate(`/reset-password-step-three/${values.cryptEmail}`);
+            }
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with code reset password!')
+            }
+        }
+    };
+
+    const onResetPasswordSubmitStepThree = async (values) => {
+
+        if (values.newPassword !== values.confirmNewPassword) {
+            console.log('Password Mismatch')
+            return;
+        }
+        try {
+            const result = await authService.resetPasswordStepThree({ ...values });
+            console.log('Result', result)
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with change password!')
+            }
+        }
+    };
 
     const onLogout = async () => {
         await authService.logout();
@@ -111,6 +152,9 @@ export const AuthProvider = ({
         onLoginSubmit,
         onRegisterSubmit,
         onChangePasswordSubmit,
+        onResetPasswordSubmitStepOne,
+        onResetPasswordSubmitStepTwo,
+        onResetPasswordSubmitStepThree,
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
