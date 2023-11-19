@@ -104,9 +104,10 @@
     cursor: pointer;
     font-size: 15px;
     padding-bottom: 10px;
+    transition: 0.3s;
 }
 
-.popup .wrapper .changePasswordWrapper .changePassword button:hover {
+.popup .wrapper .changePasswordWrapper .buttonWrapper button:hover {
     color: rgb(78, 157, 169);
 }
 

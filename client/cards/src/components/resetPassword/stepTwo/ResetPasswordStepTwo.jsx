@@ -37,7 +37,6 @@ export const ResetPasswordStepTwo = () => {
                                     <input
                                         type="text"
                                         id="email"
-                                        // placeholder="greetingcards@gmail.com"
                                         name="code"
                                         value={values.code}
                                         onChange={changeHandler}

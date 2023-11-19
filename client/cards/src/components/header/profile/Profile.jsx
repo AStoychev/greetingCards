@@ -73,8 +73,6 @@ export const Profile = ({
                         </div>
 
                         <div className={styles.changePassword}>
-                            {/* <button onClick={() => showChangePasswordMenu(accordion)}>Change Password {arrow}</button> */}
-
                             {accordion &&
                                 <div className={styles.changePasswordMenu}>
                                     <form id="changePasword" method='POST' onSubmit={onSubmit}>
@@ -126,7 +124,6 @@ export const Profile = ({
 
                     <div className={styles.buttonWrapper}>
                         <button className={styles.noButton} onClick={() => handleClose('No')}>Close</button>
-                        {/* <button className={styles.yesButton} onClick={() => handleClose('Yes')}>Yes</button> */}
                     </div>
                 </div>
             </div>
