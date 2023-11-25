@@ -31,6 +31,7 @@ import { ThirtStepOrder } from './components/makeOrder/thirtStepOrder/ThirtStepO
 import { CompleteOrderMenu } from './components/makeOrder/completeOrderMenu/CompleteOrderMenu';
 
 import { ResetPasswordStepOne } from './components/resetPassword/stepOne/ResetPasswordStepOne';
+import { RedirectPageStepOne } from './components/resetPassword/stepOne/RedirectPageStepOne';
 import { ResetPasswordStepTwo } from './components/resetPassword/stepTwo/ResetPasswordStepTwo';
 import { ResetPasswordStepThree } from './components/resetPassword/stepThree/ResetPasswordStepThree';
 
@@ -69,6 +70,8 @@ function App() {
                             <Route path='/reset-password-step-one' element={<ResetPasswordStepOne />} />
                             <Route path='/reset-password-step-two/:cryptEmail' element={<ResetPasswordStepTwo />} />
                             <Route path='/reset-password-step-three/:cryptEmail' element={<ResetPasswordStepThree />} />
+
+                            <Route path='/redirect-page-reset-password' element={<RedirectPageStepOne />} />
                         </Routes>
                         <Footer />
                     </OrderProvider>

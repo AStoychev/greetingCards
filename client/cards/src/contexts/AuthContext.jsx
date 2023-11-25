@@ -18,6 +18,7 @@ export const AuthProvider = ({
     // Try error
     const [errors, setError] = useState({});
     const [errorEmail, setErrorEmail] = useState({});
+    const [errorResetPassword, setErrorResetPassword] = useState('OK');
     // Try error
 
     const authService = authServiceFactory(auth.accessToken);
@@ -95,6 +96,7 @@ export const AuthProvider = ({
     const onResetPasswordSubmitStepOne = async (values) => {
         try {
             const result = await authService.resetPasswordStepOne({ ...values });
+            navigate('/');
         } catch (error) {
             if (error) {
                 console.log('There is a problem with reset password!')
@@ -165,6 +167,7 @@ export const AuthProvider = ({
 
         thisError: errors,
         errorEmail: errorEmail,
+        errorResetPassword: errorResetPassword,
     };
     return (
         <>

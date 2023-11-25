@@ -5,7 +5,7 @@ export const MakeOrderSpinner = () => {
         <div className={styles.container}>
             <div className={styles.spinner}>
                 <div className={styles.innerContainer}>
-                    <div class={styles.ldsEllipsis}>
+                    <div className={styles.ldsEllipsis}>
                         <div></div>
                         <div></div>
                         <div></div>
