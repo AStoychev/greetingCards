@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useForm } from '../../../hooks/useForm';
-import { AuthContext } from '../../../contexts/AuthContext';
+import { AuthContext, useAuthContext } from '../../../contexts/AuthContext';
 
 import background from '../../img/background.png';
 import styles from './ResetPasswordStepTwo.module.css';
@@ -11,11 +11,20 @@ export const ResetPasswordStepTwo = () => {
 
     const userEmail = useParams();
 
-    const { onResetPasswordSubmitStepTwo } = useContext(AuthContext);
+    // Use errorResetPassword.error because in AuthContext data is object with key error
+    const { errorResetPassword, onResetPasswordSubmitStepTwo } = useContext(AuthContext);
     const { values, changeHandler, onSubmit } = useForm({
         code: '',
         cryptEmail: userEmail['cryptEmail'],
     }, onResetPasswordSubmitStepTwo)
+
+    const checkForEmptyValues = () => {
+        if (values.code === '') {
+            return false
+        } else {
+            return true
+        }
+    }
 
     return (
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
@@ -41,9 +50,25 @@ export const ResetPasswordStepTwo = () => {
                                         value={values.code}
                                         onChange={changeHandler}
                                     />
-                                    <div className="submit">
-                                        <input type="submit" className={styles.submitBtn} value="Submit" />
-                                    </div>
+
+                                    {errorResetPassword.error &&
+                                        <p className={styles.errorField}>{errorResetPassword.error}</p>
+                                    }
+
+                                    {checkForEmptyValues() &&
+                                        <div className="submit">
+                                            <input type="submit" className={styles.submitBtn} value="Submit" />
+                                        </div>
+                                        ||
+                                        <div className="submit">
+                                            <input
+                                                type="submit"
+                                                className={styles.disabledSubmitBtn}
+                                                disabled={true}
+                                                title='Write You Code'
+                                                value="Submit" />
+                                        </div>
+                                    }
                                 </div>
                             </form>
                         </section>

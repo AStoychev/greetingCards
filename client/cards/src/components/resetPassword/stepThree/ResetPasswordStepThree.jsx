@@ -10,12 +10,20 @@ export const ResetPasswordStepThree = () => {
 
     const userEmail = useParams();
 
-    const { onResetPasswordSubmitStepThree } = useContext(AuthContext)
+    const { errorResetPassword, onResetPasswordSubmitStepThree } = useContext(AuthContext)
     const { values, changeHandler, onSubmit } = useForm({
         email: userEmail['cryptEmail'],
         newPassword: '',
         confirmNewPassword: '',
     }, onResetPasswordSubmitStepThree)
+
+    const checkForEmptyValues = () => {
+        if (values.newPassword === '' || values.confirmNewPassword === '') {
+            return false
+        } else {
+            return true
+        }
+    }
 
     return (
 
@@ -53,9 +61,24 @@ export const ResetPasswordStepThree = () => {
                                         onChange={changeHandler}
                                     />
 
-                                    <div className="submit">
-                                        <input type="submit" className={styles.submitBtn} value="SUBMIT" />
-                                    </div>
+                                    {errorResetPassword.error &&
+                                        <p className={styles.errorField}>{errorResetPassword.error}</p>
+                                    }
+
+                                    {checkForEmptyValues() &&
+                                        <div className="submit">
+                                            <input type="submit" className={styles.submitBtn} value="SUBMIT" />
+                                        </div>
+                                        ||
+                                        <div className="submit">
+                                            <input
+                                                type="submit"
+                                                className={styles.disabledSubmitBtn}
+                                                disabled={true}
+                                                title='Please Fill All Fields'
+                                                value="SUBMIT" />
+                                        </div>
+                                    }
                                 </div>
                             </form>
                         </section>

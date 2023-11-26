@@ -101,6 +101,7 @@ exports.resetPasswordSendEmail = async (email, code) => {
 exports.resetPasswordCompareCode = async (code, cryptEmail) => {
     let splitCryptEmail = cryptEmail.split('!');
     let encryptEmail = ''
+
     for (let i in splitCryptEmail) {
         if (i) {
             encryptEmail += String.fromCharCode(splitCryptEmail[i])

@@ -18,7 +18,7 @@ export const AuthProvider = ({
     // Try error
     const [errors, setError] = useState({});
     const [errorEmail, setErrorEmail] = useState({});
-    const [errorResetPassword, setErrorResetPassword] = useState('OK');
+    const [errorResetPassword, setErrorResetPassword] = useState({});
     // Try error
 
     const authService = authServiceFactory(auth.accessToken);
@@ -110,6 +110,12 @@ export const AuthProvider = ({
             const result = await authService.resetPasswordStepTwo({ ...values });
             if (result.error) {
                 console.log('Error', result.error)
+                if (result.error) {
+                    setErrorResetPassword(result)
+                    setTimeout(() => {
+                        setErrorResetPassword({})
+                    }, 2000);
+                }
             } else {
                 navigate(`/reset-password-step-three/${values.cryptEmail}`);
             }
@@ -123,17 +129,29 @@ export const AuthProvider = ({
 
     const onResetPasswordSubmitStepThree = async (values) => {
 
-        if (values.newPassword !== values.confirmNewPassword) {
+        if (values.newPassword !== values.confirmNewPassword || values.newPassword === '') {
             console.log('Password Mismatch')
+            setErrorResetPassword({error: 'Password Mismatch'})
+            setTimeout(() => {
+                setErrorResetPassword({})
+            }, 2000);
             return;
         }
         try {
             const result = await authService.resetPasswordStepThree({ ...values });
             console.log('Result', result)
+            if (result.error) {
+                setErrorResetPassword(result)
+                setTimeout(() => {
+                    setErrorResetPassword({})
+                }, 2000);
+            }
+
 
         } catch (error) {
             if (error) {
                 console.log('There is a problem with change password!')
+
             }
         }
     };
@@ -149,7 +167,7 @@ export const AuthProvider = ({
     };
 
     // console.log(1111111111111, auth)
-
+    
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,

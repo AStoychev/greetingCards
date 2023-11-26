@@ -31,7 +31,7 @@ import { ThirtStepOrder } from './components/makeOrder/thirtStepOrder/ThirtStepO
 import { CompleteOrderMenu } from './components/makeOrder/completeOrderMenu/CompleteOrderMenu';
 
 import { ResetPasswordStepOne } from './components/resetPassword/stepOne/ResetPasswordStepOne';
-import { RedirectPageStepOne } from './components/resetPassword/stepOne/RedirectPageStepOne';
+import { RedirectPageStepOne } from './components/resetPassword/redirectPage/RedirectPageStepOne';
 import { ResetPasswordStepTwo } from './components/resetPassword/stepTwo/ResetPasswordStepTwo';
 import { ResetPasswordStepThree } from './components/resetPassword/stepThree/ResetPasswordStepThree';
 

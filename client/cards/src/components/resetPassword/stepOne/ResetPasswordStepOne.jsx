@@ -21,6 +21,14 @@ export const ResetPasswordStepOne = () => {
         onSubmit(e);
     }
 
+    const checkForEmptyValues = () => {
+        if (values.email === '') {
+            return false
+        } else {
+            return true
+        }
+    }
+
     return (
 
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
@@ -44,9 +52,25 @@ export const ResetPasswordStepOne = () => {
                                         value={values.email}
                                         onChange={changeHandler}
                                     />
-                                    <div className="submit">
+                                    {/* <div className="submit">
                                         <input type="submit" className={styles.submitBtn} value="Next" />
-                                    </div>
+                                    </div> */}
+
+
+                                    {checkForEmptyValues() &&
+                                        <div className="submit">
+                                            <input type="submit" className={styles.submitBtn} value="SUBMIT" />
+                                        </div>
+                                        ||
+                                        <div className="submit">
+                                            <input
+                                                type="submit"
+                                                className={styles.disabledSubmitBtn}
+                                                disabled={true}
+                                                title='Please write your email address!'
+                                                value="SUBMIT" />
+                                        </div>
+                                    }
                                 </div>
                             </form>
                         </section>
