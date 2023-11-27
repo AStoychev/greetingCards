@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { cardServiceFactory } from "../../services/cardService";
 
-import { Cards } from "../../utils/Cards/CatalogCards/Cards";
+import { Card } from "../../utils/Cards/CatalogCards/Card";
 
 import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
 
@@ -20,20 +20,20 @@ export const Catalog = () => {
     }, [])
 
     return (
-        <div className={styles.productContainer} >
-            <div id="app" className="container">
+        <div className={styles.container} >
+            <div id="app" className={styles.itemsWrapper}>
+
+                <div className={styles.items}>
+                    {allCards && allCards.map(card => (
+                        < Card card={card} key={card._id} />
+                    ))}
+                </div>
 
                 <div className={styles.productAndSortItem}>
                     <div className={styles.columnOne}>
                     </div>
                     <div className={styles.columnTwo}>
                     </div>
-                </div>
-
-                <div className={styles.grid}>
-                    {allCards && allCards.map(card => (
-                        < Cards card={card} key={card._id} />
-                    ))}
                 </div>
                 < SaveLastFiveVisitedCards />
             </div>

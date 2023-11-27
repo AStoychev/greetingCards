@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
 
-import styles from './Cards.module.css'
+import styles from './Card.module.css'
 
-export const Cards = ({
+export const Card = ({
     card,
 }) => {
     const [coverImage, setCoverImage] = useState('');
@@ -36,16 +36,16 @@ export const Cards = ({
         }
     }
 
-    const mouseLeaceImage = () => {
+    const mouseLeaveImage = () => {
         setCoverImage(card.imageUrl)
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <article className={styles.article}>
                 {/* {message} */}
                 <div className={styles.mainCardDiv} onClick={onArticleClick}>
-                    <div className={styles.itemInfoWrapper} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
+                    <div className={styles.itemInfoWrapper} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
                         <div className={styles.image}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
                         </div>

@@ -1,29 +1,38 @@
-.productContainer {
-    overflow: auto;
+.container {
     z-index: 1;
     width: 100%;
-    height: 90vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
 }
 
-.grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    /* gap: 1rem; */
-
-    /* This CSS don't change rows */
-    /* display: grid;
-    grid-template-columns: repeat(3, minmax(280px, 1fr));
-    grid-gap: 20px;
-    align-items: stretch; */
-    grid-row: 4;
-    grid-gap: 30px;
+.container .itemsWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
 }
 
-@media (min-width: 600px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
+.container .itemsWrapper .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    row-gap: 50px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid black;
+}
+
+@media (max-width: 600px) {
+    .container .itemsWrapper {
+        margin: 0 auto;
+        /* align-items:start; */
+        /* padding-left: 15px; */
     }
 }
 
