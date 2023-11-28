@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Alfa+Slab+One&family=Bebas+Neue&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.chatFieldContainer {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgb(206, 229, 255), rgb(236, 245, 255));
+    border-radius: 10px;
+    /* border: 1px solid #195B7F; */
+}
+
+.chatFieldContainer .closeButton {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chatFieldContainer .closeButton:hover {
+    color: #114764;
+}
+
+.chatFieldContainer .chatMenuWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #195B7F;
+    background: linear-gradient(#6099b8, #6EBBBA);
+    color: #ffffff;
+    font-family: Indie Flower, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    font-size: 19px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.chatFieldContainer .messageContent {
+    display: inline-block;
+    background-color: rgb(230, 230, 230);
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+.chatFieldContainer .inputWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
+}
+
+.chatFieldContainer .inputWrapper form {
+    width: 97%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* border-top: 1.5px solid #afb3b5; */
+    border: 1.5px solid #afb3b5;
+    padding-top: 5px;
+}
+
+.chatFieldContainer .inputWrapper form input {
+    width: 80%;
+    background-color: transparent;
+}
+
+.chatFieldContainer .inputWrapper form input::placeholder {
+    font-size: 13px;
+}
+
+.chatFieldContainer .inputWrapper form .submitWrapper {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(17, 73, 137), rgb(96, 117, 142));
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.chatFieldContainer .inputWrapper form .submitWrapper .submitIcon {
+    font-size: 23px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+}

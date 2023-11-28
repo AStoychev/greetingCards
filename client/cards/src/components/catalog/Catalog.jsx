@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { cardServiceFactory } from "../../services/cardService";
 
 import { Card } from "../../utils/Cards/CatalogCards/Card";
-
 import { SaveLastFiveVisitedCards } from "../SaveInLocalStorage/SaveLastFiveVisitedCards";
+import { Chat } from "../../utils/Chat/Chat";
 
 import styles from './Catalog.module.css'
 
@@ -35,8 +35,9 @@ export const Catalog = () => {
                     <div className={styles.columnTwo}>
                     </div>
                 </div>
-                < SaveLastFiveVisitedCards />
+                <SaveLastFiveVisitedCards />
             </div>
+            <Chat />
         </div>
     );
 }

@@ -1,0 +1,15 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    right: 1%;
+}
+
+.chatWrapper {
+    position: relative;
+}
+
+.container .chatIconWrapper .chatIcon {
+    font-size: 60px;
+    cursor: pointer;
+    color: rgb(25, 150, 150);
+}
