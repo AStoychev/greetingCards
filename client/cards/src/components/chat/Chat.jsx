@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ChatWindow } from "./ChatWindow/ChatWindow";
+import { ChatWindow } from "./chatWindow/ChatWindow";
 
 import { PiWechatLogoDuotone } from "react-icons/pi";
 import styles from "./Chat.module.css"

@@ -7,6 +7,7 @@
     height: 500px;
     bottom: 0;
     right: 0;
+    margin-bottom: 73px;
     background: linear-gradient(rgb(206, 229, 255), rgb(236, 245, 255));
     border-radius: 10px;
     /* border: 1px solid #195B7F; */
@@ -32,12 +33,62 @@
     color: #ffffff;
     font-family: Indie Flower, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
-    font-size: 19px;
+    font-size: 15px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
 
-.chatFieldContainer .messageContent {
+.chatFieldContainer .chatClientData {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #114764;
+    color: #ffffff;
+    padding-top: 1px;
+    padding-bottom: 210px;
+
+}
+
+.chatFieldContainer .chatClientData h3 {
+    letter-spacing: 1px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.chatFieldContainer .chatClientData form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.chatFieldContainer .chatClientData form [name="room"] {
+    color: rgb(20, 31, 94);
+    background-color: aliceblue;
+    font-size: 15px;
+}
+
+.chatFieldContainer .chatClientData form [name="username"] {
+    color: rgb(20, 31, 94);
+    background-color: aliceblue;
+    font-size: 15px;
+}
+
+.chatFieldContainer .chatClientData form [name="submit"] {
+    all: unset;
+    border: 1.5px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.chatFieldContainer .chatClientData form [name="submit"]:hover {
+    color:rgb(10, 36, 90);
+    background-color: aliceblue;
+}
+
+.chatFieldContainer .chatClientData .chatFieldContainer .messageContent {
     display: inline-block;
     background-color: rgb(230, 230, 230);
     margin-left: 10px;

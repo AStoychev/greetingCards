@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './contexts/AuthContext';
 import { CardProvider } from './contexts/CardContext';
 import { OrderProvider } from './contexts/OrderContext';
+import { ChatProvider } from './contexts/ChatContext';
 
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
@@ -35,45 +37,59 @@ import { RedirectPageStepOne } from './components/resetPassword/redirectPage/Red
 import { ResetPasswordStepTwo } from './components/resetPassword/stepTwo/ResetPasswordStepTwo';
 import { ResetPasswordStepThree } from './components/resetPassword/stepThree/ResetPasswordStepThree';
 
+// import io from 'socket.io-client';
+
 // import './App.css';
 
+// let socket;
+// const CONNECTION_PORT = 'localhost:3000/'
+
 function App() {
+
+    // const [room, setRoom] = useState('');
+    // const [userName, setUserName] = useState('');
+    // useEffect(() => {
+    //     socket = io(CONNECTION_PORT)
+    // }, [CONNECTION_PORT])
+
     return (
         <>
             <AuthProvider>
                 <CardProvider>
                     <OrderProvider>
-                        <Header />
-                        <Routes>
-                            <Route path='/' element={<HomePage />} />
-                            <Route path='/login' element={<Login />} />
-                            <Route path='/register' element={<Register />} />
-                            <Route path='/logout' element={<Logout />} />
-                            <Route path='/catalog' element={<Catalog />} />
-                            <Route path='/add-card' element={<AddCard />} />
-                            <Route path='/catalog/:cardId' element={<CardDetails />} />
-                            <Route path='/catalog/:cardId/edit' element={<EditCard />} />
+                        <ChatProvider>
+                            <Header />
+                            <Routes>
+                                <Route path='/' element={<HomePage />} />
+                                <Route path='/login' element={<Login />} />
+                                <Route path='/register' element={<Register />} />
+                                <Route path='/logout' element={<Logout />} />
+                                <Route path='/catalog' element={<Catalog />} />
+                                <Route path='/add-card' element={<AddCard />} />
+                                <Route path='/catalog/:cardId' element={<CardDetails />} />
+                                <Route path='/catalog/:cardId/edit' element={<EditCard />} />
 
-                            <Route path='/make-first-step-order' element={<FirstStepOrder />} />
-                            <Route path='/make-second-step-order' element={<SecondStepOrder />} />
-                            <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
-                            <Route path='/complete-order' element={<CompleteOrderMenu />} />
+                                <Route path='/make-first-step-order' element={<FirstStepOrder />} />
+                                <Route path='/make-second-step-order' element={<SecondStepOrder />} />
+                                <Route path='/make-thirth-step-order' element={<ThirtStepOrder />} />
+                                <Route path='/complete-order' element={<CompleteOrderMenu />} />
 
-                            <Route path='/admin-main-page/:userId' element={<AdminMainPage />} />
-                            <Route path='/admin-main-page/all-order/:userId' element={<AdminAllOrders />} />
-                            <Route path='/admin-main-page/unprocessed-order/:userId' element={<UnprocessedOrders />} />
-                            <Route path='/admin-main-page/send-order/:userId' element={<SendOrders />} />
-                            <Route path='/admin-main-page/received-order/:userId' element={<ReceivedOrders />} />
-                            <Route path='/admin-main-page/returned-order/:userId' element={<ReturnedOrders />} />
-                            <Route path='/admin-main-page/refused-order/:userId' element={<RefussedOrders />} />
+                                <Route path='/admin-main-page/:userId' element={<AdminMainPage />} />
+                                <Route path='/admin-main-page/all-order/:userId' element={<AdminAllOrders />} />
+                                <Route path='/admin-main-page/unprocessed-order/:userId' element={<UnprocessedOrders />} />
+                                <Route path='/admin-main-page/send-order/:userId' element={<SendOrders />} />
+                                <Route path='/admin-main-page/received-order/:userId' element={<ReceivedOrders />} />
+                                <Route path='/admin-main-page/returned-order/:userId' element={<ReturnedOrders />} />
+                                <Route path='/admin-main-page/refused-order/:userId' element={<RefussedOrders />} />
 
-                            <Route path='/reset-password-step-one' element={<ResetPasswordStepOne />} />
-                            <Route path='/reset-password-step-two/:cryptEmail' element={<ResetPasswordStepTwo />} />
-                            <Route path='/reset-password-step-three/:cryptEmail' element={<ResetPasswordStepThree />} />
+                                <Route path='/reset-password-step-one' element={<ResetPasswordStepOne />} />
+                                <Route path='/reset-password-step-two/:cryptEmail' element={<ResetPasswordStepTwo />} />
+                                <Route path='/reset-password-step-three/:cryptEmail' element={<ResetPasswordStepThree />} />
 
-                            <Route path='/redirect-page-reset-password' element={<RedirectPageStepOne />} />
-                        </Routes>
-                        <Footer />
+                                <Route path='/redirect-page-reset-password' element={<RedirectPageStepOne />} />
+                            </Routes>
+                            <Footer />
+                        </ChatProvider>
                     </OrderProvider>
                 </CardProvider>
             </AuthProvider>
