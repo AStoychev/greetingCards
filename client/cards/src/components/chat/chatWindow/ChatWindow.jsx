@@ -11,21 +11,17 @@ export const ChatWindow = ({
     closeChat,
 }) => {
 
-    const [chatDisplay, setChatDisplay] = useState('none');
-    const [chatUserData, setChatUserData] = useState('block');
-
-    const { connectToTheRoom } = useContext(ChatContext);
+    const { connectToTheRoom, sendMessage, loggedIn, room, username } = useContext(ChatContext);
     const { values, changeHandler, onSubmit } = useForm({
         room: '',
         username: '',
-    }, connectToTheRoom)
+        message: '',
+        messageList: [],
+    }, !loggedIn ? connectToTheRoom : sendMessage)
 
-    const changeMessageHandler = (e) => {
-        setChatDisplay('block');
-        setChatUserData('none');
-
-        onSubmit(e)
-    }
+    // const changeMessageHandler = (e) => {
+    //     onSubmit(e)
+    // }
 
     const onClickClose = () => {
         closeChat()
@@ -35,60 +31,63 @@ export const ChatWindow = ({
         <div className={styles.chatFieldContainer}>
             <div className={styles.closeButton} onClick={onClickClose}>X</div>
             <div className={styles.chatMenuWrapper}>
-                <h3>Hi there!</h3>
+                <h3>Hi there {username}!</h3>
             </div>
 
-            {/* <div style={{ display: 'block' }} className={styles.chatClientData}>
-                <h3>Plese write your Room and Username</h3>
-                <form>
-                    <label htmlFor="room"></label>
-                    <input
-                        type="text"
-                        placeholder="Room"
-                        name="room"
-                        value={values.room}
-                        onChange={changeHandler}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        name="username"
-                        value={values.username}
-                        onChange={changeHandler}
-                    />
-                    <div>
-                        <input
-                            type="submit"
-                            name="submit"
-                            onClick={changeMessageHandler}
-                            value="Let's chat"
-                        />
-                    </div>
-                </form>
-            </div> */}
-
-            <div>
-                <div className={styles.messageContent}>
-                    Message
-                </div>
-
-                <div className={styles.inputWrapper}>
+            {!loggedIn ?
+                <div className={styles.chatClientData}>
+                    <h3>Plese write your Room and Username</h3>
                     <form>
-                        <label htmlFor="text"></label>
+                        <label htmlFor="room"></label>
                         <input
                             type="text"
-                            placeholder="Enter Your Message..."
-                            name="text"
+                            placeholder="Room"
+                            name="room"
                             value={values.room}
                             onChange={changeHandler}
                         />
-
-                        <div className={styles.submitWrapper}>
-                            <IoSend className={styles.submitIcon} onClick={changeMessageHandler} />
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            name="username"
+                            value={values.username}
+                            onChange={changeHandler}
+                        />
+                        <div>
+                            <input
+                                type="submit"
+                                name="submit"
+                                onClick={onSubmit}
+                                value="Let's chat"
+                                disabled={values.room && values.username ? false : true}
+                            />
                         </div>
                     </form>
                 </div>
-            </div>
+                :
+                <div>
+                    <div className={styles.messageContent}>
+                        Message
+                    </div>
+
+                    <div className={styles.inputWrapper}>
+                        <form>
+                            <label htmlFor="text"></label>
+                            <input
+                                type="text"
+                                placeholder="Enter Your Message..."
+                                name="message"
+                                value={values.message}
+                                onChange={changeHandler}
+                            />
+
+                            <div className={styles.submitWrapper}>
+                                <IoSend className={styles.submitIcon} onClick={onSubmit} />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
         </div>
     )
 }

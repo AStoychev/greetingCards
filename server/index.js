@@ -35,7 +35,13 @@ app.use(express.json());
 
 const server = app.listen(3030, () => console.log('Server is listening on port 3030...'));
 
-io = socket(server);
+const io = require('socket.io')(server, {
+    cors: {
+        origin : "http://localhost:3000"
+    }
+});
+
+// io = socket(server);
 
 io.on('connection', (socket) => {
     console.log(socket.id);
@@ -43,10 +49,15 @@ io.on('connection', (socket) => {
     socket.on('join_room', (data) => {
         socket.join(data)
         console.log('User Joined Room:' + data)
-    })
+    });
+
+    socket.on('send_message', (data) => {
+        socket.join(data)
+        console.log('Message:' + data.room, data.content)
+    });
 
 
     socket.on('disconnect', () => {
         console.log('USER DISCONNECTED')
-    })
-})
+    });
+});

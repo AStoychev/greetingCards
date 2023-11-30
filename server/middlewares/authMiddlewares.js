@@ -6,15 +6,15 @@ const SECRET = 'secretisnotverysecretbutissomesecretwemusthave';
 exports.authentication = () => async (req, res, next) => {
     const token = req.header('X-Authorization');
 
-    if(token) {
+    if (token) {
         try {
             const decodetToken = await jwt.verify(token, SECRET);
-            
+
             req.user = decodetToken;
             // res.locals.isAuthenticated = true;
             // res.locals.user = decodetToken;
-        } catch(err) {
-            return res.status(401).json({ok: false});
+        } catch (err) {
+            return res.status(401).json({ ok: false });
         }
     }
 

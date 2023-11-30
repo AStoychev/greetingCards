@@ -27,6 +27,8 @@
 
 .chatFieldContainer .chatMenuWrapper {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
     background-color: #195B7F;
     background: linear-gradient(#6099b8, #6EBBBA);
@@ -84,8 +86,18 @@
 }
 
 .chatFieldContainer .chatClientData form [name="submit"]:hover {
-    color:rgb(10, 36, 90);
+    color: rgb(10, 36, 90);
     background-color: aliceblue;
+}
+
+.chatFieldContainer .chatClientData form [name="submit"]:disabled {
+    all: unset;
+    background-color:rgb(142, 136, 147);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: no-drop;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .chatFieldContainer .chatClientData .chatFieldContainer .messageContent {
