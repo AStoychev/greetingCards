@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 
 import { useForm } from "../../../hooks/useForm";
 
@@ -11,7 +11,7 @@ export const ChatWindow = ({
     closeChat,
 }) => {
 
-    const { connectToTheRoom, sendMessage, loggedIn, room, username } = useContext(ChatContext);
+    const { connectToTheRoom, sendMessage, loggedIn, room, username, message, messageList } = useContext(ChatContext);
     const { values, changeHandler, onSubmit } = useForm({
         room: '',
         username: '',
@@ -23,8 +23,25 @@ export const ChatWindow = ({
     //     onSubmit(e)
     // }
 
+    const ref = useRef(null)
+
+    const scroolBottom = () => {
+        ref.current?.scrollIntoView({behavior: "smooth"})
+    }
+
+    useEffect(() => {
+        scroolBottom()
+    },[messageList])
+
     const onClickClose = () => {
         closeChat()
+    }
+
+    const onEnterPress = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            onSubmit(e)
+        }
     }
 
     return (
@@ -67,7 +84,26 @@ export const ChatWindow = ({
                 :
                 <div>
                     <div className={styles.messageContent}>
-                        Message
+                        <div className={styles.messageWrapper}>
+                            {messageList.map((key, value) => {
+                                return <div className={styles.messageData} key={value} ref={ref}>
+                                    {username === key.author ?
+                                        <div className={styles.userWrapper}>
+                                            <div className={styles.user}>
+                                                <b>{key.author}</b>: {key.message}
+                                            </div>
+                                        </div>
+                                        :
+                                        <div className={styles.adminWrapper}>
+                                            <div className={styles.admin}>
+                                                <b>{key.author}</b>: {key.message}
+                                            </div>
+                                        </div>
+                                    }
+                                    {/* <p className={styles.messegaAuthor}>{key.message}</p> */}
+                                </div>
+                            })}
+                        </div>
                     </div>
 
                     <div className={styles.inputWrapper}>
@@ -79,6 +115,7 @@ export const ChatWindow = ({
                                 name="message"
                                 value={values.message}
                                 onChange={changeHandler}
+                                onKeyDown={onEnterPress}
                             />
 
                             <div className={styles.submitWrapper}>

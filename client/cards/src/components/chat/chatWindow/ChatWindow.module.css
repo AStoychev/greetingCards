@@ -92,7 +92,7 @@
 
 .chatFieldContainer .chatClientData form [name="submit"]:disabled {
     all: unset;
-    background-color:rgb(142, 136, 147);
+    background-color: rgb(142, 136, 147);
     border-radius: 5px;
     padding: 5px 10px;
     cursor: no-drop;
@@ -100,14 +100,62 @@
     transition: 0.3s;
 }
 
-.chatFieldContainer .chatClientData .chatFieldContainer .messageContent {
+.chatFieldContainer .messageContent {
     display: inline-block;
-    background-color: rgb(230, 230, 230);
+    max-height: 350px;
+    /* background: linear-gradient(rgb(206, 229, 255), rgb(236, 245, 255)); */
     margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px 5px;
+    margin-top: 5px;
+    padding-right: 13px;
     border-radius: 10px;
+    overflow: auto;
 }
+
+.chatFieldContainer .messageContent::-webkit-scrollbar {
+    width: 3px;
+}
+.chatFieldContainer .messageContent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chatFieldContainer .messageContent::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.chatFieldContainer .messageContent::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.chatFieldContainer .messageContent .messageData {
+    width: 273px;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    /* overflow: auto; */
+}
+
+.chatFieldContainer .messageContent .messageData .userWrapper {
+    display: flex;
+    text-align: end;
+    justify-content: end;
+}
+
+.chatFieldContainer .messageContent .messageData .adminWrapper {
+    display: flex;
+    text-align: start;
+    justify-content: start;
+}
+
+.chatFieldContainer .messageContent .messageData .user {
+    background-color: rgb(223, 236, 243);
+}
+
+.chatFieldContainer .messageContent .messageData .admin {
+    background-color: rgb(183, 224, 169);
+}
+
+.chatFieldContainer .messageContent .messageData .messegaAuthor {}
 
 .chatFieldContainer .inputWrapper {
     position: absolute;

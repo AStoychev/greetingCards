@@ -18,7 +18,7 @@ export const ChatProvider = ({
 
     // Before Login
     const [loggedIn, setLoggedIn] = useState(false);
-    const [room, setRoom] = useState('Class of 2023');
+    const [room, setRoom] = useState();
     const [username, setUsername] = useState('');
 
     // After Login
@@ -27,34 +27,37 @@ export const ChatProvider = ({
 
     useEffect(() => {
         socket = io(CONNECTION_PORT)
-    }, [CONNECTION_PORT])
+    }, [CONNECTION_PORT]);
+
+    useEffect(() => {
+        socket.on('receive_message', (data) => {
+            setMessageList([...messageList, data])
+        });
+    },[messageList]);
 
     const connectToTheRoom = (data) => {
         setLoggedIn(true);
         setRoom(data.room);
         setUsername(data.username)
 
-        socket.emit('join_room', room, username)
+        socket.emit('join_room', data.room);
     }
 
-    const sendMessage = (data) => {
+    const sendMessage = async (data) => {
         setMessage(data.message)
 
         let messageContent = {
             room: room,
             content: {
                 author: username,
-                message: message
-            }
-        }
+                message: data.message,
+            },
+        };
 
-        socket.emit("send_message", messageContent);
+        await socket.emit("send_message", messageContent);
         setMessageList([...messageList, messageContent.content])
         // setMessage('');
     }
-
-
-    console.log(111111111, messageList)
 
     const contextValues = {
         room,
