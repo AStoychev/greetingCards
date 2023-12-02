@@ -11,7 +11,7 @@ export const ChatWindow = ({
     closeChat,
 }) => {
 
-    const { connectToTheRoom, sendMessage, loggedIn, room, username, message, messageList } = useContext(ChatContext);
+    const { connectToTheRoom, sendGreetingMessage, sendMessage, loggedIn, room, username, message, messageList } = useContext(ChatContext);
     const { values, changeHandler, onSubmit } = useForm({
         room: '',
         username: '',
@@ -31,7 +31,7 @@ export const ChatWindow = ({
 
     useEffect(() => {
         scroolBottom()
-    },[messageList])
+    },[messageList]);
 
     const onClickClose = () => {
         closeChat()
@@ -44,6 +44,10 @@ export const ChatWindow = ({
         }
     }
 
+    const onLoadChat = (e) => {
+        onSubmit(e)
+        sendGreetingMessage(values.room, values.username)
+    }
     return (
         <div className={styles.chatFieldContainer}>
             <div className={styles.closeButton} onClick={onClickClose}>X</div>
@@ -74,7 +78,7 @@ export const ChatWindow = ({
                             <input
                                 type="submit"
                                 name="submit"
-                                onClick={onSubmit}
+                                onClick={onLoadChat}
                                 value="Let's chat"
                                 disabled={values.room && values.username ? false : true}
                             />
@@ -90,7 +94,7 @@ export const ChatWindow = ({
                                     {username === key.author ?
                                         <div className={styles.userWrapper}>
                                             <div className={styles.user}>
-                                                <b>{key.author}</b>: {key.message}
+                                                <b>You</b>: {key.message}
                                             </div>
                                         </div>
                                         :
@@ -118,9 +122,9 @@ export const ChatWindow = ({
                                 onKeyDown={onEnterPress}
                             />
 
-                            <div className={styles.submitWrapper}>
-                                <IoSend className={styles.submitIcon} onClick={onSubmit} />
-                            </div>
+                            <button className={styles.submitWrapper} onClick={onSubmit}>
+                                <IoSend className={styles.submitIcon}/>
+                            </button>
                         </form>
                     </div>
                 </div>

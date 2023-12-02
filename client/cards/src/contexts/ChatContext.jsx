@@ -40,8 +40,25 @@ export const ChatProvider = ({
         setRoom(data.room);
         setUsername(data.username)
 
-        socket.emit('join_room', data.room);
+        socket.emit('join_room', data);
     }
+
+
+    // Try send auto meesage
+    useEffect(() => {
+        socket.on('receive_automessage', (data) => {
+            console.log(data)
+            setMessageList([...messageList, data])
+        });
+    },[messageList]);
+    const sendGreetingMessage = (userRoom, name) => {
+        let data = {
+            room: userRoom,
+            username: name
+        }
+        socket.emit('say_hello', data)
+    }
+    // Try send auto meesage
 
     const sendMessage = async (data) => {
         setMessage(data.message)
@@ -66,6 +83,7 @@ export const ChatProvider = ({
         message,
         messageList,
         connectToTheRoom,
+        sendGreetingMessage,
         sendMessage,
     };
 

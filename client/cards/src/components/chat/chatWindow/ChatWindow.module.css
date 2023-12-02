@@ -192,7 +192,13 @@
     justify-content: center;
     background: linear-gradient(rgb(17, 73, 137), rgb(96, 117, 142));
     border-radius: 50px;
+    border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.chatFieldContainer .inputWrapper form .submitWrapper:hover {
+    background: linear-gradient(rgb(96, 117, 142), rgb(17, 73, 137));
 }
 
 .chatFieldContainer .inputWrapper form .submitWrapper .submitIcon {
