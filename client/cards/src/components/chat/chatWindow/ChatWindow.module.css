@@ -46,8 +46,10 @@
     text-align: center;
     background-color: #114764;
     color: #ffffff;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     padding-top: 1px;
-    padding-bottom: 210px;
+    padding-bottom: 120px;
 
 }
 

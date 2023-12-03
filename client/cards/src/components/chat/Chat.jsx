@@ -7,6 +7,7 @@ import styles from "./Chat.module.css"
 
 export const Chat = () => {
 
+    const [open, setOpen] = useState(0);
     const [openChat, setOpenChat] = useState('')
 
     const closeChat = () => {
@@ -14,8 +15,15 @@ export const Chat = () => {
     }
 
     const openChatField = () => {
-        setOpenChat(<ChatWindow closeChat={closeChat}/>)
+        if(open === 0) {
+            setOpen(1);
+            setOpenChat(<ChatWindow closeChat={closeChat}/>);
+        } else {
+            setOpen(0);
+            closeChat();
+        }
     }
+
     return (
         <div className={styles.container}>
             <div className={styles.chatWrapper}>
