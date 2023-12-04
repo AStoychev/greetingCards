@@ -11,7 +11,8 @@ export const Chat = () => {
     const [openChat, setOpenChat] = useState('')
 
     const closeChat = () => {
-        setOpenChat("")
+        setOpen(0);
+        setOpenChat("");
     }
 
     const openChatField = () => {

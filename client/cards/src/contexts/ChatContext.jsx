@@ -4,8 +4,6 @@ import { createContext, useState, useEffect, useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { cardServiceFactory } from "../services/cardService";
-
 let socket;
 const CONNECTION_PORT = 'localhost:3030/'
 

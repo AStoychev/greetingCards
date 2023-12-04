@@ -10,7 +10,6 @@
     margin-bottom: 73px;
     background: linear-gradient(rgb(206, 229, 255), rgb(236, 245, 255));
     border-radius: 10px;
-    /* border: 1px solid #195B7F; */
 }
 
 .chatFieldContainer .closeButton {
@@ -30,7 +29,6 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background-color: #195B7F;
     background: linear-gradient(#6099b8, #6EBBBA);
     color: #ffffff;
     font-family: Indie Flower, 'Times New Roman', Times, serif;
@@ -103,13 +101,11 @@
 }
 
 .chatFieldContainer .messageContent {
+    width: 100%;
+    max-height: 360px;
     display: inline-block;
-    max-height: 350px;
-    /* background: linear-gradient(rgb(206, 229, 255), rgb(236, 245, 255)); */
-    margin-left: 10px;
-    margin-top: 5px;
-    padding-right: 13px;
-    border-radius: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     overflow: auto;
 }
 
@@ -128,32 +124,39 @@
 }
 
 .chatFieldContainer .messageContent .messageData {
-    width: 273px;
+    width: 100;
     display: flex;
     flex-direction: column;
-    word-wrap: break-word;
     border-radius: 5px;
     margin-bottom: 3px;
-    /* overflow: auto; */
+    overflow: auto;
+
 }
 
 .chatFieldContainer .messageContent .messageData .userWrapper {
     display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
     text-align: end;
     justify-content: end;
 }
 
 .chatFieldContainer .messageContent .messageData .adminWrapper {
     display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
     text-align: start;
     justify-content: start;
 }
 
 .chatFieldContainer .messageContent .messageData .user {
-    background-color: rgb(223, 236, 243);
+    padding: 3px 5px;
+    border-radius: 10px;
 }
 
 .chatFieldContainer .messageContent .messageData .admin {
+    padding: 3px 5px;
+    border-radius: 10px;
     background-color: rgb(183, 224, 169);
 }
 
@@ -172,7 +175,6 @@
     flex-direction: row;
     margin: 0 auto;
     border-radius: 10px;
-    /* border-top: 1.5px solid #afb3b5; */
     border: 1.5px solid #afb3b5;
     padding-top: 5px;
 }
@@ -192,6 +194,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 3px;
     background: linear-gradient(rgb(17, 73, 137), rgb(96, 117, 142));
     border-radius: 50px;
     border: none;

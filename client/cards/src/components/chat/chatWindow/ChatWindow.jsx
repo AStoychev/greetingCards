@@ -26,12 +26,12 @@ export const ChatWindow = ({
     const ref = useRef(null)
 
     const scroolBottom = () => {
-        ref.current?.scrollIntoView({behavior: "smooth"})
+        ref.current?.scrollIntoView({ behavior: "smooth" })
     }
 
     useEffect(() => {
         scroolBottom()
-    },[messageList]);
+    }, [messageList]);
 
     const onClickClose = () => {
         closeChat()
@@ -54,7 +54,6 @@ export const ChatWindow = ({
             <div className={styles.chatMenuWrapper}>
                 <h3>Hi there {username}!</h3>
             </div>
-
             {!loggedIn ?
                 <div className={styles.chatClientData}>
                     <h3>Plese write your Room and Username</h3>
@@ -88,26 +87,24 @@ export const ChatWindow = ({
                 :
                 <div>
                     <div className={styles.messageContent}>
-                        <div className={styles.messageWrapper}>
-                            {messageList.map((key, value) => {
-                                return <div className={styles.messageData} key={value} ref={ref}>
-                                    {username === key.author ?
-                                        <div className={styles.userWrapper}>
-                                            <div className={styles.user}>
-                                                <b>You</b>: {key.message}
-                                            </div>
+                        {messageList.map((key, value) => {
+                            return <div className={styles.messageData} key={value} ref={ref}>
+                                {username === key.author ?
+                                    <div className={styles.userWrapper}>
+                                        <div className={styles.user}>
+                                            <b>You</b>: {key.message}
                                         </div>
-                                        :
-                                        <div className={styles.adminWrapper}>
-                                            <div className={styles.admin}>
-                                                <b>{key.author}</b>: {key.message}
-                                            </div>
+                                    </div>
+                                    :
+                                    <div className={styles.adminWrapper}>
+                                        <div className={styles.admin}>
+                                            <b>{key.author}</b>: {key.message}
                                         </div>
-                                    }
-                                    {/* <p className={styles.messegaAuthor}>{key.message}</p> */}
-                                </div>
-                            })}
-                        </div>
+                                    </div>
+                                }
+                                {/* <p className={styles.messegaAuthor}>{key.message}</p> */}
+                            </div>
+                        })}
                     </div>
 
                     <div className={styles.inputWrapper}>
@@ -121,9 +118,8 @@ export const ChatWindow = ({
                                 onChange={changeHandler}
                                 onKeyDown={onEnterPress}
                             />
-
                             <button className={styles.submitWrapper} onClick={onSubmit}>
-                                <IoSend className={styles.submitIcon}/>
+                                <IoSend className={styles.submitIcon} />
                             </button>
                         </form>
                     </div>
