@@ -135,18 +135,22 @@
 
 .chatFieldContainer .messageContent .messageData .userWrapper {
     display: flex;
+    width: 94%;
     flex-direction: column;
     word-wrap: break-word;
     text-align: end;
     justify-content: end;
+    margin: 0 auto;
 }
 
 .chatFieldContainer .messageContent .messageData .adminWrapper {
     display: flex;
+    width: 94%;
     flex-direction: column;
     word-wrap: break-word;
     text-align: start;
     justify-content: start;
+    margin: 0 auto;
 }
 
 .chatFieldContainer .messageContent .messageData .user {
@@ -157,7 +161,8 @@
 .chatFieldContainer .messageContent .messageData .admin {
     padding: 3px 5px;
     border-radius: 10px;
-    background-color: rgb(183, 224, 169);
+    background-color: rgb(190, 169, 224);
+    /* background-color: rgb(183, 224, 169); */
 }
 
 .chatFieldContainer .messageContent .messageData .messegaAuthor {}

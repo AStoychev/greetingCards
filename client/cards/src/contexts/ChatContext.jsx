@@ -70,7 +70,6 @@ export const ChatProvider = ({
 
         await socket.emit("send_message", messageContent);
         setMessageList([...messageList, messageContent.content])
-        // setMessage('');
     }
 
     const contextValues = {
