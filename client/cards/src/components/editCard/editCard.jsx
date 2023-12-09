@@ -72,7 +72,6 @@ export const EditCard = () => {
         }
     }
 
-    
     return (
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
