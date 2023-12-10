@@ -171,7 +171,7 @@ export const EditCard = () => {
                                     <input
                                     className={!validateAddCardFileds() ? styles.disabledSubmitBtn : styles.submitBtn}
                                     type="submit"
-                                    value="Edit"
+                                    value="SAVE"
                                     onClick={setDiscount}
                                     />
                                 </div>
