@@ -3,14 +3,11 @@ import socketio
 socket = socketio.AsyncServer(
     async_mode="asgi",
     cors_allowed_origins="http://localhost:3000"
-    # cors_allowed_origins=['*']
-    # cors_allowed_origins=[]
 )
 
 sio_app = socketio.ASGIApp(
     socketio_server=socket,
     socketio_path="socket.io"
-    # socketio_path='sockets'
 )
 
 
