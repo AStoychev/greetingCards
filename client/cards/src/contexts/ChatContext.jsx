@@ -5,7 +5,9 @@ import { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 let socket;
-const CONNECTION_PORT = 'localhost:3030/'
+
+const CONNECTION_PORT = 'localhost:8001/'
+// const CONNECTION_PORT = 'localhost:3030/'
 
 export const ChatContext = createContext();
 
