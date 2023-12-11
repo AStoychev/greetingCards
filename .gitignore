@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 venv/
+__pycache__
 .venv
 .pnp.js
 
