@@ -153,6 +153,54 @@
     margin: 0 auto;
 }
 
+.chatFieldContainer .messageContent .messageData .showItems {
+    text-decoration: none;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem {
+    display: flex;
+    width: 84%;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    background-color: #e2e1e1c8;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem:hover {
+    background-color: rgba(225, 225, 225, 0.694);
+    /* background-color: rgba(219, 219, 219, 0.694); */
+    opacity: 0.8;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem .titleAndPrice {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem .titleAndPrice h4{
+    color: rgb(0, 0, 0);
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.chatFieldContainer .messageContent .messageData .chatFindItem .titleAndPrice span{
+    color: rgb(37, 82, 40);
+    word-wrap: break-word;
+}
+
 .chatFieldContainer .messageContent .messageData .user {
     padding: 3px 5px;
     border-radius: 10px;

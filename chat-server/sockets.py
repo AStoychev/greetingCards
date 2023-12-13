@@ -12,7 +12,7 @@ TYPES = ["card", "box"]
 OCCASION = ["birthday", "anniversaries", "wedding"]
 MORE_DETAILS = ["gender", "age"]
 context = {"type": [], "occasion": [], "more_details": []}
-
+find_items = []
 
 def context_values(data):
     seachType = ""
@@ -22,6 +22,10 @@ def context_values(data):
     else:
         seachType = "".join(data)
         return seachType
+
+
+def make_id_to_url(id):
+    return f"http://localhost:3000/catalog/{id}"
 
 
 @socket.event
@@ -34,6 +38,7 @@ async def say_hello(sid, data):
     content = {
         "author": "ChatBot",
         "message": f'Hello {data["username"]} I\'am a new ChatBot in Greting cards! How can I help You?',
+        "url_route": "",
     }
 
     await socket.emit("receive_automessage", content)
@@ -88,9 +93,31 @@ async def send_message(sid, data):
                 "message"
             ] = f'Plese wait while I looking for all {context_values(context["type"])} related with {context_values((context["occasion"]))}'
             await socket.emit("receive_automessage", content)
+
+        if find_items:
+            content["message"] = f"This is product which I find against your criteria:"
+            content["url_route"] = find_items
+            await socket.emit("receive_automessage", content)
+
     else:
         await socket.emit("receive_automessage", content)
 
+    if context["occasion"]:
+        for i in search_for_item(context["occasion"][0]):
+            price = 0
+            if(i["discount"] > 0):
+                price = (i["price"] - (i["price"] * (i["discount"] / 100)))
+            else:
+                price = i["price"]
+
+            item_info = {
+                "id_url": make_id_to_url(str(i["_id"])),
+                "title": i["title"],
+                "image": i["imageUrl"],
+                "price": price
+            }
+
+            find_items.append(item_info)
 
 @socket.on("disconnect")
 async def disconnect():

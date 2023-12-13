@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 
+import { Link } from "react-router-dom";
+
 import { useForm } from "../../../hooks/useForm";
 
 import { ChatContext } from "../../../contexts/ChatContext";
@@ -17,17 +19,17 @@ export const ChatWindow = ({
         username: '',
         message: '',
         messageList: [],
-    }, !loggedIn ? connectToTheRoom : sendMessage)
+    }, !loggedIn ? connectToTheRoom : sendMessage);
 
     // const changeMessageHandler = (e) => {
     //     onSubmit(e)
     // }
 
-    const ref = useRef(null)
+    const ref = useRef(null);
 
     const scroolBottom = () => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
-    }
+    };
 
     useEffect(() => {
         scroolBottom()
@@ -35,7 +37,7 @@ export const ChatWindow = ({
 
     const onClickClose = () => {
         closeChat()
-    }
+    };
 
     const onEnterPress = (e) => {
         if (e.key === 'Enter') {
@@ -48,6 +50,16 @@ export const ChatWindow = ({
         onSubmit(e)
         sendGreetingMessage(values.room, values.username)
     }
+
+    // console.log('Linksssss: ', messageList[0]?.url_route)
+    // for (let i in messageList) {
+    //     if (messageList[i]?.url_route) {
+    //         console.log(11111111, messageList[i]?.url_route)
+    //     } else {
+    //         console.log('None')
+    //     }
+    // }
+
     return (
         <div className={styles.chatFieldContainer}>
             <div className={styles.closeButton} onClick={onClickClose}>X</div>
@@ -98,7 +110,24 @@ export const ChatWindow = ({
                                     :
                                     <div className={styles.adminWrapper}>
                                         <div className={styles.admin}>
-                                            <b>{key.author}</b>: {key.message}
+                                            <b>{key.author}</b>:
+                                            {key.message}
+                                            {key.url_route ? key.url_route.map((data) => {
+                                                return (
+                                                    <div key={data.id_url}>
+                                                        <Link to={data.id_url} className={styles.showItems} target="_blank">
+                                                            <div className={styles.chatFindItem}>
+                                                                <img src={data.image} />
+                                                                <div className={styles.titleAndPrice}>
+                                                                    <h4>{data.title}</h4>
+                                                                    <span>${data.price}</span>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                )
+                                            }) : ''
+                                            }
                                         </div>
                                     </div>
                                 }
