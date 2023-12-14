@@ -17,5 +17,4 @@ def search_for_item(word):
         if word in description:
             if not ([x for x in saved_items if x["_id"] == card["_id"]]):
                 saved_items.append(card)
-    
     return saved_items

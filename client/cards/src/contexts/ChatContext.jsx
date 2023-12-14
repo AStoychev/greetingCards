@@ -74,6 +74,10 @@ export const ChatProvider = ({
         setMessageList([...messageList, messageContent.content])
     }
 
+    const acceptItems = async (data) => {
+        await socket.emit("accept_item", data);
+    }
+
     const contextValues = {
         room,
         username,
@@ -83,6 +87,7 @@ export const ChatProvider = ({
         connectToTheRoom,
         sendGreetingMessage,
         sendMessage,
+        acceptItems,
     };
 
     return (

@@ -50,6 +50,7 @@ async def send_message(sid, data):
     content = {
         "author": "ChatBot",
         "message": "I can't undestand you! Can you repeat your question more detailed?",
+        "url_route": "",
     }
 
     # Select Type
@@ -87,6 +88,7 @@ async def send_message(sid, data):
         ] = f'Do you have preferences for gender or age or to search all {context_values(context["type"])} for {context_values((context["occasion"]))}'
         await socket.emit("receive_automessage", content)
     elif context["occasion"]:
+
         if "all" or "not" in message:
             context["more_details"] = "all"
             content[
@@ -97,7 +99,14 @@ async def send_message(sid, data):
         if find_items:
             content["message"] = f"This is product which I find against your criteria:"
             content["url_route"] = find_items
-            await socket.emit("receive_automessage", content)
+            # context["occasion"] = []
+            try:
+                await socket.emit("receive_automessage", content)
+            except:
+                print('Not Send')
+        
+        print(1111111111, content["url_route"])
+        
 
     else:
         await socket.emit("receive_automessage", content)
@@ -116,8 +125,15 @@ async def send_message(sid, data):
                 "image": i["imageUrl"],
                 "price": price
             }
-
             find_items.append(item_info)
+
+@socket.on("accept_item")
+async def accept_item(sid, data):
+    if data:
+        ''
+
+
+
 
 @socket.on("disconnect")
 async def disconnect():

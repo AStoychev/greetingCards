@@ -13,12 +13,13 @@ export const ChatWindow = ({
     closeChat,
 }) => {
 
-    const { connectToTheRoom, sendGreetingMessage, sendMessage, loggedIn, room, username, message, messageList } = useContext(ChatContext);
+    const { connectToTheRoom, sendGreetingMessage, sendMessage, acceptItems, loggedIn, room, username, message, messageList } = useContext(ChatContext);
     const { values, changeHandler, onSubmit } = useForm({
         room: '',
         username: '',
         message: '',
         messageList: [],
+        acceptItems: false,
     }, !loggedIn ? connectToTheRoom : sendMessage);
 
     // const changeMessageHandler = (e) => {
@@ -49,6 +50,10 @@ export const ChatWindow = ({
     const onLoadChat = (e) => {
         onSubmit(e)
         sendGreetingMessage(values.room, values.username)
+    }
+
+    const catchItems = () => {
+        acceptItems(true)
     }
 
     // console.log('Linksssss: ', messageList[0]?.url_route)
@@ -115,7 +120,7 @@ export const ChatWindow = ({
                                             {key.url_route ? key.url_route.map((data) => {
                                                 return (
                                                     <div key={data.id_url}>
-                                                        <Link to={data.id_url} className={styles.showItems} target="_blank">
+                                                        <Link to={data.id_url} className={styles.showItems} target="_blank" onLoad={catchItems}>
                                                             <div className={styles.chatFindItem}>
                                                                 <img src={data.image} />
                                                                 <div className={styles.titleAndPrice}>
