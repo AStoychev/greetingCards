@@ -115,11 +115,7 @@ export const CardDetails = () => {
         }
     }
 
-
     saveFiveItemsInLocalStorage(card)
-
-
-    
 
     return (
         <div>
