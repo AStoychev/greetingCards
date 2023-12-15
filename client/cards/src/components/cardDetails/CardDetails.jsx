@@ -17,16 +17,15 @@ import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
     const [card, setCard] = useState([]);
-
     const [imageIndex, setImageIndex] = useState(0);
+    const [deleteModal, setDeleteModal] = useState()
+
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId
     const allCardsService = cardServiceFactory();
     const cardService = useService(cardServiceFactory);
     const navigate = useNavigate();
     const { deleteCard } = useCardContext();
-
-    const [deleteModal, setDeleteModal] = useState()
 
     useEffect(() => {
         allCardsService.getOne(cardId)
