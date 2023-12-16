@@ -4,6 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 
 from sockets import sio_app
+# from socket_chat import sio_app
 
 app = FastAPI()
 

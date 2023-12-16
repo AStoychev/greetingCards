@@ -6,6 +6,8 @@
 venv/
 __pycache__
 .venv
+chat_core/
+.socket_chat
 .pnp.js
 
 # testing
