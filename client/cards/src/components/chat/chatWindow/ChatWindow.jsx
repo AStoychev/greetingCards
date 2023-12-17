@@ -78,6 +78,7 @@ export const ChatWindow = ({
                         <label htmlFor="room"></label>
                         <input
                             type="text"
+                            id="room"
                             placeholder="Room"
                             name="room"
                             value={values.room}
@@ -85,6 +86,7 @@ export const ChatWindow = ({
                         />
                         <input
                             type="text"
+                            id="username"
                             placeholder="Username"
                             name="username"
                             value={values.username}
@@ -143,9 +145,10 @@ export const ChatWindow = ({
 
                     <div className={styles.inputWrapper}>
                         <form>
-                            <label htmlFor="text"></label>
+                            <label htmlFor="message"></label>
                             <input
                                 type="text"
+                                id="message"
                                 placeholder="Enter Your Message..."
                                 name="message"
                                 value={values.message}

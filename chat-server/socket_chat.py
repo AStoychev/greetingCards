@@ -10,9 +10,21 @@ socket = socketio.AsyncServer(
 
 sio_app = socketio.ASGIApp(socketio_server=socket, socketio_path="socket.io")
 
+
 @socket.event
 async def connect(sid, enviren, auth):
     print(f"{sid}: connected")
+
+
+@socket.on("say_hello")
+async def say_hello(sid, data):
+    content = {
+        "author": "ChatBot",
+        "message": f'Hello {data["username"]} I\'am a new ChatBot in Greting cards! How can I help You?',
+        "url_route": "",
+    }
+
+    await socket.emit("receive_automessage", content)
 
 
 @socket.on("send_message")
