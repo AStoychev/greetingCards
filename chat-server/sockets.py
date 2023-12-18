@@ -132,9 +132,6 @@ async def accept_item(sid, data):
     if data:
         ''
 
-
-
-
 @socket.on("disconnect")
 async def disconnect():
     print("USER DISCONNECTED")
