@@ -77,8 +77,6 @@ export const Register = () => {
                                         placeholder="greetingcards@gmail.com"
                                         value={values.email}
                                         onChange={changeHandler}
-                                    // onClick={onClickEmail}
-                                    // onBlur={onBlurEmail}
                                     />
 
                                     <label className='htmlContent' htmlFor="username"></label>
@@ -90,8 +88,6 @@ export const Register = () => {
                                         placeholder="Username"
                                         value={values.username}
                                         onChange={changeHandler}
-                                    // onClick={onClickUsername}
-                                    // onBlur={onBlurUsername}
                                     />
                                     <label className='htmlContent' htmlFor="password"></label>
                                     <div className={styles.registerInformation}>PASSWORD<span>*</span></div>
@@ -102,8 +98,6 @@ export const Register = () => {
                                         placeholder="******"
                                         value={values.password}
                                         onChange={changeHandler}
-                                    // onClick={onClickPassword}
-                                    // onBlur={onBlurPass}
                                     />
                                     <label className='htmlContent' htmlFor="repeatPassword"></label>
                                     <div className={styles.registerInformation}>CONFIRM PASSWORD<span>*</span></div>
@@ -114,13 +108,7 @@ export const Register = () => {
                                         placeholder="******"
                                         value={values.repeatPassword}
                                         onChange={changeHandler}
-                                    // onClick={onClickConfirmPassword}
-                                    // onBlur={onBlurRepeatPassword}
                                     />
-
-
-
-
 
                                     <div className={styles.privaciPolicy}>
 
@@ -139,9 +127,6 @@ export const Register = () => {
                                             <span>*</span>
                                         </div>
                                     </div>
-
-
-
 
                                     <div className="submit">
                                         {validateRegisterForm()
