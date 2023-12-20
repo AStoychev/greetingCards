@@ -45,7 +45,6 @@ export const Profile = ({
             <div className={styles.popup}>
                 <div className={styles.wrapper}>
                     <div className={styles.titleWrapper}>
-                        {/* <button className={styles.closeButton} onClick={handleClose}>&times;</button> */}
                         <h2>Hello {userName}!</h2>
                     </div>
 
