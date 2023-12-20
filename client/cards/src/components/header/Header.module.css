@@ -7,14 +7,10 @@
 
 .container .logoContainer {
     flex: 1;
-
-    /* border: solid;
-    border-color: red; */
 }
 
 .container .logoContainer {
     display: flex;
-    /* justify-content: center; */
     color: white;
     box-sizing: border-box;
 }
@@ -26,8 +22,6 @@
     justify-content: center;
     padding-left: 30px;
     padding-top: 6px;
-
-    /* border: solid white; */
 }
 
 .navigation:nth-last-child(2) {
@@ -57,15 +51,12 @@
 
     position: relative;
     overflow: hidden;
-
-    /* border: solid white; */
 }
 
 .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper::after {
     content: '';
     position: absolute;
     background-color: rgb(11, 1, 38);
-    /* background: #0e1538; */
     inset: 1px;
     border-radius: 10px;
 }
@@ -75,10 +66,7 @@
     position: absolute;
     width: 172px;
     height: 50px;
-    /* margin-bottom: 6px;
-    margin-right: 20px; */
     background: linear-gradient(rgb(108, 197, 210), #a25dae);
-    /* background: linear-gradient(#00ccff, #d500f9); */
     animation: rotate 4s linear infinite;
 }
 
@@ -121,7 +109,6 @@
 
 .container .navigation .navigationLink:hover {
     color: #88BED8;
-    /* color: rgb(184, 205, 115); */
 }
 
 .navigationLinkButton {
@@ -164,8 +151,6 @@
     height: 47px;
     padding-right: 10px;
     padding-top: 5px;
-
-    /* border: 1px solid white; */
 }
 
 .container .basket .profileIcon {
@@ -183,8 +168,6 @@
     width: 30px;
     margin: 0 auto;
     margin-right: 30px;
-
-    /* border: solid white; */
 }
 
 .container .basket .mobileNavigation {
@@ -236,8 +219,6 @@
 
 .container .basket .mobileNavigation .closeMobileNavBottom {
     font-size: 20px;
-    /* padding-bottom: 10px; */
-    /* border:  solid white; */
 }
 
 
@@ -295,35 +276,3 @@
 
 /* Extra large devices / desctop, large laptop, tv */
 @media screen and (min-width: 1200px) {}
-
-
-
-
-/* @media screen and (max-width: 900px) {
-    .container {
-        height: 60px;
-    }
-} */
-
-/* @media screen and (max-width: 600px) {
-    .container {
-        height: 50px;
-    }
-
-    .container {
-        margin-top: -5px;
-    }
-
-    .navigationChild {
-        padding-top: 12px;
-    }
-
-    .navigationLink {
-        font-size: 13px;
-    }
-
-    .logo {
-        width: 30px;
-        margin-top: 10px;
-    }
-} */
