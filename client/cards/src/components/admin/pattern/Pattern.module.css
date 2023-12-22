@@ -13,8 +13,6 @@
     background-color: #ffffff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
-    /* border: solid; */
 }
 
 .mainField {
@@ -23,9 +21,6 @@
     width: 99%;
     height: 90%;
     margin: auto;
-    /* background-color: rgb(255, 255, 255); */
-
-    /* border: solid; */
     border-radius: 10px;
 }
 
@@ -33,9 +28,6 @@
     flex: 0 0 10%;
     border-bottom-left-radius: 10px;
     background-color: #ffffff;
-
-    /* border: solid;
-    border-color: #0000ff; */
 }
 
 .lineUpOrder {
@@ -50,13 +42,11 @@
 
 .linkTo {
     color: rgb(9, 9, 9);
-    /* background-color: #9ba2a8; */
     font-size: 20px;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
-    /* border: solid; */
 }
 
 .linkTo:hover {
