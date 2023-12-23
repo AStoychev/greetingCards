@@ -18,13 +18,6 @@ export const HomePage = () => {
 
     return (
         <div className={styles.container}>
-            {/* <h1>Hello in Greeting Cards</h1> */}
-            <div >
-                {/* <Link className='navigationLink' to="/">Home</Link>
-                <Link className='navigationLink' to="/login">Login</Link>
-                <Link className='navigationLink' to="/register">Register</Link>
-                <Link className='navigationLink' to="/logout">Logout</Link> */}
-            </div >
 
             <div className={styles.articleBanner}>
                 <section className={styles.firstSection}>
@@ -82,23 +75,6 @@ export const HomePage = () => {
                     </div>
                 </section>
             </div>
-
-            {/* <div className={styles.firstAddBanner}>
-                <div className={styles.firstAddBannerImageDiv}>
-                    <img className={styles.firstAddBannerImage} src='../images/halloween1.jpg' alt='fisrtAddBaner' />
-                    <div className={styles.imageInnerDiv}>
-                        <p>Scary & Funny</p>
-                        <div className={styles.textImageBackGround}>
-                            Darkness falls across the land.
-                        </div>
-                        <br></br>
-                        <div className={styles.textImageBackGround}>The midnight hour is close at hand.</div>
-                    </div>
-                    <div className={styles.buttonInnerDiv}>
-                        <button onClick={goToShop}>SHOP NOW</button>
-                    </div>
-                </div>
-            </div> */}
 
             <Partners />
 
