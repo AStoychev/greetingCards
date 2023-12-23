@@ -10,7 +10,6 @@ export const DeleteCardModal = ({
         <div>
             <div className={styles.popup}>
                 <div className={styles.container}>
-                    {/* <button className={styles.closeButton} onClick={handleClose}>&times;</button> */}
                     <h2>Hello</h2>
                     <div className={styles.paragraphCookie}>
                         Are you sure you want to delete this card!
