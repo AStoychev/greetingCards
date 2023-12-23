@@ -6,7 +6,6 @@ import styles from './SaveLastFiveVisitedCards.module.css'
 
 export const SaveLastFiveVisitedCards = () => {
     let saveFiveItems = '';
-    // let saveFiveItems = { ...localStorage };
     const saveItems = [];
 
     for (let i = 0; i < localStorage.length; i++) {
