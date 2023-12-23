@@ -22,10 +22,6 @@ export const ChatWindow = ({
         acceptItems: false,
     }, !loggedIn ? connectToTheRoom : sendMessage);
 
-    // const changeMessageHandler = (e) => {
-    //     onSubmit(e)
-    // }
-
     const ref = useRef(null);
 
     const scroolBottom = () => {
@@ -55,15 +51,6 @@ export const ChatWindow = ({
     const catchItems = () => {
         acceptItems(true)
     }
-
-    // console.log('Linksssss: ', messageList[0]?.url_route)
-    // for (let i in messageList) {
-    //     if (messageList[i]?.url_route) {
-    //         console.log(11111111, messageList[i]?.url_route)
-    //     } else {
-    //         console.log('None')
-    //     }
-    // }
 
     return (
         <div className={styles.chatFieldContainer}>
