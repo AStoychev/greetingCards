@@ -4,12 +4,6 @@ const baseUrl = `http://localhost:3030/cards`
 
 export const cardServiceFactory = (token) => {
 
-    // let data = localStorage.getItem('auth')
-    // let dataToken = JSON.parse(data)
-    // let accessToken = dataToken['accessToken']
-    // console.log(1111111111, accessToken)
-    // token = accessToken
-
     const request = requestFactory(token);
 
     const getAll = async () => {
