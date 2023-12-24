@@ -10,9 +10,7 @@ export const validateOrder = (order) => {
         order.postCode?.length <= 0 ||
         order.address?.length <= 0 ||
         order.orders?.length <= 0 ||
-        // order.takeMessage?.length <= 0 ||
         order.payment?.length <= 0
-        // order.privacyPolicy?.lengt <= 0
     ) {
         return false
     }
