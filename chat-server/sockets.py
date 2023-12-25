@@ -104,9 +104,6 @@ async def send_message(sid, data):
                 await socket.emit("receive_automessage", content)
             except:
                 print('Not Send')
-        
-        print(1111111111, content["url_route"])
-        
 
     else:
         await socket.emit("receive_automessage", content)
