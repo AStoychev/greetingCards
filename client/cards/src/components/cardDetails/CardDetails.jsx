@@ -83,7 +83,6 @@ export const CardDetails = () => {
         }
         return images
     }
-    
 
     const AdditionalImages = () => {
         let additionalImages = []
