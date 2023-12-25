@@ -99,7 +99,6 @@ async def send_message(sid, data):
         if find_items:
             content["message"] = f"This is product which I find against your criteria:"
             content["url_route"] = find_items
-            # context["occasion"] = []
             try:
                 await socket.emit("receive_automessage", content)
             except:

@@ -23,14 +23,7 @@
 .column6,
 .column7 {
     width: 10%;
-    /* flex-grow: 1; */
-    /* flex: 1 1 auto; */
     margin-right: 3cqmax;
-    /* justify-content:space-evenly; */
-    /* border: solid; */
-    /* width: 150px; remove; use flex property instead
-    flex: 1 1 150px; don't grow, don't shrink, stay at 150px
-    border: solid; */
 }
 
 .column1{
