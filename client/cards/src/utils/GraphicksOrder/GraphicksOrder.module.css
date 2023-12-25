@@ -10,7 +10,6 @@
     justify-content: center;
 
     width: 90%;
-    /* border: solid; */
 }
 
 .cubeOne {
@@ -22,8 +21,6 @@
     width: 39px;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-
-    /* border: solid; */
 }
 
 .innerCubeText {
@@ -35,7 +32,6 @@
 .innerLineOne {
     text-align: center;
     width: 15%;
-    /* border: solid; */
 }
 
 .lineOne {
