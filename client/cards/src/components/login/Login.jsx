@@ -39,19 +39,21 @@ export const Login = () => {
                                         <input
                                             type="email"
                                             id="email"
+                                            name="email"
+                                            // name={LoginFormKeys.Email}
                                             placeholder="greetingcards@gmail.com"
-                                            name={LoginFormKeys.Email}
                                             value={values[LoginFormKeys.Email]}
                                             onChange={changeHandler}
                                         />
 
-                                        <label className={styles.htmlContent} htmlFor="pass"></label>
+                                        <label className={styles.htmlContent} htmlFor="password"></label>
                                         <div className={styles.loginInformation}>PASSWORD<span>*</span></div>
                                         <input
                                             type="password"
-                                            id="login-password"
+                                            id="password"
+                                            name="password"
+                                            // name={LoginFormKeys.Password}
                                             placeholder="******"
-                                            name={LoginFormKeys.Password}
                                             value={values[LoginFormKeys.Password]}
                                             onChange={changeHandler}
                                         />
