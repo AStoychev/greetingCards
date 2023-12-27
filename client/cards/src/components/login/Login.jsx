@@ -46,11 +46,11 @@ export const Login = () => {
                                             onChange={changeHandler}
                                         />
 
-                                        <label className={styles.htmlContent} htmlFor="password"></label>
+                                        <label className={styles.htmlContent} htmlFor="passwords"></label>
                                         <div className={styles.loginInformation}>PASSWORD<span>*</span></div>
                                         <input
-                                            type="password"
-                                            id="password"
+                                            type="passwords"
+                                            id="passwords"
                                             name="password"
                                             // name={LoginFormKeys.Password}
                                             placeholder="******"

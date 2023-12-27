@@ -61,7 +61,7 @@
 }
 
 .fieldLogin input[type='email'],
-[type='password'] {
+[type='passwords'] {
     all: unset;
     width: 80%;
     height: 30px;
@@ -156,7 +156,8 @@
         font-family: Tahoma, sans-serif;
     }
 
-    .fieldLogin input[type='email'] {
+    .fieldLogin input[type='email'],
+    [type='passwords'] {
         width: 80%;
     }
 
