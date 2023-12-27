@@ -68,6 +68,8 @@ export const Login = () => {
                                 </form>
                             </section>
                             <div className={styles.goToRegister}>
+
+                                
                                 Need an account?
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
                             </div>
