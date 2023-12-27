@@ -49,7 +49,7 @@ export const Login = () => {
                                         <label className={styles.htmlContent} htmlFor="passwords"></label>
                                         <div className={styles.loginInformation}>PASSWORD<span>*</span></div>
                                         <input
-                                            type="passwords"
+                                            type="password"
                                             id="passwords"
                                             name="password"
                                             // name={LoginFormKeys.Password}
@@ -68,8 +68,6 @@ export const Login = () => {
                                 </form>
                             </section>
                             <div className={styles.goToRegister}>
-
-                                
                                 Need an account?
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
                             </div>
