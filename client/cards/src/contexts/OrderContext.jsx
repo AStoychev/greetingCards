@@ -29,23 +29,12 @@ export const OrderProvider = ({
     const onOrderEditSubmit = async (values) => {
         const result = await orderService.changeStatusOrder(values._id, values);
         setOrders(state => state.map(x => x._id === values._id ? result : x));
-        // navigate(`/catalog/${values._id}`);
     };
-
-    // const deleteOrder = (orderId) => {
-    //     setOrders(state => state.filter(order => order._id !== orderId));
-    // };
-
-    // const getOrder = (orderId) => {
-    //     return orders.find(order => order._id === orderId);
-    // };
 
     const contextValues = {
         orders,
         onCreateOrderSubmit,
         onOrderEditSubmit,
-        // deleteOrder,
-        // getOrder,
     };
 
     return (
