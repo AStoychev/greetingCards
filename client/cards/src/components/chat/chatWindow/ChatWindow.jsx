@@ -47,7 +47,6 @@ export const ChatWindow = ({
         onSubmit(e)
         sendGreetingMessage(values.room, values.username)
     }
-    
 
     const catchItems = () => {
         acceptItems(true)
