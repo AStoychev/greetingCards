@@ -70,7 +70,6 @@ export const Login = () => {
                                         <div className={styles.forgotPasswordFiled}>
                                             <Link className={styles.navigationLink} to="/reset-password-step-one">Forgot your password?</Link>
                                         </div>
-
                                         <div className="submit">
 
                                             {checkForFullValue()
@@ -83,7 +82,6 @@ export const Login = () => {
                                         </div>
 
                                     </div>
-                                    
                                 </form>
                             </section>
                             <div className={styles.goToRegister}>
