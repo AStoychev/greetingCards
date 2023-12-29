@@ -72,7 +72,6 @@ export const Login = () => {
                                         </div>
 
                                         <div className="submit">
-
                                             {checkForFullValue()
                                             ?
                                             <input type="submit" className={styles.submitBtn} value="Log In" />
@@ -81,7 +80,6 @@ export const Login = () => {
                                             }
 
                                         </div>
-                                        
                                     </div>
                                 </form>
                             </section>
