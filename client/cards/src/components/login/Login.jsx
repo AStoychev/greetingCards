@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -21,6 +21,14 @@ export const Login = () => {
 
     }, onLoginSubmit);
 
+    const checkForFullValue = () => {
+        if(values[LoginFormKeys.Email].length > 0 && values[LoginFormKeys.Password].length > 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
 
@@ -32,6 +40,7 @@ export const Login = () => {
                         <div className={styles.innerColumOne}>
                             <section id="login-page" className="content auth">
                                 <form id="login" method='POST' onSubmit={onSubmit}>
+
                                     <div className={styles.fieldLogin}>
 
                                         <label className={styles.htmlContent} htmlFor="email"></label>
@@ -61,10 +70,20 @@ export const Login = () => {
                                         <div className={styles.forgotPasswordFiled}>
                                             <Link className={styles.navigationLink} to="/reset-password-step-one">Forgot your password?</Link>
                                         </div>
+
                                         <div className="submit">
+
+                                            {checkForFullValue()
+                                            ?
                                             <input type="submit" className={styles.submitBtn} value="Log In" />
+                                            :
+                                            <input type="submit" className={styles.disabledSubmitBtn} value="Log In" title="Please fill all inputs" />
+                                            }
+
                                         </div>
+
                                     </div>
+                                    
                                 </form>
                             </section>
                             <div className={styles.goToRegister}>
