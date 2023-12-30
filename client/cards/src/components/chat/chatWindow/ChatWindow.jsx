@@ -125,7 +125,6 @@ export const ChatWindow = ({
                                         </div>
                                     </div>
                                 }
-                                {/* <p className={styles.messegaAuthor}>{key.message}</p> */}
                             </div>
                         })}
                     </div>
