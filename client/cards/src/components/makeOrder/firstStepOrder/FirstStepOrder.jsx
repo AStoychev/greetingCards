@@ -20,6 +20,9 @@ export const FirstStepOrder = () => {
         navigate('/make-second-step-order')
     }
 
+    
+    
+
     return (
         <div className={styles.container} style={{backgroundImage: `url(${background})`}}>
             <div className={styles.innerContainer}>
