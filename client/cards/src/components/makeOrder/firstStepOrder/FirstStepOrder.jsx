@@ -25,7 +25,6 @@ export const FirstStepOrder = () => {
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Your Order</div>
                 <GraphicksOrder />
-                
                 <div className={styles.orderContainer}>
                     <MapOrder />
                     {
@@ -34,7 +33,6 @@ export const FirstStepOrder = () => {
                         <div className={styles.emptyList}>Not purchase yet!</div>
                     }
                 </div>
-
                 <FinalPrice />
             </div>
 

@@ -2,9 +2,6 @@
     width: 100%;
     min-height: 780px;
     background-color: rgba(107, 208, 231, 0.313);
-
-    /* border: solid;
-    border-color: red; */
 }
 
 .innerContainer {
@@ -58,32 +55,6 @@
     color: rgb(0, 0, 0);
     margin-bottom: 30px;
 }
-
-/* .bottomButtons {
-    display: flex;
-    margin-bottom: 10px;
-} */
-
-/* .nextStep {
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-} */
-
-/* .nextButton {
-    width: 120px;
-    height: 30px;
-    background-color: rgb(51, 153, 112);
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-.nextButton:hover {
-    background-color: rgb(13, 135, 86);
-    cursor: pointer;
-} */
 
 @media screen and (max-width: 768px) {
 
