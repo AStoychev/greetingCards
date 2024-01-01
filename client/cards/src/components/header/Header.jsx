@@ -27,10 +27,6 @@ export const Header = () => {
     const [dropdownMobileNav, setDropdownMobileNav] = useState();
     const [profileModal, setProfileModal] = useState();
 
-
-
-    
-
     const navigate = useNavigate();
 
     const onLoadLogoutModal = (data) => {
