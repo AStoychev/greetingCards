@@ -142,14 +142,16 @@ export const Header = () => {
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
                         <Link className={styles.navigationLink} to="/catalog">Catalog</Link>
-                        {!isAuthenticated &&
+                        {
+                            !isAuthenticated &&
                             <>
                                 <Link className={styles.navigationLink} to="/login">Login</Link>
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
                             </>
                         }
 
-                        {isAuthenticated &&
+                        {
+                            isAuthenticated &&
                             <>
                                 {isAdmin &&
                                     <>
@@ -166,7 +168,8 @@ export const Header = () => {
                 </div>
 
                 <div className={styles.basket}>
-                    {isAuthenticated &&
+                    {
+                        isAuthenticated &&
                         <div className={styles.profileWrapper} onClick={showProfileModal}>
                             <FaUser className={styles.profileIcon} />
                         </div>
