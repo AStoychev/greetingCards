@@ -9,7 +9,6 @@ import { Profile } from './profile/Profile';
 
 import { addToOrder } from '../../functions/addToOrder';
 
-// import { OnLoad } from '../../utils/onLoad/onLoad';
 // import { MyFavorite } from '../../utils/MyFavorites/MyFavorites';
 
 // import Cookies from 'universal-cookie';
