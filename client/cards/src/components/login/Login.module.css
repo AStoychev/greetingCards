@@ -153,8 +153,15 @@
 }
 
 @media (max-width: 600px) {
+    .loginContainer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     .loginContainer .innerContiner {
         width: 100%;
+        border-radius: 0;
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
     .loginContainer .innerContiner .mainLoginField .columnOne {
