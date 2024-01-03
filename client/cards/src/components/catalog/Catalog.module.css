@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: row;
     gap: 130px;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
     width: 80%;
     row-gap: 50px;
@@ -33,8 +32,6 @@
 @media (max-width: 600px) {
     .container .itemsWrapper {
         margin: 0 auto;
-        /* align-items:start; */
-        /* padding-left: 15px; */
     }
 }
 
