@@ -1,21 +1,16 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
 import { takeTypeOrder } from '../functions/takeTypeOrder';
-import { changeColorOfStatus } from '../functions/changeColorOfStatus';
 import { copyOnClickId } from '../functions/copyOnClickId';
-
-import { useForm } from '../../../hooks/useForm';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
 import { ModalStatus } from './modalChangeStatus/ModalStatus';
 import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
-
-import { checkForDiscount } from '../../../functions/checkForDiscount';
 
 import styles from './UnprocessedOrders.module.css'
 
