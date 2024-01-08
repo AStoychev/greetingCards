@@ -1,15 +1,12 @@
 .bottomButtons {
     display: flex;
     margin-bottom: 10px;
-    /* border: solid; */
 }
 
 .nextStep {
     text-align: center;
     justify-content: center;
     width: 100%;
-
-    /* border: solid; */
 }
 .nextButton {
     width: 120px;
