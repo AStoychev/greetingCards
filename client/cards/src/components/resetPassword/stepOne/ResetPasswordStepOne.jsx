@@ -52,10 +52,6 @@ export const ResetPasswordStepOne = () => {
                                         value={values.email}
                                         onChange={changeHandler}
                                     />
-                                    {/* <div className="submit">
-                                        <input type="submit" className={styles.submitBtn} value="Next" />
-                                    </div> */}
-
 
                                     {checkForEmptyValues() &&
                                         <div className="submit">
