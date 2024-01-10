@@ -289,7 +289,6 @@ export const SecondStepOrder = () => {
                         <div className={styles.choosePaymentMehod}>CHOOSE PAYMENT METHOD
                             <span>*</span>
                         </div>
-
                         <div className={styles.typePayment}>
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="card">
@@ -307,7 +306,6 @@ export const SecondStepOrder = () => {
                                     <img src="images/payment-icons/credit-card.png" alt="card" />
                                 </div>
                                 <div className={styles.innerPaymentType}>CARD</div>
-
                             </div>
 
                             <div className={styles.innerDivPayment}>
@@ -321,12 +319,10 @@ export const SecondStepOrder = () => {
                                         onChange={changeHandler}
                                     />
                                 </label>
-
                                 <div className={styles.logoPayment}>
                                     <img src="images/payment-icons/paypal.png" alt="pay-pal" />
                                 </div>
                                 <div className={styles.innerPaymentType}>PayPal</div>
-
                             </div>
 
                             <div className={styles.innerDivPayment}>
@@ -340,12 +336,10 @@ export const SecondStepOrder = () => {
                                         onChange={changeHandler}
                                     />
                                 </label>
-
                                 <div className={styles.logoPayment}>
                                     <img src="images/payment-icons/ewallet.png" alt="ewallet" />
                                 </div>
                                 <div className={styles.innerPaymentType}>Mobile <br></br>Walet</div>
-
                             </div>
 
                             <div className={styles.innerDivPayment}>

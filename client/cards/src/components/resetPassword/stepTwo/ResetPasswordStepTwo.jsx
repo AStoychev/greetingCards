@@ -50,7 +50,6 @@ export const ResetPasswordStepTwo = () => {
                                         value={values.code}
                                         onChange={changeHandler}
                                     />
-
                                     {errorResetPassword.error &&
                                         <p className={styles.errorField}>{errorResetPassword.error}</p>
                                     }
