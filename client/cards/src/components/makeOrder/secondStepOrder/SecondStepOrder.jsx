@@ -293,10 +293,6 @@ export const SecondStepOrder = () => {
                         <div className={styles.typePayment}>
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="card">
-                                    {/* <div className={styles.emptyCircleButton}>
-                                        <img className={styles.tick} src="images/payment-icons/check.png" alt="checkmark" />
-                                        <img className={styles.tick} src="images/payment-icons/checkmark.png" alt="checkmark" />
-                                    </div> */}
                                     <input
                                         type="radio"
                                         id="card"

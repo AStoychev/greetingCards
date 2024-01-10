@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useForm } from '../../../hooks/useForm';
-import { AuthContext, useAuthContext } from '../../../contexts/AuthContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 import background from '../../img/background.png';
 import styles from './ResetPasswordStepTwo.module.css';
