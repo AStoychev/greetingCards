@@ -65,8 +65,7 @@ export const ModalStatus = ({
                         </div>
                     </div>
                 </form>
-
-                {/* <button className={styles.buttonYes} onClick={onSubmit}>Yes</button> */}
+                
             </div>
         </div>
     );

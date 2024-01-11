@@ -52,7 +52,6 @@ export const SendOrders = () => {
                         <div className={styles.rowItem}>Order</div>
                         <div className={styles.rowItem}>Action</div>
                     </div>
-
                     {
                         sendOrders.length
                             ?

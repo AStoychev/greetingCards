@@ -77,7 +77,6 @@ export const ReturnedOrders = () => {
                     :
                     <div>Not returned orders</div>
                 }
-
                 
                 </div>
             </div>
