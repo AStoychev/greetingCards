@@ -26,7 +26,7 @@ export const AdminAllOrders = () => {
             })
     }, [])
 
-    const showOrder = (id, firstName, lastName, order) => {
+    const showOrder = (firstName, lastName, order) => {
         let fullName = `${firstName} ${lastName}`
         setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
     };
