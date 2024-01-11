@@ -5,14 +5,11 @@ import { useOrderContext } from '../../../../contexts/OrderContext';
 
 import { useService } from '../../../../hooks/useService';
 import { orderServiceFactory } from '../../../../services/orderService';
-import { unPackingOrder } from '../../../../functions/localStorageFunction/unPackingOrder';
-import { totalPrice } from '../../../../functions/totalPrice';
 
 import styles from './ModalStatus.module.css'
 
 export const ModalStatus = ({
     modalController,
-    modalPressYes,
     id,
 }) => {
 
