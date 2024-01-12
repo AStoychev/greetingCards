@@ -62,7 +62,7 @@ export const Register = () => {
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
                 <div className={styles.mainField}>
-                    <h1>Create an account</h1>
+                    <h2>Create an account</h2>
                     <div className={styles.innerColumn}>
                         <section id="register-page" className="content auth">
                             <form id="register" method='POST' onSubmit={onSubmit}>

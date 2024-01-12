@@ -33,7 +33,7 @@
     width: 60%;
 }
 
-.loginContainer .innerContiner .mainLoginField .columnOne h1 {
+.loginContainer .innerContiner .mainLoginField .columnOne h2 {
     text-align: center;
     font-weight: 400;
     font-family: Tahoma, sans-serif;
@@ -160,19 +160,20 @@
     .loginContainer .innerContiner {
         width: 100%;
         border-radius: 0;
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 50px;
+        padding-bottom: 149px;
     }
 
     .loginContainer .innerContiner .mainLoginField .columnOne {
         width: 100%;
     }
 
-    .loginContainer .innerContiner .mainLoginField h1 {
+    .loginContainer .innerContiner .mainLoginField h2 {
         text-align: center;
         font-size: 21px;
         font-weight: 400;
         font-family: Tahoma, sans-serif;
+        padding-bottom: 30px;
     }
 
     .fieldLogin input[type='email'],

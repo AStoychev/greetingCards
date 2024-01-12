@@ -36,7 +36,7 @@ export const Login = () => {
 
                 <div className={styles.mainLoginField}>
                     <div className={styles.columnOne}>
-                        <h1>Login</h1>
+                        <h2>Login</h2>
                         <div className={styles.innerColumOne}>
                             <section id="login-page" className="content auth">
                                 <form id="login" method='POST' onSubmit={onSubmit}>

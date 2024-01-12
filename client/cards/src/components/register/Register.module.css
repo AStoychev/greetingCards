@@ -1,10 +1,12 @@
 .container {
     width: 100%;
-    height: 90vh;;
+    height: auto;
     background-color: #d86f6f;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 100.5px;
+    padding-bottom: 100.5px;
 }
 
 .container .innerContainer {
@@ -26,7 +28,7 @@
     /* border: solid rebeccapurple; */
 }
 
-.mainField h1 {
+.mainField h2 {
     text-align: center;
     font-weight: 400;
     font-family: Tahoma, sans-serif;
@@ -95,7 +97,7 @@ input[id='repeatPassword'] {
     color: #F2F3F5;
     border-radius: 5px;
     border: none;
-    cursor:no-drop;
+    cursor: no-drop;
     transition: 0.3s;
 }
 
@@ -143,4 +145,46 @@ input[id='repeatPassword'] {
     margin: auto;
     font-size: 11px;
     font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .container .innerContainer {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .registerInformation {
+        width: 80%;
+    }
+
+    .fieldRegister input[type='email'],
+    input[type='username'],
+    input[id='password'],
+    input[id='repeatPassword'] {
+        all: unset;
+        width: 80%;
+        height: 30px;
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #1E1F22;
+
+        border: solid rgba(102, 51, 153, 0);
+    }
+
+    .submitBtn {
+        width: 80%;
+        height: 30px;
+    }
+
+    .disabledSubmitBtn {
+        width: 80%;
+        height: 30px;
+    }
 }
