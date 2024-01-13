@@ -194,3 +194,62 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .loginContainer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .loginContainer .innerContiner {
+        width: 100%;
+        border-radius: 0;
+        padding-top: 95px;
+        padding-bottom: 96px;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne {
+        width: 100%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField h2 {
+        text-align: center;
+        font-size: 23px;
+        font-weight: 400;
+        font-family: Tahoma, sans-serif;
+        padding-bottom: 30px;
+    }
+
+    .fieldLogin input[type='email'],
+    [id='passwords'] {
+        width: 70%;
+    }
+
+    .loginInformation {
+        width: 70%;
+    }
+
+    .submitBtn {
+        width: 70%;
+    }
+
+    .disabledSubmitBtn {
+        width: 70%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin .forgotPasswordFiled {
+        display: flex;
+        justify-content: center;
+    }
+
+    .columnTwo {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .container {
+        height: 70px;
+    }
+
+}
