@@ -11,12 +11,12 @@ This is web shop for greeting cards and other handmade products. It has the full
    - Start command: `npm install`;
    - Start command: `npm run start`;
 
-4. Start Back end:
+3. Start Back end:
    - Go to server directory with command: `cd .server`;
    - Start command: `npm install`;
    - Start command `npm run start`;
 
-6. Start Chatbot:
+4. Start Chatbot:
    - Go to chatbot directory with command: `cd .\chat-server`;
    - Start command: `pip install -r requirements.txt`;
    - Start command: `python main.py`;
