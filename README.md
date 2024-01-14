@@ -6,19 +6,19 @@ This is web shop for greeting cards and other handmade products. It has the full
 
 1. Clone the repo.
 2. Start Front end:
-    - Go to client directori with command: `cd .\client`;
-    - After that use command: `cd .\card`;
-    - Start command: `npm install`;
-    - Start command: `npm run start`;
+   - Go to client directori with command: `cd .\client`;
+   - After that use command: `cd .\card`;
+   - Start command: `npm install`;
+   - Start command: `npm run start`;
 
-3. Start Back end:
-    - Go to server directory with command: `cd .server`;
-    - Start command: `npm install`;
-    - Start command `npm run start`;
+4. Start Back end:
+   - Go to server directory with command: `cd .server`;
+   - Start command: `npm install`;
+   - Start command `npm run start`;
 
-4. Start Chatbot:
-    - Go to chatbot directory with command: `cd .\chat-server`;
-    - Start command: `pip install -r requirements.txt`;
-    - Start command: `python main.py`;
+6. Start Chatbot:
+   - Go to chatbot directory with command: `cd .\chat-server`;
+   - Start command: `pip install -r requirements.txt`;
+   - Start command: `python main.py`;
 
 If you have any comments or a better idea, please don't hesitate to write me. 🍻
