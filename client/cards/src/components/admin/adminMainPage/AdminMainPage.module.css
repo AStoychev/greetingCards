@@ -67,13 +67,6 @@
     flex: 0 0 90%;
     background-color: #41dd8c;
     border-bottom-right-radius: 10px;
-
-    /* You can remove margin for delete space between columns */
-    /* margin: 0 auto; */
-
-    /* border: solid;
-    border-color: red; */
-
 }
 
 .greetingField {
