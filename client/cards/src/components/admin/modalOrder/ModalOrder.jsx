@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import { checkForDiscount } from '../../../functions/checkForDiscount';
@@ -43,6 +42,7 @@ export const ModalOrder = ({
                 <img className={styles.orderImage} src='../../../images/shopping-bag.png' />
                 <div className={styles.blueField}></div>
             </div>
+
             <div className={styles.secondField}>
                 <div className={styles.mainFieldModal}>
                     <span>Order of {fullName}</span>
@@ -64,6 +64,7 @@ export const ModalOrder = ({
                     <div className={styles.buttonOk} onClick={closeModal}>OK</div>
                 </div>
             </div>
+            
         </div>
     );
 }

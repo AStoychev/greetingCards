@@ -13,8 +13,6 @@
     background-color: rgb(215, 145, 145);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
-    /* border: solid; */
 }
 
 .mainField {
@@ -24,8 +22,6 @@
     height: 90%;
     margin: auto;
     background-color: rgb(255, 255, 255);
-
-    /* border: solid; */
     border-radius: 10px;
 }
 
