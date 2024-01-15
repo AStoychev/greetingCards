@@ -46,6 +46,7 @@ export const AddCard = () => {
                 <div className={styles.mainField}>
                     <h1>Add Card</h1>
                     <div className={styles.innerColumn}>
+
                         <section id="card-page" className="content auth">
                             <form id="card" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldCard}>
@@ -144,6 +145,7 @@ export const AddCard = () => {
                                 </div>
                             </form>
                         </section>
+                        
                     </div>
                 </div>
 
