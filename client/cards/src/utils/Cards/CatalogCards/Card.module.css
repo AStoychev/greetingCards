@@ -6,12 +6,6 @@
     cursor: pointer;
 }
 
-.article .mainCardDiv {}
-
-.article .mainCardDiv .itemInfoWrapper {
-    
-}
-
 .container .article .mainCardDiv .itemInfoWrapper .image { 
     width: 100%;
 }

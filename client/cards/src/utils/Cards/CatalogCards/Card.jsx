@@ -70,7 +70,6 @@ export const Card = ({
                 <div className={styles.title}>
                     <button onClick={() => addToCart(card._id)}>Add to Cart</button>
                 </div>
-                {/* <Link className={styles.navigationLink} to={`/catalog/${card._id}`}>Details</Link> */}
 
             </article>
         </div>
