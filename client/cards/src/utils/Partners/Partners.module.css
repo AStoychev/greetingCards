@@ -1,5 +1,6 @@
 .mainDivPartner {
     width: 99.9%;
+    padding-top: 30px;
 }
 
 .flexRow {
@@ -9,7 +10,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    justify-content:space-around;
+    justify-content: space-around;
     border: solid;
 
     /* remove if you want to force all flex items on same row */
@@ -23,12 +24,12 @@
 .column6,
 .column7 {
     width: 10%;
-    margin-right: 3cqmax;
+    /* margin-right: 3cqmax; */
 }
 
-.column1{
+/* .column1 {
     margin-left: 30px;
-}
+} */
 
 .imagPartners {
     width: 100%;
@@ -38,5 +39,19 @@
 @media screen and (max-width: 768px) {
     .mainDivPartner {
         max-width: 100%;
+    }
+
+    .mainDivPartner .flexRow .column2,
+    .column4,
+    .column6,
+    .column7 {
+        display: none;
+    }
+
+    .mainDivPartner .flexRow .column1,
+    .column3,
+    .column5 {
+        width: 25%;
+        height: 1000px;
     }
 }
