@@ -42,7 +42,7 @@ export const SaveLastFiveVisitedCards = () => {
         <div>
             {lastFiveVisitedCarts.length ?
                 <div className={styles.lastFiveCart}>
-                    <h1 className={styles.headerLastVisited}>Last Visited</h1>
+                    <h2 className={styles.headerLastVisited}>Last Visited</h2>
                     <div className={styles.mainCartItems}>
                         <div className={styles.flexRow}>
                             <CheckForSaveImage />
