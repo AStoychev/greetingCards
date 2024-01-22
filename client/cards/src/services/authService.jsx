@@ -1,6 +1,6 @@
 import { requestFactory } from './requester';
 
-const baseUrl = `http://localhost:3030/users`;
+const baseUrl = process.env.REACT_APP_BASE_URL_AUTH_SERVICE;
 
 export const authServiceFactory = (token) => {
     const request = requestFactory(token);
