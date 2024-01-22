@@ -134,6 +134,8 @@ export const AddCard = () => {
                                         value={values.additionalImageFour}
                                         onChange={changeHandler}
                                     />
+
+                                    
                                     {/* Additional Image */}
                                 </div>
                                 <div className="submit">
