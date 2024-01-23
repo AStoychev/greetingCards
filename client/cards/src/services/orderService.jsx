@@ -1,6 +1,6 @@
 import { requestFactory } from "./requester";
 
-const baseUrl = `http://localhost:3030/orders`
+const baseUrl = process.env.REACT_APP_BASE_URL_ORDER_SERVICE;
 
 export const orderServiceFactory = (token) => {
 

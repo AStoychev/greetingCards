@@ -1,6 +1,6 @@
 import { requestFactory } from "./requester";
 
-const baseUrl = `http://localhost:3030/cards`
+const baseUrl = process.env.REACT_APP_BASE_URL_CARD_SERVICE;
 
 export const cardServiceFactory = (token) => {
 

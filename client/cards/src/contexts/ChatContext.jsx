@@ -6,8 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 let socket;
 
-const CONNECTION_PORT = 'localhost:8001/'
-// const CONNECTION_PORT = 'localhost:3030/'
+const CONNECTION_PORT = process.env.REACT_APP_CHAT_CONTEX_PYTORCH;
+
+
+// This is for express bot
+// const CONNECTION_PORT = process.env.REACT_APP_CHAT_CONTEX_FAST_API;
 
 export const ChatContext = createContext();
 
