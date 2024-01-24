@@ -26,3 +26,5 @@ chat_core/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+chat-server/chat_core/data.pth

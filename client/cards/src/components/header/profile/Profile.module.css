@@ -11,7 +11,7 @@
 .popup {
     background-color: #2c2d31;
     box-shadow: 1px 1px 10px #2c2d31;
-    width: 550px;
+    width: 100%;
     height: auto;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -30,7 +30,6 @@
 
 .popup .wrapper .titleWrapper {
     width: 100%;
-    background-color: #323338;
     border-radius: 8px;
 }
 
