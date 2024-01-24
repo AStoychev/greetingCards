@@ -52,6 +52,7 @@ export const Profile = ({
                         <div className={styles.profileImage}>
                             <img src='../../../images/user/myImage.jpg' alt='profi-image' />
                         </div>
+
                         <div className={styles.personalData}>
                             <div className={styles.profileInfo}>
                                 <p>First Name: {userName}</p>
@@ -75,8 +76,8 @@ export const Profile = ({
                             {accordion &&
                                 <div className={styles.changePasswordMenu}>
                                     <form id="changePasword" method='POST' onSubmit={onSubmit}>
+                                        
                                         <label className='htmlContent' htmlFor="password"></label>
-
                                         <div className={styles.registerInformation}>PASSWORD<span>*</span></div>
                                         <input
                                             type="password"
@@ -87,7 +88,6 @@ export const Profile = ({
                                             placeholder="******"
                                         />
                                         <label className='htmlContent' htmlFor="newPassword"></label>
-
                                         <div className={styles.registerInformation}>NEW PASSWORD<span>*</span></div>
                                         <input
                                             type="password"
@@ -97,7 +97,6 @@ export const Profile = ({
                                             onChange={changeHandler}
                                             placeholder="******"
                                         />
-
                                         <div className={styles.registerInformation}>CONFIRM NEW PASSWORD<span>*</span></div>
                                         <input
                                             type="password"
@@ -107,7 +106,6 @@ export const Profile = ({
                                             onChange={changeHandler}
                                             placeholder="******"
                                         />
-
                                         <div className={styles.submit}>
                                             <input
                                                 type="submit"
@@ -115,6 +113,7 @@ export const Profile = ({
                                                 value="CHANGE"
                                             />
                                         </div>
+
                                     </form>
                                 </div>
                             }
