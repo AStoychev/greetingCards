@@ -52,7 +52,6 @@ export const Profile = ({
                         <div className={styles.profileImage}>
                             <img src='../../../images/user/myImage.jpg' alt='profi-image' />
                         </div>
-
                         <div className={styles.personalData}>
                             <div className={styles.profileInfo}>
                                 <p>First Name: {userName}</p>
@@ -65,7 +64,6 @@ export const Profile = ({
                             </div>
                         </div>
                     </div>
-
                     <div className={styles.changePasswordWrapper}>
 
                         <div className={styles.buttonWrapper}>
