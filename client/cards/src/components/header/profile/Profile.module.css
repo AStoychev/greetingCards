@@ -74,6 +74,7 @@
 .popup .wrapper .changePasswordWrapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
     width: 60%;
     margin: 0 auto;
     padding-top: 15px;
@@ -81,8 +82,22 @@
 }
 
 .popup .wrapper .changePasswordWrapper .buttonWrapper {
-    display: flex;
+    display: inline;
+    width: 100%;
     flex-direction: column;
+    justify-content: center;
+}
+
+.popup .wrapper .changePasswordWrapper .buttonWrapper button {
+    all: unset;
+    color: rgb(112, 218, 234);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    /* padding-bottom: 10px; */
+    transition: 0.3s;
 }
 
 .popup .wrapper .changePasswordWrapper .changePassword {
@@ -94,17 +109,6 @@
     box-shadow: 21px 15px 121px 20px rgba(159, 159, 214, 0.651);
 }
 
-.popup .wrapper .changePasswordWrapper .buttonWrapper button {
-    color: rgb(112, 218, 234);
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-    padding-bottom: 10px;
-    transition: 0.3s;
-}
-
 .popup .wrapper .changePasswordWrapper .buttonWrapper button:hover {
     color: rgb(78, 157, 169);
 }
@@ -112,14 +116,15 @@
 .popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu {
     display: flex;
     text-align: center;
+    justify-content: center;
     color: white;
-    padding-bottom: 8px;
+    padding: 12px 0 12px 0;
 }
 
 .popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu input[type="password"] {
-    width: 300px;
-
+    width: 88%;
     height: 30px;
+    margin-bottom: 5px;
     border-radius: 5px;
     background-color: #1E1F22;
 
@@ -132,6 +137,7 @@
     border: 1px solid white;
     border-radius: 5px;
     font-weight: bold;
+    margin-top: 5px;
     padding: 5px 8px 5px 8px;
     cursor: pointer;
     transition: 0.3s;

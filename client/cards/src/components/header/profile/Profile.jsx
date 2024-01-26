@@ -77,8 +77,8 @@ export const Profile = ({
                                 <div className={styles.changePasswordMenu}>
                                     <form id="changePasword" method='POST' onSubmit={onSubmit}>
                                         
-                                        <label className='htmlContent' htmlFor="password"></label>
-                                        <div className={styles.registerInformation}>PASSWORD<span>*</span></div>
+                                        <label className='htmlContent' htmlFor="oldPassword">PASSWORD<span>*</span></label>
+                                        {/* <div className={styles.registerInformation}>PASSWORD<span>*</span></div> */}
                                         <input
                                             type="password"
                                             name="password"
@@ -87,8 +87,8 @@ export const Profile = ({
                                             onChange={changeHandler}
                                             placeholder="******"
                                         />
-                                        <label className='htmlContent' htmlFor="newPassword"></label>
-                                        <div className={styles.registerInformation}>NEW PASSWORD<span>*</span></div>
+                                        <label className='htmlContent' htmlFor="newPassword">NEW PASSWORD<span>*</span></label>
+                                        {/* <div className={styles.registerInformation}>NEW PASSWORD<span>*</span></div> */}
                                         <input
                                             type="password"
                                             name="newPassword"
@@ -97,7 +97,8 @@ export const Profile = ({
                                             onChange={changeHandler}
                                             placeholder="******"
                                         />
-                                        <div className={styles.registerInformation}>CONFIRM NEW PASSWORD<span>*</span></div>
+                                        <label className='htmlContent' htmlFor="repeatNewPassword">CONFIRM NEW PASSWORD<span>*</span></label>
+                                        {/* <div className={styles.registerInformation}>CONFIRM NEW PASSWORD<span>*</span></div> */}
                                         <input
                                             type="password"
                                             name="repeatNewPassword"
