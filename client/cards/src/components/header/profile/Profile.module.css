@@ -198,8 +198,17 @@
 @media only screen and (max-width: 600px) {
     .popup {
         width: 100%;
-        height: auto;
+        height: 500px;
+        /* height: auto; */
         border-radius: 0px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        overflow: scroll;
+        /* overflow-x: scroll;
+        overflow-y: scroll; */
+        overflow: scroll;
+
     }
 
     .popup .wrapper .titleWrapper h2 {
@@ -209,6 +218,39 @@
     .popup .wrapper .infoWrapper {
         text-align: center;
         justify-content: center;
+    }
+
+    p {
+        padding: 0;
+        margin: 5px 0;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    .popup .wrapper .changePasswordWrapper {
+        width: 94%;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu {
+        padding: 0;
+    }
+
+    .popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu input[type="submit"] {
+        all: unset;
+        background-color: transparent;
+        font-size: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        padding: 3px 4px 3px 4px;
+        border: 1px solid white;
+        cursor: pointer;
+        transition: 0.3s;
     }
 
     .popup .wrapper .buttonWrapper .noButton,
