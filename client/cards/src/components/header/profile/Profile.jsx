@@ -78,6 +78,9 @@ export const Profile = ({
     return (
         <div className={styles.container}>
             <div className={styles.popup}>
+                <div className={styles.closeButton}>
+                    <button onClick={() => handleClose('No')}>X</button>
+                </div>
                 <div className={styles.wrapper}>
                     <div className={styles.titleWrapper}>
                         <h2>Hello {userName}!</h2>
