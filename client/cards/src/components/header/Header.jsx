@@ -6,6 +6,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { Basket } from './basket/Basket';
 import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
 import { Profile } from './profile/Profile';
+import { MobileNavigation } from './profile/mobileNav/MobileNavigation';
 
 import { addToOrder } from '../../functions/addToOrder';
 
@@ -22,7 +23,7 @@ export const Header = () => {
     const { isAuthenticated, userId, userEmail, userName, isAdmin } = useContext(AuthContext);
 
     const [logoutModal, setLogoutModal] = useState();
-    const [mobileNav, setMobileNav] = useState(0);
+    const [mobileNav, setMobileNav] = useState(false);
     const [colorMobileNav, setColorMobileNav] = useState('white')
     const [dropdownMobileNav, setDropdownMobileNav] = useState();
     const [profileModal, setProfileModal] = useState();
@@ -40,49 +41,16 @@ export const Header = () => {
 
     const showLogoutModal = () => {
         setLogoutModal(<ShowLogoutModal onLoadLogoutModal={onLoadLogoutModal} />)
+        setMobileNav(false)
     }
 
     const closeMobileNav = () => {
+        setMobileNav(false);
         setColorMobileNav('white')
-        setDropdownMobileNav()
     }
 
     const clickMObileNavButton = () => {
-        let openCloseMobileNav = mobileNav + 1
-        if (openCloseMobileNav % 2 == 1) {
-            setColorMobileNav('ae0303')
-            setDropdownMobileNav(
-                <div className={styles.containerMobileNav}>
-                    <Link className={styles.mobileNavigationLink} to="/">Home</Link>
-                    <Link className={styles.mobileNavigationLink} to="/catalog">Catalog</Link>
-                    {!isAuthenticated &&
-                        <>
-                            <Link className={styles.mobileNavigationLink} to="/login">Login</Link>
-                            <Link className={styles.mobileNavigationLink} to="/register">Register</Link>
-                        </>
-                    }
-
-                    {isAuthenticated &&
-                        <>
-                            {isAdmin &&
-                                <>
-                                    <Link className={styles.mobileNavigationLink} to="/add-card">Add Card</Link>
-                                    <Link className={styles.mobileNavigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
-                                </>
-                            }
-                            <button className={styles.mobileNavigationLinkButton} onClick={showLogoutModal}>Logout</button>
-                            {/* <Link className={styles.navigationLink} onClick={showLogoutModal} to="/logout">Logout</Link> */}
-                            <div className={styles.mobileUserName}>{userName}</div>
-                        </>
-                    }
-                    <div className={styles.closeMobileNavBottom} onClick={closeMobileNav}>...</div>
-                </div>
-            )
-        } else {
-            setColorMobileNav('white')
-            setDropdownMobileNav()
-        }
-        setMobileNav(openCloseMobileNav)
+        setMobileNav(!mobileNav ? true : false)
     }
 
     // if (isAuthenticated) {
@@ -118,6 +86,18 @@ export const Header = () => {
     const showProfileModal = () => {
         setProfileModal(<Profile onLoadProfileModal={onLoadProfileModal} data={[userEmail, userName]} />)
     }
+
+    useEffect(() => {
+        if (mobileNav) {
+            setColorMobileNav('ae0303')
+            setDropdownMobileNav(
+                <MobileNavigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal} userName={userName} closeMobileNav={closeMobileNav} />
+            )
+        } else {
+            setColorMobileNav('white')
+            setDropdownMobileNav()
+        }
+    }, [mobileNav])
 
     return (
         <header>

@@ -1,0 +1,36 @@
+.containerMobileNav {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    top: 1;
+    right: 0;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(195, 196, 198);
+    z-index: 5;
+}
+
+.containerMobileNav .mobileNavigationLink {
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: rgb(8, 8, 8);
+}
+
+.containerMobileNav .mobileNavigationLinkButton {
+    all: unset;
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: rgb(8, 8, 8);
+}
+
+.containerMobileNav .mobileUserName {
+    padding: 10px;
+    font-family: 'Playpen Sans', cursive;
+    color: #66559e;
+}
+
+.closeMobileNavBottom {
+    font-size: 20px;
+}

@@ -184,7 +184,7 @@
     cursor: pointer;
 }
 
-.container .basket .mobileNavigation .containerMobileNav {
+/* .container .basket .mobileNavigation .containerMobileNav {
     position: absolute;
     display: flex;
     width: 100%;
@@ -215,11 +215,11 @@
     padding: 10px;
     font-family: 'Playpen Sans', cursive;
     color: #66559e;
-}
+} */
 
-.container .basket .mobileNavigation .closeMobileNavBottom {
+/* .container .basket .mobileNavigation .closeMobileNavBottom {
     font-size: 20px;
-}
+} */
 
 
 /* Extra small devices /phone, smartwatch and other smart devices */
