@@ -1,0 +1,248 @@
+.container {
+    width: 100%;
+    min-height: 780px;
+    background-color: rgba(107, 208, 231, 0.313);
+}
+
+.innerContainer {
+    width: 70%;
+    margin: auto;
+}
+
+.headerOrder {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.651);
+}
+
+.dataContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 516px;
+    height: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+    border: solid;
+    border-color: #9fb3b4;
+}
+
+
+.formTopField {
+    width: 100%;
+    height: 50px;
+    background-color: #51b9bc;
+    margin-bottom: 10px;
+}
+
+.topFieldTitle {
+    display: flex;
+    margin: auto;
+    width: 76%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+
+.mainPersonalData {
+    width: 98%;
+    height: 100%;
+    justify-content: left;
+    text-align: left;
+    padding-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: rgb(216, 215, 218);
+}
+
+.innerPersonalData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.typePersonalData {
+    width: 50%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.detailedData {
+    width: 50%;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.innerPrivacyPolicy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-weight: 00;
+}
+
+.typeSeparator {
+    margin-bottom: 30px;
+}
+
+.mainAllPurchase {
+    width: 98%;
+    height: 30px;
+    display: flex;
+    background-color: rgb(216, 215, 218);
+    margin: auto;
+    margin-top: 5px;
+    color: white;
+}
+
+.mainAllPurchase>div {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.purchaseTitle {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchaseQuantity {
+    display: flex;
+    width: 8%;
+    align-items: center;
+    justify-content: center;
+}
+
+.multiplySign {
+    display: flex;
+    width: 6%;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchasePrice {
+    display: flex;
+    width: 16%;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchaseFinalPrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchaseTotalPrice {
+    display: flex;
+    justify-content: right;
+    background-color: rgba(255, 141, 141, 0.559);
+    width: 96%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.purchaseTotalPrice>div {
+    margin-left: 10px;
+}
+
+.bottomButtons {
+    display: flex;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.back {
+    display: flex;
+    width: 50%;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.next {
+    display: flex;
+    width: 50%;
+    justify-content: left;
+    margin-left: 10px;
+}
+
+/* Next Button */
+.nextStep {
+    text-align: left;
+    justify-content: left;
+    width: 100%;
+}
+
+.nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(17, 162, 104, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}
+
+/* Next Button */
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        max-width: 100%;
+        min-height: 683px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .container .innerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: #F2F3F5;
+        text-align: center;
+        border-radius: 0px;
+    }
+
+    .container .innerContainer .dataContainer {
+        width: 100%;
+        border: none;
+        margin-bottom: 0px;
+    }
+
+    .container .innerContainer .dataContainer .formTopField {
+        width: 100%;
+    }
+
+    .container .innerContainer .mainPersonalData {
+        width: 100%;
+        padding-top: 0px;
+        margin-bottom: 0px;
+    }
+}

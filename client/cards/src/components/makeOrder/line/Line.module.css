@@ -1,0 +1,19 @@
+.innerLineOne {
+    width: 100%;
+    margin-bottom: 10px;
+
+    /* border: solid; */
+}
+
+.lineOne {
+    display: inline-block;
+    width: 90%;
+    border-bottom: 1.5px solid #b5c1c1
+        /* border-bottom-style: dotted; */
+}
+
+@media screen and (max-width:768px) {
+    .innerLineOne {
+        width: 97%;
+    }
+}

@@ -1,0 +1,70 @@
+.container {
+    width: 99.9%;
+    height: 800px;
+    padding-top: 3%;
+    background-color: #f1f1f1
+}
+
+.middleColumnTopBaR {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    background-color: rgb(215, 145, 145);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.mainField {
+    display: flex;
+    justify-content: left;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.leftColumn {
+    flex: 0 0 10%;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(215, 145, 145);;
+}
+
+.lineUpOrder {
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.lineUpOrder>div {
+    margin-bottom: 10px;
+}
+
+.lineUpOrder>div>* {
+    color: rgb(9, 9, 9);
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.lineUpOrder>div>*:hover {
+    background-color: rgb(94, 139, 124);
+}
+
+.middleColumn {
+    float: right;
+    flex: 0 0 90%;
+    background-color: #41dd8c;
+    border-bottom-right-radius: 10px;
+}
+
+.greetingField {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+    font-size: 20px;
+}

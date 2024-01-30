@@ -1,0 +1,255 @@
+.loginContainer {
+    width: 100%;
+    height: auto;
+    background-color: #d86f6f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.loginContainer .innerContiner {
+    display: flex;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #313338;
+    box-shadow: 1px 1px 10px #313338;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.loginContainer .innerContiner .mainLoginField {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #F2F3F5;
+}
+
+.loginContainer .innerContiner .mainLoginField .columnOne {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.loginContainer .innerContiner .mainLoginField .columnOne h2 {
+    text-align: center;
+    font-weight: 400;
+    font-family: Tahoma, sans-serif;
+}
+
+.loginContainer .innerContiner .mainLoginField .columnOne .innerColumOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin {
+    background-color: #313338;
+}
+
+.loginInformation {
+    width: 78%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d8d9dc;
+}
+
+.fieldLogin input[type='email'],
+[id='passwords'] {
+    all: unset;
+    width: 80%;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #1E1F22;
+}
+
+.forgotPasswordFiled {
+    width: 78%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: #43baf6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.forgotPasswordFiled:hover {
+    color: #357493;
+}
+
+.submitBtn {
+    width: 80%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: #3d46ae;
+}
+
+.disabledSubmitBtn {
+    width: 80%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #6a6f99;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: no-drop;
+    transition: 0.3s;
+}
+
+.goToRegister {
+    width: 78%;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #90969F;
+}
+
+.navigationLink {
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #43baf6;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navigationLink:hover {
+    color: #357493;
+}
+
+.columnTwo {
+    display: flex;
+    flex-direction: columnn;
+    width: 40%;
+}
+
+.innerLogo {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+}
+
+.innerLogo img {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .loginContainer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .loginContainer .innerContiner {
+        width: 100%;
+        border-radius: 0;
+        padding-top: 50px;
+        padding-bottom: 150px;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne {
+        width: 100%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField h2 {
+        text-align: center;
+        font-size: 21px;
+        font-weight: 400;
+        font-family: Tahoma, sans-serif;
+        padding-bottom: 30px;
+    }
+
+    .fieldLogin input[type='email'],
+    [id='passwords'] {
+        width: 80%;
+    }
+
+    .loginInformation {
+        width: 80%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin .forgotPasswordFiled {
+        display: flex;
+        justify-content: center;
+    }
+
+    .columnTwo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .loginContainer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .loginContainer .innerContiner {
+        width: 100%;
+        border-radius: 0;
+        padding-top: 97px;
+        padding-bottom: 97px;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne {
+        width: 100%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField h2 {
+        text-align: center;
+        font-size: 23px;
+        font-weight: 400;
+        font-family: Tahoma, sans-serif;
+        padding-bottom: 30px;
+    }
+
+    .fieldLogin input[type='email'],
+    [id='passwords'] {
+        width: 70%;
+    }
+
+    .loginInformation {
+        width: 70%;
+    }
+
+    .submitBtn {
+        width: 70%;
+    }
+
+    .disabledSubmitBtn {
+        width: 70%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin .forgotPasswordFiled {
+        display: flex;
+        justify-content: center;
+    }
+
+    .columnTwo {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .container {
+        height: 70px;
+    }
+
+}

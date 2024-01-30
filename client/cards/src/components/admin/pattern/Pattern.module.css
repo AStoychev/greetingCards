@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    height: 800px;
+    padding-top: 3%;
+    background-color: #f1f1f1
+}
+
+.middleColumnTopBaR {
+    display: none;
+    margin: auto;
+    width: 99%;
+    height: 50px;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.mainField {
+    width: 97%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.leftColumn {
+    flex: 0 0 10%;
+    border-radius: 10px;
+    /* border-bottom-left-radius: 10px; */
+    background-color: #ffffff;
+}
+
+.lineUpOrder {
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.lineUpOrder>div {
+    margin-bottom: 20px;
+}
+
+.linkTo {
+    color: rgb(9, 9, 9);
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.linkTo:hover {
+    background-color: rgb(94, 139, 124);
+}
+
+.middleColumn {
+    float: right;
+    flex: 0 0 90%;
+    border-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
+    background-color: #fafafa;
+
+    /* You can remove margin for delete space between columns */
+    /* margin: 0 auto; */
+
+    /* border: solid;
+    border-color: red; */
+}
+
+.greetingField {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+    font-size: 20px;
+}

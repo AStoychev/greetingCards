@@ -1,0 +1,28 @@
+.bottomButtons {
+    display: flex;
+    margin-bottom: 10px;
+    /* border: solid; */
+}
+
+.nextStep {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+
+    /* border: solid; */
+}
+.backButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(39, 53, 154, 0.763);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.backButton:hover {
+    background-color: rgb(5, 89, 179);
+    cursor: pointer;
+}

@@ -1,0 +1,143 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(44, 45, 48, 58%);
+    z-index: 1000;
+    box-shadow: 21px 15px 121px 3020px rgba(45, 45, 46, 0.651);
+}
+
+.popup {
+    background-color: rgba(4, 0, 11, 0.557);
+    /* background-color: rgb(56, 29, 29); */
+    width: 530px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 10px 20px;
+    position: fixed;
+    /* position: absolute; */
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    /* left: 85%;
+    top: 20%; */
+    border-radius: 8px;
+    z-index: 1000;
+    font-family: "Poppins", sans-serif;
+
+    box-shadow: 21px 15px 121px 1020px rgba(45, 45, 46, 0.329);
+    /* box-shadow: 21px 15px 121px 1020px rgba(11, 23, 80, 0.2); */
+}
+
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 100%;
+    }
+}
+
+/* @media(min-width:768px) {
+    .popup {
+        float: left;
+        width: 30%;
+        margin-right: 5px;
+    }
+} */
+
+.wrapper {
+    padding-bottom: 5px;
+}
+
+.closeButton {
+    display: block;
+    margin: 0 0 1px auto;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.paragraphCookie {
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.emptyList {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.mainFinalOrder {
+    height: 50px;
+    display: flex;
+    background-color: rgb(150, 87, 87);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.finalOrder {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonsOrder {
+    display: flex;
+}
+
+.buttonClose {
+    width: 50%;
+
+    /* border: solid; */
+}
+
+.buttonOrder {
+    width: 50%;
+    /* border: solid; */
+}
+
+.bottomButton {
+    width: 150px;
+    background-color: #7896b8;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 5px 0;
+    border: none;
+    transition: 0.3s;
+}
+
+.bottomButton:hover {
+    background-color: #18579f;
+    cursor: pointer;
+}
+
+
+/* .closeBottomButton {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #0f72e5;
+    color: #ffffff;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 5px 0;
+    border: none;
+}
+
+.closeBottomButton:hover {
+    background-color: #18579f;
+} */

@@ -18,6 +18,7 @@ export const AuthProvider = ({
     // Try error
     const [errors, setError] = useState({});
     const [errorEmail, setErrorEmail] = useState({});
+    const [errorResetPassword, setErrorResetPassword] = useState({});
     // Try error
 
     const authService = authServiceFactory(auth.accessToken);
@@ -74,6 +75,87 @@ export const AuthProvider = ({
 
     };
 
+    const onChangePasswordSubmit = async (values) => {
+        const { email, password, newPassword, repeatNewPassword } = values;
+        if (repeatNewPassword !== newPassword) {
+            console.log('Password Mismatch')
+            return;
+        }
+
+        try {
+            const result = await authService.changePassword({ ...values });
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with change password')
+            }
+        }
+
+    };
+
+    const onResetPasswordSubmitStepOne = async (values) => {
+        try {
+            const result = await authService.resetPasswordStepOne({ ...values });
+            navigate('/');
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with reset password!')
+            }
+        }
+
+    };
+
+    const onResetPasswordSubmitStepTwo = async (values) => {
+        try {
+            const result = await authService.resetPasswordStepTwo({ ...values });
+            if (result.error) {
+                console.log('Error', result.error)
+                if (result.error) {
+                    setErrorResetPassword(result)
+                    setTimeout(() => {
+                        setErrorResetPassword({})
+                    }, 2000);
+                }
+            } else {
+                navigate(`/reset-password-step-three/${values.cryptEmail}`);
+            }
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with code reset password!')
+            }
+        }
+    };
+
+    const onResetPasswordSubmitStepThree = async (values) => {
+
+        if (values.newPassword !== values.confirmNewPassword || values.newPassword === '') {
+            console.log('Password Mismatch')
+            setErrorResetPassword({error: 'Password Mismatch'})
+            setTimeout(() => {
+                setErrorResetPassword({})
+            }, 2000);
+            return;
+        }
+        try {
+            const result = await authService.resetPasswordStepThree({ ...values });
+            console.log('Result', result)
+            if (result.error) {
+                setErrorResetPassword(result)
+                setTimeout(() => {
+                    setErrorResetPassword({})
+                }, 2000);
+            }
+
+
+        } catch (error) {
+            if (error) {
+                console.log('There is a problem with change password!')
+
+            }
+        }
+    };
+
     const onLogout = async () => {
         await authService.logout();
 
@@ -84,18 +166,26 @@ export const AuthProvider = ({
         // Try logout
     };
 
+    // console.log(1111111111111, auth)
+    
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
+        onChangePasswordSubmit,
+        onResetPasswordSubmitStepOne,
+        onResetPasswordSubmitStepTwo,
+        onResetPasswordSubmitStepThree,
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
         userName: auth.username,
+        isAdmin: auth.admin,
         isAuthenticated: !!auth.accessToken,
 
         thisError: errors,
         errorEmail: errorEmail,
+        errorResetPassword: errorResetPassword,
     };
     return (
         <>

@@ -1,0 +1,25 @@
+.bottomButtons {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.nextStep {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(17, 162, 104, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}

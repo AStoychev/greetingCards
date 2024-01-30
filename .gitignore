@@ -3,6 +3,11 @@
 # dependencies
 /node_modules
 /.pnp
+venv/
+__pycache__
+.venv
+chat_core/
+.socket_chat
 .pnp.js
 
 # testing
@@ -21,3 +26,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+chat-server/chat_core/data.pth

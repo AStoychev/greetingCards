@@ -1,0 +1,222 @@
+.container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container .header {
+    display: flex;
+    justify-content: center;
+}
+
+.container .columns3 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+/* .columns3>* {
+    width: calc(100% / 1);
+} */
+
+/* Left Column */
+.container .columns3 .columnsLeft {
+    width: 230px;
+    height: 720px;
+    flex: 0 0 130px;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.container .columns3 .columnsLeft .leftImages {
+    margin-top: 10px;
+}
+
+.bgPink {
+    margin-top: 30px;
+    background-color: rgb(216, 216, 216);
+    width: 100px;
+    height: 120px;
+}
+
+.otherPictures {
+    border: solid;
+    border-width: thin;
+    border-color: rgb(216, 216, 216);
+    width: 100px;
+    height: 120px;
+}
+
+.otherPictures:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Left Column */
+
+/* Middle Column */
+.container .columns3 .columnsCenter {
+    width: 530px;
+    height: 720px;
+    border: 3px solid #eee;
+}
+
+.container .columns3 .columnsCenter .bgOrange {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: orange; */
+}
+
+.container .columns3 .columnsCenter .bgOrange .leftBox {
+    margin-top: 50%;
+    width: 10%;
+    height: 100px;
+}
+
+.container .columns3 .columnsCenter .bgOrange .leftBox .changeImageButtonBack {
+    width: 44px;
+    height: 44px;
+    margin-left: 5px;
+    border: 1.5px solid;
+    border-color: rgb(236, 97, 97);
+    background-color: transparent;
+    color: rgb(236, 97, 97);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .columns3 .columnsCenter .bgOrange .leftBox .changeImageButtonBack:hover {
+    background-color: rgb(236, 97, 97);
+    color: white;
+}
+
+.container .columns3 .columnsCenter .bgOrange .middleBox {
+    margin-top: 10%;
+}
+
+.container .columns3 .columnsCenter .bgOrange .middleBox .mainImage {
+    max-width: 400px;
+    max-height: 600px;
+}
+
+.container .columns3 .columnsCenter .bgOrange .rigthBox {
+    margin-top: 50%;
+    width: 10%;
+    height: 100px;
+    text-align: right;
+}
+
+.container .columns3 .columnsCenter .bgOrange .rigthBox .changeImageButtonPrev {
+    width: 44px;
+    height: 44px;
+    margin-right: 5px;
+    border: 1.5px solid;
+    border-color: rgb(236, 97, 97);
+    background-color: transparent;
+    color: rgb(236, 97, 97);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .columns3 .columnsCenter .bgOrange .rigthBox .changeImageButtonPrev:hover {
+    background-color: rgb(236, 97, 97);
+    color: white;
+}
+
+
+/* Middle Column */
+
+/* Right Column */
+.container .columns3 .columnsRight {
+    min-width: 330px;
+    height: auto;
+    flex: 0 0 330px;
+    background-color: #EDEDED;
+    /* border: solid; */
+}
+
+.container .columns3 .columnsRight .bgRed {
+    font-family: 'Assistant', sans-serif;
+}
+
+.container .columns3 .columnsRight .bgRed .rightColumnArticle {
+    font-size: 13px;
+}
+
+/* Right Column */
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        max-width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .container .columns3 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container .columns3 .columnsLeft {
+        display: none;
+    }
+
+    .container .columns3 .columnsCenter {
+        width: 100%;
+        height: auto;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange {
+        position: relative;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .leftBox {
+        position: absolute;
+        top: 560px;
+        left: 1%;
+        z-index: 3;
+        margin-top: 0px;
+        width: 0px;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .rigthBox {
+        position: absolute;
+        top: 560px;
+        right: 13%;
+        z-index: 3;
+        margin-top: 0px;
+        width: 0px;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .middleBox {
+        display: flex;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .container .columns3 .columnsCenter .bgOrange .middleBox .mainImage {
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .container .columns3 .columnsRight {
+        width: 100%;
+        margin: 10px auto;
+    }
+}

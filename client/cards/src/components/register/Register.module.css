@@ -1,0 +1,190 @@
+.container {
+    width: 100%;
+    height: auto;
+    background-color: #d86f6f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100.5px;
+    padding-bottom: 100.5px;
+}
+
+.container .innerContainer {
+    display: flex;
+    width: 36%;
+    height: auto;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    background-color: #313338;
+    box-shadow: 1px 1px 10px #313338;
+}
+
+.container .innerContainer .mainField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #F2F3F5;
+
+    /* border: solid rebeccapurple; */
+}
+
+.mainField h2 {
+    text-align: center;
+    font-weight: 400;
+    font-family: Tahoma, sans-serif;
+}
+
+.container .innerContainer .innerColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.container .innerContainer .innerColumn .fieldRegister {
+    background-color: #313338;
+}
+
+.registerInformation {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d8d9dc;
+}
+
+.fieldRegister input[type='email'],
+input[type='username'],
+input[id='password'],
+input[id='repeatPassword'] {
+    all: unset;
+    width: 50%;
+    height: 36px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #1E1F22;
+
+    border: solid rgba(102, 51, 153, 0);
+}
+
+.fieldRegister :focus {
+    border: solid;
+}
+
+.submitBtn {
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: #3d46ae;
+}
+
+.disabledSubmitBtn {
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #7b7d91;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: no-drop;
+    transition: 0.3s;
+}
+
+.navigationLinkLogin {
+    padding-top: 20px;
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #43baf6;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigationLinkLogin:hover {
+    color: #357493;
+}
+
+.privaciPolicy {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    height: 60px;
+}
+
+.checkbox {
+    width: 26px;
+    height: 26px;
+    margin: auto;
+    background-color: rgba(174, 188, 185, 0.655);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tick {
+    opacity: 0.8;
+    width: 26px;
+    height: 26px;
+}
+
+.textPolicy {
+    width: 90%;
+    color: #90969F;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .container .innerContainer {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .registerInformation {
+        width: 80%;
+    }
+
+    .fieldRegister input[type='email'],
+    input[type='username'],
+    input[id='password'],
+    input[id='repeatPassword'] {
+        all: unset;
+        width: 80%;
+        height: 30px;
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #1E1F22;
+
+        border: solid rgba(102, 51, 153, 0);
+    }
+
+    .submitBtn {
+        width: 80%;
+        height: 30px;
+    }
+
+    .disabledSubmitBtn {
+        width: 80%;
+        height: 30px;
+    }
+}

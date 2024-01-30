@@ -1,7 +1,12 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
+
+import { Link } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useAuthContext } from "../../contexts/AuthContext";
+
+import background from '../img/background.png'
+import styles from './Login.module.css'
 
 const LoginFormKeys = {
     Email: 'email',
@@ -16,48 +21,85 @@ export const Login = () => {
 
     }, onLoginSubmit);
 
+    const checkForFullValue = () => {
+        if(values[LoginFormKeys.Email].length > 0 && values[LoginFormKeys.Password].length > 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
-        <div className="container">
-            <div>
-                <h1>Login</h1>
-                <div>
-                    <section id="register-page" className="content auth">
-                        <form id="register" method='POST' onSubmit={onSubmit}>
-                            <div className='field-register'>
+        <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
 
-                                <label className='htmlContent' htmlFor="email">Email:</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="livingwall@gmail.com"
-                                    name={LoginFormKeys.Email}
-                                    value={values[LoginFormKeys.Email]}
-                                    onChange={changeHandler}
-                                // onClick={onClickEmail}
-                                // onBlur={onBlurEmail}
-                                />
+            <div className={styles.innerContiner}>
 
-                                <label className='htmlContent' htmlFor="pass">Password:</label>
-                                <input
-                                    type="password"
-                                    id="register-password"
-                                    placeholder="******"
-                                    name={LoginFormKeys.Password}
-                                    value={values[LoginFormKeys.Password]}
-                                    onChange={changeHandler}
-                                // onClick={onClickPassword}
-                                // onBlur={onBlurPass}
-                                />
+                <div className={styles.mainLoginField}>
+                    <div className={styles.columnOne}>
+                        <h2>Login</h2>
+                        <div className={styles.innerColumOne}>
+                            <section id="login-page" className="content auth">
+                                <form id="login" method='POST' onSubmit={onSubmit}>
+
+                                    <div className={styles.fieldLogin}>
+
+                                        <label className={styles.htmlContent} htmlFor="email"></label>
+                                        <div className={styles.loginInformation}>EMAIL<span>*</span></div>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            // name={LoginFormKeys.Email}
+                                            placeholder="greetingcards@gmail.com"
+                                            value={values[LoginFormKeys.Email]}
+                                            onChange={changeHandler}
+                                        />
+
+                                        <label className={styles.htmlContent} htmlFor="passwords"></label>
+                                        <div className={styles.loginInformation}>PASSWORD<span>*</span></div>
+                                        <input
+                                            type="password"
+                                            id="passwords"
+                                            name="password"
+                                            // name={LoginFormKeys.Password}
+                                            placeholder="******"
+                                            value={values[LoginFormKeys.Password]}
+                                            onChange={changeHandler}
+                                        />
+
+                                        <div className={styles.forgotPasswordFiled}>
+                                            <Link className={styles.navigationLink} to="/reset-password-step-one">Forgot your password?</Link>
+                                        </div>
+
+                                        <div className="submit">
+
+                                            {checkForFullValue()
+                                            ?
+                                            <input type="submit" className={styles.submitBtn} value="Log In" />
+                                            :
+                                            <input type="submit" className={styles.disabledSubmitBtn} value="Log In" title="Please fill all inputs" />
+                                            }
+
+                                        </div>
+                                        
+                                    </div>
+                                </form>
+                            </section>
+                            <div className={styles.goToRegister}>
+                                Need an account?
+                                <Link className={styles.navigationLink} to="/register">Register</Link>
                             </div>
-                            <div className="submit">
-                                <input type="submit" className="submit-btn" value="Login" />
-                            </div>
-                        </form>
-                    </section>
+                        </div>
+                    </div>
+
+                    <div className={styles.columnTwo}>
+                        <div className={styles.innerLogo}>
+                            <img src="../../../images/login-menu/image3.png" />
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
-
         </div>
     )
 }
