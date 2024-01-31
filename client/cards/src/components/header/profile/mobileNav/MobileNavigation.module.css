@@ -1,11 +1,12 @@
 .containerMobileNav {
     position: absolute;
-    display: flex;
-    width: 100%;
+    width: 94%;
+    /* width: 100%; */
     height: auto;
-    top: 1;
-    right: 0;
+    display: flex;
     flex-direction: column;
+    top: 1;
+    right: 3%;
     border-radius: 10px;
     background-color: rgb(195, 196, 198);
     z-index: 5;
@@ -16,6 +17,12 @@
     padding: 10px;
     font-family: 'Playpen Sans', cursive;
     color: rgb(8, 8, 8);
+    border: 1px solid rgb(174, 174, 174);
+}
+
+.containerMobileNav .mobileNavigationLink:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .containerMobileNav .mobileNavigationLinkButton {
