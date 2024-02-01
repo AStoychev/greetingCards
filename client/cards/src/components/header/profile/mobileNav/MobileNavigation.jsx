@@ -14,14 +14,12 @@ export const MobileNavigation = ({
         <div className={styles.containerMobileNav}>
             <Link className={styles.mobileNavigationLink} onClick={closeMobileNav} to="/">Home</Link>
             <Link className={styles.mobileNavigationLink} onClick={closeMobileNav} to="/catalog">Catalog</Link>
-
             {!isAuthenticated &&
                 <>
                     <Link className={styles.mobileNavigationLink} onClick={closeMobileNav} to="/login">Login</Link>
                     <Link className={styles.mobileNavigationLink} onClick={closeMobileNav} to="/register">Register</Link>
                 </>
             }
-
             {isAuthenticated &&
                 <>
                     {isAdmin &&
