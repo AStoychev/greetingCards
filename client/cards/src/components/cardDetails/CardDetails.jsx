@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
-import { useService } from "../../hooks/useService";
-
-import { cardServiceFactory } from "../../services/cardService";
 import { useCardContext } from "../../contexts/CardContext";
+
+import { useService } from "../../hooks/useService";
+import { cardServiceFactory } from "../../services/cardService";
 
 import { DeleteCardModal } from "../../utils/Modals/deleteModal/deleteCardModal";
 
@@ -134,7 +134,6 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
-
                             <div className={styles.leftBox}>
                                 {checkForIndetifiedImage().length > 1 &&
                                     <div>
@@ -162,7 +161,6 @@ export const CardDetails = () => {
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
-
                         </div>
                     </div>
 
