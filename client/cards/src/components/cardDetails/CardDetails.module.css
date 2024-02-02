@@ -70,7 +70,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* background-color: orange; */
 }
 
 .container .columns3 .columnsCenter .bgOrange .leftBox {
@@ -144,7 +143,6 @@
     height: auto;
     flex: 0 0 330px;
     background-color: #EDEDED;
-    /* border: solid; */
 }
 
 .container .columns3 .columnsRight .bgRed {
