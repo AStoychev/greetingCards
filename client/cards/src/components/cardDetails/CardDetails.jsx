@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { useCardContext } from "../../contexts/CardContext";
 
 import { useService } from "../../hooks/useService";
@@ -16,6 +17,9 @@ import Magnifier from "react-magnifier";
 import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
+
+    const { isAuthenticated } = useContext(AuthContext);
+
     const [card, setCard] = useState([]);
     const [imageIndex, setImageIndex] = useState(0);
     const [deleteModal, setDeleteModal] = useState()
@@ -172,8 +176,14 @@ export const CardDetails = () => {
                                 <h3>Price: {checkForDiscount(card.price, card.discount)} BGN</h3>
                             </article>
                         </div>
-                        <button onClick={onDeleteClick}>Delete</button>
-                        <Link to={`/catalog/${card._id}/edit`}>Edit</Link>
+
+                        {isAuthenticated &&
+                            <div>
+                                < button onClick={onDeleteClick}>Delete</button>
+                                <Link to={`/catalog/${card._id}/edit`}>Edit</Link>
+                            </div>
+                        }
+
                     </div>
 
                 </div>
