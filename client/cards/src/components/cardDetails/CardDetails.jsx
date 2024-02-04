@@ -18,7 +18,7 @@ import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
 
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAdmin } = useContext(AuthContext);
 
     const [card, setCard] = useState([]);
     const [imageIndex, setImageIndex] = useState(0);
@@ -177,7 +177,7 @@ export const CardDetails = () => {
                             </article>
                         </div>
 
-                        {isAuthenticated &&
+                        {isAdmin &&
                             <div>
                                 < button onClick={onDeleteClick}>Delete</button>
                                 <Link to={`/catalog/${card._id}/edit`}>Edit</Link>
