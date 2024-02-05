@@ -178,9 +178,9 @@ export const CardDetails = () => {
                         </div>
 
                         {isAdmin &&
-                            <div>
-                                < button onClick={onDeleteClick}>Delete</button>
-                                <Link to={`/catalog/${card._id}/edit`}>Edit</Link>
+                            <div className={styles.buttonWrapper}>
+                                <button className={styles.deleteButton} onClick={onDeleteClick}>Delete</button>
+                                <Link className={styles.editLink} to={`/catalog/${card._id}/edit`}>Edit</Link>
                             </div>
                         }
 
