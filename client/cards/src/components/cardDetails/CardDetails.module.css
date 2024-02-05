@@ -153,6 +153,46 @@
     font-size: 13px;
 }
 
+.container .columns3 .columnsRight .buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+}
+
+.container .columns3 .columnsRight .deleteButton {
+    all:unset;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 10px;
+    background-color: rgb(255, 81, 81);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .columns3 .columnsRight .deleteButton:hover {
+    background-color: rgb(137, 27, 27);
+}
+
+.container .columns3 .columnsRight .editLink {
+    all:unset;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 10px;
+    background-color: rgb(70, 155, 118);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .columns3 .columnsRight .editLink:hover {
+    background-color: rgb(34, 72, 56);
+}
+
+
 /* Right Column */
 
 @media screen and (max-width: 768px) {
