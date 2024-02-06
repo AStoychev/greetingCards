@@ -139,14 +139,18 @@
 
 /* Right Column */
 .container .columns3 .columnsRight {
-    min-width: 330px;
+    width: 33%;
+    /* min-width: 330px; */
     height: auto;
     flex: 0 0 330px;
     background-color: #EDEDED;
 }
 
 .container .columns3 .columnsRight .bgRed {
+    display: flex;
+    flex-direction: row;
     font-family: 'Assistant', sans-serif;
+    padding: 10px 0 0 20px;
 }
 
 .container .columns3 .columnsRight .bgRed .rightColumnArticle {
@@ -156,6 +160,7 @@
 .container .columns3 .columnsRight .buttonWrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 15px;
 
 }
