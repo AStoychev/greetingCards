@@ -1,5 +1,8 @@
 .popup {
-    background-color: #cca3a3;
+    background-color: #2c2d31;
+    /* background-color: #cca3a3; */
+    box-shadow: 1px 1px 10px #2c2d31;
+    color: rgb(255, 255, 255);
     width: 450px;
     padding: 10px 20px;
     position: absolute;
@@ -45,23 +48,29 @@
 }
 
 .paragraphCookie {
-    color: rgb(2, 2, 2);
     font-size: 15px;
     font-weight: bold;
     text-align: center;
 }
 
-.letsGoButton {
-    display: block;
+.buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.buttonWrapper .letsGoButton {
     width: 150px;
     position: relative;
     margin: auto;
-    text-align: center;
+    padding: 5px 0;
+    text-decoration: none;
     background-color: #0f72e5;
     color: #ffffff;
-    text-decoration: none;
-    padding: 5px 0;
+    border-radius: 6px;
     border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .letsGoButton:hover {
