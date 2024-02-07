@@ -7,7 +7,7 @@ import { useCardContext } from "../../contexts/CardContext";
 import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
-import { DeleteCardModal } from "../../utils/Modals/deleteModal/deleteCardModal";
+import { DeleteCardModal } from "../../utils/Modals/deleteModal/DeleteCardModal";
 
 import { saveFiveItemsInLocalStorage } from "../../functions/saveFiveItemsInLocalStorage";
 import { checkForDiscount } from "../../functions/checkForDiscount";

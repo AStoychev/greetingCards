@@ -1,4 +1,4 @@
-import styles from "./deleteCardModal.module.css"
+import styles from "./DeleteCardModal.module.css"
 
 export const DeleteCardModal = ({
     onLoadModal
@@ -14,8 +14,10 @@ export const DeleteCardModal = ({
                     <div className={styles.paragraphCookie}>
                         Are you sure you want to delete this card!
                     </div>
-                    <button className={styles.letsGoButton} onClick={() => handleClose('No')}>No</button>
-                    <button className={styles.letsGoButton} onClick={() => handleClose('Yes')}>Yes</button>
+                    <div className={styles.buttonWrapper}>
+                        <button className={styles.letsGoButton} onClick={() => handleClose('No')}>No</button>
+                        <button className={styles.letsGoButton} onClick={() => handleClose('Yes')}>Yes</button>
+                    </div>
                 </div>
             </div>
         </div>
