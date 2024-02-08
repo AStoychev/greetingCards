@@ -5,7 +5,7 @@ from find_items.search_cards import search_for_item
 from chat_core.chat import get_response
 
 socket = socketio.AsyncServer(
-    async_mode="asgi", cors_allowed_origins="http://localhost:3000"
+    async_mode="asgi", cors_allowed_origins="http://localhost:3001"
 )
 
 sio_app = socketio.ASGIApp(socketio_server=socket, socketio_path="socket.io")

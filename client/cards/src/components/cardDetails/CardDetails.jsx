@@ -22,7 +22,7 @@ export const CardDetails = () => {
 
     const [card, setCard] = useState([]);
     const [imageIndex, setImageIndex] = useState(0);
-    const [deleteModal, setDeleteModal] = useState()
+    const [deleteModal, setDeleteModal] = useState(false)
 
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId
@@ -41,9 +41,9 @@ export const CardDetails = () => {
     const onLoadModal = (data) => {
         if (data === 'Yes') {
             deleteGreetinCard();
-            setDeleteModal();
+            setDeleteModal(false);
         }
-        setDeleteModal();
+        setDeleteModal(false);
     }
 
     const onDeleteClick = () => {
