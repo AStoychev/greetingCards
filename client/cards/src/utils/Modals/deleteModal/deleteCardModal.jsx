@@ -1,6 +1,7 @@
 import styles from "./DeleteCardModal.module.css"
 
 export const DeleteCardModal = ({
+    title,
     onLoadModal
 }) => {
     const handleClose = (data) => {
@@ -10,7 +11,7 @@ export const DeleteCardModal = ({
         <div>
             <div className={styles.popup}>
                 <div className={styles.container}>
-                    <h2>Hello</h2>
+                    <h2>Delete {title}</h2>
                     <div className={styles.paragraphCookie}>
                         Are you sure you want to delete this card!
                     </div>

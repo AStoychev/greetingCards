@@ -47,7 +47,7 @@ export const CardDetails = () => {
     }
 
     const onDeleteClick = () => {
-        setDeleteModal(<DeleteCardModal onLoadModal={onLoadModal} />)
+        setDeleteModal(<DeleteCardModal title={card.title} onLoadModal={onLoadModal} />)
     }
 
     const deleteGreetinCard = async () => {
