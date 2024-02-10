@@ -3,9 +3,6 @@
     text-align: right;
     justify-content: right;
     margin-top: 10px;
-
-    /* border: solid;
-    border-color: red; */
 }
 
 .basketMain {
@@ -14,30 +11,26 @@
     width: 15px;
     padding-right: 10px;
     color: white;
-
-    /* border: solid;
-    border-color: red; */
 }
 
 .innerBascketOne {
     flex: 50%;
     cursor: pointer;
-
-    /* border: solid;
-    border-color: white; */
 }
 
 .bascketLogo {
-    width: 33px;
-    height: 33px;
+    width: 36px;
+    height: 36px;
+    transition: 0.3;
+}
+
+.bascketLogo:hover {
+    color: rgb(140, 47, 47);
 }
 
 .innerBascketTwo {
     flex: 50%;
     padding-top: 6px;
-
-    /* border: solid;
-    border-color: white; */
 }
 
 @media screen and (max-width: 600px) {
