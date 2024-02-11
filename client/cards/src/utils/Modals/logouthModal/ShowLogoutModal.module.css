@@ -4,8 +4,6 @@
     height: 100%;
 
     background-color: rgb(44, 45, 48, 58%);
-    /* background-color: #2c2d31; */
-    /* transform: translate(-50%, -50%); */
     z-index: 1000;
     box-shadow: 21px 15px 121px 3020px rgba(45, 45, 46, 0.651);
 }
@@ -15,32 +13,19 @@
     box-shadow: 1px 1px 10px #2c2d31;
     width: 450px;
     height: 150px;
-    /* padding: 10px 20px; */
     position: fixed;
-    /* position: absolute; */
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     border-radius: 8px;
     z-index: 1000;
     font-family: "Poppins", sans-serif;
-
-    /* box-shadow: 21px 15px 121px 1020px rgba(45, 45, 46, 0.651); */
 }
-
-/* @media(min-width:768px) {
-    .popup {
-        float: left;
-        width: 30%;
-        margin-right: 5px;
-    }
-} */
 
 .popup .wrapper {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    /* padding-bottom: 5px; */
 }
 
 .popup .wrapper .titleWrapper {
@@ -80,7 +65,6 @@
     position: relative;
     margin: auto;
     text-align: center;
-    /* background-color: #0f72e5; */
     color: #ffffff;
     text-decoration: none;
     padding: 5px 0;
@@ -93,7 +77,6 @@
 .popup .wrapper .buttonWrapper .noButton:hover {
     border: solid #5393dc;
     color: #5393dc;
-    /* background-color: #18579f; */
 }
 
 .popup .wrapper .buttonWrapper .yesButton {
@@ -108,7 +91,6 @@
     text-decoration: none;
     padding: 5px 0;
     border-radius: 8px;
-    /* border: solid #2c2d31; */
     cursor: pointer;
     transition: 0.3s;
 }
