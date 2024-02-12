@@ -1,0 +1,50 @@
+.buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttonWrapper .buttonBack {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #359461;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttonWrapper .buttonBack:hover {
+    background-color: #236743;
+}
+
+.buttonWrapper .submitBtn {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttonWrapper .submitBtn:hover {
+    background-color: #3d46ae;
+}
+
+.buttonWrapper .disabledSubmitBtn {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #7b7d91;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: no-drop;
+    transition: 0.3s;
+}

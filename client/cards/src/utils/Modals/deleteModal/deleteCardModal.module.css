@@ -1,22 +1,16 @@
 .popup {
+    position: fixed;
     background-color: #2c2d31;
     box-shadow: 1px 1px 10px #2c2d31;
     color: rgb(255, 255, 255);
     width: 450px;
     padding: 10px 20px;
-    position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     border-radius: 8px;
     z-index: 1000;
     font-family: "Poppins", sans-serif;
-}
-
-@media only screen and (max-width: 400px) {
-    .popup {
-        width: 100%;
-    }
 }
 
 .container {
@@ -66,4 +60,10 @@
 
 .letsGoButton:hover {
     background-color: #18579f;
+}
+
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 84%;
+    }
 }

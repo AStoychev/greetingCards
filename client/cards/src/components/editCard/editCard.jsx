@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useCardContext } from "../../contexts/CardContext";
@@ -8,11 +8,13 @@ import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
 import background from '../img/background.png'
+import "./EditCardOnlyForButtonBack.css"
 import styles from "../addCard/AddCard.module.css"
 
 export const EditCard = () => {
 
     const { onCardEditSubmit } = useCardContext();
+    const navigate = useNavigate();
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId;
     const cardService = useService(cardServiceFactory);
@@ -70,6 +72,10 @@ export const EditCard = () => {
         } else {
             return false
         }
+    }
+
+    const goBackToCard = (cardId) => {
+        navigate(`/catalog/${cardId}`)
     }
 
     return (
@@ -167,19 +173,24 @@ export const EditCard = () => {
                                     />
                                     {/* Additional Image */}
                                 </div>
-                                <div className="submit">
-                                    <input
-                                    className={!validateAddCardFileds() ? styles.disabledSubmitBtn : styles.submitBtn}
-                                    type="submit"
-                                    value="SAVE"
-                                    onClick={setDiscount}
-                                    />
+
+                                <div className="buttonWrapper">
+                                        <button className="buttonBack" onClick={() => goBackToCard(cardId)}>
+                                            BACK
+                                        </button>
+
+                                        <input
+                                            className={!validateAddCardFileds() ? "disabledSubmitBtn" : "submitBtn"}
+                                            type="submit"
+                                            value="SAVE"
+                                            onClick={setDiscount}
+                                        />
                                 </div>
                             </form>
                         </section>
                     </div>
                 </div>
-                
+
             </div>
 
         </div>
