@@ -175,7 +175,7 @@ export const EditCard = () => {
                                 </div>
 
                                 <div className="buttonWrapper">
-                                        <button className="buttonBack" onClick={() => goBackToCard(cardId)}>
+                                        <button type="button" className="buttonBack" onClick={() => goBackToCard(cardId)}>
                                             BACK
                                         </button>
 
