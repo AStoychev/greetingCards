@@ -140,7 +140,6 @@
 /* Right Column */
 .container .columns3 .columnsRight {
     width: 33%;
-    /* min-width: 330px; */
     height: auto;
     flex: 0 0 330px;
     background-color: #EDEDED;
