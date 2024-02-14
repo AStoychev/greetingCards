@@ -41,60 +41,19 @@
     }
 }
 
-.productAndSortItem {
+.container .itemsWrapper .productAndSortItem {
     display: flex;
     padding-top: 10px;
 }
 
-.columnOne {
+.container .itemsWrapper .productAndSortItem .columnOne {
     flex: 90%;
     padding: 10px;
     height: 50px;
 }
 
-.modalContainer {
-    padding-top: 50px;
-}
-
-.columnTwo {
+.container .itemsWrapper .productAndSortItem .columnTwo {
     flex: 10%;
     padding: 10px;
     height: 50px;
-}
-
-.buttonDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-}
-
-.loadMoreButton {
-    color: white;
-    background-color: rgb(70, 70, 128);
-    border: none;
-    width: 300px;
-    height: 30px;
-    border-radius: 15px;
-}
-
-.loadMoreButton:hover {
-    background-color: rgb(66, 143, 99);
-}
-
-.noMoreProduct {
-    color: #212429;
-    text-align: center;
-    border: none;
-    font-weight: bold;
-    width: 300px;
-    height: 30px;
-}
-
-.message {
-    position: fixed;
-    top: 15%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
