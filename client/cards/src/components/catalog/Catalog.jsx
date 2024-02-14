@@ -18,6 +18,7 @@ export const Catalog = () => {
                 setAllCards(result)
             })
     }, [])
+    
 
     return (
         <div className={styles.container} >
