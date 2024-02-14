@@ -18,6 +18,7 @@ export const Catalog = () => {
                 setAllCards(result)
             })
     }, [])
+    
 
     return (
         <div className={styles.container} >
@@ -28,6 +29,7 @@ export const Catalog = () => {
                         < Card card={card} key={card._id} />
                     ))}
                 </div>
+
                 <div className={styles.productAndSortItem}>
                     <div className={styles.columnOne}>
                     </div>
