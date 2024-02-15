@@ -44,9 +44,9 @@ export const Card = ({
         <div className={styles.container}>
             <article className={styles.article}>
                 {/* {message} */}
-                <div className={styles.mainCardDiv} onClick={onArticleClick}>
-                    <div className={styles.itemInfoWrapper} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
-                        <div className={styles.image}>
+                <div className={styles.mainCardDiv}>
+                    <div className={styles.itemInfoWrapper}>
+                        <div className={styles.image} onClick={onArticleClick} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
                         </div>
 
