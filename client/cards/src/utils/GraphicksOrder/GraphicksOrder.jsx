@@ -39,6 +39,7 @@ export const GraphicksOrder = () => {
                 <div className={styles.cubeOne} style={{ backgroundColor: `${changeCubeAntTextColor(3)[0]}` }}>
                     <div className={styles.innerCubeText} style={{ color: `${changeCubeAntTextColor(3)[1]}` }}>3</div>
                 </div>
+                
             </div>
         </div>
     );

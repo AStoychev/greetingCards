@@ -49,12 +49,10 @@ export const Card = ({
                         <div className={styles.image} onClick={onArticleClick} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
                         </div>
-
                         <div className={styles.title}>
                             <h3>{card.title}</h3>
                         </div>
                     </div>
-
 
                     <div className={styles.price}>
                         Price: {checkForDiscount(card.price, card.discount)}
@@ -63,9 +61,7 @@ export const Card = ({
                     <div className={styles.star}>
                         {/* <StarRating /> */}
                     </div>
-
                 </div>
-
 
                 <div className={styles.title}>
                     <button onClick={() => addToCart(card._id)}>Add to Cart</button>
