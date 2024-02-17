@@ -124,10 +124,13 @@ export const CardDetails = () => {
     return (
         <div>
             <div className={styles.container}>
+
                 {deleteModal}
+
                 <div className={styles.header}>
                     <h2>Details</h2>
                 </div>
+
                 <div className={styles.columns3}>
 
                     <div className={styles.columnsLeft}>
@@ -138,6 +141,7 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
+
                             <div className={styles.leftBox}>
                                 {checkForIndetifiedImage().length > 1 &&
                                     <div>
@@ -165,6 +169,7 @@ export const CardDetails = () => {
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
+
                         </div>
                     </div>
 
@@ -172,8 +177,8 @@ export const CardDetails = () => {
                         <div className={styles.bgRed}>
                             <article className={styles.rightColumnArticle}>
                                 <h3>{card.title}</h3>
-                                <h3>{card.description}</h3>
-                                <h3>Price: {checkForDiscount(card.price, card.discount)} BGN</h3>
+                                <p className={styles.description}>{card.description}</p>
+                                <p className={styles.price}>Price: {checkForDiscount(card.price, card.discount)} BGN</p>
                             </article>
                         </div>
 
@@ -183,9 +188,7 @@ export const CardDetails = () => {
                                 <Link className={styles.editLink} to={`/catalog/${card._id}/edit`}>Edit</Link>
                             </div>
                         }
-
                     </div>
-
                 </div>
             </div>
         </div >

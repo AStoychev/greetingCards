@@ -156,6 +156,21 @@
     font-size: 13px;
 }
 
+.container .columns3 .columnsRight .bgRed .rightColumnArticle h3 {
+ font-size: 30px;
+}
+
+.container .columns3 .columnsRight .bgRed .rightColumnArticle .description {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container .columns3 .columnsRight .bgRed .rightColumnArticle .price {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
 .container .columns3 .columnsRight .buttonWrapper {
     display: flex;
     flex-direction: row;
