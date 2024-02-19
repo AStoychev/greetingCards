@@ -7,8 +7,8 @@ import { copyOnClickId } from '../functions/copyOnClickId';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
-import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
 import { TableHeading } from '../adminUtils/tableHeading/TableHeading';
+import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
 
 import styles from './AllOrders.module.css'
 

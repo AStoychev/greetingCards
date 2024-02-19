@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import { orderServiceFactory } from '../../../services/orderService';
@@ -10,6 +9,7 @@ import { copyOnClickId } from '../functions/copyOnClickId';
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
 import { ModalStatus } from './modalChangeStatus/ModalStatus';
+import { TableHeading } from '../adminUtils/tableHeading/TableHeading';
 import { TooltipMessageOrder } from '../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
 
 import styles from './UnprocessedOrders.module.css'
@@ -66,20 +66,7 @@ export const UnprocessedOrders = () => {
             <div className={styles.mainContainer}>
                 {showModal}
                 <div className={styles.tableContainer}>
-                    <div className={styles.tableRowHeading}>
-                        <div className={styles.rowItem}>#</div>
-                        <div className={styles.rowItem}>ID</div>
-                        <div className={styles.rowItem}>Date</div>
-                        <div className={styles.rowItem}>Address</div>
-                        <div className={styles.rowItem}>Client</div>
-                        <div className={styles.rowItem}>Shipping</div>
-                        <div className={styles.rowItem}>Payment</div>
-                        <div className={styles.rowItem}>Price</div>
-                        <div className={styles.rowItem}>Status</div>
-                        <div className={styles.rowItem}>Message</div>
-                        <div className={styles.rowItem}>Order</div>
-                        <div className={styles.rowItem}>Action</div>
-                    </div>
+                    <TableHeading />
 
                     {
                         unprocesedOrders.length
