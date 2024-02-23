@@ -6,6 +6,7 @@ import { takeTypeOrder } from '../functions/takeTypeOrder';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
+import { TableHeading } from '../adminUtils/tableHeading/TableHeading';
 
 import styles from './RefussedOrders.module.css'
 
@@ -40,19 +41,7 @@ export const RefussedOrders = () => {
             <div className={styles.mainContainer}>
                 {showModal}
                 <div className={styles.tableContainer}>
-                    <div className={styles.tableRowHeading}>
-                        <div className={styles.rowItem}>#</div>
-                        <div className={styles.rowItem}>ID</div>
-                        <div className={styles.rowItem}>Date</div>
-                        <div className={styles.rowItem}>Address</div>
-                        <div className={styles.rowItem}>Client</div>
-                        <div className={styles.rowItem}>Shipping</div>
-                        <div className={styles.rowItem}>Payment</div>
-                        <div className={styles.rowItem}>Price</div>
-                        <div className={styles.rowItem}>Status</div>
-                        <div className={styles.rowItem}>Order</div>
-                        <div className={styles.rowItem}>Action</div>
-                    </div>
+                    <TableHeading />
 
                     {
                         refuseOrders.length
