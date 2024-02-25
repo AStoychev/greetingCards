@@ -35,7 +35,9 @@ export const Catalog = () => {
                     <div className={styles.columnTwo}>
                     </div>
                 </div>
+
                 <SaveLastFiveVisitedCards />
+                
             </div>
             <Chat />
         </div>
