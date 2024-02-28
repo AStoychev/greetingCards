@@ -35,14 +35,17 @@ export const Login = () => {
             <div className={styles.innerContiner}>
 
                 <div className={styles.mainLoginField}>
+
                     <div className={styles.columnOne}>
+
                         <h2>Login</h2>
+
                         <div className={styles.innerColumOne}>
+
                             <section id="login-page" className="content auth">
                                 <form id="login" method='POST' onSubmit={onSubmit}>
 
                                     <div className={styles.fieldLogin}>
-
                                         <label className={styles.htmlContent} htmlFor="email"></label>
                                         <div className={styles.loginInformation}>EMAIL<span>*</span></div>
                                         <input
@@ -72,24 +75,25 @@ export const Login = () => {
                                         </div>
 
                                         <div className="submit">
-
                                             {checkForFullValue()
                                             ?
                                             <input type="submit" className={styles.submitBtn} value="Log In" />
                                             :
                                             <input type="submit" className={styles.disabledSubmitBtn} value="Log In" title="Please fill all inputs" />
                                             }
-
                                         </div>
-                                        
                                     </div>
+
                                 </form>
                             </section>
+
                             <div className={styles.goToRegister}>
                                 Need an account?
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div className={styles.columnTwo}>
