@@ -128,10 +128,6 @@ export const CardDetails = () => {
                 {deleteModal}
 
 
-
-
-
-
                 <div className={styles.header}>
                     <h2>Details</h2>
                 </div>
