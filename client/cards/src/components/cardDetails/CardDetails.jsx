@@ -124,18 +124,24 @@ export const CardDetails = () => {
     return (
         <div>
             <div className={styles.container}>
+
                 {deleteModal}
+
                 <div className={styles.header}>
                     <h2>Details</h2>
                 </div>
+
                 <div className={styles.columns3}>
+
                     <div className={styles.columnsLeft}>
                         <div className={styles.leftImages}>
                             <AdditionalImages />
                         </div>
                     </div>
+
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
+
                             <div className={styles.leftBox}>
                                 {checkForIndetifiedImage().length > 1 &&
                                     <div>
@@ -143,6 +149,7 @@ export const CardDetails = () => {
                                     </div>
                                 }
                             </div>
+
                             <div className={styles.middleBox}>
                                 <Magnifier
                                     className={styles.mainImage}
@@ -156,14 +163,18 @@ export const CardDetails = () => {
                                 // mgShape='circle'
                                 />
                             </div>
+
                             <div className={styles.rigthBox}>
                                 {checkForIndetifiedImage().length > 1 &&
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
+                            
                         </div>
                     </div>
+
                     <div className={styles.columnsRight}>
+                        
                         <div className={styles.bgRed}>
                             <article className={styles.rightColumnArticle}>
                                 <h3>{card.title}</h3>
@@ -171,6 +182,7 @@ export const CardDetails = () => {
                                 <p className={styles.price}>Price: {checkForDiscount(card.price, card.discount)} BGN</p>
                             </article>
                         </div>
+
                         {isAdmin &&
                             <div className={styles.buttonWrapper}>
                                 <button className={styles.deleteButton} onClick={onDeleteClick}>Delete</button>
@@ -178,6 +190,7 @@ export const CardDetails = () => {
                             </div>
                         }
                     </div>
+
                 </div>
             </div>
         </div >
