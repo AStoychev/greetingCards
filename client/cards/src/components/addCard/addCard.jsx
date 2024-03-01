@@ -50,7 +50,6 @@ export const AddCard = () => {
                         <section id="card-page" className="content auth">
                             <form id="card" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldCard}>
-
                                     <label className={styles.labelContent} htmlFor="title">Title<span>*</span></label>
                                     <input
                                         type="text"
@@ -60,7 +59,6 @@ export const AddCard = () => {
                                         value={values.title}
                                         onChange={changeHandler}
                                     />
-
                                     <label className={styles.labelContent} htmlFor="description">Description<span>*</span></label>
                                     <input
                                         type="text"
@@ -148,9 +146,7 @@ export const AddCard = () => {
                         
                     </div>
                 </div>
-
             </div>
-
         </div>
     );
 }
