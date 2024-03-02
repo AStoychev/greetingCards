@@ -1,25 +1,21 @@
-import { useContext, useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
 import { useCardContext } from "../../contexts/CardContext";
 
 import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
+import { InfoDetails } from "./infoDetails/InfoDetails";
 import { DeleteCardModal } from "../../utils/Modals/deleteModal/DeleteCardModal";
 
 import { saveFiveItemsInLocalStorage } from "../../functions/saveFiveItemsInLocalStorage";
-import { checkForDiscount } from "../../functions/checkForDiscount";
 
 import Magnifier from "react-magnifier";
 
 import styles from './CardDetails.module.css'
 
 export const CardDetails = () => {
-
-    const { isAdmin } = useContext(AuthContext);
-
     const [card, setCard] = useState([]);
     const [imageIndex, setImageIndex] = useState(0);
     const [deleteModal, setDeleteModal] = useState(false)
@@ -173,23 +169,7 @@ export const CardDetails = () => {
                         </div>
                     </div>
 
-                    <div className={styles.columnsRight}>
-                        
-                        <div className={styles.bgRed}>
-                            <article className={styles.rightColumnArticle}>
-                                <h3>{card.title}</h3>
-                                <p className={styles.description}>{card.description}</p>
-                                <p className={styles.price}>Price: {checkForDiscount(card.price, card.discount)} BGN</p>
-                            </article>
-                        </div>
-
-                        {isAdmin &&
-                            <div className={styles.buttonWrapper}>
-                                <button className={styles.deleteButton} onClick={onDeleteClick}>Delete</button>
-                                <Link className={styles.editLink} to={`/catalog/${card._id}/edit`}>Edit</Link>
-                            </div>
-                        }
-                    </div>
+                    <InfoDetails card={card} onDeleteClick={onDeleteClick}/>
 
                 </div>
             </div>
