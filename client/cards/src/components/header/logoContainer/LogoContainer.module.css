@@ -1,0 +1,100 @@
+.logoContainer {
+    display: flex;
+    color: white;
+    box-sizing: border-box;
+}
+
+.logoContainer .navigationLinkLogo {
+    text-decoration: none;
+}
+
+.logoContainer .navigationLinkLogo .logoContainer {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    padding-top: 6px;
+}
+
+.navigation:nth-last-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+
+
+.logoContainer>h1 {
+    font-weight: bold;
+}
+
+.logoContainer>h2 {
+    color: rgb(108, 197, 210);
+    font-weight: bold;
+}
+
+.logoContainer .navigationLinkLogo .logoContainer .logoWrapper {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.logoContainer .navigationLinkLogo .logoContainer .logoWrapper::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(11, 1, 38);
+    inset: 1px;
+    border-radius: 10px;
+}
+
+.logoContainer .navigationLinkLogo .logoContainer .logoWrapper::before {
+    content: '';
+    position: absolute;
+    width: 172px;
+    height: 50px;
+    background: linear-gradient(rgb(108, 197, 210), #a25dae);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logoContainer .navigationLinkLogo .logoContainer .logoWrapper .logo {
+    width: 50px;
+    z-index: 2;
+}
+
+.logoContainer .navigationLinkLogo .logoContainer .logoWrapper .textLogo {
+    color: #88BED8;
+    margin-left: 10px;
+    font-family: 'Playpen Sans', cursive;
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .container .logoContainer {
+        margin-top: -1px;
+    }
+
+    .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .logo {
+        width: 30px;
+    }
+
+    .container .logoContainer .navigationLinkLogo .logoContainer .logoWrapper .textLogo {
+        font-size: 13px;
+    }
+}

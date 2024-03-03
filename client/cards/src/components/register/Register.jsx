@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
@@ -150,8 +151,8 @@ export const Register = () => {
 
                             </form>
                         </section>
-                        <div className={styles.navigationLinkLogin} onClick={goToLogin}>
-                            Already have an account?
+                        <div className={styles.navigationLinkRegister}>
+                            <Link className={styles.navigationLink} to="/login">Already have an account?</Link>
                         </div>
                     </div>
                 </div>

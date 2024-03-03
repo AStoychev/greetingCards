@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
+import { LogoContainer } from './logoContainer/LogoContainer';
 import { Basket } from './basket/Basket';
 import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
 import { Profile } from './profile/Profile';
@@ -107,16 +108,7 @@ export const Header = () => {
                 {logoutModal}
                 {profileModal}
 
-                <div className={styles.logoContainer}>
-                    <Link className={styles.navigationLinkLogo} to="/">
-                        <div className={styles.logoContainer}>
-                            <div className={styles.logoWrapper}>
-                                <img className={styles.logo} src="../../../images/login-menu/invite.png" alt="logo" />
-                                <p className={styles.textLogo}>NikoletaArt</p>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
+                <LogoContainer />
 
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>

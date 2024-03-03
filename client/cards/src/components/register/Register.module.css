@@ -101,7 +101,12 @@ input[id='repeatPassword'] {
     transition: 0.3s;
 }
 
-.navigationLinkLogin {
+.navigationLinkRegister {
+    padding-top: 16px;
+}
+
+.navigationLink {
+    all: unset;
     padding-top: 20px;
     margin-left: 5px;
     font-size: 13px;
@@ -112,7 +117,7 @@ input[id='repeatPassword'] {
     transition: 0.3s;
 }
 
-.navigationLinkLogin:hover {
+.navigationLink:hover {
     color: #357493;
 }
 
