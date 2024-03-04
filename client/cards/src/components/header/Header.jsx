@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
 import { LogoContainer } from './logoContainer/LogoContainer';
+import { Navigation } from './navigation/Navigation';
 import { Basket } from './basket/Basket';
 import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal';
 import { Profile } from './profile/Profile';
@@ -110,36 +111,9 @@ export const Header = () => {
 
                 <LogoContainer />
 
-                <div className={styles.navigation}>
-                    <div className={styles.navigationChild}>
-                        <Link className={styles.navigationLink} to="/">Home</Link>
-                        <Link className={styles.navigationLink} to="/catalog">Catalog</Link>
-                        {
-                            !isAuthenticated &&
-                            <>
-                                <Link className={styles.navigationLink} to="/login">Login</Link>
-                                <Link className={styles.navigationLink} to="/register">Register</Link>
-                            </>
-                        }
+                <Navigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal}/>
 
-                        {
-                            isAuthenticated &&
-                            <>
-                                {isAdmin &&
-                                    <>
-                                        <Link className={styles.navigationLink} to="/add-card">Add Card</Link>
-                                        <Link className={styles.navigationLink} to={`/admin-main-page/${userId}`}>Admin</Link>
-                                    </>
-                                }
-                                <button className={styles.navigationLinkButton} onClick={showLogoutModal}>Logout</button>
-                                {/* <Link className={styles.navigationLink} onClick={showLogoutModal} to="/logout">Logout</Link> */}
-                                {/* <div className={styles.userName}>{userName}</div> */}
-                            </>
-                        }
-                    </div>
-                </div>
-
-                <div className={styles.basket}>
+                <div className={styles.authIconWrapper}>
                     {
                         isAuthenticated &&
                         <div className={styles.profileWrapper} onClick={showProfileModal}>

@@ -1,0 +1,53 @@
+.navigation:nth-last-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+
+
+.navigation .navigationChild {
+    padding-top: 20px;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.navigation .navigationLink {
+    padding-top: 20px;
+    color: white;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navigation .navigationLink:hover {
+    color: #88BED8;
+}
+
+.navigationLinkButton {
+    all: unset;
+    color: white;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigationLinkButton:hover {
+    color: #88BED8;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navigation .navigationChild {
+        display: none;
+        padding-top: 12px;
+    }
+
+    .navigation .navigationChild .navigationLink {
+        font-size: 13px;
+    }
+}
