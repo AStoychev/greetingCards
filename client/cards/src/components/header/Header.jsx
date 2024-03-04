@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -10,15 +10,7 @@ import { ShowLogoutModal } from '../../utils/Modals/logouthModal/ShowLogoutModal
 import { Profile } from './profile/Profile';
 import { MobileNavigation } from './profile/mobileNav/MobileNavigation';
 
-import { addToOrder } from '../../functions/addToOrder';
-
-// import { MyFavorite } from '../../utils/MyFavorites/MyFavorites';
-
-// import Cookies from 'universal-cookie';
-
-// import { AiFillHeart } from 'react-icons/ai'
 import { FaBars, FaUser } from "react-icons/fa";
-// import { FaUser } from "react-icons/fa";
 import styles from "./Header.module.css"
 
 export const Header = () => {
@@ -55,28 +47,6 @@ export const Header = () => {
         setMobileNav(!mobileNav ? true : false)
     }
 
-    // if (isAuthenticated) {
-    //     console.log(userEmail, userId, userName)
-    // }
-    // Show first modal
-    // Safe cookies for ten minutes
-    // const cookies = new Cookies(null, { path: '/', expires: new Date(Date.now()+600000)});
-    // Safe cookies for current session storage
-    // const cookies = new Cookies(null, { path: '/' });
-    // const onLoadModal = (data) => {
-    //     if (data === "Close") {
-    //         cookies.set('popup', 'Hello');
-    //         setPopup();
-    //     }
-    // };
-
-    // const [popup, setPopup] = useState()
-    // const lookForCookies = () => {
-    //     if (!cookies.get('popup')) {
-    //         setPopup(<OnLoad onLoadModal={onLoadModal} />)
-    //     }
-    // }
-
     const onLoadProfileModal = (data) => {
         if (data === 'Yes') {
             setProfileModal('');
@@ -104,8 +74,6 @@ export const Header = () => {
     return (
         <header>
             <div className={styles.container}>
-                {/* <div className={styles.flexContainer} onLoad={lookForCookies}> */}
-                {/* {popup} */}
                 {logoutModal}
                 {profileModal}
 
