@@ -5,61 +5,18 @@
     background-color: rgb(11, 1, 38);
 }
 
-.navigation:nth-last-child(2) {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    width: 100%;
-}
-
-
-.container .navigation .navigationChild {
-    padding-top: 20px;
-    font-family: 'Playpen Sans', cursive;
-}
-
-.container .navigation .navigationLink {
-    padding-top: 20px;
-    color: white;
-    padding-left: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.container .navigation .navigationLink:hover {
-    color: #88BED8;
-}
-
-.navigationLinkButton {
-    all: unset;
-    color: white;
-    padding-left: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.navigationLinkButton:hover {
-    color: #88BED8;
-}
-
 .userName {
     color: white;
 }
 
-
 /* Basket */
-.container .basket {
+.container .authIconWrapper {
     display: flex;
     text-align: center;
     align-items: center;
 }
 
-.container .basket .profileWrapper {
+.container .authIconWrapper .profileWrapper {
     display: flex;
     text-align: center;
     align-items: center;
@@ -68,33 +25,33 @@
     padding-top: 5px;
 }
 
-.container .basket .profileIcon {
+.container .authIconWrapper .profileIcon {
     font-size: 28px;
     color: rgb(55, 159, 86);
     transition: 0.3s;
     cursor: pointer;
 }
 
-.container .basket .profileIcon:hover {
+.container .authIconWrapper .profileIcon:hover {
     color: rgb(34, 225, 101);
 }
 
-.container .basket .basketWrapper {
+.container .authIconWrapper .basketWrapper {
     width: 30px;
     margin: 0 auto;
     margin-right: 30px;
 }
 
-.container .basket .mobileNavigation {
+.container .authIconWrapper .mobileNavigation {
     display: none;
     width: 50%;
 }
 
-.container .basket .mobileNavigation>button {
+.container .authIconWrapper .mobileNavigation>button {
     all: unset;
 }
 
-.container .basket .mobileNavigation .mobileIcon {
+.container .authIconWrapper .mobileNavigation .mobileIcon {
     font-size: 28px;
     cursor: pointer;
 }
@@ -106,21 +63,12 @@
         height: 54px;
     }
 
-    .container .navigation .navigationChild {
-        display: none;
-        padding-top: 12px;
-    }
-
-    .container .navigation .navigationChild .navigationLink {
-        font-size: 13px;
-    }
-
-    .container .basket .mobileNavigation {
+    .container .authIconWrapper .mobileNavigation {
         display: inline;
         padding-top: 10px;
     }
 
-    .container .basket .basketWrapper {
+    .container .authIconWrapper .basketWrapper {
         margin-right: 10px;
     }
 }
