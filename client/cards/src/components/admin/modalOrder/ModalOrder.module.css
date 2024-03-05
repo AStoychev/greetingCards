@@ -56,15 +56,21 @@
 
 .mainFieldModal {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
     margin-top: 3%;
 }
 
-.mainFieldModal>span {
+.mainFieldModal>p {
     color: rgb(79, 72, 72);
-    font-size: 24px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.mainFieldModal .orderInformation {
+    color: rgb(2, 116, 23);
 }
 
 .finalPrice {
@@ -85,6 +91,7 @@
     font-weight: 600;
     font-family:sans-serif;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .buttonOk:hover {

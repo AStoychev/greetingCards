@@ -8,6 +8,7 @@ import styles from './ModalOrder.module.css'
 
 export const ModalOrder = ({
     modalController,
+    id,
     fullName,
     order,
 }) => {
@@ -45,7 +46,8 @@ export const ModalOrder = ({
 
             <div className={styles.secondField}>
                 <div className={styles.mainFieldModal}>
-                    <span>Order of {fullName}</span>
+                    <p>Order of <span className={styles.orderInformation}>{fullName}</span></p>
+                    <p>Order ID <span className={styles.orderInformation}>{id}</span></p>
                 </div>
                 {order.map((x, index) => (
                     <div className={styles.tableRow} key={x._id}>
