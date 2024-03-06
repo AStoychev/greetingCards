@@ -28,6 +28,7 @@ export const AdminAllOrders = () => {
                     <TableHeading />
                     
                     <ShowOrders showOrder={showOrder}/>
+                    
                 </div>
             </div>
         } />
