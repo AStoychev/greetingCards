@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { AddToCardButton } from '../AddToCardButton/AddToCardButton';
+
 import { checkForDiscount } from '../../../functions/checkForDiscount';
 
 import styles from './Card.module.css'
@@ -10,21 +12,6 @@ export const Card = ({
 }) => {
     const [coverImage, setCoverImage] = useState('');
     const navigate = useNavigate();
-
-    const addToCart = (id) => {
-        if (localStorage.getItem(`orders ${id}`) === null) {
-            card['quantity'] = 1;
-            localStorage.setItem(`orders ${id}`, JSON.stringify(card));
-        }
-        else {
-            let localStorageItems = JSON.parse(localStorage.getItem(`orders ${id}`));
-
-            let lastQuantity = localStorageItems['quantity']
-            card['quantity'] = lastQuantity + 1;
-            localStorage.removeItem(`orders ${id}`);
-            localStorage.setItem(`orders ${id}`, JSON.stringify(card));
-        }
-    }
 
     const onArticleClick = () => {
         navigate(`/catalog/${card._id}`)
@@ -45,6 +32,7 @@ export const Card = ({
             <article className={styles.article}>
                 {/* {message} */}
                 <div className={styles.mainCardDiv}>
+                    
                     <div className={styles.itemInfoWrapper}>
                         <div className={styles.image} onClick={onArticleClick} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
@@ -63,9 +51,7 @@ export const Card = ({
                     </div>
                 </div>
 
-                <div className={styles.title}>
-                    <button onClick={() => addToCart(card._id)}>Add to Cart</button>
-                </div>
+                <AddToCardButton card={card}/>
 
             </article>
         </div>
