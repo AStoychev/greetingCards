@@ -1,0 +1,103 @@
+.articleBanner .firstSection {
+    background-color: #DFE9F2;
+    padding: 100px 0;
+}
+
+.articleBanner .firstSection .bannerContainerOne {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent h1 {
+    font-size: 67px;
+    letter-spacing: 1px;
+    color: #071e2c;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent p {
+    font-size: 29px;
+    letter-spacing: 0px;
+    color: #071e2c;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent button {
+    font-size: 21px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton {
+    background-color: #00bec9;
+    border: 2px solid #00bec9;
+    margin-right: 20px;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton:hover {
+    color: #00bec9;
+    background-color: transparent;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent button.aboutButton {
+    background-color: #071e2c;
+    border: 2px solid #071e2c;
+
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerContent button.aboutButton:hover {
+    background-color: transparent;
+    border: 2px solid #071e2c;
+    color: #071e2c;
+}
+
+.articleBanner .firstSection .bannerContainerOne .bannerImage .imageOne {
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .articleBanner .firstSection,
+    .articleBanner .secondSection {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent h1,
+    .articleBanner .secondSection .bannerContainer .bannerContent h1 {
+        font-size: 20px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent p,
+    .articleBanner .secondSection .bannerContainer .bannerContent p {
+        font-size: 12px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent button,
+    .articleBanner .secondSection .bannerContainer .bannerContent button {
+        font-size: 8px;
+        padding: 5px 5px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerContent button.shopNowButton,
+    .articleBanner .secondSection .bannerContainer .bannerContent button.shopNowButton {
+        margin-right: 5px;
+    }
+
+    .articleBanner .firstSection .bannerContainerOne .bannerImage .imageOne,
+    .articleBanner .secondSection .bannerContainer .bannerImage .animatedBox {
+        width: 200px;
+        height: 300px;
+    }
+}
