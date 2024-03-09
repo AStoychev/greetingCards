@@ -1,20 +1,20 @@
-import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
 import { useCardContext } from "../../contexts/CardContext";
+
+import { EditButtons } from "./EditButtons/EditButtons";
 
 import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
 import background from '../img/background.png'
-import "./EditCardOnlyForButtonBack.css"
 import styles from "../addCard/AddCard.module.css"
 
 export const EditCard = () => {
 
     const { onCardEditSubmit } = useCardContext();
-    const navigate = useNavigate();
     const cardIdObj = useParams();
     const cardId = cardIdObj.cardId;
     const cardService = useService(cardServiceFactory);
@@ -53,29 +53,6 @@ export const EditCard = () => {
         } else {
             return data;
         }
-    }
-
-    const validateImageUrl = (url) => {
-        let regex = /https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-        return regex.test(url)
-    }
-
-    const validateAddCardFileds = () => {
-        if (values.title.length >= 2
-            &&
-            values.description.length >= 10
-            &&
-            values.price > 0
-            &&
-            validateImageUrl(values.imageUrl)) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    const goBackToCard = (cardId) => {
-        navigate(`/catalog/${cardId}`)
     }
 
     return (
@@ -168,7 +145,7 @@ export const EditCard = () => {
                                         value={checkForEmptyInput(values.additionalImageThree)}
                                         onChange={changeHandler}
                                     />
-                                    
+
                                     <label className={styles.labelContent} htmlFor="additionalImageFour">Aditional Image Four:</label>
                                     <input
                                         type="url"
@@ -181,18 +158,7 @@ export const EditCard = () => {
                                     {/* Additional Image */}
                                 </div>
 
-                                <div className="buttonWrapper">
-                                        <button type="button" className="buttonBack" onClick={() => goBackToCard(cardId)}>
-                                            BACK
-                                        </button>
-
-                                        <input
-                                            className={!validateAddCardFileds() ? "disabledSubmitBtn" : "submitBtn"}
-                                            type="submit"
-                                            value="SAVE"
-                                            onClick={setDiscount}
-                                        />
-                                </div>
+                                <EditButtons setDiscount={setDiscount} cardId={cardId} values={values}/>
                             </form>
                         </section>
                     </div>
