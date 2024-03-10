@@ -1,0 +1,43 @@
+.bottomButtons {
+    display: flex;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.bottomButtons .back {
+    display: flex;
+    width: 50%;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.bottomButtons .next {
+    display: flex;
+    width: 50%;
+    justify-content: left;
+    margin-left: 10px;
+}
+
+.bottomButtons .next .nextStep {
+    text-align: left;
+    justify-content: left;
+    width: 100%;
+}
+
+.bottomButtons .next .nextStep .nextButton {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(17, 162, 104, 0.836);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.bottomButtons .next .nextStep .nextButton:hover {
+    background-color: rgb(13, 135, 86);
+    cursor: pointer;
+}

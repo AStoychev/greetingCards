@@ -1,0 +1,49 @@
+.mainAllPurchase {
+    width: 98%;
+    height: 30px;
+    display: flex;
+    background-color: rgb(216, 215, 218);
+    margin: auto;
+    margin-top: 5px;
+    color: white;
+}
+
+.mainAllPurchase>div {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.mainAllPurchase .purchaseTitle {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainAllPurchase .purchaseQuantity {
+    display: flex;
+    width: 8%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainAllPurchase .multiplySign {
+    display: flex;
+    width: 6%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainAllPurchase .purchasePrice {
+    display: flex;
+    width: 16%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainAllPurchase .purchaseFinalPrice {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
