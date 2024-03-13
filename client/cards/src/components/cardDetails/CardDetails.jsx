@@ -6,12 +6,11 @@ import { useCardContext } from "../../contexts/CardContext";
 import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
+import { MainImage } from "./magnifier/MainImage";
 import { InfoDetails } from "./infoDetails/InfoDetails";
 import { DeleteCardModal } from "../../utils/Modals/deleteModal/DeleteCardModal";
 
 import { saveFiveItemsInLocalStorage } from "../../functions/saveFiveItemsInLocalStorage";
-
-import Magnifier from "react-magnifier";
 
 import styles from './CardDetails.module.css'
 
@@ -65,7 +64,7 @@ export const CardDetails = () => {
 
     // Put border on mainImage in additional image field
     const aroundWithBorder = (image) => {
-        if (image === checkForIndetifiedImage()[imageIndex]) {
+        if (image === checkForIndentifiedImage()[imageIndex]) {
             return 'solid'
         } else {
             return ""
@@ -73,7 +72,7 @@ export const CardDetails = () => {
     }
     // Put border on mainImage in additional image field
 
-    const checkForIndetifiedImage = () => {
+    const checkForIndentifiedImage = () => {
         let images = []
         images.push(card.imageUrl)
         for (let i in card.additionalImage) {
@@ -87,7 +86,7 @@ export const CardDetails = () => {
     const AdditionalImages = () => {
         let additionalImages = []
 
-        checkForIndetifiedImage().map(image => {
+        checkForIndentifiedImage().map(image => {
             additionalImages.push(
                 <div className={styles.bgPink} key={additionalImages.length}>
                     <img className={styles.otherPictures} style={{ border: aroundWithBorder(image) }} onClick={() => showClickedImage(image)} onMouseEnter={() => showClickedImage(image, 'slow')} src={image} />
@@ -139,37 +138,25 @@ export const CardDetails = () => {
                         <div className={styles.bgOrange}>
 
                             <div className={styles.leftBox}>
-                                {checkForIndetifiedImage().length > 1 &&
+                                {checkForIndentifiedImage().length > 1 &&
                                     <div>
                                         <button className={styles.changeImageButtonBack} onClick={moveImageBack}>{'<'}</button>
                                     </div>
                                 }
                             </div>
 
-                            <div className={styles.middleBox}>
-                                <Magnifier
-                                    className={styles.mainImage}
-                                    src={checkForIndetifiedImage() ? checkForIndetifiedImage()[imageIndex] : card.imageUrl}
-                                    width={422}
-                                    height={610}
-                                    zoomFactor={0.5}
-                                    mgWidth={300}
-                                    mgHeight={300}
-                                    mgShape='square'
-                                // mgShape='circle'
-                                />
-                            </div>
+                            <MainImage checkForIndentifiedImage={checkForIndentifiedImage} card={card} imageIndex={imageIndex}/>
 
                             <div className={styles.rigthBox}>
-                                {checkForIndetifiedImage().length > 1 &&
+                                {checkForIndentifiedImage().length > 1 &&
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
-                            
+
                         </div>
                     </div>
 
-                    <InfoDetails card={card} onDeleteClick={onDeleteClick}/>
+                    <InfoDetails card={card} onDeleteClick={onDeleteClick} />
 
                 </div>
             </div>
