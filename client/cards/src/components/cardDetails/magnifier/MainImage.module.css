@@ -1,0 +1,22 @@
+.middleBox {
+    margin-top: 10%;
+}
+
+.middleBox .mainImage {
+    max-width: 400px;
+    max-height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+    .middleBox {
+        display: flex;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .middleBox .mainImage {
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
