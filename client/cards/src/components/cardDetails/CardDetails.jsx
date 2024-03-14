@@ -6,7 +6,7 @@ import { useCardContext } from "../../contexts/CardContext";
 import { useService } from "../../hooks/useService";
 import { cardServiceFactory } from "../../services/cardService";
 
-import { MainImage } from "./magnifier/MainImage";
+import { MainImage } from "./MainImage/MainImage";
 import { InfoDetails } from "./infoDetails/InfoDetails";
 import { DeleteCardModal } from "../../utils/Modals/deleteModal/DeleteCardModal";
 
