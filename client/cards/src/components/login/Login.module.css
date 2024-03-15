@@ -47,72 +47,6 @@
     width: 100%;
 }
 
-.loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin {
-    background-color: #313338;
-}
-
-.loginInformation {
-    width: 78%;
-    text-align: left;
-    margin: 0 auto;
-    font-size: 12px;
-    font-weight: 600;
-    color: #d8d9dc;
-}
-
-.fieldLogin input[type='email'],
-[id='passwords'] {
-    all: unset;
-    width: 80%;
-    height: 30px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: #1E1F22;
-}
-
-.forgotPasswordFiled {
-    width: 78%;
-    text-align: left;
-    margin: 0 auto;
-    font-size: 13px;
-    font-weight: 600;
-    color: #43baf6;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.forgotPasswordFiled:hover {
-    color: #357493;
-}
-
-.submitBtn {
-    width: 80%;
-    height: 30px;
-    margin-top: 20px;
-    background-color: #5865F2;
-    color: #F2F3F5;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.submitBtn:hover {
-    background-color: #3d46ae;
-}
-
-.disabledSubmitBtn {
-    width: 80%;
-    height: 30px;
-    margin-top: 20px;
-    background-color: #6a6f99;
-    color: #ffffff;
-    border-radius: 5px;
-    border: none;
-    cursor: no-drop;
-    transition: 0.3s;
-}
-
 .goToRegister {
     width: 78%;
     text-align: left;
@@ -121,19 +55,6 @@
     font-size: 13px;
     font-weight: 600;
     color: #90969F;
-}
-
-.navigationLink {
-    margin-left: 5px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #43baf6;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.navigationLink:hover {
-    color: #357493;
 }
 
 .columnTwo {
@@ -181,10 +102,6 @@
         width: 80%;
     }
 
-    .loginInformation {
-        width: 80%;
-    }
-
     .loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin .forgotPasswordFiled {
         display: flex;
         justify-content: center;
@@ -221,10 +138,6 @@
 
     .fieldLogin input[type='email'],
     [id='passwords'] {
-        width: 70%;
-    }
-
-    .loginInformation {
         width: 70%;
     }
 
