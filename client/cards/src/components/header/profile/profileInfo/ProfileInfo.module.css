@@ -1,0 +1,29 @@
+.infoWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.infoWrapper .profileImage {
+    padding-left: 10px;
+}
+
+.infoWrapper .profileImage img {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.infoWrapper .personalData {
+    padding-left: 10px;
+}
+
+.infoWrapper .personalData .profileInfo {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .infoWrapper {
+        text-align: center;
+        justify-content: center;
+    }
+}
