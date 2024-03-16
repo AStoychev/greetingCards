@@ -4,6 +4,8 @@ import { useForm } from '../../../hooks/useForm';
 
 import { AuthContext } from '../../../contexts/AuthContext';
 
+import { ProfileInfo } from './profileInfo/ProfileInfo';
+
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import styles from './Profile.module.css'
 
@@ -86,24 +88,8 @@ export const Profile = ({
                         <h2>Hello {userName}!</h2>
                     </div>
 
-                    <div className={styles.infoWrapper}>
-                        <div className={styles.profileImage}>
-                            <img src='../../../images/user/myImage.jpg' alt='profi-image' />
-                        </div>
-                        <div className={styles.personalData}>
+                    <ProfileInfo userName={userName} email={email}/>
 
-                            <div className={styles.profileInfo}>
-                                <p>First Name: {userName}</p>
-                            </div>
-                            <div className={styles.profileInfo}>
-                                <p>Last Name: {userName}</p>
-                            </div>
-                            <div className={styles.profileInfo}>
-                                <p>email: {email}</p>
-                            </div>
-
-                        </div>
-                    </div>
                     <div className={styles.changePasswordWrapper}>
 
                         <div className={styles.buttonWrapper}>

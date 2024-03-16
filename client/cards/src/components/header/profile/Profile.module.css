@@ -70,29 +70,6 @@
     color: white;
 }
 
-.popup .wrapper .infoWrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.popup .wrapper .infoWrapper .profileImage {
-    padding-left: 10px;
-}
-
-.popup .wrapper .infoWrapper .profileImage img {
-    width: 200px;
-    height: 250px;
-    border-radius: 20px;
-}
-
-.popup .wrapper .infoWrapper .personalData {
-    padding-left: 10px;
-}
-
-.popup .wrapper .infoWrapper .personalData .profileInfo {
-    color: white;
-}
-
 .popup .wrapper .changePasswordWrapper {
     display: flex;
     flex-direction: column;
@@ -232,11 +209,6 @@
 
     .popup .wrapper .titleWrapper h2 {
         font-size: 15px;
-    }
-
-    .popup .wrapper .infoWrapper {
-        text-align: center;
-        justify-content: center;
     }
 
     p {
