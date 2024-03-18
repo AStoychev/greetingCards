@@ -119,7 +119,6 @@ export const CardDetails = () => {
     return (
         <div>
             <div className={styles.container}>
-
                 {deleteModal}
 
                 <div className={styles.header}>
@@ -127,7 +126,7 @@ export const CardDetails = () => {
                 </div>
 
                 <div className={styles.columns3}>
-
+                
                     <div className={styles.columnsLeft}>
                         <div className={styles.leftImages}>
                             <AdditionalImages />
@@ -136,7 +135,6 @@ export const CardDetails = () => {
 
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
-
                             <div className={styles.leftBox}>
                                 {checkForIndentifiedImage().length > 1 &&
                                     <div>
@@ -144,9 +142,7 @@ export const CardDetails = () => {
                                     </div>
                                 }
                             </div>
-
                             <MainImage checkForIndentifiedImage={checkForIndentifiedImage} card={card} imageIndex={imageIndex}/>
-
                             <div className={styles.rigthBox}>
                                 {checkForIndentifiedImage().length > 1 &&
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
