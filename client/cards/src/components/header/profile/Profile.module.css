@@ -80,33 +80,6 @@
     margin-bottom: 15px;
 }
 
-.popup .wrapper .changePasswordWrapper .changePassword {
-    display: flex;
-    flex-direction: column;
-    background-color: #323338;
-    border-radius: 15px;
-
-    box-shadow: 21px 15px 121px 20px rgba(159, 159, 214, 0.651);
-}
-
-.popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    padding: 12px 0 12px 0;
-}
-
-.popup .wrapper .changePasswordWrapper .changePassword .changePasswordMenu input[type="password"] {
-    width: 88%;
-    height: 30px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    background-color: #1E1F22;
-    border: solid rgba(102, 51, 153, 0);
-}
-
 .popup .wrapper .buttonWrapper {
     padding-bottom: 15px;
 }

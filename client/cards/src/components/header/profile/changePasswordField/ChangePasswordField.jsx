@@ -3,8 +3,10 @@ import { useState } from 'react';
 import styles from './ChangePasswordField.module.css';
 
 export const ChangePasswordField = ({
+    onSubmit,
     changeHandler,
-    values
+    values,
+    accordion
 }) => {
 
     const [validateFields, setValidateFields] = useState({
@@ -43,56 +45,63 @@ export const ChangePasswordField = ({
     }
 
     return (
-        <div>
-            <div>
-                <label className='htmlContent' htmlFor="oldPassword">PASSWORD<span>*</span></label>
-                <input
-                    type="password"
-                    name="password"
-                    id="oldPassword"
-                    style={{ outline: validateFields.password[1] }}
-                    placeholder="******"
-                    value={values.password}
-                    onChange={onChangeHandler}
-                    onClick={onHandleClick}
-                    onBlur={onHandleBlur}
-                />
-            </div>
-            <div>
-                <label className='htmlContent' htmlFor="newPassword">NEW PASSWORD<span>*</span></label>
-                <input
-                    type="password"
-                    name="newPassword"
-                    id="newPassword"
-                    style={{ outline: validateFields.newPassword[1] }}
-                    placeholder="******"
-                    value={values.newPassword}
-                    onChange={onChangeHandler}
-                    onClick={onHandleClick}
-                    onBlur={onHandleBlur}
-                />
-            </div>
-            <div>
-                <label className='htmlContent' htmlFor="repeatNewPassword">CONFIRM NEW PASSWORD<span>*</span></label>
-                <input
-                    type="password"
-                    name="repeatNewPassword"
-                    id="repeatNewPassword"
-                    style={{ outline: validateFields.repeatNewPassword[1] }}
-                    placeholder="******"
-                    value={values.repeatNewPassword}
-                    onChange={onChangeHandler}
-                    onClick={onHandleClick}
-                    onBlur={onHandleBlur}
-                />
-            </div>
-            <div className={styles.submit}>
-                <input
-                    type="submit"
-                    className={styles.submitBtn}
-                    value="CHANGE"
-                />
-            </div>
+        <div className={styles.changePassword}>
+            {accordion &&
+                <div className={styles.changePasswordMenu}>
+                    <form id="changePasword" method='POST' onSubmit={onSubmit}>
+                        <div>
+                            <label className='htmlContent' htmlFor="oldPassword">PASSWORD<span>*</span></label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="oldPassword"
+                                style={{ outline: validateFields.password[1] }}
+                                placeholder="******"
+                                value={values.password}
+                                onChange={onChangeHandler}
+                                onClick={onHandleClick}
+                                onBlur={onHandleBlur}
+                            />
+                        </div>
+                        <div>
+                            <label className='htmlContent' htmlFor="newPassword">NEW PASSWORD<span>*</span></label>
+                            <input
+                                type="password"
+                                name="newPassword"
+                                id="newPassword"
+                                style={{ outline: validateFields.newPassword[1] }}
+                                placeholder="******"
+                                value={values.newPassword}
+                                onChange={onChangeHandler}
+                                onClick={onHandleClick}
+                                onBlur={onHandleBlur}
+                            />
+                        </div>
+                        <div>
+                            <label className='htmlContent' htmlFor="repeatNewPassword">CONFIRM NEW PASSWORD<span>*</span></label>
+                            <input
+                                type="password"
+                                name="repeatNewPassword"
+                                id="repeatNewPassword"
+                                style={{ outline: validateFields.repeatNewPassword[1] }}
+                                placeholder="******"
+                                value={values.repeatNewPassword}
+                                onChange={onChangeHandler}
+                                onClick={onHandleClick}
+                                onBlur={onHandleBlur}
+                            />
+                        </div>
+                        <div className={styles.submit}>
+                            <input
+                                type="submit"
+                                className={styles.submitBtn}
+                                value="CHANGE"
+                            />
+                        </div>
+                    </form>
+                </div>
+            }
         </div>
+
     )
 }
