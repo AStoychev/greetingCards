@@ -58,18 +58,8 @@ export const Profile = ({
                     <ProfileInfo userName={userName} email={email} />
 
                     <div className={styles.changePasswordWrapper}>
-
                         <ChangePasswordButton showChangePasswordMenu={showChangePasswordMenu} accordion={accordion} arrow={arrow}/>
-
-                        <div className={styles.changePassword}>
-                            {accordion &&
-                                <div className={styles.changePasswordMenu}>
-                                    <form id="changePasword" method='POST' onSubmit={onSubmit}>
-                                        <ChangePasswordField changeHandler={changeHandler} values={values}/>
-                                    </form>
-                                </div>
-                            }
-                        </div>
+                        <ChangePasswordField onSubmit={onSubmit} changeHandler={changeHandler} values={values} accordion={accordion}/>
                     </div>
 
                     <div className={styles.buttonWrapper}>
