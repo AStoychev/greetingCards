@@ -1,0 +1,35 @@
+.lineOrderGraphic {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.lineOrderGraphic .cubeOne {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    width: 39px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.lineOrderGraphic .cubeOne .innerCubeText {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.lineOrderGraphic .innerLineOne {
+    text-align: center;
+    width: 15%;
+}
+
+.lineOrderGraphic .innerLineOne .lineOne {
+    display: inline-block;
+    padding-bottom: 20px;
+    width: 100%;
+    border-bottom: 3px solid rgb(255, 255, 255);
+}
