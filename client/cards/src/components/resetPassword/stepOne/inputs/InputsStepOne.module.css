@@ -1,0 +1,59 @@
+.fieldStepOne {
+    background-color: #313338;
+}
+
+.fieldStepOne .loginInformation {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d8d9dc;
+}
+
+.fieldStepOne input[type='email'] {
+    all: unset;
+    width: 50%;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #1E1F22;
+}
+
+.fieldStepOne .submitBtn {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #5865F2;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fieldStepOne .submitBtn:hover {
+    background-color: #3d46ae;
+}
+
+.fieldStepOne .disabledSubmitBtn {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #7b7d91;
+    color: #F2F3F5;
+    border-radius: 5px;
+    border: none;
+    cursor: no-drop;
+}
+
+
+@media (max-width: 600px) {
+    .fieldStepOne input[type='email'] {
+        width: 80%;
+    }
+
+    .fieldStepOne .loginInformation {
+        width: 80%;
+    }
+}
