@@ -1,16 +1,22 @@
 import styles from './Partners.module.css'
 
 export const Partners = () => {
+    const partners = {
+        imageParnersOne: "./images/partners.jpg",
+        imageParnersTwo: "./images/partners.jpg",
+        imageParnersThree: "./images/partners.jpg",
+        imageParnersFour: "./images/partners.jpg",
+        imageParnersFive: "./images/partners.jpg",
+        imageParnersSix: "./images/partners.jpg",
+        imageParnersSeven: "./images/partners.jpg",
+    }
+
     return (
         <div className={styles.mainDivPartner}>
             <div className={styles.flexRow}>
-                <div className={styles.column1}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column2}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column3}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column4}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column5}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column6}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
-                <div className={styles.column7}><img className={styles.imagPartners} src='./images/partners.jpg'/></div>
+                {Object.entries(partners).map((image, index) => (
+                    <div className={styles.column} key={image[0]} ><img className={styles.imagPartners} src={image[1]} /></div>
+                ))}
             </div>
         </div>
     );
