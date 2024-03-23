@@ -141,9 +141,11 @@ export const ChatWindow = ({
                                 onChange={changeHandler}
                                 onKeyDown={onEnterPress}
                             />
+
                             <button className={styles.submitWrapper} onClick={onSubmit}>
                                 <IoSend className={styles.submitIcon} />
                             </button>
+                            
                         </form>
                     </div>
                 </div>
