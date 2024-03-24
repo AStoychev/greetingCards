@@ -25,15 +25,10 @@ export const Login = () => {
 
     return (
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
-
             <div className={styles.innerContiner}>
-
                 <div className={styles.mainLoginField}>
-
                     <div className={styles.columnOne}>
-
                         <h2>Login</h2>
-
                         <div className={styles.innerColumOne}>
 
                             <section id="login-page" className="content auth">
@@ -48,15 +43,12 @@ export const Login = () => {
                             </div>
 
                         </div>
-
                     </div>
-
                     <div className={styles.columnTwo}>
                         <div className={styles.innerLogo}>
                             <img src="../../../images/login-menu/image3.png" />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
