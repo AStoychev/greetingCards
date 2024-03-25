@@ -22,22 +22,18 @@ export const Catalog = () => {
     return (
         <div className={styles.container} >
             <div id="app" className={styles.itemsWrapper}>
-
                 <div className={styles.items}>
                     {allCards && allCards.map(card => (
                         < Card card={card} key={card._id} />
                     ))}
                 </div>
-
                 <div className={styles.productAndSortItem}>
                     <div className={styles.columnOne}>
                     </div>
                     <div className={styles.columnTwo}>
                     </div>
                 </div>
-
                 <SaveLastFiveVisitedCards />
-                
             </div>
             <Chat />
         </div>
