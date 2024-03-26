@@ -29,7 +29,9 @@ export const ResetPasswordStepOne = () => {
             <div className={styles.innerContiner}>
 
                 <div className={styles.mainLoginField}>
+
                     <h1>Reset Password</h1>
+                    
                     <div className={styles.innerColumn}>
                         <section id="login-page" className="content auth">
                             <form id="login" method='POST' onSubmit={onClickSubmit}>
