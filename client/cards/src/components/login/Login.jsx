@@ -36,7 +36,6 @@ export const Login = () => {
                                     <LoginInputs changeHandler={changeHandler} values={values} LoginFormKeys={LoginFormKeys}/>
                                 </form>
                             </section>
-
                             <div className={styles.goToRegister}>
                                 Need an account?
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
@@ -44,11 +43,13 @@ export const Login = () => {
 
                         </div>
                     </div>
+                    
                     <div className={styles.columnTwo}>
                         <div className={styles.innerLogo}>
                             <img src="../../../images/login-menu/image3.png" />
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
