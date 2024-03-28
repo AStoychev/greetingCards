@@ -120,11 +120,9 @@ export const CardDetails = () => {
         <div>
             <div className={styles.container}>
                 {deleteModal}
-
                 <div className={styles.header}>
                     <h2>Details</h2>
                 </div>
-
                 <div className={styles.columns3}>
                 
                     <div className={styles.columnsLeft}>
