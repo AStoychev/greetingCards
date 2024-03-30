@@ -62,7 +62,6 @@ export const ThirtStepOrder = () => {
                         <OrderInformation />
                         <PurchaseTotalPrice />
                         <BottomButtons onClickSubmit={onClickSubmit}/>
-
                     </div>
                 </div>
 
