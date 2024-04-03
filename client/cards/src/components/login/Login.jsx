@@ -29,6 +29,7 @@ export const Login = () => {
                 <div className={styles.mainLoginField}>
                     <div className={styles.columnOne}>
                         <h2>Login</h2>
+                        
                         <div className={styles.innerColumOne}>
 
                             <section id="login-page" className="content auth">
@@ -36,6 +37,7 @@ export const Login = () => {
                                     <LoginInputs changeHandler={changeHandler} values={values} LoginFormKeys={LoginFormKeys}/>
                                 </form>
                             </section>
+
                             <div className={styles.goToRegister}>
                                 Need an account?
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
