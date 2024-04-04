@@ -38,14 +38,16 @@ export const ShowOrders = ({
                             <div className={styles.rowItemOrder}>
                                 <button className={styles.buttonSeeItemOrder} onClick={() => showOrder(x._id, x.firstName, x.lastName, x.orders)} value={x._id}>SEE ITEMS</button>
                             </div>
-                            
                             <div className={styles.rowSubContainer}>
                                 <div className={styles.rowItem}>Sub item 1</div>
                                 <div className={styles.rowItem}>Sub item 2</div>
                             </div>
+
                         </div>
                     ))
+
                     :
+
                     <div>Not orders</div>
             }
         </div>
