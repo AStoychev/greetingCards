@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useForm } from '../../../hooks/useForm';
 import { AuthContext } from '../../../contexts/AuthContext';
 
+import { NewPasswordInputs } from './newPasswordInputs/NewPasswordInputs';
+
 import background from '../../img/background.png';
 import styles from './ResetPasswordStepThree.module.css';
 
@@ -38,28 +40,7 @@ export const ResetPasswordStepThree = () => {
                             <form id="login" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldLogin}>
 
-                                    <label className={styles.htmlContent} htmlFor="newPassword"></label>
-                                    <div className={styles.loginInformation}>NEW PASSWORD<span>*</span></div>
-                                    <input
-                                        type="password"
-                                        id="newPassword"
-                                        placeholder="******"
-                                        name="newPassword"
-                                        value={values.newPassword}
-                                        onChange={changeHandler}
-                                    />
-
-                                    <label className={styles.htmlContent} htmlFor="confirmNewPassword"></label>
-
-                                    <div className={styles.loginInformation}>CONFIRM NEW PASSWORD<span>*</span></div>
-                                    <input
-                                        type="password"
-                                        id="confirmNewPassword"
-                                        placeholder="******"
-                                        name="confirmNewPassword"
-                                        value={values.confirmNewPassword}
-                                        onChange={changeHandler}
-                                    />
+                                    <NewPasswordInputs values={values} changeHandler={changeHandler}/>
 
                                     {errorResetPassword.error &&
                                         <p className={styles.errorField}>{errorResetPassword.error}</p>
