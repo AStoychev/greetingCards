@@ -124,13 +124,11 @@ export const CardDetails = () => {
                     <h2>Details</h2>
                 </div>
                 <div className={styles.columns3}>
-                
                     <div className={styles.columnsLeft}>
                         <div className={styles.leftImages}>
                             <AdditionalImages />
                         </div>
                     </div>
-
                     <div className={styles.columnsCenter}>
                         <div className={styles.bgOrange}>
                             <div className={styles.leftBox}>
@@ -146,12 +144,9 @@ export const CardDetails = () => {
                                     < button className={styles.changeImageButtonPrev} onClick={moveImagePrev}>{'>'}</button>
                                 }
                             </div>
-
                         </div>
                     </div>
-
                     <InfoDetails card={card} onDeleteClick={onDeleteClick} />
-
                 </div>
             </div>
         </div >
