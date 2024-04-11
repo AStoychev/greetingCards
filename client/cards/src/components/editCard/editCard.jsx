@@ -61,9 +61,7 @@ export const EditCard = () => {
                         </section>
                     </div>
                 </div>
-
             </div>
-
         </div>
     );
 }
