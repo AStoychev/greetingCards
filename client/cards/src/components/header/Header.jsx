@@ -76,11 +76,8 @@ export const Header = () => {
             <div className={styles.container}>
                 {logoutModal}
                 {profileModal}
-
                 <LogoContainer />
-
                 <Navigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal}/>
-
                 <div className={styles.authIconWrapper}>
                     {
                         isAuthenticated &&
@@ -88,7 +85,6 @@ export const Header = () => {
                             <FaUser className={styles.profileIcon} />
                         </div>
                     }
-
                     <div className={styles.basketWrapper}>
                         <Basket />
                     </div>
@@ -99,9 +95,7 @@ export const Header = () => {
                         {dropdownMobileNav}
                     </div>
                 </div>
-
             </div >
-
         </header>
     );
 }
