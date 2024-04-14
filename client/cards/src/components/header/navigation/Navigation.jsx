@@ -20,7 +20,6 @@ export const Navigation = ({
                         <Link className={styles.navigationLink} to="/register">Register</Link>
                     </>
                 }
-
                 {
                     isAuthenticated &&
                     <>
