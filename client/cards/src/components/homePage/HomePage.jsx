@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { FirstSectionBanner } from './FirstSectionBanner/FirstSectionBanner';
 import { SecondSectionBanner } from './SecondSectionBanner/SecondSectionBanner';
@@ -28,14 +28,11 @@ export const HomePage = () => {
 
     return (
         <div className={styles.container}>
-
             <FirstSectionBanner goToShop={goToShop} linkToImage={LINK_FOR_FIRST_IMAGE} altToImage={ALT_FOR_FIRST_IMAGE} />
-            <SecondSectionBanner goToShop={goToShop} linkToImage={LINK_FOR_SECOND_IMAGE} altToImage={ALT_FOR_SECOND_IMAGE}/>
+            <SecondSectionBanner goToShop={goToShop} linkToImage={LINK_FOR_SECOND_IMAGE} altToImage={ALT_FOR_SECOND_IMAGE} />
             <FirstSectionBanner goToShop={goToShop} linkToImage={LINK_FOR_THRIT_IMAGE} altToImage={ALT_FOR_THIRD_IMAGE} />
-
             <Partners />
-
-            < SaveLastFiveVisitedCards />
+            <SaveLastFiveVisitedCards />
         </div>
     )
 }
