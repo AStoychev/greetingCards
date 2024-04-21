@@ -102,6 +102,5 @@ export const ChangePasswordField = ({
                 </div>
             }
         </div>
-
     )
 }

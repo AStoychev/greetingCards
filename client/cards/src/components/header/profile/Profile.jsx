@@ -54,18 +54,14 @@ export const Profile = ({
                     <div className={styles.titleWrapper}>
                         <h2>Hello {userName}!</h2>
                     </div>
-
                     <ProfileInfo userName={userName} email={email} />
-
                     <div className={styles.changePasswordWrapper}>
                         <ChangePasswordButton showChangePasswordMenu={showChangePasswordMenu} accordion={accordion} arrow={arrow}/>
                         <ChangePasswordField onSubmit={onSubmit} changeHandler={changeHandler} values={values} accordion={accordion}/>
                     </div>
-
                     <div className={styles.buttonWrapper}>
                         <button className={styles.noButton} onClick={() => handleClose('No')}>Close</button>
                     </div>
-
                 </div>
             </div>
         </div>
