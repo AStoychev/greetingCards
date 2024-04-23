@@ -23,15 +23,11 @@ export const ResetPasswordStepOne = () => {
     }
 
     return (
-
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
             {spinner}
             <div className={styles.innerContiner}>
-
                 <div className={styles.mainLoginField}>
-
                     <h1>Reset Password</h1>
-                    
                     <div className={styles.innerColumn}>
                         <section id="login-page" className="content auth">
                             <form id="login" method='POST' onSubmit={onClickSubmit}>
@@ -39,7 +35,6 @@ export const ResetPasswordStepOne = () => {
                             </form>
                         </section>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -15,7 +15,6 @@ export const InputsStepOne = ({
 
     return (
         <div className={styles.fieldStepOne}>
-
             <label className={styles.htmlContent} htmlFor="email"></label>
             <div className={styles.loginInformation}>EMAIL<span>*</span></div>
             <input
@@ -26,7 +25,6 @@ export const InputsStepOne = ({
                 value={values.email}
                 onChange={changeHandler}
             />
-
             {checkForEmptyValues() &&
                 <div className="submit">
                     <input type="submit" className={styles.submitBtn} value="SUBMIT" />
