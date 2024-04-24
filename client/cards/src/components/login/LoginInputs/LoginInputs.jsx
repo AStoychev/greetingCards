@@ -29,7 +29,6 @@ export const LoginInputs = ({
                 value={values[LoginFormKeys.Email]}
                 onChange={changeHandler}
             />
-
             <label className={styles.htmlContent} htmlFor="passwords"></label>
             <div className={styles.loginInformation}>PASSWORD<span>*</span></div>
             <input
@@ -41,11 +40,9 @@ export const LoginInputs = ({
                 value={values[LoginFormKeys.Password]}
                 onChange={changeHandler}
             />
-
             <div className={styles.forgotPasswordFiled}>
                 <Link className={styles.navigationLink} to="/reset-password-step-one">Forgot your password?</Link>
             </div>
-
             <div className="submit">
                 {checkForFullValue()
                     ?
