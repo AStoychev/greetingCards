@@ -50,21 +50,17 @@ export const ThirtStepOrder = () => {
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Final Steps</div>
                 <GraphicksOrder />
-
                 <div className={styles.dataContainer}>
                     <div className={styles.buttonsNextBack}>
-
                         <div className={styles.formTopField}>
                             <div className={styles.topFieldTitle}>COMPLETE YOUR INFORMATION</div>
                         </div>
-
                         <PersonalData />
                         <OrderInformation />
                         <PurchaseTotalPrice />
                         <BottomButtons onClickSubmit={onClickSubmit}/>
                     </div>
                 </div>
-
             </div>
         </div>
     );
