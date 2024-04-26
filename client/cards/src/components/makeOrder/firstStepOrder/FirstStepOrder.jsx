@@ -35,9 +35,7 @@ export const FirstStepOrder = () => {
                 </div>
                 <FinalPrice />
             </div>
-
             <ButtonNext nextStep={nextStep} page={'NEXT'}/>
-
         </div>
     );
 }

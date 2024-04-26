@@ -92,15 +92,12 @@ export const SecondStepOrder = () => {
         <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.innerContainer}>
                 <div className={styles.headerOrder}>Order Information</div>
-
                 <GraphicksOrder />
-
                 <div className={styles.dataContainer}>
                     <form>
                         <div className={styles.formTopField}>
                             <div className={styles.topFieldTitle}>COMPLETE YOUR INFORMATION</div>
                         </div>
-
                         <div className={styles.firstAndLastName}>
                             <div className={styles.innerDivDataOrderName}>
                                 <label htmlFor="first">FIRST
@@ -114,7 +111,6 @@ export const SecondStepOrder = () => {
                                     onChange={changeHandler}
                                 />
                             </div>
-
                             <div className={styles.innerDivDataOrderName}>
                                 <label htmlFor="last">LAST
                                     <span>*</span>
@@ -128,7 +124,6 @@ export const SecondStepOrder = () => {
                                 />
                             </div>
                         </div>
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="email">EMAIL
                                 <span>*</span>
@@ -141,7 +136,6 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="phone">PHONE NUMBER
                                 <span>*</span>
@@ -154,13 +148,9 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <Line />
-
                         <div className={styles.choosePaymentMehod}>SHIPPING</div>
-
                         <div className={styles.mainShipping}>
-
                             <div className={styles.innerDivShippingOne}>
                                 <div className={styles.innerShippingType}>EkoShipping</div>
                                 <div className={styles.logoShipping}>
@@ -177,7 +167,6 @@ export const SecondStepOrder = () => {
                                     />
                                 </label>
                             </div>
-
                             <div className={styles.innerDivShippingTwo}>
                                 <div className={styles.innerShippingType}>FreeShipping</div>
                                 <div className={styles.logoShipping}>
@@ -195,9 +184,7 @@ export const SecondStepOrder = () => {
                                 </label>
                             </div>
                         </div>
-
                         <Line />
-
                         {
                             values.shippingCompany
                                 ?
@@ -215,7 +202,6 @@ export const SecondStepOrder = () => {
                                             />
                                         </label>
                                     </div>
-
                                     <div className={styles.innerDivOffice}>
                                         <div className={styles.innerShippingType}>To your address</div>
                                         <label htmlFor="ToYourAddress">
@@ -233,7 +219,6 @@ export const SecondStepOrder = () => {
                                 :
                                 ''
                         }
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="city">CITY
                                 <span>*</span>
@@ -246,7 +231,6 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="postCode">POST CODE
                                 <span>*</span>
@@ -259,7 +243,6 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="address">{changeAddresTitle()} ADDRESS
                                 <span>*</span>
@@ -272,7 +255,6 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <div className={styles.innerDivDataOrder}>
                             <label htmlFor="takeMessage">TAKE MESSAGE</label>
                             <textarea
@@ -283,9 +265,7 @@ export const SecondStepOrder = () => {
                                 onChange={changeHandler}
                             />
                         </div>
-
                         <Line />
-
                         <div className={styles.choosePaymentMehod}>CHOOSE PAYMENT METHOD
                             <span>*</span>
                         </div>
@@ -301,13 +281,11 @@ export const SecondStepOrder = () => {
                                         onChange={changeHandler}
                                     />
                                 </label>
-
                                 <div className={styles.logoPayment}>
                                     <img src="images/payment-icons/credit-card.png" alt="card" />
                                 </div>
                                 <div className={styles.innerPaymentType}>CARD</div>
                             </div>
-
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="pay-pal">
                                     <input
@@ -324,7 +302,6 @@ export const SecondStepOrder = () => {
                                 </div>
                                 <div className={styles.innerPaymentType}>PayPal</div>
                             </div>
-
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="mobileWalet">
                                     <input
@@ -341,7 +318,6 @@ export const SecondStepOrder = () => {
                                 </div>
                                 <div className={styles.innerPaymentType}>Mobile <br></br>Walet</div>
                             </div>
-
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="crypto">
                                     <input
@@ -353,14 +329,11 @@ export const SecondStepOrder = () => {
                                         onChange={changeHandler}
                                     />
                                 </label>
-
                                 <div className={styles.logoPayment}>
                                     <img src="images/payment-icons/cryptowallet.png" alt="cryptowallet" />
                                 </div>
                                 <div className={styles.innerPaymentType}>Crypto</div>
-
                             </div>
-
                             <div className={styles.innerDivPayment}>
                                 <label htmlFor="cash">
                                     <input
@@ -372,18 +345,13 @@ export const SecondStepOrder = () => {
                                         onChange={changeHandler}
                                     />
                                 </label>
-
                                 <div className={styles.logoPayment}>
                                     <img src="images/payment-icons/money.png" alt="cash" />
                                 </div>
                                 <div className={styles.innerPaymentType}>Cash</div>
-
                             </div>
-
                         </div>
-
                         <div className={styles.privaciPolicy}>
-
                             <div className={styles.checkbox} onClick={onCheckPrivacyPolicy}>
                                 {
                                     checkbox
@@ -393,18 +361,15 @@ export const SecondStepOrder = () => {
                                         ''
                                 }
                             </div>
-
                             <div className={styles.textPolicy}>
                                 <span>*</span>
                                 By ticking this box I agree that I have read the privacy policy</div>
                         </div>
                     </form>
-
                     <div className={styles.buttonsNextBack}>
                         <div className={styles.back}>
                             <ButtonBack backStep={backStep} page={'BACK'} />
                         </div>
-
                         <div className={styles.next}>
                             <div className={styles.bottomButtons}>
                                 <div className={styles.nextStep}>
@@ -420,10 +385,8 @@ export const SecondStepOrder = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div >
         </div >
     );
