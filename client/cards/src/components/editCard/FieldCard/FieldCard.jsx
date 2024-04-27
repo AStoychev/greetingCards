@@ -16,7 +16,6 @@ export const FieldCard = ({
 
   return (
     <div className={styles.fieldCard}>
-
       <label className={styles.labelContent} htmlFor="title">Title:<span>*</span></label>
       <input
         type="text"
@@ -26,7 +25,6 @@ export const FieldCard = ({
         value={values.title}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="description">Description:<span>*</span></label>
       <input
         type="text"
@@ -36,7 +34,6 @@ export const FieldCard = ({
         value={values.description}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="price">Price:<span>*</span></label>
       <input
         type="number"
@@ -46,7 +43,6 @@ export const FieldCard = ({
         value={values.price}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="discount">Discount:</label>
       <input
         type="number"
@@ -56,7 +52,6 @@ export const FieldCard = ({
         value={checkForEmptyInput(values.discount)}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="imageUrl">ImageURL:<span>*</span></label>
       <input
         type="url"
@@ -66,7 +61,6 @@ export const FieldCard = ({
         value={values.imageUrl}
         onChange={changeHandler}
       />
-
       {/* Additional Image */}
       <label className={styles.labelContent} htmlFor="additionalImageOne">Aditional Image One:</label>
       <input
@@ -77,7 +71,6 @@ export const FieldCard = ({
         value={checkForEmptyInput(values.additionalImageOne)}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="additionalImageTwo">Aditional Image Two:</label>
       <input
         type="url"
@@ -87,7 +80,6 @@ export const FieldCard = ({
         value={checkForEmptyInput(values.additionalImageTwo)}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="additionalImageThree">Aditional Image Three:</label>
       <input
         type="url"
@@ -97,7 +89,6 @@ export const FieldCard = ({
         value={checkForEmptyInput(values.additionalImageThree)}
         onChange={changeHandler}
       />
-
       <label className={styles.labelContent} htmlFor="additionalImageFour">Aditional Image Four:</label>
       <input
         type="url"

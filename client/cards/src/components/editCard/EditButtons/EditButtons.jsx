@@ -25,11 +25,9 @@ export const EditButtons = ({
 
     return (
         <div className={styles.buttonWrapper}>
-            
             <button type="button" className={styles.buttonBack} onClick={() => goBackToCard(cardId)}>
                 BACK
             </button>
-
             <input
                 className={isNotValid ? styles.disabledSubmitBtn : styles.submitBtn}
                 type="submit"
