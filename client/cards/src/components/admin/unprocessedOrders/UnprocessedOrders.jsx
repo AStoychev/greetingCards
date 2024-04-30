@@ -67,7 +67,6 @@ export const UnprocessedOrders = () => {
                 {showModal}
                 <div className={styles.tableContainer}>
                     <TableHeading />
-
                     {
                         unprocesedOrders.length
                             ?

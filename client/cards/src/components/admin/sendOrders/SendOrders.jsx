@@ -65,7 +65,6 @@ export const SendOrders = () => {
                             :
                             <div>Not send orders</div>
                     }
-
                 </div>
             </div>
         } />

@@ -9,10 +9,7 @@ export const AdminMainPage = () => {
     const { isAuthenticated, userId, userEmail, userName } = useContext(AuthContext);
 
     return (
-        <Pattern pageWithOrder=
-            {
-                <div className={styles.greetingField}>Hello Admin</div>
-            }
+        <Pattern pageWithOrder={<div className={styles.greetingField}>Hello Admin</div>}
         />
     );
 }
