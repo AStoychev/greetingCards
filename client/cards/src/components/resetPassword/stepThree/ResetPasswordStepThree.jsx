@@ -30,15 +30,11 @@ export const ResetPasswordStepThree = () => {
                         <section id="login-page" className="content auth">
                             <form id="login" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldLogin}>
-
                                     <NewPasswordInputs values={values} changeHandler={changeHandler} />
-
                                     {errorResetPassword.error &&
                                         <p className={styles.errorField}>{errorResetPassword.error}</p>
                                     }
-
                                     <SubmitInputs values={values} />
-
                                 </div>
                             </form>
                         </section>
