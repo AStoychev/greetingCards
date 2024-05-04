@@ -27,7 +27,6 @@ export const CardSaveFiveVisited = ({
 
     return (
             <article className={styles.article} onClick={onArticleClick}>
-
                 <div onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaceImage}>
                     <div className={styles.image}>
                         <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
@@ -36,18 +35,14 @@ export const CardSaveFiveVisited = ({
                         <h3>{card.title}</h3>
                     </div>
                 </div>
-
                 <div className={styles.price}>
                     Price: {checkForDiscount(card.price, card.discount)}
                 </div>
-
                 <div className={styles.star}>
                 </div>
-
                 <div className={styles.title}>
                     <button>Add to Cart</button>
                 </div>
-
             </article>
     );
 }
