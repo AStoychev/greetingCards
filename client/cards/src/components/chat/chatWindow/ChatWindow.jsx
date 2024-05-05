@@ -128,7 +128,6 @@ export const ChatWindow = ({
                             </div>
                         })}
                     </div>
-
                     <div className={styles.inputWrapper}>
                         <form>
                             <label htmlFor="message"></label>
@@ -141,11 +140,9 @@ export const ChatWindow = ({
                                 onChange={changeHandler}
                                 onKeyDown={onEnterPress}
                             />
-
                             <button className={styles.submitWrapper} onClick={onSubmit}>
                                 <IoSend className={styles.submitIcon} />
                             </button>
-
                         </form>
                     </div>
                 </div>
