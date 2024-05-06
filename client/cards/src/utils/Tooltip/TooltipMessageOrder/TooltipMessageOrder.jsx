@@ -17,7 +17,6 @@ export const TooltipMessageOrder = ({
         >
             {children}
             {isVisible && <div className={styles.tooltip}>{text}</div>}
-
         </div>
     );
 }
