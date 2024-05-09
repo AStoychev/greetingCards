@@ -33,8 +33,7 @@ export const ShowOrders = ({
                 allOrders.length ?
                     allOrders.map((x, index) => (
                         <div className={styles.tableRow} key={x._id}>
-                            <RowItems onClickId={onClickId} copyId={copyId} copyMessage={copyMessage} x={x} index={index}/>
-                            
+                            <RowItems onClickId={onClickId} copyId={copyId} copyMessage={copyMessage} x={x} index={index}/>    
                             <div className={styles.rowItemOrder}>
                                 <button className={styles.buttonSeeItemOrder} onClick={() => showOrder(x._id, x.firstName, x.lastName, x.orders)} value={x._id}>SEE ITEMS</button>
                             </div>
@@ -42,12 +41,9 @@ export const ShowOrders = ({
                                 <div className={styles.rowItem}>Sub item 1</div>
                                 <div className={styles.rowItem}>Sub item 2</div>
                             </div>
-
                         </div>
                     ))
-
                     :
-
                     <div>Not orders</div>
             }
         </div>
