@@ -1,8 +1,6 @@
 # greetingCards
 This is web shop for greeting cards and other handmade products. It has the full range of features that can be seen in most online stores, and even a little more. For Backend I have used Node.js and Express.js. For the frontend I have used React. For the chatbot I first used Java Script again, but then rewrote it with Python and FAST API framework, using PyTorch machine learning library. The store has a shopping cart, password change, forgotten password. Last seen 5 products as I mentioned already chatbot. An admin panel that easily manages the orders placed: new orders, sent orders, orders in process, returned orders, discounts, as well as automatically sending emails to the user when their order is processed and given to a supplier. The store is completely mobile responsive.
 
-
-
 **How to start the project:**
 
 1. Clone the repo.
