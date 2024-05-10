@@ -46,7 +46,6 @@ export const ModalStatus = ({
             </div>
             <div className={styles.modalButtons}>
                 <button className={styles.buttonNo} onClick={closeModal}>No</button>
-
                 <form id="orderStatus" method='POST' onSubmit={onSubmit}>
                     <div className="submit">
                         <label htmlFor="orderStatus"></label>
@@ -61,8 +60,7 @@ export const ModalStatus = ({
                             <input className="submit" type="submit" value="Yes" onClick={pressYes}/>
                         </div>
                     </div>
-                </form>
-                
+                </form>                
             </div>
         </div>
     );
