@@ -32,7 +32,6 @@ export const Card = ({
             <article className={styles.article}>
                 {/* {message} */}
                 <div className={styles.mainCardDiv}>
-                    
                     <div className={styles.itemInfoWrapper}>
                         <div className={styles.image} onClick={onArticleClick} onMouseEnter={mouseOverImage} onMouseLeave={mouseLeaveImage}>
                             <img src={coverImage ? coverImage : card.imageUrl} alt='productImage' />
@@ -41,18 +40,14 @@ export const Card = ({
                             <h3>{card.title}</h3>
                         </div>
                     </div>
-
                     <div className={styles.price}>
                         Price: {checkForDiscount(card.price, card.discount)}
                     </div>
-
                     <div className={styles.star}>
                         {/* <StarRating /> */}
                     </div>
                 </div>
-
                 <AddToCardButton card={card}/>
-
             </article>
         </div>
     );
