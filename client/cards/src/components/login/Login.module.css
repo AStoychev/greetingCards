@@ -49,12 +49,29 @@
 
 .goToRegister {
     width: 78%;
-    text-align: left;
+    display: flex;
+    text-align: center;
+    align-items: center;
     margin: 0 auto;
     margin-top: 20px;
     font-size: 13px;
     font-weight: 600;
     color: #90969F;
+    gap: 3px;
+}
+
+.goToRegister .navigationLink {
+    all: unset;
+    font-size: 13px;
+    font-weight: 600;
+    color: #43baf6;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.goToRegister .navigationLink:hover {
+    color: #357493;
 }
 
 .columnTwo {
@@ -78,6 +95,7 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+
     .loginContainer .innerContiner {
         width: 100%;
         border-radius: 0;
@@ -117,6 +135,7 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+
     .loginContainer .innerContiner {
         width: 100%;
         border-radius: 0;

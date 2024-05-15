@@ -36,7 +36,7 @@ export const Login = () => {
                                 </form>
                             </section>
                             <div className={styles.goToRegister}>
-                                Need an account?
+                                <p>Need an account?</p>
                                 <Link className={styles.navigationLink} to="/register">Register</Link>
                             </div>
                         </div>
