@@ -124,8 +124,9 @@ export const Register = () => {
                                         </div>
 
                                         <div className={styles.textPolicy}>
-                                            I have read and agree to Greeting Cards Ters of Service and Privacy Policy.
-                                            <span>*</span>
+                                            <p>I have read and agree to Greeting Cards Ters of Service and Privacy Policy.
+                                                <span>*</span>
+                                            </p>
                                         </div>
                                     </div>
 
