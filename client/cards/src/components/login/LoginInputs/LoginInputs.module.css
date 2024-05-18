@@ -96,4 +96,35 @@
     .fieldLogin .disabledSubmitBtn {
         width: 70%;
     }
+
+    .fieldLogin input[type='email'],
+    [id='passwords'] {
+        width: 80%;
+    }
+
+    .fieldLogin .forgotPasswordFiled {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .fieldLogin input[type='email'],
+    [id='passwords'] {
+        width: 70%;
+    }
+
+    .submitBtn {
+        width: 70%;
+    }
+
+    .disabledSubmitBtn {
+        width: 70%;
+    }
+
+    .loginContainer .innerContiner .mainLoginField .columnOne .fieldLogin .forgotPasswordFiled {
+        display: flex;
+        justify-content: center;
+    }
 }
