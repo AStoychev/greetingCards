@@ -28,19 +28,15 @@ export const ResetPasswordStepTwo = () => {
 
     return (
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${background})` }}>
-
             <div className={styles.innerContiner}>
-
                 <div className={styles.mainLoginField}>
                     <div className={styles.innerColumn}>
                         <section id="login-page" className="content auth">
                             <form id="login" method='POST' onSubmit={onSubmit}>
                                 <div className={styles.fieldLogin}>
-
                                     <h2>
                                         Enter Code From Your Email:
                                     </h2>
-
                                     <label className={styles.htmlContent} htmlFor="email"></label>
                                     <div className={styles.loginInformation}>CODE<span>*</span></div>
                                     <input
@@ -53,7 +49,6 @@ export const ResetPasswordStepTwo = () => {
                                     {errorResetPassword.error &&
                                         <p className={styles.errorField}>{errorResetPassword.error}</p>
                                     }
-
                                     {checkForEmptyValues() &&
                                         <div className="submit">
                                             <input type="submit" className={styles.submitBtn} value="Submit" />
@@ -72,7 +67,6 @@ export const ResetPasswordStepTwo = () => {
                             </form>
                         </section>
                     </div>
-
                 </div>
             </div>
         </div>
