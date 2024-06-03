@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 import { TooltipMessageOrder } from '../../../../../utils/Tooltip/TooltipMessageOrder/TooltipMessageOrder';
+import { AdminOrderMessage } from '../../../../../utils/Modals/adminOrderMessage/AdminOrderMessage';
 
 import { showDateTime } from '../../../functions/showDateTime';
 import { changeColorOfStatus } from '../../../functions/changeColorOfStatus';
@@ -12,6 +15,12 @@ export const RowItems = ({
     copyMessage,
     onClickId,
 }) => {
+    const [messageModal, setMessageModal] = useState(false);
+
+    const messageModalHandle = () => {
+        setMessageModal(messageModal ? false : true)
+    }
+
     return (
         <>
             <div className={styles.rowItem}>{index + 1}</div>
@@ -27,7 +36,7 @@ export const RowItems = ({
                 {
                     x.takeMessage
                         ?
-                        <div className={styles.tooltipMessage}>
+                        <div className={styles.tooltipMessage} onClick={messageModalHandle}>
                             <TooltipMessageOrder text={x.takeMessage}>
                                 <img className={styles.messageIcon} src='../../../images/message.png' alt='haveMessage' />
                             </TooltipMessageOrder>
@@ -36,6 +45,7 @@ export const RowItems = ({
                         <img className={styles.messageIcon} src='../../../images/none.png' alt='noneMessage' />
                 }
             </div>
+            {messageModal && <AdminOrderMessage client={`${x.firstName} ${x.lastName}`} message={x.takeMessage} messageModalHandle={messageModalHandle}/>}
         </>
     )
 }
