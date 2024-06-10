@@ -14,7 +14,6 @@ export const ResetPasswordStepOne = () => {
         email: '',
     }, onResetPasswordSubmitStepOne)
 
-
     const [spinner, setSpinner] = useState('');
 
     const onClickSubmit = (e) => {
