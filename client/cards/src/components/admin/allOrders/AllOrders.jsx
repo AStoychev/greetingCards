@@ -24,7 +24,6 @@ export const AdminAllOrders = () => {
             <div className={styles.mainContainer}>
                 {showModal}
                 <div className={styles.tableContainer}>
-                    
                     <TableHeading />
                     <ShowOrders showOrder={showOrder}/>
                 </div>
