@@ -9,7 +9,6 @@ This is web shop for greeting cards and other handmade products. It has the full
    - After that use command: `cd .\card`
    - Start command: `npm install`
    - Start command: `npm run start`
-   - 
 
 3. Start Back end:
    - Go to server directory with command: `cd .\server`
