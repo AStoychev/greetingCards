@@ -18,7 +18,7 @@ export const Header = () => {
 
     const [logoutModal, setLogoutModal] = useState();
     const [mobileNav, setMobileNav] = useState(false);
-    const [colorMobileNav, setColorMobileNav] = useState('white')
+    const [colorMobileNav, setColorMobileNav] = useState('rgb(255, 255, 255)')
     const [dropdownMobileNav, setDropdownMobileNav] = useState();
     const [profileModal, setProfileModal] = useState();
 
@@ -40,7 +40,7 @@ export const Header = () => {
 
     const closeMobileNav = () => {
         setMobileNav(false);
-        setColorMobileNav('white')
+        setColorMobileNav('rgb(255, 255, 255)')
     }
 
     const clickMObileNavButton = () => {
@@ -61,12 +61,13 @@ export const Header = () => {
 
     useEffect(() => {
         if (mobileNav) {
-            setColorMobileNav('ae0303')
+            setColorMobileNav('rgb(162, 238, 255)')
+            // setColorMobileNav('ae0303')
             setDropdownMobileNav(
                 <MobileNavigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal} userName={userName} closeMobileNav={closeMobileNav} />
             )
         } else {
-            setColorMobileNav('white')
+            setColorMobileNav('rgb(255, 255, 255)')
             setDropdownMobileNav()
         }
     }, [mobileNav])

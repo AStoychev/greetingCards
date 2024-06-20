@@ -7,7 +7,9 @@
     top: 1;
     right: 3%;
     border-radius: 10px;
-    background-color: rgb(195, 196, 198);
+    color: rgb(255, 255, 255);
+    background-color: rgb(11, 1, 38);
+    /* background-color: rgb(195, 196, 198); */
     z-index: 5;
 }
 
@@ -15,8 +17,10 @@
     text-decoration: none;
     padding: 10px;
     font-family: 'Playpen Sans', cursive;
-    color: rgb(8, 8, 8);
-    border: 1px solid rgb(174, 174, 174);
+    color: rgb(255, 255, 255);
+    /* color: rgb(8, 8, 8); */
+    border-bottom: 1px solid rgb(174, 174, 174);
+    /* border: 1px solid rgb(174, 174, 174); */
 }
 
 .containerMobileNav .mobileNavigationLink:first-child {
