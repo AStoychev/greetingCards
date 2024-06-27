@@ -24,10 +24,10 @@ export const BasketModal = ({
     };
 
     return (
-        <div className={styles.container} onClick={() => handleClose('Close')}>
+        <div className={styles.container} onClick={handleClose}>
             <div className={styles.popup} id="mainPopup" onClick={e => { e.stopPropagation() }}>
                 <div className={styles.wrapper}>
-                    <button className={styles.closeButton} onClick={() => handleClose('Close')}>&times;</button>
+                    <button className={styles.closeButton} onClick={handleClose}>&times;</button>
                     <h2>My Order</h2>
 
                     <div className={styles.paragraphCookie}>
@@ -42,7 +42,7 @@ export const BasketModal = ({
                     <FinalPrice />
                     <div className={styles.buttonsOrder}>
                         <div className={styles.buttonWrapper}>
-                            <button className={styles.bottomButton} onClick={() => handleClose('Close')}>Close</button>
+                            <button className={styles.bottomButton} onClick={handleClose}>Close</button>
                             {parseFloat(totalPrice()) > 0 &&
                                 <button className={styles.bottomButton} onClick={firsStepOrder}>Order</button>
                             }

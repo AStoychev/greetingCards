@@ -7,16 +7,10 @@ import styles from './Basket.module.css'
 
 export const Basket = () => {
 
-    const [purchaseModal, setPurchaseModal] = useState([]);
+    const [purchaseModal, setPurchaseModal] = useState(false);
 
-    const onPurchseModal = (data) => {
-        if (data === 'Close') {
-            setPurchaseModal([])
-        }
-    };
-
-    const onBascketClick = () => {
-        setPurchaseModal(<BasketModal onPurchseModal={onPurchseModal} />)
+    const onPurchseModal = () => {
+        setPurchaseModal(!purchaseModal)
     };
 
     // Try to close order on click outside order field
@@ -30,9 +24,9 @@ export const Basket = () => {
 
     return (
         <div className={styles.mainRight} onClick={onClickOutSide}>
-            <div className={styles.basketMain} onClick={onBascketClick}>
+            <div className={styles.basketMain} onClick={onPurchseModal}>
                 {/* <div className={styles.basketMain} onMouseEnter={showOrder} onMouseLeave={closeOrder} onClick={onBascketClick}> */}
-                {purchaseModal}
+                {purchaseModal && <BasketModal onPurchseModal={onPurchseModal}/>}
                 <div className={styles.innerBascketOne}>
                     <TiShoppingCart className={styles.bascketLogo} />
                 </div>
