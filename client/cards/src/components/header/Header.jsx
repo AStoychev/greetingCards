@@ -16,21 +16,19 @@ import styles from "./Header.module.css"
 export const Header = () => {
     const { isAuthenticated, userId, userEmail, userName, isAdmin } = useContext(AuthContext);
 
-    const [logoutModal, setLogoutModal] = useState();
+    const [logoutModal, setLogoutModal] = useState(false);
     const [mobileNav, setMobileNav] = useState(false);
     const [colorMobileNav, setColorMobileNav] = useState('rgb(255, 255, 255)')
     const [dropdownMobileNav, setDropdownMobileNav] = useState();
-    const [profileModal, setProfileModal] = useState();
+    const [profileModal, setProfileModal] = useState(false);
 
     const navigate = useNavigate();
 
     const onLoadLogoutModal = (data) => {
         if (data === 'Yes') {
-            setLogoutModal('');
             navigate('/logout');
-        } else {
-            setLogoutModal('')
         }
+        setLogoutModal('');
     }
 
     const showLogoutModal = () => {
@@ -47,16 +45,8 @@ export const Header = () => {
         setMobileNav(!mobileNav ? true : false)
     }
 
-    const onLoadProfileModal = (data) => {
-        if (data === 'Yes') {
-            setProfileModal('');
-        } else {
-            setProfileModal('')
-        }
-    }
-
-    const showProfileModal = () => {
-        setProfileModal(<Profile onLoadProfileModal={onLoadProfileModal} data={[userEmail, userName]} />)
+    const onLoadProfileModal = () => {
+        setProfileModal(!profileModal);
     }
 
     useEffect(() => {
@@ -76,13 +66,13 @@ export const Header = () => {
         <header>
             <div className={styles.container}>
                 {logoutModal}
-                {profileModal}
+                {profileModal && <Profile onLoadProfileModal={onLoadProfileModal} data={[userEmail, userName]} />}
                 <LogoContainer />
-                <Navigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal}/>
+                <Navigation isAuthenticated={isAuthenticated} isAdmin={isAdmin} userId={userId} showLogoutModal={showLogoutModal} />
                 <div className={styles.authIconWrapper}>
                     {
                         isAuthenticated &&
-                        <div className={styles.profileWrapper} onClick={showProfileModal}>
+                        <div className={styles.profileWrapper} onClick={onLoadProfileModal}>
                             <FaUser className={styles.profileIcon} />
                         </div>
                     }

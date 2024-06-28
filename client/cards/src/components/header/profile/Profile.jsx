@@ -30,10 +30,6 @@ export const Profile = ({
     const [accordion, setAccordion] = useState(false);
     const [arrow, setArrow] = useState(<FaAngleDown />);
 
-    const handleClose = (data) => {
-        onLoadProfileModal(data)
-    }
-
     const showChangePasswordMenu = (data) => {
         if (data === false) {
             setAccordion(true)
@@ -48,7 +44,7 @@ export const Profile = ({
         <div className={styles.container}>
             <div className={styles.popup}>
                 <div className={styles.closeButton}>
-                    <button onClick={() => handleClose('No')}>X</button>
+                    <button onClick={onLoadProfileModal}>X</button>
                 </div>
                 <div className={styles.wrapper}>
                     <div className={styles.titleWrapper}>
@@ -60,7 +56,7 @@ export const Profile = ({
                         <ChangePasswordField onSubmit={onSubmit} changeHandler={changeHandler} values={values} accordion={accordion}/>
                     </div>
                     <div className={styles.buttonWrapper}>
-                        <button className={styles.noButton} onClick={() => handleClose('No')}>Close</button>
+                        <button className={styles.noButton} onClick={onLoadProfileModal}>Close</button>
                     </div>
                 </div>
             </div>
