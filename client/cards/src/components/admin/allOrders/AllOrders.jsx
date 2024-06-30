@@ -8,21 +8,24 @@ import { ShowOrders } from '../adminUtils/orders/ShowOrders';
 import styles from './AllOrders.module.css'
 
 export const AdminAllOrders = () => {
-    const [showModal, setShowModal] = useState();
+    const [userData, setUserData] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const showOrder = (id, firstName, lastName, order) => {
-        let fullName = `${firstName} ${lastName}`
-        setShowModal(<ModalOrder modalController={modalController} id={id} fullName={fullName} order={order} />)
+        setUserData({
+            fullName: `${firstName} ${lastName}`,
+            id: id,
+            order:order
+        })
+        setShowModal(!showModal)
     };
 
-    const modalController = () => {
-        setShowModal('');
-    }
 
     return (
         <Pattern pageWithOrder={
             <div className={styles.mainContainer}>
-                {showModal}
+                {showModal && <ModalOrder modalController={showOrder} id={userData?.id} fullName={userData?.fullName} order={userData?.order}/>}
+                {/* {showModal} */}
                 <div className={styles.tableContainer}>
                     <TableHeading />
                     <ShowOrders showOrder={showOrder}/>
