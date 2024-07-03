@@ -13,9 +13,18 @@ import styles from './RefussedOrders.module.css'
 export const RefussedOrders = () => {
 
     const [refuseOrders, sestRefusedOrders] = useState([]);
-    const [idOrder, setIdOrder] = useState();
-    const [showModal, setShowModal] = useState();
+    const [userData, setUserData] = useState('');
+    const [showModal, setShowModal] = useState(false);
     const allOrdersService = orderServiceFactory();
+
+    const showOrder = (id, firstName, lastName, order) => {
+        setUserData({
+            fullName: `${firstName} ${lastName}`,
+            id: id,
+            order: order
+        });
+        setShowModal(!showModal);
+    };
 
     useEffect(() => {
         allOrdersService.getAll()
@@ -23,27 +32,15 @@ export const RefussedOrders = () => {
                 let type = takeTypeOrder(result, 'Refused')
                 sestRefusedOrders(type);
             })
-    }, [])
-
-    const showOrder = (id, firstName, lastName, order) => {
-        setIdOrder(id);
-        let fullName = `${firstName} ${lastName}`
-        setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
-    };
-
-    const modalController = () => {
-        setShowModal('');
-    }
+    }, []);
 
     return (
         <Pattern pageWithOrder={
             <div className={styles.mainContainer}>
-                {showModal}
+                {showModal && <ModalOrder modalController={showOrder} fullName={userData.fullName} order={userData.order} />}
                 <div className={styles.tableContainer}>
                     <TableHeading />
-
-                    <ShowOrders showOrder={showOrder}/>
-
+                    <ShowOrders showOrder={showOrder} />
                 </div>
             </div>
         } />
