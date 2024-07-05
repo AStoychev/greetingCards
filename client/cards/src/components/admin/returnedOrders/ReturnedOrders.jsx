@@ -13,9 +13,8 @@ import styles from './ReturnedOrders.module.css'
 export const ReturnedOrders = () => {
 
     const [returnedOrders, setReturnedOrders] = useState([]);
-    const [orders, setOrders] = useState('off');
-    const [idOrder, setIdOrder] = useState();
-    const [showModal, setShowModal] = useState();
+    const [userData, setUserData] = useState('')
+    const [showModal, setShowModal] = useState(false);
     const allOrdersService = orderServiceFactory();
 
     useEffect(() => {
@@ -27,19 +26,18 @@ export const ReturnedOrders = () => {
     }, [])
 
     const showOrder = (id, firstName, lastName, order) => {
-        setIdOrder(id);
-        let fullName = `${firstName} ${lastName}`
-        setShowModal(<ModalOrder modalController={modalController} fullName={fullName} order={order} />)
+        setUserData({
+            fullName: `${firstName} ${lastName}`,
+            id: id,
+            order: order
+        })
+        setShowModal(!showModal)
     };
-
-    const modalController = () => {
-        setShowModal('');
-    }
 
     return (
         <Pattern pageWithOrder={
             <div className={styles.mainContainer}>
-                {showModal}
+                {showModal && <ModalOrder modalController={showOrder} fullName={userData.fullName} order={userData.order} />}
                 <div className={styles.tableContainer}>
                     <TableHeading />
 
