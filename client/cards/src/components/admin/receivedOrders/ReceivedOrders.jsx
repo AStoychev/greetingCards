@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { useAdminModalOrder } from '../../../hooks/useAdminModalOrder';
+
 import { orderServiceFactory } from '../../../services/orderService';
 import { showDateTime } from '../functions/showDateTime';
 import { takeTypeOrder } from '../functions/takeTypeOrder';
@@ -12,8 +14,7 @@ import styles from './ReceivedOrders.module.css'
 
 export const ReceivedOrders = () => {
     const [receivedOrders, setReceivedOrders] = useState([]);
-    const [userData, setUserData] = useState('');
-    const [showModal, setShowModal] = useState(false);
+    const {userData, showModal, showOrder} = useAdminModalOrder();
     const allOrdersService = orderServiceFactory();
 
     useEffect(() => {
@@ -23,15 +24,6 @@ export const ReceivedOrders = () => {
                 setReceivedOrders(type);
             })
     }, [])
-
-    const showOrder = (id, firstName, lastName, order) => {
-        setUserData({
-            fullName: `${firstName} ${lastName}`,
-            id: id,
-            order: order
-        })
-        setShowModal(!showModal)
-    };
 
     return (
         <Pattern pageWithOrder={

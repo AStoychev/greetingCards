@@ -13,8 +13,8 @@ import styles from './SendOrders.module.css'
 export const SendOrders = () => {
 
     const [sendOrders, setSendOrders] = useState([]);
-    const [showModal, setShowModal] = useState(false);
     const [userData, setUserData] = useState('');
+    const [showModal, setShowModal] = useState(false);
     const allOrdersService = orderServiceFactory();
 
     useEffect(() => {

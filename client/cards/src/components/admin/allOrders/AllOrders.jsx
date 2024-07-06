@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useAdminModalOrder } from '../../../hooks/useAdminModalOrder';
 
 import { Pattern } from '../pattern/Pattern';
 import { ModalOrder } from '../modalOrder/ModalOrder';
@@ -8,17 +8,7 @@ import { ShowOrders } from '../adminUtils/orders/ShowOrders';
 import styles from './AllOrders.module.css'
 
 export const AdminAllOrders = () => {
-    const [userData, setUserData] = useState('');
-    const [showModal, setShowModal] = useState(false);
-
-    const showOrder = (id, firstName, lastName, order) => {
-        setUserData({
-            fullName: `${firstName} ${lastName}`,
-            id: id,
-            order:order
-        })
-        setShowModal(!showModal)
-    };
+    const {userData, showModal, showOrder} = useAdminModalOrder();
 
     return (
         <Pattern pageWithOrder={
