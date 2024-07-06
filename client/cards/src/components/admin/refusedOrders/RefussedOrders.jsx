@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { useAdminModalOrder } from '../../../hooks/useAdminModalOrder';
+
 import { orderServiceFactory } from '../../../services/orderService';
 import { takeTypeOrder } from '../functions/takeTypeOrder';
 
@@ -13,18 +15,8 @@ import styles from './RefussedOrders.module.css'
 export const RefussedOrders = () => {
 
     const [refuseOrders, sestRefusedOrders] = useState([]);
-    const [userData, setUserData] = useState('');
-    const [showModal, setShowModal] = useState(false);
+    const { userData, showModal, showOrder } = useAdminModalOrder();
     const allOrdersService = orderServiceFactory();
-
-    const showOrder = (id, firstName, lastName, order) => {
-        setUserData({
-            fullName: `${firstName} ${lastName}`,
-            id: id,
-            order: order
-        });
-        setShowModal(!showModal);
-    };
 
     useEffect(() => {
         allOrdersService.getAll()
