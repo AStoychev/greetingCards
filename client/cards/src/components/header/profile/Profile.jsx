@@ -32,12 +32,11 @@ export const Profile = ({
 
     const showChangePasswordMenu = (data) => {
         if (data === false) {
-            setAccordion(true)
             setArrow(<FaAngleUp />)
         } else {
-            setAccordion(false)
             setArrow(<FaAngleDown />)
         }
+        setAccordion(!accordion)
     }
 
     return (
