@@ -43,7 +43,6 @@ export const ModalOrder = ({
                 <img className={styles.orderImage} src='../../../images/shopping-bag.png' />
                 <div className={styles.blueField}></div>
             </div>
-
             <div className={styles.secondField}>
                 <div className={styles.mainFieldModal}>
                     <p>Order of <span className={styles.orderInformation}>{fullName}</span></p>
@@ -66,7 +65,6 @@ export const ModalOrder = ({
                     <div className={styles.buttonOk} onClick={closeModal}>OK</div>
                 </div>
             </div>
-            
         </div>
     );
 }
