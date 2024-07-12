@@ -39,18 +39,15 @@ export const ModalOrder = ({
 
     return (
         <div className={styles.containerModal}>
-
             <div className={styles.topField}>
                 <img className={styles.orderImage} src='../../../images/shopping-bag.png' />
                 <div className={styles.blueField}></div>
             </div>
-
             <div className={styles.secondField}>
                 <div className={styles.mainFieldModal}>
                     <p>Order of <span className={styles.orderInformation}>{fullName}</span></p>
                     <p>Order ID <span className={styles.orderInformation}>{id}</span></p>
                 </div>
-                
                 {order.map((x, index) => (
                     <div className={styles.tableRow} key={x._id}>
                         <div className={styles.rowItem}>{index + 1}</div>
