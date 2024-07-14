@@ -7,20 +7,20 @@ import styles from "./Chat.module.css"
 
 export const Chat = () => {
 
-    const [open, setOpen] = useState(0);
+    const [open, setOpen] = useState(false);
     const [openChat, setOpenChat] = useState('')
 
     const closeChat = () => {
-        setOpen(0);
+        setOpen(false);
         setOpenChat("");
     }
 
     const openChatField = () => {
-        if(open === 0) {
-            setOpen(1);
+        if(!open) {
+            setOpen(true);
             setOpenChat(<ChatWindow closeChat={closeChat}/>);
         } else {
-            setOpen(0);
+            setOpen(false);
             closeChat();
         }
     }
