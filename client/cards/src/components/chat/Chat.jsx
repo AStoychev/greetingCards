@@ -24,9 +24,11 @@ export const Chat = () => {
 
     return (
         <div className={styles.container}>
+
             <div className={styles.chatWrapper}>
                 {open && <ChatWindow closeChat={closeChat}/>}
             </div>
+            
             <div className={styles.chatIconWrapper}>
                 <PiWechatLogoDuotone onClick={openChatField} className={styles.chatIcon} />
             </div>
