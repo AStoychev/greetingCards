@@ -8,17 +8,14 @@ import styles from "./Chat.module.css"
 export const Chat = () => {
 
     const [open, setOpen] = useState(false);
-    const [openChat, setOpenChat] = useState('')
 
     const closeChat = () => {
         setOpen(false);
-        setOpenChat("");
     }
 
     const openChatField = () => {
         if(!open) {
             setOpen(true);
-            setOpenChat(<ChatWindow closeChat={closeChat}/>);
         } else {
             setOpen(false);
             closeChat();
@@ -28,7 +25,7 @@ export const Chat = () => {
     return (
         <div className={styles.container}>
             <div className={styles.chatWrapper}>
-                {openChat}
+                {open && <ChatWindow closeChat={closeChat}/>}
             </div>
             <div className={styles.chatIconWrapper}>
                 <PiWechatLogoDuotone onClick={openChatField} className={styles.chatIcon} />
