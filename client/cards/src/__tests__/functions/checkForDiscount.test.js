@@ -20,18 +20,21 @@ describe('checkForDiscount', () => {
 
     expect(checkForDiscount(price, undefined)).toBe(price.toFixed(2));
   });
+
   test('handles zero price correctly', () => {
     const price = 0;
     const discount = 50; // 50% discount
 
     expect(checkForDiscount(price, discount)).toBe(price.toFixed(2));
   });
+
   test('handles price as undefined', () => {
     const price = undefined;
     const discount = 20;
 
     expect(checkForDiscount(price, discount)).toBe('NaN');
   });
+  
   test('handles price as null', () => {
     const price = null;
     const discount = 20;
