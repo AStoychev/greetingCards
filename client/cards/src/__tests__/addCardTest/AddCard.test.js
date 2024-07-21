@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { AddCard } from '../../src/components/addCard/AddCard';
+import { AddCard } from '../../components/addCard/AddCard';
 
 test('renders the correct addCard', () => {
     render(<AddCard/>);
