@@ -1,6 +1,5 @@
 import { validateImageUrl, validateAddCardFileds } from "../../functions/validateAddAndEditFields";
 
-
 describe('validateImageUrl', () => {
     test('returns true for valid HTTPS image URLs', () => {
         const validUrls = [
