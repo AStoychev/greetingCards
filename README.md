@@ -4,6 +4,8 @@ This is web shop for greeting cards and other handmade products. It has the full
 
 
 
+
+
 **How to start the project:**
 
 1. Clone the repo.
