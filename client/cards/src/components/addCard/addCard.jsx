@@ -12,9 +12,6 @@ export const AddCard = () => {
                     <h1>Add Card</h1>
                     <div className={styles.innerColumn}>
                         <section id="card-page" className="content auth">
-                            
-
-                            
                             <AddCardForm />
                         </section>
                     </div>
