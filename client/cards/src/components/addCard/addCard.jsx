@@ -13,6 +13,8 @@ export const AddCard = () => {
                     <div className={styles.innerColumn}>
                         <section id="card-page" className="content auth">
                             
+
+                            
                             <AddCardForm />
                         </section>
                     </div>
