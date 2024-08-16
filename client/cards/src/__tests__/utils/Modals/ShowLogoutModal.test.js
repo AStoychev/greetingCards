@@ -1,10 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ShowLogoutModal } from '../../../utils/Modals/logouthModal/ShowLogoutModal';
 
-
-
-
-
 describe('ShowLogoutModal Component', () => {
     test('renders correctly and handles button clicks', () => {
         const mockOnLoadLogoutModal = jest.fn();
