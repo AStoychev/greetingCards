@@ -16,6 +16,7 @@ describe('ShowLogoutModal Component', () => {
         expect(mockOnLoadLogoutModal).toHaveBeenCalledWith('Yes');
     });
 
+    
     // test('should handle clicks outside the modal to close with "No"', () => {
     //     const mockOnLoadLogoutModal = jest.fn();
     //     render(<ShowLogoutModal onLoadLogoutModal={mockOnLoadLogoutModal} />);
