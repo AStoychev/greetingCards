@@ -1,6 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ShowLogoutModal } from '../../../utils/Modals/logouthModal/ShowLogoutModal';
 
+
+
+
+
 describe('ShowLogoutModal Component', () => {
     test('renders correctly and handles button clicks', () => {
         const mockOnLoadLogoutModal = jest.fn();
@@ -16,7 +20,6 @@ describe('ShowLogoutModal Component', () => {
         expect(mockOnLoadLogoutModal).toHaveBeenCalledWith('Yes');
     });
 
-    
     // test('should handle clicks outside the modal to close with "No"', () => {
     //     const mockOnLoadLogoutModal = jest.fn();
     //     render(<ShowLogoutModal onLoadLogoutModal={mockOnLoadLogoutModal} />);
