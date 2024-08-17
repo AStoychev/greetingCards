@@ -1,0 +1,45 @@
+.mainDivPartner {
+    width: 99.9%;
+    padding-top: 30px;
+}
+
+.flexRow {
+    height: 160px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    border: solid;
+}
+
+.column {
+    width: 10%;
+    /* margin-right: 3cqmax; */
+}
+
+.imagPartners {
+    width: 100%;
+    height: 160px;
+}
+
+@media screen and (max-width: 768px) {
+    .mainDivPartner {
+        max-width: 100%;
+    }
+
+    .mainDivPartner .flexRow .column2,
+    .column4,
+    .column6,
+    .column7 {
+        display: none;
+    }
+
+    .mainDivPartner .flexRow .column1,
+    .column3,
+    .column5 {
+        width: 25%;
+        height: 1000px;
+    }
+}
