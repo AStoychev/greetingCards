@@ -1,5 +1,3 @@
-// CardSaveFiveVisited.test.js
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
@@ -33,16 +31,9 @@ describe('CardSaveFiveVisited Component', () => {
     test('renders without crashing', () => {
         render(<CardSaveFiveVisited card={card} />);
 
-        // Check if the title is rendered
         expect(screen.getByText('Sample Card')).toBeInTheDocument();
-
-        // Check if the price is rendered correctly
         expect(screen.getByText('Price: 90')).toBeInTheDocument();
-
-        // Check if the image is rendered
         expect(screen.getByAltText('productImage')).toHaveAttribute('src', card.imageUrl);
-
-        // Check if the "Add to Cart" button is present
         expect(screen.getByText('Add to Cart')).toBeInTheDocument();
     });
 
@@ -60,11 +51,9 @@ describe('CardSaveFiveVisited Component', () => {
 
         const image = screen.getByAltText('productImage');
 
-        // Mouse over event
         fireEvent.mouseEnter(image);
         expect(image).toHaveAttribute('src', card.additionalImage[0]);
 
-        // Mouse leave event
         fireEvent.mouseLeave(image);
         expect(image).toHaveAttribute('src', card.imageUrl);
     });

@@ -13,7 +13,6 @@ jest.mock('../../../../utils/Cards/AddToCardButton/AddToCardButton', () => ({
 describe('Card Component', () => {
     const mockNavigate = jest.fn();
 
-    // Mock the useNavigate hook from react-router-dom
     jest.mock('react-router-dom', () => ({
         ...jest.requireActual('react-router-dom'),
         useNavigate: () => mockNavigate,
@@ -69,11 +68,9 @@ describe('Card Component', () => {
 
         const imageElement = screen.getByAltText('productImage');
 
-        // Simulate mouse enter
         fireEvent.mouseEnter(imageElement);
         expect(imageElement).toHaveAttribute('src', 'hoverImage.jpg');
 
-        // Simulate mouse leave
         fireEvent.mouseLeave(imageElement);
         expect(imageElement).toHaveAttribute('src', 'defaultImage.jpg');
     });

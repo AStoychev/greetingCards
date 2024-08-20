@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-// import '@testing-library/jest-dom/extend-expect';
 import { Graphic } from '../../../../utils/GraphicksOrder/graphic/Graphic';
 import styles from './Graphic.module.css';
 

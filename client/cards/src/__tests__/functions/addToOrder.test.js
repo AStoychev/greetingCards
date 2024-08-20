@@ -9,9 +9,7 @@ describe('addToOrder', () => {
         localStorage.setItem('orders 1', JSON.stringify({ title: 'Item 1', price: 10 }));
         localStorage.setItem('orders 2', JSON.stringify({ title: 'Item 2', price: 20 }));
         localStorage.setItem('otherData', JSON.stringify({ title: 'Item 3', price: 30 }));
-
         const result = addToOrder();
-
         expect(result).toEqual([
             JSON.stringify({ title: 'Item 1', price: 10 }),
             JSON.stringify({ title: 'Item 2', price: 20 })
@@ -26,7 +24,6 @@ describe('addToOrder', () => {
     test('handles localStorage keys with spaces correctly', () => {
         localStorage.setItem('orders 123', JSON.stringify({ title: 'Item 123', price: 15 }));
         const result = addToOrder();
-
         expect(result).toEqual([
             JSON.stringify({ title: 'Item 123', price: 15 })
         ]);
@@ -35,7 +32,6 @@ describe('addToOrder', () => {
     test('handles empty order values correctly', () => {
         localStorage.setItem('orders empty', JSON.stringify({}));
         const result = addToOrder();
-
         expect(result).toEqual([
             JSON.stringify({})
         ]);
@@ -44,7 +40,6 @@ describe('addToOrder', () => {
     test('calculates total price correctly (if needed)', () => {
         localStorage.setItem('orders 1', JSON.stringify({ title: 'Item 1', price: 10 }));
         localStorage.setItem('orders 2', JSON.stringify({ title: 'Item 2', price: 20 }));
-
         const result = addToOrder();
     });
 });

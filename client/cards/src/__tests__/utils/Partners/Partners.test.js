@@ -1,9 +1,6 @@
-// src/__tests__/Partners.test.js
-
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Partners } from '../../../utils/Partners/Partners';
-import styles from './Partners.module.css';
 
 describe('Partners Component', () => {
     test('renders all partner images with correct src attributes', () => {
