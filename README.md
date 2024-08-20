@@ -4,7 +4,6 @@ This is web shop for greeting cards and other handmade products. It has the full
 
 **How to start the project:**
 
-
 1. Clone the repo.
 2. Start Front end:
    - Go to client directori with command: `cd .\client`
