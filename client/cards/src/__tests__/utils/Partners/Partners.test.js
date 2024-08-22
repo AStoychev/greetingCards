@@ -17,9 +17,7 @@ describe('Partners Component', () => {
         ];
 
         const images = screen.getAllByRole('img');
-
         expect(images).toHaveLength(expectedSources.length);
-
         images.forEach((img, index) => {
             expect(img).toHaveAttribute('src', expectedSources[index]);
         });

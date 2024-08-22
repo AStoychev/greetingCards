@@ -17,14 +17,12 @@ describe('DeleteCardModal Component', () => {
     it('calls onLoadModal with "No" when the No button is clicked', () => {
         const noButton = screen.getByText('No');
         fireEvent.click(noButton);
-
         expect(mockOnLoadModal).toHaveBeenCalledWith('No');
     });
 
     it('calls onLoadModal with "Yes" when the Yes button is clicked', () => {
         const yesButton = screen.getByText('Yes');
         fireEvent.click(yesButton);
-
         expect(mockOnLoadModal).toHaveBeenCalledWith('Yes');
     });
 });

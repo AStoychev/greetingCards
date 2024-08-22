@@ -24,11 +24,8 @@ describe('TooltipMessageOrder Component', () => {
         );
 
         const button = screen.getByText(/hover me/i);
-
         expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
-
         fireEvent.mouseEnter(button);
-
         expect(screen.getByText(tooltipText)).toBeInTheDocument();
     });
 
@@ -40,13 +37,9 @@ describe('TooltipMessageOrder Component', () => {
         );
 
         const button = screen.getByText(/hover me/i);
-
         fireEvent.mouseEnter(button);
-
         expect(screen.getByText(tooltipText)).toBeInTheDocument();
-
         fireEvent.mouseLeave(button);
-
         expect(screen.queryByText(tooltipText)).not.toBeInTheDocument();
     });
 });
