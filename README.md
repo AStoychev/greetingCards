@@ -20,5 +20,6 @@ This is web shop for greeting cards and other handmade products. It has the full
    - Go to chatbot directory with command: `cd .\chat-server`
    - Start command: `pip install -r requirements.txt`
    - Start command: `python main.py`
+     
 
 If you have any comments or a better idea, please don't hesitate to write me. 🍻
